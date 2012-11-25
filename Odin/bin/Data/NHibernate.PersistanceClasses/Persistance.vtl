@@ -1,0 +1,648 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $per = "Persistance" )
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using NHibernate;
+using NHibernate.Cfg;
+using Loki.DataRepresentation;
+using Loki.Exceptions;
+using Loki.Interfaces;
+using Loki.Generic;
+using $coreNamespace;
+using LifecycleVeto = Loki.DataRepresentation.LifecyleVeto;
+
+namespace $namespace {
+
+	public class Persistance<T> :
+			IPersistance<T>, 
+			ILifecycle<T>,
+			IDisposable 
+			where T : IDescriptable {
+		
+		#region Ctor and Fields
+		
+		private ISession session = null;
+		private ITransaction transaction = null;
+		private bool attached = false;
+		private Type persistanceType = null;
+		
+		/// <summary>
+        /// Constructor to use by derived classes
+        /// </summary>
+        /// <param name="currSession">The current NHibernate session</param>
+        /// <param name="type">The current type</param>
+		protected $per ( ISession currSession, Type type ) 
+		{
+			Session = currSession;
+			PersistanceType = type;
+		}
+		
+		/// <summary>
+        /// Constructor to use by derived classes
+        /// </summary>
+        /// <param name="currSession">The current NHibernate session</param>
+		protected $per ( ISession currSession ) 
+		{
+			Session = currSession;
+			PersistanceType = typeof(T);
+		}
+		
+		/// <summary>
+        /// Access to the NHibernate session
+        /// </summary>
+		internal ISession Session {
+			get { return session; }
+			set { session = value; }
+		}
+		
+		/// <summary>
+        /// Access to the current NHibernate transaction
+        /// </summary>
+		internal ITransaction Transaction {
+			get { return transaction; }
+			private set { transaction = value; }
+		}
+		
+		/// <summary>
+        /// Weather this persistance session is attached to another
+        /// </summary>
+        /// <remarks>
+        /// If attached then when you close this Persistance instance, the NHibernate
+        /// session will remain open. It's the parent Persistance instance (the one you attached to)
+        /// that has the responsability to close the NHibernate session
+        /// </remarks>
+		internal bool Attached {
+			get { return attached; }
+			set { attached = value; }
+		}
+		
+		/// <summary>
+        /// The Type to persist
+        /// </summary>
+		public Type PersistanceType {
+			get { return persistanceType; }
+			set { persistanceType = value; }
+		}
+		
+		#endregion Ctor and Fields
+		
+		#region IDisposable Implementation
+		
+		/// <summary>
+        ///  Closes the NHibernate session
+        /// </summary>
+		public void Dispose()
+		{
+			if( !Attached ) {
+				session.Close();
+			}
+		}
+		
+		#endregion
+	
+		#region IPersistance
+			
+		/// <summary>
+        /// Creates an instance of the type T
+        /// </summary>
+        /// <returns>The created instance</returns>
+		public virtual T Create()
+		{
+			throw new DALException(" Cannot create an instance of the abstract class '"+PersistanceType.Name+"'");
+		}
+		
+		/// <summary>
+        /// Selects the element with the given Id
+        /// </summary>
+        /// <param name="id">The target's id</param>
+        /// <returns>The associated object</returns>
+		public T Select( int id )
+		{
+			return (T) session.Load(typeof(T), id);
+		}
+		
+		/// <summary>
+        /// Selects all elements
+        /// </summary>
+        /// <returns>The list with all elements</returns>
+		public List<T> Select()
+		{
+			return Select(-1, -1, "Id", true);
+		}
+		
+		/// <summary>
+        /// Selects all elements with a given order
+        /// </summary>
+        /// <param name="orderByProperty">Field to order by</param>
+        /// <param name="ascending">Order direction</param>
+        /// <returns>The list with all elements</returns>
+		public List<T> Select( string orderByProperty, bool ascending )
+		{
+			return Select(-1, -1, orderByProperty, ascending);
+		}
+		
+		/// <summary>
+        /// Selects all elements with a given order
+        /// </summary>
+        /// <param name="orderByProperties">Fields to order by</param>
+        /// <param name="ascending">Order directions</param>
+        /// <returns>The list with all elements</returns>
+		public List<T> Select( string[] orderByProperties, bool[] ascending )
+		{
+			return Select( -1, -1, orderByProperties, ascending);
+		}
+		
+		/// <summary>
+        /// Selects a subset of all the elements
+        /// </summary>
+        /// <param name="start">The first element index</param>
+        /// <param name="count">The number of elements</param>
+        /// <returns>The list with the elements</returns>
+		public List<T> Select( int start, int count )
+		{
+			return Select(start, count, "Id", true);
+		}
+
+		/// <summary>
+        /// Selects a subset of all the elements ordered by the given fields
+        /// </summary>
+        /// <param name="start">The first element index</param>
+        /// <param name="count">The number of elements</param>
+        /// <param name="orderByProperty">Field to order by</param>
+        /// <param name="ascending">Order direction</param>
+        /// <returns>The list with the elements</returns>
+		public List<T> Select(int start, int count, string orderByProperty, bool ascending)
+		{
+			return Select(start, count, new string[] {orderByProperty}, new bool[]{ascending});
+		}
+		
+		/// <summary>
+        /// Selects a subset of all the elements ordered by the given fields
+        /// </summary>
+        /// <param name="start">The first element index</param>
+        /// <param name="count">The number of elements</param>
+        /// <param name="orderByProperties">Fields to order by</param>
+        /// <param name="ascending">Order directions</param>
+        /// <returns>The list with the elements</returns>
+		public List<T> Select( int start, int count, string[] orderByProperties, bool[] ascending )
+		{
+			if( ascending == null ) {
+				ascending = GetBoolArray(orderByProperties.Length);
+			}
+		
+			ICriteria criteria = Session.CreateCriteria(PersistanceType);
+			
+			for( int i = 0; i < orderByProperties.Length; ++i ) {
+				string propery = orderByProperties[i];
+				bool asc = ascending[i];
+				criteria.AddOrder( CreateOrderExpression(propery, asc) );
+			}
+			
+			if( start >= 0 ) {
+				criteria.SetFirstResult(start);
+			}
+			if( count > 0 ) {
+				criteria.SetMaxResults(count);
+			}
+
+			return ToTypedCollection( criteria.List() );
+		}
+		
+		/// <summary>
+        /// Gets the number of instanced persisted
+        /// </summary>
+        /// <returns>The instance count</returns>
+		public int GetCount()
+		{
+			return GetStaticCount( PersistanceType.Name );
+		}
+		
+		/// <summary>
+        /// Gets a random element
+        /// </summary>
+        /// <returns>An element</returns>
+		public T GetRandom()
+		{
+			int count = GetCount();
+			Random rnd = new Random();
+			int lucky = rnd.Next(count);
+			
+			return Select(lucky, 1)[0];
+		}
+		
+		/// <summary>
+        /// Performs a HQL query
+        /// </summary>
+        /// <param name="hql">The HQL</param>
+        /// <returns>The list</returns>
+		public IList Query( string hql )
+		{
+            return Query(-1, -1, hql, new object[0]);
+		}
+		
+		/// <summary>
+        /// Performs a HQL query
+        /// </summary>
+        /// <param name="hql">The HQL</param>
+        /// <param name="args">Arguments to format the HQL</param>
+        /// <returns>The list</returns>
+		public IList Query( string hql, params object[] args )
+		{
+            return Query(-1, -1, hql, args);
+		}
+
+		/// <summary>
+        /// Performs a HQL query
+        /// </summary>
+        /// <param name="start">The first index</param>
+        /// <param name="count">The number of elements to return</param>
+        /// <param name="hql">The HQL</param>
+        /// <param name="args">Parameters to format the HQL</param>
+        /// <returns>The list</returns>
+        public IList Query( int start, int count, string hql, params object[] args )
+        {
+            IQuery query = Session.CreateQuery(string.Format(hql, args));
+            if (start >= 0) {
+                query.SetFirstResult(start);
+            }
+            if( count >= 0 ) {
+                query.SetMaxResults(count);
+            }
+            return query.List();
+        }
+		
+		/// <summary>
+        /// Performs a HQL query
+        /// </summary>
+        /// <param name="hql">The HQL</param>
+        /// <returns>The list</returns>
+		public List<T> TypedQuery( string hql )
+		{
+            return TypedQuery(-1, -1, hql, new object[0]);
+		}
+		
+		/// <summary>
+        /// Performs a HQL query
+        /// </summary>
+        /// <param name="hql">The HQL</param>
+        /// <param name="args">Arguments to format the HQL</param>
+        /// <returns>The list</returns>
+		public List<T> TypedQuery( string hql, params object[] args )
+		{
+            return TypedQuery(-1, -1, hql, args);
+		}
+
+		/// <summary>
+        /// Performs a HQL query
+        /// </summary>
+        /// <param name="start">The first index</param>
+        /// <param name="count">The number of elements to return</param>
+        /// <param name="hql">The HQL</param>
+        /// <param name="args">Parameters to format the HQL</param>
+        /// <returns>The list</returns>
+        public List<T> TypedQuery( int start, int count, string hql, params object[] args )
+        {
+			try {
+	            IQuery query = Session.CreateQuery(string.Format(hql, args));
+	            if (start >= 0) {
+	                query.SetFirstResult(start);
+	            }
+	            if( count >= 0 ) {
+	                query.SetMaxResults(count);
+	            }
+	            return ToTypedCollection(query.List());
+			} catch( Exception ex ) {
+				throw new DALException("Could not execute `" + string.Format(hql, args) + "'", ex);
+			}
+        }
+		
+		/// <summary>
+        /// Persists an object
+        /// </summary>
+        /// <param name="t">The object</param>
+		public void Update( T t )
+		{
+			LifecycleVeto veto = LifecycleVeto.Continue;
+			if( t.Id == 0 ) {
+				veto = OnSave(t);
+				if( veto != LifecycleVeto.Abort ) {
+					Session.Save(t);
+					ResetStaticCount();
+				}
+			} else {
+				veto = OnUpdate(t);
+				if( veto != LifecycleVeto.Abort ) {
+					Session.Update(t);
+				}
+			}
+			
+			if( veto == LifecycleVeto.Abort ) {
+				throw new LifecycleAbortException();
+			}
+		}
+		
+		/// <summary>
+        /// Deletes an object from the persistance repository
+        /// </summary>
+        /// <param name="t">The target object</param>
+		public void Delete( T t )
+		{
+			Session.Delete(t);
+			ResetStaticCount();
+		}
+		
+		/// <summary>
+        /// Deletes an object from the persistance repository
+        /// </summary>
+        /// <param name="id">The target object's Id</param>
+        /// <returns>The number of objects deleted</returns>
+		public int Delete( int id )
+		{
+			string query = string.Format("from {0} e where e.Id={1}", PersistanceType.Name, id);
+			ResetStaticCount();
+			return (int)Session.Delete(query);
+		}
+		
+		/// <summary>
+        /// Deletes all objects from the persistance repository
+        /// </summary>
+        /// <returns>The number of objects deleted</returns>
+		public int DeleteAll()
+		{
+			string query = string.Format("from {0}", PersistanceType.Name);
+			ResetStaticCount();
+			return (int)Session.Delete(query);
+		}
+		
+		/// <summary>
+        /// Deletes objects based on a HQL
+        /// </summary>
+        /// <param name="hql">The HQL</param>
+        /// <returns>The number of objects deleted</returns>
+		public int Delete(string hql)
+		{
+			ResetStaticCount();
+			return (int)Session.Delete(hql);
+		}
+		
+		/// <summary>
+        /// Deletes objects based on a HQL
+        /// </summary>
+        /// <param name="hql">The HQL</param>
+        /// <param name="args">The parameters to format the HQL</param>
+        /// <returns>The number of deleted objects</returns>
+		public int Delete(string hql, params object[] args)
+        {
+            return Delete(string.Format(hql, args));
+        }
+        
+		/// <summary>
+        /// Executes HQL
+        /// </summary>
+        /// <param name="hql">The HQL</param>
+        /// <param name="args">The parameters to format the HQL</param>
+        /// <returns>The result</returns>
+		public int ExecuteScalar(string hql, params object[] args)
+        {
+            return ExecuteScalar( string.Format(hql, args) );
+        }
+
+		/// <summary>
+        /// Executes HQL
+        /// </summary>
+        /// <param name="hql">The HQL</param>
+        /// <returns>The result</returns>
+        public int ExecuteScalar(string hql)
+        {
+            IList list = Query(hql);
+            return (int)list[0];
+        }
+		
+		/// <summary>
+        /// Starts a transaction
+        /// </summary>
+		public void StartTransaction()
+		{
+			Transaction = Session.BeginTransaction();
+		}
+		
+		/// <summary>
+        /// Commit transaction
+        /// </summary>
+		public void CommitTransaction()
+		{
+			if( Transaction != null ) {
+				transaction.Commit();
+			}
+		}
+		
+		/// <summary>
+        /// Rollback transaction
+        /// </summary>
+		public void RollbackTransaction()
+		{
+			if( Transaction != null ) {
+				transaction.Rollback();
+			}
+		}
+		
+		/// <summary>
+        /// Updates the persistance repository with the information stilll in memory
+        /// </summary>
+		public void Flush()
+		{
+			Session.Flush();
+		}
+		
+		#endregion IPersistance
+		
+		#region Lifecycle Implementation
+		
+		/// <summary>
+        /// OnLoad event
+        /// </summary>
+		public event Lifecycle<T>.Event LoadEvent;
+		
+		/// <summary>
+        /// Save event
+        /// </summary>
+		public event Lifecycle<T>.ActionEvent SaveEvent;
+		
+		/// <summary>
+        /// Update event
+        /// </summary>
+		public event Lifecycle<T>.ActionEvent UpdateEvent;
+		
+		/// <summary>
+        /// Delete event
+        /// </summary>
+		public event Lifecycle<T>.ActionEvent DeleteEvent;
+		
+		/// <summary>
+        /// Calls the load events
+        /// </summary>
+        /// <param name="t">The loaded object</param>
+		protected virtual void OnLoad( T t)
+		{
+			CallEvent(t, LoadEvent);
+		}
+		
+		/// <summary>
+        /// Calls the Save events
+        /// </summary>
+        /// <param name="t">The object to save</param>
+        /// <returns>The LifecyleVeto</returns>
+		protected virtual LifecyleVeto OnSave( T t )
+		{
+			return CallActionEvent(t, SaveEvent);
+		}
+		
+		/// <summary>
+        /// Calls the Update events
+        /// </summary>
+        /// <param name="t">The object to update</param>
+        /// <returns>The LifecyleVeto</returns>
+		protected virtual LifecyleVeto OnUpdate( T t )
+		{
+			return CallActionEvent(t, UpdateEvent);
+		}
+		
+		/// <summary>
+        /// Calls the Delete events
+        /// </summary>
+        /// <param name="t">The object to delete</param>
+        /// <returns>The LifecyleVeto</returns>
+		protected virtual LifecyleVeto OnDelete( T t )
+		{
+			return CallActionEvent(t, DeleteEvent);
+		}
+		
+		/// <summary>
+        /// Calls the event's actions
+        /// </summary>
+        /// <typeparam name="T">The type</typeparam>
+        /// <param name="t">The object</param>
+        /// <param name="handler">The handler</param>
+        /// <returns>The LifecyleVeto</returns>
+		private LifecyleVeto CallActionEvent<T>( T t, Lifecycle<T>.ActionEvent handler )
+		{
+			if( handler != null ) {
+				foreach( Lifecycle<T>.ActionEvent e in handler.GetInvocationList() ) {
+					LifecycleVeto veto = e(t);
+					if( veto == LifecycleVeto.Abort ) {
+						return veto;
+					}	
+				}
+			}
+			return LifecycleVeto.Continue;
+		}
+		
+		/// <summary>
+        /// Calls events
+        /// </summary>
+        /// <typeparam name="T">The type</typeparam>
+        /// <param name="t">The object</param>
+        /// <param name="handler">The handler</param>
+		private void CallEvent<T>( T t, Lifecycle<T>.Event handler )
+		{
+			if( handler != null ) {
+				foreach( Lifecycle<T>.Event e in handler.GetInvocationList() ) {
+					e(t);
+				}
+			}
+		}
+		
+		#endregion Lifecycle Implementation
+		
+		#region Utilities
+		
+		/// <summary>
+        /// Creates a typed collections given an object collection
+        /// </summary>
+        /// <param name="col">The collection</param>
+        /// <returns>Tye typed collection</returns>
+		protected List<T> ToTypedCollection( ICollection col )
+		{
+			List<T> toReturn = new List<T>();
+			foreach( T item in col ) {
+				toReturn.Add(item);
+			}
+			return toReturn;
+		}
+		
+		/// <summary>
+        /// Creates the order by expression
+        /// </summary>
+        /// <param name="orderPropery">The property to order</param>
+        /// <param name="ascending">The order direction</param>
+        /// <returns>The NHibernate expression</returns>
+		protected NHibernate.Expression.Order CreateOrderExpression( string orderPropery, bool ascending)
+		{
+			string column = orderPropery;
+			return new NHibernate.Expression.Order(column, ascending);
+		}
+		
+		/// <summary>
+        /// Gets a boolean array
+        /// </summary>
+        /// <param name="length">The number of items</param>
+        /// <returns>The bool array</returns>
+		protected bool[] GetBoolArray( int length )
+		{
+			bool[] array = new bool[length];
+			for( int i = 0; i < length; ++i ) {
+				array[i] = true;
+			}
+			return array;
+		}
+	
+		#endregion Utilities
+		
+		#region Static Count Management
+		
+		private static int count = -1;
+		private static object sync = new object();
+		
+		/// <summary>
+        /// Gets the static count for an entity
+        /// </summary>
+        /// <param name="entity">The entity</param>
+        /// <returns>The number of objects persisted</returns>
+		private static int GetStaticCount( string entity )
+		{
+			lock(sync) {
+				if( count < 0 ) {
+					IList list = NHibernateUtilities.HqlQuery((string.Format("select count(*) from {0}", entity)));
+					count = (int) list[0];
+				}
+				return count;
+			}
+		}
+		
+		/// <summary>
+        /// Clears the static count
+        /// </summary>
+		private static void ResetStaticCount()
+		{
+			lock(sync) {
+				count = -1;
+			}
+		}
+		
+		#endregion
+		
+	};
+}

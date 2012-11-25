@@ -1,0 +1,48 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.SessionState;
+using $coreNamespace;
+using $dalNamespace;
+using System.Collections.Generic;
+
+namespace $namespace {
+	public class Global : System.Web.HttpApplication {
+	
+		protected void Application_Start( object sender, EventArgs e ) {
+			string status = ConfigurationManager.AppSettings["appStatus"];
+			Application["APP_STATUS"] = bool.Parse( status );
+		}
+
+		protected void Application_End( object sender, EventArgs e ) {
+
+		}
+		
+		protected void Application_EndRequest( object sender, EventArgs e ) {
+			object o = HttpContext.Current.Items["Persistance"];
+			if( o != null ) {
+				((PrincipalPersistance)o).Dispose();
+			}
+		}
+		
+		protected void Application_Error(object sender, EventArgs e)
+        {
+            // Errors are dealed with the ExceptionModule
+        }
+	}
+}

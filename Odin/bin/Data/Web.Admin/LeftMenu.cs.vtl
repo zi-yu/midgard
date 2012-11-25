@@ -1,0 +1,76 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
+using System.Web.UI;
+using System.Web;
+
+namespace $namespace {
+	public class LeftMenu : Control {
+		
+		#region Fields
+		
+		private string[] state = { "Application", "Session", "Cache", "Items" };
+		private string[] utilities = { "SmtpSettings", "HttpHeaders", "QueryAnalyser", "SendMail" };
+#if($dependencies.HasDependency( "RequestLogger" ))
+		private string[] stats = { "LatestRequests", "LatestReferrals"};
+#end
+		private string[] entities =	{ #foreach( $entity in $entities )#if( $first == 0 ),#else#set( $first = 0 )#end"$entity.Name"#end };
+		
+		#endregion
+		
+		#region Private
+
+		private void WriteMenu( HtmlTextWriter writer, string name, string[] menu ) {
+			writer.Write( "<dt>{0}</dt>", name );
+			foreach( string s in menu ) {
+				WriteLine( writer, s );
+			}
+		}
+
+		private void WriteLine( HtmlTextWriter writer, string s ) {
+			object entity = HttpContext.Current.Session["CurrentEntity"];
+			if( entity != null && s.ToLower() == entity.ToString() ) {
+				writer.Write( "<dd class='active'><a href='{0}Home.aspx'>{1}</a></dd>", s.ToLower(), s );
+			} else {
+				writer.Write( "<dd><a href='{0}Home.aspx'>{1}</a></dd>", s.ToLower(), s );
+			}
+		}
+		
+		#endregion
+		
+		#region Events
+
+		protected override void Render( HtmlTextWriter writer ) {
+			writer.Write( "<dl>" );
+
+			object entity = HttpContext.Current.Session["CurrentEntity"];
+			
+			WriteMenu( writer, "State", state );
+			WriteMenu( writer, "Utilities", utilities );
+			WriteMenu( writer, "Entities", entities );
+#if($dependencies.HasDependency( "RequestLogger" ))
+			WriteMenu( writer, "Statistics", stats );
+#end
+			
+			writer.Write( "</dl>" );
+
+			base.Render( writer );
+		}
+		
+		#endregion
+		
+	}
+}

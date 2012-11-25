@@ -1,0 +1,32 @@
+<Project name="BuildUtilities" fileversion="2.0" language="C#" clr-version="Net_2_0" ctype="DotNetProject">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="DotNetProjectConfiguration">
+      <Output directory="../../../Odin/bin/Plugins/BuildGenerator" assembly="BuildUtilities" />
+      <Build debugmode="True" target="Library" />
+      <Execution runwithwarnings="True" consolepause="True" runtime="MsNet" clr-version="Net_2_0" />
+      <CodeGeneration compiler="Csc" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" generatexmldocumentation="False" ctype="CSharpCompilerParameters" />
+    </Configuration>
+    <Configuration name="Release" ctype="DotNetProjectConfiguration">
+      <Output directory="./bin/" assembly="BuildUtilities" />
+      <Build debugmode="False" target="Library" />
+      <Execution runwithwarnings="True" consolepause="True" runtime="MsNet" clr-version="Net_2_0" />
+      <CodeGeneration compiler="Csc" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" generatexmldocumentation="False" ctype="CSharpCompilerParameters" />
+    </Configuration>
+  </Configurations>
+  <DeploymentInformation strategy="File">
+    <excludeFiles />
+  </DeploymentInformation>
+  <Contents>
+    <File name="./Src/AssemblyInfo.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/MSBuild.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/MSBuildFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Nant.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/NantFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/MonodevelopFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Monodevelop.cs" subtype="Code" buildaction="Compile" />
+  </Contents>
+  <References>
+    <ProjectReference type="Project" localcopy="True" refto="Loki" />
+    <ProjectReference type="Assembly" localcopy="True" refto="../../../Loki/bin/DesignPatterns.dll" />
+  </References>
+</Project>

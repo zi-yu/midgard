@@ -1,0 +1,143 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+
+using System;
+using System.IO;
+using System.Collections.Generic;
+using Loki.Generic;
+using NHibernate;
+using NHibernate.Cfg;
+using NHibernate.Tool.hbm2ddl;
+
+namespace $namespace {
+	public static class NHibernateUtilities {
+	
+		#region Static Fields
+		
+		private static Configuration cfg = new Configuration();
+		private static ISessionFactory factory = null;
+		
+		#endregion Static Fields
+		
+		#region Static Properties
+		
+		public static Configuration Config {
+			get { return cfg; }
+		}
+		
+		public static ISessionFactory Factory {
+			get { return factory; }
+		}
+
+		public static ISession OpenSession {
+			get { return Factory.OpenSession(); }
+		}
+		
+		public static string ConnectionString {
+			get { 
+				return Config.GetProperty("connection.connection_string");
+			}
+		}
+		
+		#endregion Static Properties
+	
+		#region Initialization
+		
+		static NHibernateUtilities()
+		{
+			if( File.Exists(ConfigFile) ) {
+				Log.Info("Using `{0}` con configure NHibernate", ConfigFile);
+				Config.Configure( ConfigFile );
+				Config.AddXmlFile( ModelFile );
+				factory = cfg.BuildSessionFactory();
+			} else {
+				throw new DALException("NHibernate Config File `"+ConfigFile+"` does not exist");
+			}
+		}
+		
+		#endregion Initialization
+	
+		#region Utilities
+		
+		public static string ConfigFile {
+			get {
+				string cfgFile = "$configFile";
+				string path = typeof(NHibernateUtilities).Assembly.CodeBase;
+				path = new Uri(path).AbsolutePath;
+				path = Path.GetDirectoryName(path);
+				cfgFile = Path.Combine(path, cfgFile);
+				return cfgFile;
+			}
+		}
+
+        public static string ModelFile {
+            get {
+                string cfgFile = "Model.hbm.xml";
+                string path = typeof(NHibernateUtilities).Assembly.CodeBase;
+				path = new Uri(path).AbsolutePath;
+                path = Path.GetDirectoryName(path);
+                cfgFile = Path.Combine(path, cfgFile);
+                return cfgFile;
+            }
+        }
+		
+		#endregion Utilities
+		
+		#region Queries
+		
+		public static System.Collections.IList HqlQuery( string hql )
+		{
+			return HqlQuery( -1, -1, hql, new object[0] );
+		}
+		
+		public static System.Collections.IList HqlQuery( int start, int count, string hql )
+		{
+			return HqlQuery( start, count, hql, new object[0] );
+		}
+		
+		public static System.Collections.IList HqlQuery( int start, int count, string hql, params object[] args )
+		{
+			ISession session = OpenSession;
+            IQuery query = session.CreateQuery(string.Format(hql, args));
+            if (start >= 0) {
+                query.SetFirstResult(start);
+            }
+            if (count >= 0) {
+                query.SetMaxResults(count);
+            }
+			return query.List();
+		}
+		
+		#endregion Queries
+		
+		#region Database Creation
+		
+		public static void DropSchema( string file )
+		{
+			SchemaExport exporter = new SchemaExport(Config);
+			exporter.SetOutputFile(file);
+			exporter.Drop(true, true);
+		}
+		
+		public static void CreateSchema( string file )
+		{
+			SchemaExport exporter = new SchemaExport(Config);
+			exporter.SetOutputFile(file);
+            exporter.Create(true, true);
+		}
+		
+		#endregion
+		
+	}
+}

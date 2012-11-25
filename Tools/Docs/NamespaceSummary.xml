@@ -1,0 +1,8 @@
+<namespaces>
+    <namespace name="Foo.Bar">
+        The <b>Foo.Bar</b> namespace reinvents the wheel.
+    </namespace>
+    <namespace name="Foo.Bar.Tests">
+        The <b>Foo.Bar.Tests</b> namespace ensures that the Foo.Bar namespace reinvents the wheel correctly.
+    </namespace>
+</namespaces>

@@ -1,0 +1,42 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Loki.DataRepresentation;
+
+namespace $namespace {
+
+	/// <summary>
+    /// This is the base class for controls that edit an Entity field
+    /// </summary>
+    /// <typeparam name="T">The Entity Type</typeparam>
+	public abstract class BaseEntityFieldEditor<T> : 
+			BaseFieldControl<T>,
+			IEntityFieldEditor<T>
+			where T : IDescriptable {
+		
+		#region Abstract Members
+		
+		/// <summary>
+        /// Updates the object
+        /// </summary>
+        /// <param name="t">The object</param>
+		public abstract void Update( T t );
+		
+		#endregion
+		
+	};
+
+}

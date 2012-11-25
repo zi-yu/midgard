@@ -1,0 +1,86 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+				StringEditor<$entity.Name>, INamingContainer {
+		
+		#region Base Implementation
+		
+		/// <summary>
+        /// Initializes this control
+        /// </summary>
+        /// <param name="args">Event arguments</param>
+		protected override void OnInit( EventArgs args )
+		{
+			base.OnInit(args);
+			AddValidators();
+			AdjustTextBox();
+		}
+		
+		/// <summary>
+        /// Gets the text to be rendered
+        /// </summary>
+        /// <param name="entity">The $entity.Name instance</param>
+        /// <returns>The string value</returns>
+		protected override string GetCaption( $entity.Name entity )
+		{
+			return entity.$field.PropertyName;
+		}
+		
+		/// <summary>
+        /// Updates an $entity.Name
+        /// </summary>
+        /// <param name="entity">An instance of $entity.Name</param>
+		public override void Update( $entity.Name entity )
+		{
+			if( !Secret ) {
+				entity.$field.PropertyName = text.Text;
+			}else{
+				if( !string.IsNullOrEmpty(text.Text) ) {
+					entity.$field.PropertyName = FormsAuthentication.HashPasswordForStoringInConfigFile( text.Text, "sha1" );
+				}
+			}
+		}
+		
+		/// <summary>
+        /// Field to be edited
+        /// </summary>
+		protected override string TargetName { 
+			get { return "$field.Name"; }
+		}
+		
+		#endregion
+		
+		#region Utilities
+		
+		/// <summary>
+        /// Adjust the text box properties
+        /// </summary>
+		private void AdjustTextBox()
+		{
+			text.MaxLength = $field.MaxSize;
+			if( text.MaxLength > 500 ) {
+				text.TextMode = TextBoxMode.MultiLine;
+			}
+			if( Secret ) {
+				text.TextMode = TextBoxMode.Password;
+			}
+		}
+		
+		/// <summary>
+        /// Indicated if the target property is secret (eg: password)
+        /// </summary>
+		private bool Secret {
+			get { return $field.Secret.ToString().ToLower(); }
+		}
+		
+		#endregion

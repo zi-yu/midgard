@@ -1,0 +1,82 @@
+
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Loki.DataRepresentation;
+
+namespace $namespace {
+
+	/// <summary>
+    /// Edits a boolean field
+    /// </summary>
+    /// <typeparam name="T">The entity type</typeparam>
+	public abstract class BoolEditor<T> : BaseEntityFieldEditor<T> where T : IDescriptable {
+	
+		#region Fields
+		
+		protected CheckBox check = new CheckBox();
+		
+		#endregion Fields
+		
+		#region Events
+		
+		/// <summary>
+        /// Initializes this control
+        /// </summary>
+        /// <param name="args">Event arguments</param>
+		protected override void OnInit( EventArgs args )
+		{
+			base.OnInit(args);
+			check.ID = TargetName;
+			Controls.Add(check );
+		}
+		
+		/// <summary>
+        /// Renders a boolean editor
+        /// </summary>
+        /// <param name="writer">The HtmlTextWriter</param>
+        /// <param name="t">The entity instance</param>
+        /// <param name="renderCount">The render count</param>
+        /// <param name="flipFlop">True if render count is odd</param>
+		protected override void Render( HtmlTextWriter writer, T t, int renderCount, bool flipFlop )
+		{
+			check.Checked = Checked(t);
+			foreach (Control control in Controls) {
+                control.RenderControl(writer);
+            }
+		}
+		
+		#endregion Events
+		
+		#region Abstract Members
+		
+		/// <summary>
+        /// Indicates if the boolean is true or false
+        /// </summary>
+        /// <param name="t">The object</param>
+        /// <returns>The boolean value</returns>
+		protected abstract bool Checked( T t );
+		
+		/// <summary>
+        /// Field to be edited
+        /// </summary>
+		protected abstract string TargetName { get; }
+		
+		#endregion
+		
+	};
+
+}

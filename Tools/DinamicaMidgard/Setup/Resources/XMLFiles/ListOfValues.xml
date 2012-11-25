@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+<!-- Os atributos code e description aparecem nas listBoxes e são utilizados no modeler. Todos os outros atributos são para o cross compiler -->
+
+	<channels>
+		<channel code="60-2" description="NPT (60 - 2)" applicationId="60" mediaId="2"/>
+	</channels>
+
+</root>

@@ -1,0 +1,7 @@
+:Parent: Midgard.FerramentasRAD
+:Summary: Model Driven Architecture
+
+[MDA] é um acrónimo para ''Model Driven Architecture''.
+
+!!!Referências Externas
+	* "MDA FAQ":http://www.klasse.nl/english/mda/mda-faq.html 

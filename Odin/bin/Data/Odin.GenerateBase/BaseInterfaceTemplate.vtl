@@ -1,0 +1,43 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+
+using System;
+
+namespace $namespace {
+
+	/// <summary>
+	/// $entity.Name interface
+	/// </summary>
+	$entity.Visibility interface $entity.Name {
+
+#foreach($method in $entity.Methods)## 						{
+#set($first = "true")
+#set($totalParams = "")
+#foreach($param in $method.Parameters)## 							{
+#if($param.IsReturn)##											{
+#set($totalParams = "$totalParams out")
+#end##													}
+#if($first == "true")##											{
+#set($totalParams = "$totalParams $param.Type.Name $param.Name")
+#set($first = "false")
+#else##													}{
+#set($totalParams = "$totalParams , $param.Type.Name $param.Name")
+#end##													}
+#end##												}
+#set($retType = "void")
+#set($retType = $method.ReturnEntity.Type.Name)							
+		$retType $method.Name ($totalParams );
+#end##											}
+	}
+}

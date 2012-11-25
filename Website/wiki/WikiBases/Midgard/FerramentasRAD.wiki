@@ -1,0 +1,11 @@
+:Summary: Ferramentas RAD
+
+Tendo o Midgard como objectivo ser uma ferramenta [RAD] como deve ser, foram estudadas outras ferramentas RAD de criação de aplicações web:
+	* [Django]
+	* [RubyOnRails]
+	* JavaTrails
+	* AndroMDA
+	* ObjectMapper
+
+Inspirada em parte por estas ferramentas, temos os seguintes objectivos com o Midgard:
+	* ...

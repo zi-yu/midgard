@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<itemList id="fields" label="Fields:" itemType="FieldItem" itemName="field" complexLabel="value" complexPattern="{0}" >
+		<annotation>Fields.</annotation>
+	</itemList>
+</root>

@@ -1,0 +1,42 @@
+Neo é uma ferramenta Object Relational Mapper ([ORM]), ou seja, permite gerar toda a lógica de acesso a dados com o mínimo de esforço. Como é uma ferramenta Open Source pode ser usado livremente e possui o código aberto para estudo por parte do programador que a vai usar.
+Esta framework não possui uma Graphic User Interface (GUI) associada, logo toda a geração do código tem de ser feita usando a linha de comandos, ou então, em caso de uso do Visual Studio, usando um plugin de geração de código.
+O código gerado não se limita apenas à camada de acesso a dados. É também gerado todo o SQL necessário para a criação das tabelas que suportam a lógica. Todo este código (lógica aplicacional e tabelas) tem como base o seguinte ficheiro XML:
+
+ <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+ <!DOCTYPE database SYSTEM "norque.dtd">
+ <?neo path="..\..\build"?>
+
+ <database name="movies" package="Movies.Model" defaultIdMethod="native">
+ 	<table name="persons" javaName="Person">
+        	<column name="person_id" primaryKey="true" hidden="true" type="INTEGER" />
+	        <column name="name" required="true" type="VARCHAR" size="500" />
+        	<iforeign-key foreignTable="movie_actor" name="MovieActorLinks" onDelete="cascade">
+               		<ireference local="person_id" foreign="actor_id"/>
+	        </iforeign-key>
+     	</table>
+
+      	...
+ </database>
+
+A geração de código tem as seguintes propriedades:
+	* Um objecto por cada tabela de classe;
+	* Um objecto por cada tuplo da tabela;
+	* Toda a API gerada é strongly typed;
+	* É gerado um ficheiro só com o core de acesso a dados o qual não pode ser modificado, e gerado um conjunto de ficheiros que representam o acesso a cada uma das tabelas. A essas classes podem ser adicionados novos métodos que representam as operações que o programador pretende executar; 
+	* Utiliza ADO.NET para realizar todas as operações;
+	* Possibilidade de realizar operações desconectadas;
+	* Contempla acesso concorrente aos dados;
+
+Framework Neo suporta diferentes tipos de Bases de Dados e de providers. Esta compatibilidade não é suportada internamente no gerador, mas sim através de templates no formato Velocity (1). Logo, se se pretender alterar quer o provider, quer a base de dados, há que modificar os ficheiros template de modo a que o código template use o provider pretendido e o script de criação de base de dados seja suportado pela Base de dados Alvo.
+
+Quanto à compatibilidade com outras frameworks de desenvolvimento, visto o código fonte estar disponível, basta fazer a compilação para a framework alvo e funcionará (não foi testado, mas visto toda a framework Neo ser um assembly, em teoria, é possível).
+
+1. O formato Velocity é uma tecnologia de scripting que tem como origem o mundo Java. O NVelocity, a versão .NET, é uma port da versão original e por isso a documentação da versão original pode ser usada com segurança e pode ser encontrada em jakarta.apache.org.
+
+!!! Referências externas
+
+	* "Neo Site":http://neo.codehaus.org/
+	* "Blog Midgard":http://www.cc.isel.ipl.pt/CS/blogs/midgard/archive/2005/12/06/150.aspx
+
+:Summary: Descrição da NeoFramework
+:Parent: Midgard.ORM

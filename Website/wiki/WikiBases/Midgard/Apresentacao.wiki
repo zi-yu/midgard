@@ -1,0 +1,20 @@
+:Display: Apresentação
+:Summary: Apresentação do Projecto
+
+O Midgard é o projecto final de curso dos alunos:
+	* Nuno Silva
+	* Pedro Santos
+	* Tiago Sousa
+
+Responsáveis:
+	* Paulo Pereira
+	* Pedro Pereira
+
+!!!Objectivo
+Criação de ferramenta [RAD] para suporte ao desenvolvimento de aplicações Web, com ênfase na camada de apresentação. A ferramenta suporta a geração de código para arquitecturas multi-camada. A geração é realizada com base nas descrições dos elementos que compõem a aplicação.
+
+!!!Descrição
+O desenvolvimento de aplicações web pode ser moroso e repetitivo visto ser uma actividade que na maioria das situações não carece de criatividade por parte do programador. A criação de scripts, páginas de administração, API de acesso a dados e respectivos formulários, são blocos constituintes de aplicações web que podem ser gerados automaticamente segundo um modelo de dados pré-definido.
+
+O que se propõe fazer é uma aplicação gráfica que simplifique a geração de grande parte do código e permita realizar a lógica da aplicação através de diagramas concebidos para o efeito. 
+	

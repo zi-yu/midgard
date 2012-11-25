@@ -1,0 +1,93 @@
+:Display: Gentle.NET
+:Summary: Ferramenta Gentle.NET
+:Parent: Midgard.ORM
+
+O GentleDotNet é uma ferramenta de [ORM]. Esta framework define um conjunto de atributos com os quais se podem decorar as classes a persistir. No entanto o GentleDotNet sabe obter o ''shema'' da BD sem ajuda, sendo os atributos usados somente quando o ''provider'' corrente não suporta esta funcionalidade. O GentleDotNet também suporta a criação de ''SQL statements'' de forma independente do SGBD corrente. Eles têm boa documentação no wiki que parece ser actualizado regularmente (a última actualização foi dois dias antes da criação deste tópico).
+
+!!!Exemplo
+
+Dada uma entidade User que se pretende persistir, esta teria de ser decorada da seguinte forma:
+
+ [TableName("Users")]
+ public class User
+ {
+    private int userId;
+    private string userName;
+
+    public User( int userId, string userName )
+    {
+        this.userId = userId;
+        this.userName = userName;
+    }
+
+    [TableColumn("UserId"), PrimaryKey]
+    public int Id
+    {
+        get{ return userId; }
+        set{ userId = value; }
+    }
+
+    [TableColumn(NotNull=true)]
+    public string Name
+    {
+        get{ return userName; }
+        set{ userName = value; }
+    }
+ }
+
+Para se persistir um objecto User, seria usado o seguinte código:
+
+ User user = new User( 42, "Ford Prefect" );
+
+ // save the user to the database
+ Broker.Insert( user ); 
+
+ // create a key with a single selection criteria value
+ Key key = new Key( typeof(User), true, "Id", 42 ); 
+
+ // load the specified user from the database
+ user = Broker.RetrieveInstance( typeof(User), key ) as User; 
+
+Alguns exemplos mais elaborados (suponha-se que estes métodos pertencem à classe User):
+
+ static public IList ListAll
+ {
+    get{ return Broker.RetrieveList( typeof(User) ); }
+ }
+
+ static public IList ListByNameStartsWith( string partialName )
+ {
+    SqlBuilder sb = new SqlBuilder( StatementType.Select, typeof(User) );
+    
+    // note: the partialName parameter must also contain the %'s for the LIKE query!
+    sb.AddConstraint( Operator.Like, "Name", partialName );
+    
+    // passing true indicates that we'd like a list of elements, i.e. that no primary key
+    // constraints from the type being retrieved should be added to the statement
+    SqlStatement stmt = sb.GetStatement( true );
+    
+    // execute the statement/query and create a collection of User instances from the result set
+    return ObjectFactory.GetCollection( typeof(User), stmt.Execute() );
+ }
+
+!!!Relações
+
+o GentleDotNet suporta relações de *1 para 1*, *1 para N* e *N para M*, sendo esta imformação expressa também na forma de atributos. Exemplo da criação de uma relação de User com Subscriber:
+
+ [TableColumn("SubscriberId"), PrimaryKey, ForeignKey("User","UserId")]
+ public int SubscriberId
+ {
+        get{ return subscriberId; }
+        set{ subscriberId = value; }
+ }
+
+!!!Conclusão
+
+O GentleDotNet apresenta-se como uma boa ferramenta de [ORM]. Eles têm um manual bom, com vários tópicos que abrangem transacções, dicas de performance, etc. O facto do gentle se basear em atributos contribui para que seja uma ferramenta fácil de ''incorporar'', tal como é fácil de usar.
+
+!!!Referências Externas
+	* "Gentle.NET Site":http://www.mertner.com/confluence/homepage.action
+	* "Documentação":http://www.mertner.com/confluence/display/Gentle/Documentation+Home
+	* "SGBD's Suportados":http://www.mertner.com/confluence/pages/viewpage.action?pageId=215
+
+

@@ -1,0 +1,2 @@
+nant test-projects
+pause

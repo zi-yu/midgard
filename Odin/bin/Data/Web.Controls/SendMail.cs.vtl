@@ -1,0 +1,58 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Net.Mail;
+
+namespace $namespace {
+	public class SendMail {
+
+		#region Fields
+
+		private static SmtpClient mailClient = new SmtpClient("foxie.clustercube.com");
+
+		#endregion
+
+		#region Public
+
+        public static void Send( string[] to, string from, string subject, string body ) {
+            using( MailMessage message = new MailMessage() ) {
+                message.From = new MailAddress(from);
+                message.Subject = subject;
+                message.Body = body;
+
+                foreach( string mail in to ) {
+					message.To.Add(new MailAddress(mail));
+                }
+
+                mailClient.Send(message);
+            }
+        }
+
+		public static void Send( string to, string from, string subject, string body) {
+			using( MailMessage message = new MailMessage( from, to, subject, body ) ) {
+				message.IsBodyHtml = true;
+				mailClient.Send( message );
+			}
+		}
+
+		public static void Send( string to, string from, string subject, string body, params object[] param ) {
+			Send( to, from, subject, string.Format( body, param ) );
+		}
+
+		#endregion
+
+	}
+}

@@ -1,0 +1,28 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $queryAnalyser = ".QueryAnalyser")
+<%@ Page Language="C#" MasterPageFile="~/Admin/adminMaster.master" Inherits="$namespace$queryAnalyser" %>
+<%@ Register TagPrefix="Admin" Assembly="$assembly" Namespace="$namespace" %>
+
+<asp:content runat="server" contentplaceholderid="content">
+	<p>
+		This Page can be use to see the contents of the database using queries. The language to be used is NHQL (NHibernate Query Language).
+	</p>
+	<b>HQL Query</b><br />
+	<asp:TextBox ID="query" Width="90%" Height="250"  TextMode="MultiLine" runat="server" />
+	<asp:Button ID="execute" Text="execute" OnClick="ExecuteQuery" runat="server" />
+	<p />
+	<asp:GridView ID="results" runat="server" />
+	<p />
+</asp:content>

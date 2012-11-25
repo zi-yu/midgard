@@ -1,0 +1,73 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Web;
+using System.Threading;
+using WebUserInterface.app_globalresource;
+using System.Resources;
+using System.Globalization;
+using System.Reflection;
+
+namespace $namespace {
+	public class LanguageManager {
+		
+		#region Fields
+
+		private static CultureInfo resourceCulture = Thread.CurrentThread.CurrentUICulture;
+
+		#endregion
+
+		#region Properties
+		 
+		#endregion
+
+		#region Internal
+
+		internal static string GetContent( string resourceFile, string key ) {
+			try {
+				return ResourceManager( resourceFile ).GetString( key, resourceCulture );
+			} catch( Exception e ) {
+				throw new Exception( string.Format( "Resource file {0} doesn't exists!", resourceFile ) );
+			}
+
+        }
+        
+        internal static string GetContent( string key ) {
+			return ResourceManager( "Resource" ).GetString( key, resourceCulture );
+        }
+        
+        internal static string LocalizeImageName( string name, string extension ) {
+			return string.Format( "{0}_{1}.{2}", name, Resource.Culture.IetfLanguageTag.Substring(0,2), extension );
+		}
+        
+        #endregion Internal
+        
+        #region Private
+        
+        private static ResourceManager ResourceManager( string resourceFile ) { 
+			try {
+				if( resourceFile != null ) {
+					return (ResourceManager)Assembly.GetExecutingAssembly().GetType( resourceFile ).GetProperty( "ResourceManager" ).GetGetMethod().Invoke( null, null );
+				}
+			}catch {}
+			
+			return Resource.ResourceManager;
+		}
+        
+        #endregion
+        
+	}
+}

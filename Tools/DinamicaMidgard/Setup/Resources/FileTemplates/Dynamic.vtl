@@ -1,0 +1,16 @@
+<MidgardDynamic>
+    <Pages>
+#foreach($page in $pages)##
+        <Page title = '$page.Title' entity = '$page.Entity' operation = '$page.Operation'>
+#*  *##foreach($field in $page.Fields)##
+            <Field>$field</Field>
+#*  *##end##           
+        </Page>
+#end##
+    </Pages>
+    <Transitions>
+ #foreach($shift in $shifts)##
+        <Transition origin = '$shift.Origin' destiny = '$shift.Destiny' connector = '$shift.Connector' label = '$shift.Label' />
+#end##   
+    </Transitions>
+</MidgardDynamic>

@@ -1,0 +1,165 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $item = "Item" )
+#set( $pagedList = "PagedList" )
+#set( $session = "Persistance.GetSession()" )
+#set( $designers = ".Designers" )
+#set( $designer = "Designer" )
+#set( $search = "Search" )
+#set( $SelectedValue = ".SelectedValue" )
+#set( $Text = ".Text" )
+#set( $Id = ".ID" )
+
+using System;
+using System.IO;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.ComponentModel;
+using $CoreNamespace;
+using $DALNamespace;
+
+namespace $namespace {
+
+	/// <summary>
+    /// Control that enables $entity.Name search
+    /// </summary>
+	/// <remarks>
+    /// This control specifies gives input to a $entity.Name$pagedList
+    /// </remarks>
+	public class $entity.Name$search : Control {
+	
+		#region Control Fields
+		
+#foreach( $field in $entity.AllFields )#if( $field.Type.IsIntrinsic )
+		protected TextBox $field.Name = new TextBox();
+		protected DropDownList operatorsFor$field.PropertyName = new DropDownList();
+#end#end
+		protected Button button = new Button();
+
+		#endregion Control Fields
+		
+		#region Control Properties
+		
+#foreach( $field in $entity.AllFields )#if( $field.Type.IsIntrinsic )
+		/// <summary>
+        /// Search box for $entity.Name's $field.PropertyName property
+        /// </summary>
+		public TextBox $field.PropertyName {
+			get { return $field.Name; }
+			set { $field.Name = value; }
+		}
+		
+		/// <summary>
+        /// Combo box for $entity.Name's $field.PropertyName operators
+        /// </summary>
+		public DropDownList OperatorsFor$field.PropertyName {
+			get { return operatorsFor$field.PropertyName; }
+			set { operatorsFor$field.PropertyName = value; }
+		}
+		
+#end#end
+		#endregion Control Properties
+		
+		#region Control Events
+		
+		/// <summary>
+        /// Initialization
+        /// </summary>
+        /// <param name="args">Arguments</param>
+		protected override void OnInit( EventArgs args )
+		{
+			base.OnInit(args);
+			EnsureChildControls();
+			button.Text = "Search";
+		}
+		
+		/// <summary>
+        /// Control actions
+        /// </summary>
+        /// <param name="args">Arguments</param>
+		protected override void OnLoad( EventArgs args )
+		{
+			base.OnLoad(args);
+			if( Page.IsPostBack ) {
+				StringWriter writer = new StringWriter();
+				bool first = true;
+				
+#foreach( $field in $entity.AllFields )#if( $field.Type.IsIntrinsic )
+				if( !string.IsNullOrEmpty( $field.PropertyName$Text ) ) {
+					writer.Write( "{2} e.$field.PropertyName {0} '{1}' ",
+							operatorsFor$field.PropertyName$SelectedValue, 
+							$field.PropertyName$Text, first ? "" : ","
+						);
+					first = false;
+				}
+#end#end
+
+				string search = writer.ToString();
+				if( !string.IsNullOrEmpty(search) ) {
+					HttpContext.Current.Items[BasePagedList<$entity.Name>.GetWhereKey("$entity.Name")] = writer.ToString();
+				}
+			}
+		}
+		
+		/// <summary>
+        /// Creates the control tree
+        /// </summary>
+		protected override void CreateChildControls()
+        {
+			Controls.Add( new LiteralControl("<table>") );
+			Controls.Add( new LiteralControl("<tr><th>Field</th><th>Operator</th><th>Search</th></tr>") );
+#foreach( $field in $entity.AllFields )#if( $field.Type.IsIntrinsic )
+			$field.PropertyName$Id = "search$field.PropertyName";
+			Controls.Add( new LiteralControl("<tr>") );
+			Controls.Add( new LiteralControl("<td><b>$field.PropertyName</b></td><td>") );
+			Controls.Add( AddOperators( OperatorsFor$field.PropertyName ) );
+			Controls.Add( new LiteralControl("</td><td>") );
+			Controls.Add( $field.PropertyName );
+			Controls.Add( new LiteralControl("</td><tr>") );
+#end#end
+			Controls.Add( new LiteralControl("<tr><td></td><td></td><td>") );
+			Controls.Add( button );
+			Controls.Add( new LiteralControl("</td></tr>") );
+			Controls.Add( new LiteralControl("</table>") );
+        }
+		
+		#endregion Control Events
+		
+		#region Utilities
+		
+		/// <summary>
+        /// Adds Search operators
+        /// </summary>
+        /// <param name="list">The Target List</param>
+        /// <returns>The target list</returns>
+		private DropDownList AddOperators( DropDownList list )
+		{
+			list.Items.Add( "=" );
+			list.Items.Add( "!=" );
+			list.Items.Add( "<" );
+			list.Items.Add( ">" );
+			list.Items.Add( "<=" );
+			list.Items.Add( ">=" );
+			list.Items.Add( "like" );
+			list.Items.Add( "not like" );
+			
+			return list;
+		}
+		
+		#endregion Utilities
+	
+	};
+
+}

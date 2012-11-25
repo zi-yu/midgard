@@ -1,0 +1,166 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $IdToDelete = "IdToDelete" )
+#set( $ext = "Delete" )
+#set( $par = "(" )
+#set( $value = ".value" )
+#set( $persistance = "Persistance" )
+#set( $persistanceSession = "Persistance.GetSession()" )
+#set( $persistanceAttachSession = "Persistance.AttachSession" )
+#set( $remove = ".Remove" )
+
+using System;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Loki.DataRepresentation;
+using $CoreNamespace;
+using $DALNamespace;
+
+namespace $namespace {
+
+	/// <summary>
+    /// Deletes $entity.Name relashionship to $field.Type.Name
+    /// </summary>
+	public class $className : BaseFieldControl<$entity.Name> {
+	
+		#region Control Fields & Events
+		
+		/// <summary>
+        /// OnInit configuration
+        /// </summary>
+        /// <param name="e">Event arguments</param>
+		protected override void OnInit( EventArgs args )
+		{
+			base.OnInit(args);
+			RegisterDeleteJS();
+		}
+		
+		/// <summary>
+        /// OnLoad configuration
+        /// </summary>
+        /// <param name="e">Event arguments</param>
+		protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            if( Page.IsPostBack ) {
+				string $entity.Name.ToLower() = Page.Request.Form["$className$entity.Name"];
+                string $field.Type.Name.ToLower() = Page.Request.Form["$className$field.Type.Name"];
+                string check = "$entity.Name$field.Type.Name -- to -- delete";
+				if( !string.IsNullOrEmpty( $entity.Name.ToLower() ) && 
+                    !string.IsNullOrEmpty( $field.Type.Name.ToLower() ) && 
+                        HttpContext.Current.Items[check] == null ) {
+					HttpContext.Current.Items[check] = string.Empty;
+					DeleteRelation ( int.Parse( $field.Type.Name.ToLower() ), int.Parse( $entity.Name.ToLower() ) );
+				}
+			}
+        }
+
+		/// <summary>
+        /// Deletes $entity.Name relashionship to $field.Type.Name
+        /// </summary>
+        /// <param name="$field.Type.Name$IdToDelete">$field.Type.Name identifier</param>
+        /// <param name="$entity.Name$IdToDelete">$entity.Name identifier</param>
+        void DeleteRelation ( int $field.Type.Name$IdToDelete, int $entity.Name$IdToDelete )
+        {
+            using ($field.Type.Name$persistance p1 = $field.Type.Name$persistanceSession ) {
+                using ($entity.Name$persistance p2 = $entity.Name$persistanceAttachSession (p1) ) {
+
+                    $field.Type.Name e1 = p1.Select( $field.Type.Name$IdToDelete );
+                    $entity.Name toRemove = null;
+
+                    foreach ( $entity.Name e2 in e1.$property ) {
+                        if ( e2.Id == $entity.Name$IdToDelete ) {
+                            toRemove = e2;
+                        }
+                    }
+
+                    e1.$property$remove (toRemove);
+                    toRemove.$field.PropertyName$remove (e1);
+
+                    p1.StartTransaction();
+					
+                    p1.Update(e1);
+                    p2.Update(toRemove);
+
+                    p1.CommitTransaction();
+                    p1.Flush();
+                }
+            }
+        }
+		
+		#endregion
+	
+		#region BaseFieldControl<Roles> Implementation
+		
+		/// <summary>
+        /// Renders a delete link
+        /// </summary>
+        /// <param name="writer">The HtmlTextWriter</param>
+        /// <param name="entity">The $entity.Name instance</param>
+        /// <param name="renderCount">The render count</param>
+        /// <param name="flipFlop">True if render count is odd</param>
+		protected override void Render( HtmlTextWriter writer, $entity.Name entity, int renderCount, bool flipFlop )
+		{
+            $field.Type.Name e1 = Get$field.Type.Name ();
+            writer.Write("<a href='javascript:$className({0},{1})'>Delete</a>", e1.Id, entity.Id);
+		}
+
+		/// <summary>
+        /// Gets the $field.Type.Name associated to this $entity.Name to delete
+        /// </summary>
+        /// <returns>The $field.Type.Name</returns>
+        private $field.Type.Name Get$field.Type.Name ()
+        {
+            $field.Type.Name e = ($field.Type.Name) HttpContext.Current.Items["__Current__$field.Type.Name"];
+            if (e == null) {
+                throw new Exception("HttpContext.Current.Items[\"__Current__$field.Type.Name\"] is null! Check if this control has a BaseFieldControl<$field.Type.Name> as Parent");
+            }
+            return e;
+        }
+		
+		#endregion BaseFieldControl<$entity.Name> Implementation
+
+        #region Delete JS
+
+		/// <summary>
+        /// Necessary JavaScript
+        /// </summary>
+        private void RegisterDeleteJS()
+        {
+            string script = @"<script type='text/javascript'>
+	var theForm = document.forms['form'];
+    if (!theForm) {
+        theForm = document.form;
+    }
+    function $className ( id1, id2 )
+    {
+        if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                theForm.$className$entity.Name$value = id2;
+				theForm.$className$field.Type.Name$value = id1;
+		        theForm.submit();
+		    }
+	}
+	</script>";
+
+            Page.ClientScript.RegisterClientScriptBlock(typeof(Roles), "$className", script);
+            Page.ClientScript.RegisterHiddenField("$className$entity.Name", "");
+            Page.ClientScript.RegisterHiddenField("$className$field.Type.Name", "");
+        }
+
+        #endregion
+
+    };
+
+}

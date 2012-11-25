@@ -1,0 +1,69 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Web.UI;
+using System.Web;
+using $coreNamespace;
+using $dalNamespace;
+using System.Web.UI.WebControls;
+
+namespace $namespace {
+	public class AdminBanner : Control {
+		#region Fields
+		
+		protected LoginStatus loginStatus = new LoginStatus();
+
+ 		#endregion		
+
+		#region Private
+				
+		private void WriteStatus( HtmlTextWriter writer ) {
+			writer.Write( "<li><b>Status:</b> " );
+			loginStatus.RenderControl( writer );
+			writer.Write( "</li>" );
+		}
+
+		private string GetExceptionsNumber() {
+			using( ExceptionInfoPersistance exceptionInfo = ExceptionInfoPersistance.GetSession() ) {
+				return exceptionInfo.GetCount().ToString();
+			}
+		}
+
+		private void Write( HtmlTextWriter writer, string name, string s ) {
+			writer.Write( "<li><b>{0}:</b> {1}</li>", name, s );
+		}
+
+		#endregion
+
+		#region Overrided
+
+		protected override void Render( HtmlTextWriter writer ) {
+			Principal user = (Principal)HttpContext.Current.User;
+
+			writer.Write("<ul id='adminBanner'>");
+			WriteStatus( writer );
+			Write( writer, "Username", user.Name );
+			Write( writer, "Last Login", user.LastLogin.ToString() );
+			Write( writer, "Exceptions", string.Format("<a href='/admin/exceptioninfoManage.aspx'>{0}</a>",GetExceptionsNumber()) );
+			writer.Write("<li><a href='/admin/'>Admin</a></li>");
+			writer.Write("</ul>");
+
+			base.Render( writer );
+		}
+		
+		#endregion
+	}
+}

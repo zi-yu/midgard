@@ -1,0 +1,84 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $edit = "Editor" )
+#set( $session = "Persistance.GetSession()" )
+
+using System;
+using System.Web.UI;
+using $CoreNamespace;
+using $DALNamespace;
+
+namespace $namespace {
+
+	/// <summary>
+    /// $entity.Name editor control
+    /// </summary>
+	public class $entity.Name$edit : BaseEntityEditor<$entity.Name> {
+	
+		#region Ctor & Control Fields
+		
+		/// <summary>
+        /// Constructor
+        /// </summary>
+		public $entity.Name$edit () : base( $entity.Name$session )
+		{
+		}
+		
+		#endregion Control Fields
+		
+		#region BaseEntityItem<$entity.Name> Implementation
+#if( $entity.Name == "Principal" )
+
+		/// <summary>
+        /// Gets the current $entity.Name
+        /// </summary>
+        /// <returns>The $entity.Name</returns>
+		protected override Principal GetSourceObject()
+		{
+			if( Source != SourceType.ContextUser ) {
+				return base.GetSourceObject();
+			}
+			Principal principal = Context.User as Principal;
+			if( principal == null ) {
+				throw new Exception("Context.User it's not Principal");
+			}
+			return principal;
+		}
+#end
+
+		/// <summary>
+        /// Adds a default control tree
+        /// </summary>
+		protected override void AddDefaultControlTree()
+		{
+			Controls.Add( new LiteralControl("<dl>") );
+#foreach( $field in $entity.AllFields )
+#if( $field.Mult.ToString.EndsWith("ToOne") )
+			Controls.Add( new LiteralControl("<dt>$field.PropertyName</dt>") );
+			Controls.Add( new LiteralControl("<dd>") );
+			Controls.Add( new $field.Parent.Name$field.PropertyName$edit () );
+			Controls.Add( new LiteralControl("</dd>") );
+#end
+#end
+			Controls.Add( new LiteralControl("<dt>") );
+			Controls.Add( new UpdateButton() );
+			Controls.Add( new LiteralControl("</dt>") );
+			Controls.Add( new LiteralControl("</dl>") );
+		}
+		
+		#endregion BaseEntityItem<$entity.Name> Implementation
+		
+	};
+
+}

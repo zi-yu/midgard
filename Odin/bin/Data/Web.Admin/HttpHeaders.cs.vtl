@@ -1,0 +1,38 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace $namespace {
+
+	public class HttpHeaders : Control {
+
+		protected override void OnLoad( EventArgs e ) {
+			HttpContext.Current.Session["CurrentEntity"] = "httpheaders";
+			HttpContext.Current.Session["CurrentAction"] = "";
+		}
+
+		protected override void Render( HtmlTextWriter writer ) {
+			foreach( string s in HttpContext.Current.Request.Headers.AllKeys ) {
+				writer.WriteLine( string.Format( "<p><b>{0}:</b> {1}</p>", s, HttpContext.Current.Request.Headers[s] ) );
+			}
+			base.Render( writer );
+		}
+
+	}
+	
+}

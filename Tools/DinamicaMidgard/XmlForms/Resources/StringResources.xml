@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!-- ***************************************************************
+* $Workfile: StringResources.xml $
+*
+* $Revision: 1.1 $
+* $Author: pre $
+*
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* $History: StringResources.xml $
+* 
+* *****************  Version 1  *****************
+* User: Tms          Date: 5-12-06    Time: 14:22
+* Created in $/dev/EditorDinamica/XmlForms/Resources
+* Última versão do Editor Dinâmica.
+* 
+* *****************  Version 1  *****************
+* User: Tms          Date: 3-11-06    Time: 18:44
+* Created in $/dev/EditorDinamica/XmlForms/Resources
+* 
+* *****************  Version 1  *****************
+* User: Lft          Date: 5-09-05    Time: 16:26
+* Created in $/dev/ProcessModeler/XmlForms/Resources
+* 
+* $NoKeywords: $
+**************************************************************** -->
+<resources>
+	<annotation>Resources for Process Model.</annotation>
+	<!-- ***************************************************************
+	*
+	* Output Steps
+	*
+	**************************************************************** -->	
+	<output>
+		<step name="String Resources" xslt="qz-resx.xslt" output="StringResources.resx" encoding="iso-8859-1" />
+
+		<step name="String Resources" xslt="qz-csharp.xslt" output="ResourceTokens.cs" encoding="iso-8859-1">
+			<param name="namespace" value="Midgard.XmlForms" />
+			<param name="className" value="ResourceTokens" />
+		</step>
+	</output>
+	
+	<!-- ***************************************************************
+	*
+	* Resources
+	*
+	**************************************************************** -->	
+	<resource>
+	
+		<!-- ***************************************************************
+		*
+		* Validators
+		*
+		**************************************************************** -->
+		<message ID="ValidatorRequired">
+			<annotation>Failure message for Required validator.</annotation>
+			<value>Required.</value>
+		</message>	
+
+		<message ID="ValidatorTypeMoniker">
+			<annotation>Failure message for Moniker validator.</annotation>
+			<value>Not a valid .NET type moniker.</value>
+		</message>	
+
+
+	
+	</resource>
+</resources>

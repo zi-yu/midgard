@@ -1,0 +1,341 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Web;
+using System.IO;
+using System.Xml.XPath;
+using System.Threading;
+using System.Resources;
+using System.Globalization;
+using System.Reflection;
+
+namespace $namespace {
+
+   /// <summary>
+    /// This class handles all the localization needs
+    /// </summary>
+	public class LanguageManager {
+
+        #region Static Members
+
+        private static string[] supported = new string[] { $languageCSV };
+        private static object sync = new object();
+        private static string defaultLanguage = "$defaultLanguage";
+        private static LanguageManager manager = new LanguageManager();
+
+        /// <summary>
+        /// Get's the current supported languages
+        /// </summary>
+        public static string[] SupportedLanguages {
+            get { return supported; }
+        }
+
+        /// <summary>
+        /// Get's this object sync access
+        /// </summary>
+        public static object Sync {
+            get { return sync; }
+        }
+
+        /// <summary>
+        /// Get's the language used when the response language is not available
+        /// </summary>
+        public static string DefaultLanguage {
+            get { return defaultLanguage; }
+            set { defaultLanguage = value; }
+        }
+
+        /// <summary>
+        /// Singleton Access for LanguageManager
+        /// </summary>
+        public static LanguageManager Instance {
+            get { return manager; }
+        }
+
+        /// <summary>
+        /// Set's up the LanguageManager
+        /// </summary>
+        static LanguageManager()
+        {
+            lock (Sync) {
+                BuildLanguageResources();
+            }
+        }
+
+        #endregion Static Members
+
+        #region Constructor
+
+        /// <summary>
+        /// The ctor is private, this class is only accesible via LanguageManager.Instance
+        /// </summary>
+        private LanguageManager()
+        {
+        }
+
+        #endregion Constructor
+
+        #region Public Members
+
+        /// <summary>
+        /// Get's the current response culture
+        /// </summary>
+        public CultureInfo CurrentCulture {
+            get { return Thread.CurrentThread.CurrentUICulture; }
+        }
+
+        /// <summary>
+        /// Get's a localized resource for the current language
+        /// </summary>
+        /// <param name="key">The identifier</param>
+        /// <returns>The Localized string</returns>
+        public string Get(string key)
+        {
+            string language = Resolve(CurrentCulture.Name);
+            return Get(language, key);
+        }
+
+        /// <summary>
+        /// Get's a localized resource for a specified language
+        /// </summary>
+        /// <param name="language">The language</param>
+        /// <param name="key">The identifier</param>
+        /// <returns>The localized string</returns>
+        public string Get(string language, string key)
+        {
+            lock (Sync) {
+                return GetLanguageResources(language).Get(key);
+            }
+        }
+
+        /// <summary>
+        /// Given a language string, returns a supported language
+        /// </summary>
+        /// <param name="language">The wanted language</param>
+        /// <returns>The supported language</returns>
+        private static string Resolve( string language )
+        {
+            if (RegisteredKey(language)) {
+                return language;
+            }
+
+            if (language.Contains("_")) {
+                string stronger = language.Split('_')[0];
+                if (RegisteredKey(stronger)) {
+                    return stronger;
+                }
+            }
+
+            if (!RegisteredKey(DefaultLanguage)) {
+                throw new Exception("Cannot resolve language for '"+language+"'");
+            }
+
+            return DefaultLanguage;
+        }
+
+        /// <summary>
+        /// Indicates if the requested language is available
+        /// </summary>
+        /// <param name="language">The wanted language</param>
+        /// <returns>True if it's available</returns>
+        private static bool RegisteredKey(string language)
+        {
+            return HttpContext.Current.Cache[GetCacheKey(language)] != null;
+        }
+
+        /// <summary>
+        /// Gets the LanguageResources for a specified Language
+        /// </summary>
+        /// <param name="language">The language</param>
+        /// <returns>The LanguageResources</returns>
+        private LanguageResources GetLanguageResources(string language)
+        {
+            LanguageResources fromCache = GetCache(language);
+            while (fromCache == null) {
+                BuildLanguageResources();
+                fromCache = GetCache(language);
+            }
+
+            return fromCache;
+        }
+
+        /// <summary>
+        /// Get's a LanguageResources from Cache
+        /// </summary>
+        /// <param name="language">The language</param>
+        /// <returns>The LanguageResources</returns>
+        private static LanguageResources GetCache(string language)
+        {
+            return (LanguageResources)HttpContext.Current.Cache[GetCacheKey(language)];
+        }
+
+        /// <summary>
+        /// Set's a LanguageResources to Cache
+        /// </summary>
+        /// <param name="language">The Language</param>
+        /// <param name="resources">The LanguageResources</param>
+        private static void SetCache( string language, LanguageResources resources )
+        {
+            HttpContext.Current.Cache[GetCacheKey(language)] = resources;
+        }
+
+        /// <summary>
+        /// Get's a Cache Key string based on the language
+        /// </summary>
+        /// <param name="language">Language</param>
+        /// <returns>The Cache Key</returns>
+        private static string GetCacheKey(string language)
+        {
+            return string.Format("I18N:{0}", language);
+        }
+
+        /// <summary>
+        /// Get's the LanguageResource for a specified language
+        /// </summary>
+        /// <remarks>
+        /// If the LanguageResources does not exist, it will be created
+        /// </remarks>
+        /// <param name="language">The language</param>
+        /// <returns>The LanguageResources</returns>
+        private static LanguageResources GetOrCreateLanguageResources(string language)
+        {
+            LanguageResources fromCache = GetCache(language);
+            if (fromCache == null) {
+                return new LanguageResources(language);
+            }
+            return fromCache;
+        }
+
+        /// <summary>
+        /// Builds the Resources's objects from the XML file
+        /// </summary>
+        private static void BuildLanguageResources()
+        {
+            foreach (string file in GetResourcesFiles()) {
+                LoadLanguageFile(file);
+            }
+        }
+
+        /// <summary>
+        /// Enumerates all language XML files found
+        /// </summary>
+        /// <returns></returns>
+        private static IEnumerable<string> GetResourcesFiles()
+        {
+            foreach( string file in Directory.GetFiles(LanguageDirectory, "*.xml") ) {
+                yield return file;
+            }
+
+            foreach (string dir in Directory.GetDirectories(LanguageDirectory)) {
+                foreach (string file in Directory.GetFiles(dir, "*.xml")) {
+                    yield return file;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Loads a XML resources file to memory
+        /// </summary>
+        /// <param name="file"></param>
+        private static void LoadLanguageFile(string file)
+        {
+            string content = File.ReadAllText(file);
+            XPathNodeIterator iter = GetNodeIterator(content, "/resources/entry");
+            while (iter.MoveNext()) {
+                string entry = GetXpathValue(iter.Current.OuterXml, "/entry/@key");
+                XPathNodeIterator lang = GetNodeIterator(iter.Current.OuterXml, "/entry/lang");
+                while (lang.MoveNext()) {
+                    StoreLanguageInfo(entry, lang.Current.OuterXml);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Stores the Language Data for a specific entry in a LanguageResources
+        /// </summary>
+        /// <param name="entry">Entry Name</param>
+        /// <param name="xml">Entry XML</param>
+        private static void StoreLanguageInfo(string entry, string xml)
+        {
+            string lang = GetXpathValue(xml, "/lang/@key");
+            string localized = GetXpathContent(xml, "/lang");
+
+            LanguageResources resources = GetOrCreateLanguageResources(lang);
+            resources.Register(entry, localized);
+
+            SetCache(lang, resources);
+        }
+
+        /// <summary>
+        /// Get's the Language Directory
+        /// </summary>
+        public static string LanguageDirectory {
+            get {
+                // WebUserInterface/bin/
+                string dir = AppDomain.CurrentDomain.BaseDirectory;
+
+                // WebUserInterface/Localization
+                return Path.Combine(dir, "Localization");
+            }
+        }
+
+        #endregion Public Members
+
+        #region XPath Utilities
+
+        /// <summary>
+        /// Get's a XPathNodeIterator for a spcific XML/xpath expression
+        /// </summary>
+        /// <param name="content">XML content</param>
+        /// <param name="xpath">XPath expression</param>
+        /// <returns>The XPathNodeIterator</returns>
+        private static XPathNodeIterator GetNodeIterator(string content, string xpath)
+        {
+            XPathDocument doc = new XPathDocument(new StringReader(content));
+            XPathNavigator nav = doc.CreateNavigator();
+            return nav.Select(xpath);
+        }
+
+        /// <summary>
+        /// Get's a Node Value
+        /// </summary>
+        /// <param name="xml">The XML content</param>
+        /// <param name="xpath">The XPath Exression</param>
+        /// <returns>The value</returns>
+        private static string GetXpathValue(string xml, string xpath)
+        {
+            XPathNodeIterator iter = GetNodeIterator(xml, xpath);
+            iter.MoveNext();
+            return iter.Current.Value;
+        }
+
+        /// <summary>
+        /// Get's a Node Content
+        /// </summary>
+        /// <param name="xml">The XML content</param>
+        /// <param name="xpath">The XPath Exression</param>
+        /// <returns>The Inner XML</returns>
+        private static string GetXpathContent(string xml, string xpath)
+        {
+            XPathNodeIterator iter = GetNodeIterator(xml, xpath);
+            iter.MoveNext();
+            return iter.Current.InnerXml;
+        }
+
+        #endregion XPath Utilities
+
+    };
+}

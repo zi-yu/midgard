@@ -1,0 +1,45 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Web;
+using $dataAccess;
+using $core;
+
+namespace $namespace {
+	
+	public class ExceptionLogger {
+	
+		#region Utilities
+		
+		public static void Log( Exception ex ) {
+			ExceptionInfoPersistance info = ExceptionInfoPersistance.GetSession();
+			ExceptionInfo exceptionInfo = info.Create();
+
+			exceptionInfo.Message = ex.Message;
+			exceptionInfo.Name = ex.GetType().Name;
+			exceptionInfo.Date = DateTime.Now;
+			exceptionInfo.StackTrace = ex.StackTrace;
+			
+            if (HttpContext.Current != null) {
+                //exceptionInfo.Principal = HttpContext.Current.User.Identity.Name;
+                exceptionInfo.Url = HttpContext.Current.Request.Url.AbsoluteUri;
+            }
+			
+			info.Update( exceptionInfo );
+		}
+		
+		#endregion Utilities
+		
+	};
+}

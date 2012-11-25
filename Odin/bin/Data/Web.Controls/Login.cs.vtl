@@ -1,0 +1,37 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System.Text;
+using System.Web.Security;
+using System;
+using System.Web;
+using System.Security.Principal;
+using $dalNamespace;
+using $coreNamespace;
+
+namespace $namespace {
+	public class Login : System.Web.UI.WebControls.Login {
+
+		protected override void OnLoggedIn( EventArgs e ) {
+			base.OnLoggedIn( e );
+			FormsAuthentication.RedirectFromLoginPage( this.UserName, this.RememberMeSet );
+
+			using( PrincipalPersistance persistance = PrincipalPersistance.CreateSession() ) {
+				IIdentity identity = HttpContext.Current.User.Identity;
+				Principal principal = persistance.SelectByName( this.UserName )[0];
+				principal.Identity = identity;
+				HttpContext.Current.User = principal;
+			}
+		}
+	}
+}

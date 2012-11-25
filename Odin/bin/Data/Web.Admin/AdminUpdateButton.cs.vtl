@@ -1,0 +1,42 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
+using System.Web.UI;
+using System.Web;
+using $webControls;
+
+namespace $namespace {
+	
+	public class AdminUpdateButton : UpdateButton {
+
+        #region UpdateButton Implementation
+
+        protected override void OnSuccess(object src, EventArgs args)
+        {
+            base.OnSuccess(src, args);
+            Information.AddInformation("Operation Succeeded");
+        }
+
+        protected override void OnFailure(object src, EventArgs args)
+        {
+            base.OnFailure(src, args);
+            Information.AddError("Operation Failed");
+        }
+
+        #endregion UpdateButton Implementation
+
+	};
+}

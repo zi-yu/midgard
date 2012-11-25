@@ -1,0 +1,85 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $editor = "Editor" )
+#set( $editorId = "EditorId" )
+#set( $item = "Item" )
+#set( $managePage = "Manage.aspx" )
+#set( $delete = "Delete" )
+#set( $deleteFrom = "DeleteFrom" )
+#set( $count = "1" )
+<%@ Page Language="C#" MasterPageFile="~/Admin/adminMaster.master"  %>
+<%@ Register TagPrefix="$projectName" Assembly="$assembly" Namespace="$controls" %>
+<%@ Register TagPrefix="Admin" Assembly="$assembly" Namespace="$controlsNamespace" %>
+<script type="text/C#" runat="server">
+	protected override void OnInit( EventArgs e ) {
+		HttpContext.Current.Session["CurrentEntity"] = "$entity.ToLower()";
+		HttpContext.Current.Session["CurrentAction"] = "Manage";
+	}
+</script>
+<asp:Content ContentPlaceHolderID="content" runat="server">
+<$projectName:$entity$editor runat="server" Source="QueryString" ID="$entity$editorId$count" >
+	<h2>Edit $obj.Name #if($obj.HasMainField)&lt;<$projectName:$obj.Name$obj.MainProperty.PropertyName runat="server" />&gt;#end</h2>
+	
+		<table>
+		<tr>
+			<th>Field</th>
+			<th>Value</th>
+		</tr>
+		
+#foreach( $field in $obj.AllFields )#if( !$field.Mult.ToString().EndsWith("ToMany") )
+		<tr>
+			<td><b>$field.PropertyName</b></td>
+			<td>
+				<$projectName:$field.Parent.Name$field.PropertyName$editor runat="server" /> 
+			</td>
+		</tr>
+#end#end
+		<tr>
+			<td></td>
+			<td><Admin:AdminUpdateButton runat="server" /></td>
+		</tr>
+	</table>
+#foreach( $field in $obj.AllFields )#if( $field.Mult.ToString().EndsWith("ToMany") )
+	<h2>$obj.Name :: $field.PropertyName</h2>
+	<$projectName:$field.Parent.Name$field.PropertyName runat="server">
+		<table>
+		<tr>
+#foreach( $preview in $field.Type.DirectPreviewFields )
+			<th>$preview.PropertyName</th>
+#end
+			<th>Edit</th>
+			<th title="Delete from $obj.Name">Delete</th>
+		</tr>
+		<$projectName:$field.Type.Name$item runat="server">
+		<tr>
+#foreach( $preview in $field.Type.DirectPreviewFields )
+			<td><$projectName:$preview.Parent.Name$preview.PropertyName runat="server" /></td>
+#end		
+			<td><Admin:EditLink runat="server" /></td>
+#if( $field.Mult.ToString().EndsWith("OneToMany") )
+			<td><$projectName:$field.Type.Name$delete runat="server" /></td>
+#elseif( $field.Mult.ToString().EndsWith("ManyToMany") )
+			<td><$projectName:$field.Type.Name$deleteFrom$entity runat="server" /></td>
+#end
+		</tr>
+		</$projectName:$field.Type.Name$item>
+	</table>
+	</$projectName:$field.Parent.Name$field.PropertyName>
+#end#end
+
+	<h2>Delete $obj.Name</h2>
+	<p><$projectName:$obj.Name$delete OnDeleteRedirectTo="/admin/$obj.Name.ToLower()$managePage" runat="server" /></p>
+	
+</$projectName:$entity$editor>
+</asp:Content>

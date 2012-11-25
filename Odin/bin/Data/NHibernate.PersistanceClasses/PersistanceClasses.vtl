@@ -1,0 +1,258 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $per = "Persistance" )
+#set( $order = "Field" )
+#set( $id = "ID" )
+#set( $pontoid = ".Id" )
+#set( $attach = ".AttachSession" )
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using NHibernate;
+using NHibernate.Cfg;
+using Loki.DataRepresentation;
+using $coreNamespace;
+
+namespace $namespace {
+	
+	public class $entity.Name$per : 
+			Persistance<$entity.AccessInterface> {
+	
+		#region Static Access
+		
+		public static $entity.Name$per CreateSession()
+		{
+			return new $entity.Name$per ( NHibernateUtilities.OpenSession, typeof($entity.Name) );
+		}
+				
+		public static $entity.Name$per AttachSession<T>( Persistance<T> owner )where T: IDescriptable
+		{
+			$entity.Name$per persistance = new $entity.Name$per ( owner.Session, typeof($entity.Name) );
+			persistance.Attached = true;
+			return persistance;
+		}
+		
+		public static $entity.Name$per GetSession()
+		{
+			System.Web.HttpContext context = System.Web.HttpContext.Current;
+			if( context == null ) {
+				return CreateSession();
+			}
+			
+			object persistance = context.Items["Persistance"];
+			Persistance<Principal> session = null;
+			
+			if( persistance != null ) {
+				session = (Persistance<Principal>) persistance;
+			} else {
+				session = PrincipalPersistance.CreateSession();
+				context.Items["Persistance"] = session;
+			}
+			
+			return AttachSession( session );
+		}
+		
+		public static $entity.Name$per GetValidatedSession()
+        {
+            $entity.Name$per persistance = GetSession();
+            AddValidation(persistance);
+            return persistance;
+        }
+		
+		#endregion
+		
+		#region Ctor and Fields
+		
+		private $entity.Name$per ( ISession currSession, Type type ) 
+			: base(currSession, type) 
+		{
+		}
+		
+		#endregion Ctor and Fields
+		
+		#region IPersistance
+		
+#if( !$entity.IsAbstract )
+		public override $entity.AccessInterface Create()
+		{
+			return new $entity.Name ();
+		}
+#if( $entity.IsBaseRoot )
+
+		public $entity.AccessInterface Create( string entity )
+		{
+			switch(entity) {
+				case "$entity.Name":
+					return Create();
+#foreach( $son in $entity.AllDerivedEntities )
+				case "$son.Name":
+					return $son.Name$per$attach (this).Create();
+#end
+				default: 
+					throw new DALException("Can't create an instance of '"+entity+"' (is it derived from $entity.Name?)");
+			}
+		}
+		
+#end	
+#else
+		// We Only implement Create for non-abstract entities
+#end
+		#endregion IPersistance
+		
+		#region ExtendedMethods
+		
+#* 	*# #foreach($field in $allFields)#if( $field.Mult.ToString().EndsWith("ToOne") )
+		public List<$entity.AccessInterface> SelectBy$field.PropertyName ( $field.Type.AccessInterface $field.Name )
+		{
+			return SelectBy$field.PropertyName (-1, -1, $field.Name );
+		}
+
+		public List<$entity.AccessInterface> SelectBy$field.PropertyName ( int start, int count, $field.Type.AccessInterface $field.Name )
+		{
+#if( $field.Type.AccessInterface == "string" )
+			IList list = Query(start, count, "from $entity.Name e where e.$field.PropertyName like '{0}'", $field.Name);
+			return ToTypedCollection(list);
+#elseif( $field.Type.AccessInterface == "int" || $field.Type.AccessInterface == "bool" )
+			IList list = Query(start, count, "from $entity.Name e where e.$field.PropertyName = {0}", $field.Name);
+			return ToTypedCollection(list);
+#elseif( $field.Mult.ToString() == "ManyToOne" )
+			IList list = Query(start, count, "from $entity.Name e where e.$field.PropertyName$pontoid = {0}", $field.Name$pontoid);
+			return ToTypedCollection(list);
+#else
+			throw new NotImplementedException();
+#end
+		}
+		
+#*	*# #end#end
+		#endregion ExtendedMethods
+		
+		#region Validation
+		
+        public static void AddValidation<T>( Persistance<T> owner ) where T : $entity.Name
+        {
+##
+##		Required Field Validator
+##
+#foreach($field in $allFields)
+#*	*##if( $field.IsRequired )	
+			owner.UpdateEvent += new Lifecycle<T>.ActionEvent( ValidateExistenceOf$field.PropertyName );
+#*	*##end
+#end
+##
+##		Regex Validator
+##
+#foreach($field in $allFields)
+#*	*##if( $field.HasRegex )	
+			owner.UpdateEvent += new Lifecycle<T>.ActionEvent( ValidateRegexOf$field.PropertyName );
+#*	*##end
+#end
+##
+##		Count Validator
+##
+#foreach($field in $allFields)
+#*	*##if( $field.Type.AccessInterface == "string" )	
+			owner.UpdateEvent += new Lifecycle<T>.ActionEvent( ValidateMaxSizeOf$field.PropertyName );
+#*	*##end
+#end
+##
+##		Uniqueness Validator
+##
+#foreach($field in $allFields)
+#*	*##if( $field.Unique )
+			owner.UpdateEvent += new Lifecycle<T>.ActionEvent( ValidateUniquenessOf$field.PropertyName );
+#*	*##end
+#end
+        }
+##
+##	Required Field Validator
+##
+#foreach($field in $allFields)
+#*	*##if( $field.IsRequired )	
+		public static LifecyleVeto ValidateExistenceOf$field.PropertyName ( $entity.Name e ) 
+        {
+#*		*##if( $field.Type.AccessInterface == "string" )
+            if( string.IsNullOrEmpty( e.$field.PropertyName ) ) {
+                return LifecyleVeto.Abort;
+            }
+#*		*##elseif( !$field.Type.IsIntrinsic )
+			if( e.$field.PropertyName == null ) {
+                return LifecyleVeto.Abort;
+            }
+#*		*##end
+            return LifecyleVeto.Continue;
+        }
+		
+#*	*##end
+#end
+##
+##		Regex Validator
+##
+#foreach($field in $allFields)
+#*	*##if( $field.HasRegex )	
+		public static LifecyleVeto ValidateRegexOf$field.PropertyName ( $entity.Name e ) 
+        {
+#foreach( $regex in $field.Regex ) 
+			if( !Regex.IsMatch(e.$field.PropertyName, "$regex") ) {
+				return LifecyleVeto.Abort;
+			}
+#end
+			return LifecyleVeto.Continue;
+		}
+#*	*##end
+#end
+##
+##		Count Validator
+##
+#foreach($field in $allFields)
+#*	*##if( $field.Type.AccessInterface == "string" )	
+		public static LifecyleVeto ValidateMaxSizeOf$field.PropertyName ( $entity.Name e ) 
+        {
+			return ValidateStringMaxSize( e.$field.PropertyName, $field.MaxSize );
+		}
+#*	*##end
+#end
+##
+##		Uniqueness Validator
+##
+#foreach($field in $allFields)
+#*	*##if( $field.Unique )	
+		public static LifecyleVeto ValidateUniquenessOf$field.PropertyName ( $entity.Name e ) 
+        {
+			$entity.Name$per  persistance = GetSession();
+			if( persistance.SelectBy$field.PropertyName ( e.$field.PropertyName ).Count == 0 ) {
+				return LifecyleVeto.Continue;
+			}
+			return LifecyleVeto.Abort;
+		}
+#*	*##end
+#end
+
+		public static LifecyleVeto ValidateStringMaxSize( string val, int maxSize ) 
+        {
+			if( string.IsNullOrEmpty( val ) ) {
+				return LifecyleVeto.Continue;
+			}
+			
+			if( val.Length > maxSize ) {
+				return LifecyleVeto.Abort;
+			}
+			
+			return LifecyleVeto.Continue;
+		}
+
+		#endregion Validation
+		
+	};
+}

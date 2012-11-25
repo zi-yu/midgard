@@ -1,0 +1,129 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set($count= 0)##
+#set($one= 1)##
+#macro( WriteDeps $deps )##
+//$deps.Name - 1
+#set($count= ($count+1))// ++  $count
+#set($name = $deps.Name)##
+#*	*##foreach ($depRec in $deps.Dependencies)##
+//$deps.Name - 2
+//$deps.Name - 3
+#*		*##if (!$depRec.IsReusable)##
+#**#			$depRec.Name$persistance _$depRec.Name$persistance = $depRec.Name$persistance$getSession;
+#**#			$depRec.Name _$depRec.Name = _$depRec.Name$persistance$create;
+#*		*##end##
+
+#*	    *##WriteDeps( $depRec )
+// $count before
+#*			*##if ($count == $one)##
+			_$deps.Name$point$depRec.Name = _$depRec.Name; //1 "depName->_$deps.Name"; name-> $name
+#*			*##else##
+			_$name$point$depRec.Name = _$depRec.Name;	//2 depName->_$deps.Name; "name-> $name"
+#*			*##end##
+#*	*##end##
+		_$deps.Name$persistance$update _$deps.Name );
+#set($count= ($count - 1))//-- $count
+#end
+
+#macro( WriteDepsWithoutDeclarations $deps )##
+	#foreach ($depRec in $deps.Dependencies)##
+#*		    *##if (!$depRec.IsReusable)##
+#*		*#		_$depRec.Name$persistance = $depRec.Name$persistance$getSession;
+#*	*#			_$depRec.Name = _$depRec.Name$persistance$create;
+			#end##
+#*		    *##WriteDepsWithoutDeclarations( $depRec )
+			_$deps.Name$point$depRec.Name = _$depRec.Name;
+	#end##
+			_$deps.Name$persistance$update _$deps.Name );
+#end
+
+	// WARNING: Generated File! Do not modify by hand!
+	// *************************************************************
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using NUnit.Framework;
+using System.IO;
+using $coreName;
+using $dataName;
+
+#set($test = ".DataAccessTests")##
+#set($tests = "Tests")##
+#set($persistance = "Persistance")##
+#set($getSession =".GetSession()")##
+#set($create =".Create()")##
+#set($update =".Update(")##
+#set($deleteAll =".DeleteAll()")##
+#set($delete =".Delete(")##
+#set($point =".")##
+#set($getCount =".GetCount()")##
+namespace $namespace$test {
+
+	[TestFixture()]
+	public class $entity.Name$tests{
+
+##$entity.Name$persistance persistanceBase = null;
+		$dep.Name$persistance _$dep.Name$persistance = null;
+		public $entity.Name$tests ()
+		{
+			_$dep.Name$persistance = $dep.Name$persistance$getSession;
+		}
+		
+		[SetUp]
+		public void setUp() 
+		{
+			_$dep.Name$persistance$deleteAll;
+		}
+
+		#region Insert-Read Tests
+
+		[Test]
+		public void Count$entity.Name ()
+		{
+			$dep.Name _$dep.Name = _$dep.Name$persistance$create;
+#*		     #WriteDeps( $dep )*#
+			$depsWhithDeclaration
+			
+			Assert.IsTrue( _$dep.Name$persistance$getCount == 1 );
+
+			_$dep.Name = _$dep.Name$persistance$create;
+#*		     #WriteDepsWithoutDeclarations( $dep )*#
+			$depsWhithoutDeclaration
+			
+			Assert.IsTrue( _$dep.Name$persistance$getCount == 2 );
+		}
+
+		#endregion Insert-Read Tests
+
+		#region Remove-Read Tests
+
+		[Test]
+		public void Remove$entity.Name ()
+		{
+			$dep.Name _$dep.Name = _$dep.Name$persistance$create;
+#*		   #WriteDeps ( $dep ) *#
+			$depsWhithDeclaration
+			
+			Assert.IsTrue( _$dep.Name$persistance$getCount  == 1 );
+			
+			_$dep.Name$persistance$delete _$dep.Name );
+			Assert.IsTrue( _$dep.Name$persistance$getCount == 0 );	
+		}
+
+		#endregion Remove-Read Tests
+
+	}
+}

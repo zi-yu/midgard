@@ -1,0 +1,23 @@
+:Summary: Planeamento do Projecto (Actualizado)
+
+	1. Escrever os Documentos e Criar a Apresentação
+	1. Mecanismo de tratamento de Excepções(Pyro)
+	1. Gerar testes Unitários para as classes de persistência geradas(Tiaginho,...)
+	1. Adicionar mais Dados das Entidades ao ficheiro de Projecto (Pre)
+	1. Validators Para as Entidades
+		1. Possibilidade de especificar N validators no Projecto para cada campo de dada entidade
+			1. Required Field Validator
+			1. Regex Validator
+			1. Uniqueness Validator
+			1. Range Validator
+			1. Type Validator
+			1. Mail Validator
+			1. Simple Text Validator
+			1. URL Validator
+
+	1. Mecanismo de Internacionalização (Pre)
+	1. Mecanismo de Gestão de Utilizadores, incorporado com a framework ASP.NET 2.0(Pyro)
+
+	1. Controlos de CRUD para as entidades (Tiaginho,Pre)
+	1. Sistema de Administração (...)
+	1. Realizar uma GUI para a especificação do Projecto(...)

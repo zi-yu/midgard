@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!-- ***************************************************************
+* $Workfile: StringResources.xml $
+*
+* $Revision: 1.1 $
+* $Author: pre $
+*
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* $History: StringResources.xml $
+* 
+* *****************  Version 1  *****************
+* User: Tms          Date: 5-12-06    Time: 14:22
+* Created in $/dev/EditorDinamica/Tranquilidade/Resources
+* Última versão do Editor Dinâmica.
+* 
+* *****************  Version 1  *****************
+* User: Tms          Date: 3-11-06    Time: 18:44
+* Created in $/dev/EditorDinamica/Tranquilidade/Resources
+* 
+* *****************  Version 1  *****************
+* User: Lft          Date: 5-09-05    Time: 16:28
+* Created in $/dev/ProcessModeler/ProcessModel/Resources
+* 
+* $NoKeywords: $
+**************************************************************** -->
+<resources>
+	<annotation>Resources for Process Model.</annotation>
+	<!-- ***************************************************************
+	*
+	* Output Steps
+	*
+	**************************************************************** -->	
+	<output>
+		<step name="String Resources" xslt="qz-resx.xslt" output="StringResources.resx" encoding="iso-8859-1" />
+
+		<step name="String Resources" xslt="qz-exceptions.xslt" output="ExceptionTokens.cs" encoding="iso-8859-1">
+			<param name="namespace" value="Midgard.Interop" />
+			<param name="className" value="ExceptionTokens" />
+		</step>
+
+		<step name="String Resources" xslt="qz-csharp.xslt" output="ResourceTokens.cs" encoding="iso-8859-1">
+			<param name="namespace" value="Midgard.Interop" />
+			<param name="className" value="ResourceTokens" />
+		</step>
+	</output>
+	
+	<!-- ***************************************************************
+	*
+	* Resources
+	*
+	**************************************************************** -->	
+	<resource>
+		<message ID="CommandBarName">
+			<annotation>Name of the command-bar.</annotation>
+			<value>Quartz Process</value>
+		</message>
+	
+	
+		<!-- ***************************************************************
+		*
+		* Command Bar
+		*
+		**************************************************************** -->
+		<message ID="ButtonValidate">
+			<annotation>Text for validate button.</annotation>
+			<value>Validate page.</value>
+		</message>
+
+		<message ID="ButtonValidateTooltip">
+			<annotation>Tooltip for validate button.</annotation>
+			<value>Checks that the current page is a valid Quartz process.</value>
+		</message>
+
+		<message ID="ButtonExportPage">
+			<annotation>Text for export page button.</annotation>
+			<value>Export current page.</value>
+		</message>
+
+		<message ID="ButtonExportPageTooltip">
+			<annotation>Tooltip for export page button.</annotation>
+			<value>Exports the current Quartz Process into an XML file.</value>
+		</message>
+
+		<message ID="ButtonExportAll">
+			<annotation>Text for export all button.</annotation>
+			<value>Export document.</value>
+		</message>
+
+		<message ID="ButtonExportAllTooltip">
+			<annotation>Tooltip for export all button.</annotation>
+			<value>Exports all Quartz Process in the current document into seperate XML files.</value>
+		</message>
+
+		<message ID="ButtonSettings">
+			<annotation>Text for settings button.</annotation>
+			<value>Document settings...</value>
+		</message>
+
+		<message ID="ButtonSettingsTooltip">
+			<annotation>Tooltip for settings  button.</annotation>
+			<value>Configures export parameters.</value>
+		</message>
+
+		<message ID="ComboModeLabel">
+			<annotation>Label for the combo combo.</annotation>
+			<value>Mode:</value>
+		</message>
+
+		<message ID="ExportPleaseWait">
+			<annotation>Message shown in the Export: Please Wait.</annotation>
+			<value>Please wait while this operation is being performed...</value>
+		</message>
+		
+
+		<!-- ***************************************************************
+		*
+		* Settings
+		*
+		**************************************************************** -->
+		<message ID="SettingsPleaseSave">
+			<annotation>Settings depend on the location of the Visio file.</annotation>
+			<value>Please save your document before configuring the export settings.</value>
+		</message>
+
+
+
+		<!-- ***************************************************************
+		*
+		* Color Indexes
+		* These index colors in the Visio palette.
+		*
+		**************************************************************** -->	
+		<message ID="ShapeLineColorOk">
+			<annotation>Ok Color.</annotation>
+			<value></value>
+		</message>
+		
+		<message ID="ShapeLineColorError">
+			<annotation>Error color.</annotation>
+			<value>2</value>
+		</message>
+		
+		
+		
+		<!-- ***************************************************************
+		*
+		* Export Messages
+		*
+		**************************************************************** -->	
+		<message ID="ExportPageNotQuartz">
+			<annotation>When trying to export/validate a non-Quartz sheet.</annotation>
+			<value>Page is not a Quartz process.</value>
+		</message>
+
+		<message ID="ExportPageIsValid">
+			<annotation></annotation>
+			<value>Page is valid.</value>
+		</message>
+
+		<message ID="ExportErrorsInPage">
+			<annotation></annotation>
+			<value>Found {0} errors in page {1}.
+
+</value>
+		</message>
+
+		<message ID="ExportShapeError">
+			<annotation></annotation>
+			<value>Shape '{0}': {1}
+</value>
+		</message>
+
+		<message ID="ExportPageOk">
+			<annotation></annotation>
+			<value>Page exported successfully!</value>
+		</message>
+
+		<message ID="ExportNoPagesProcessed">
+			<annotation></annotation>
+			<value>No pages processed.</value>
+		</message>
+
+		<message ID="ExportAllOk">
+			<annotation></annotation>
+			<value>Exported {0} pages successfully.</value>
+		</message>
+
+		<message ID="ExportErrorsInPages">
+			<annotation></annotation>
+			<value>Found {0} errors in {1} Quartz pages.
+
+</value>
+		</message>
+
+		<message ID="ExportPageShapeError">
+			<annotation></annotation>
+			<value>Page '{0}': Shape '{1}': {2}
+</value>
+		</message>
+
+		<message ID="ExportErrorLimit">
+			<annotation>Maximum number of errors to display.</annotation>
+			<value>20</value>
+		</message>
+
+		<message ID="ExportErrorLimitMessage">
+			<annotation>Message to display when more errors occured.</annotation>
+			<value>(More errors occured...)</value>
+		</message>
+
+
+
+		
+		<!-- ***************************************************************
+		*
+		* Export Messages
+		*
+		**************************************************************** -->		
+		<message ID="ProcessFilenameFormat">
+			<annotation>Formatter t obtain process filename. 0th index is the Process ID.</annotation>
+			<value>{0}.qzp</value>
+		</message>
+		
+		<message ID="SourceControlHeader">
+			<annotation></annotation>
+			<value>***************************************************************************
+* Process: {0} - {1}
+* Model File: {2}
+*
+* Automatically generated by ProcessModel macros. Do not edit this file!
+*
+****************************************************************************</value>
+		</message>
+
+		<message ID="ErrorSavingSettings">
+			<annotation>Exception caught when trying to set export settings in the visio file.</annotation>
+			<value>Error saving settings </value>
+		</message>	
+
+
+
+		<!-- ***************************************************************
+		*
+		* WinForms Validator Errors
+		*
+		**************************************************************** -->
+		<message ID="ProcessIdValidator">
+			<annotation>Duplicate Process ID.</annotation>
+			<value>Duplicate Process ID.</value>
+		</message>
+		
+		<message ID="NodeIdValidator">
+			<annotation>Duplicate Node ID.</annotation>
+			<value>Duplicate Node ID.</value>
+		</message>
+
+
+		
+
+		<!-- ***************************************************************
+		*
+		* Validation Errors
+		*
+		**************************************************************** -->
+		<message ID="EventNotConnected">
+			<annotation>Event must be connected on both ends.</annotation>
+			<value>Event shape must be connected on both ends.</value>
+		</message>	
+
+		<message ID="EventConnectedFromInvalidShape">
+			<annotation>Invalid from connection.</annotation>
+			<value>Shape is not connected from a valid Quartz shape.</value>
+		</message>	
+
+		<message ID="EventConnectedFromEndShape">
+			<annotation>Invalid from connection, cannot be an End shape.</annotation>
+			<value>Events must not connect from End shapes.</value>
+		</message>	
+
+		<message ID="EventConnectedToInvalidShape">
+			<annotation>Invalid To connection.</annotation>
+			<value>Shape is not connected to a valid Quartz shape.</value>
+		</message>	
+
+		<message ID="EventConnectedToStartShape">
+			<annotation>Invalid To connection, cannot be a Start shape.</annotation>
+			<value>Events must not connect to Start shapes.</value>
+		</message>	
+
+
+		<message ID="EventConnectedFromEventShape">
+			<annotation>Invalid from connection.</annotation>
+			<value>From event.</value>
+		</message>	
+
+		<message ID="EventConnectedToEventShape">
+			<annotation>Invalid To connection, cannot be an Event shape.</annotation>
+			<value>To event.</value>
+		</message>	
+
+
+		<message ID="NodeShapeNotConnected">
+			<annotation>No incoming connections to this shape.</annotation>
+			<value>Shape is not connected to.</value>
+		</message>
+
+		<message ID="StartShapeNotConnected">
+			<annotation>No outgoing connections from this shape.</annotation>
+			<value>No outgoing connections from start shape.</value>
+		</message>
+
+
+		<message ID="ShapeTextMaxSize">
+			<annotation>Maximum chars on shape text. (Integer)</annotation>
+			<value>20</value>
+		</message>
+
+		<message ID="ShapeTextTruncate">
+			<annotation>Text that is appended in case of truncation.</annotation>
+			<value>...</value>
+		</message>
+
+
+
+
+		<!-- ***************************************************************
+		*
+		* Exceptions
+		*
+		**************************************************************** -->
+		<exceptionMessage ID="ErrorLoadConfigurationFile">
+			<annotation>Error loading process-model configuration file, filename '{0}'.</annotation>
+			<value>There was an error loading the Quartz Process Visio Add-On.</value>
+		</exceptionMessage>
+		
+	</resource>
+</resources>

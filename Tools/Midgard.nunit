@@ -1,0 +1,6 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Default" appbase="..\" />
+  <Config name="Default" binpathtype="Auto">
+    <assembly path="Odin\bin\Midgard.Tests.dll" />
+  </Config>
+</NUnitProject>

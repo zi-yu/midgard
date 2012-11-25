@@ -1,0 +1,145 @@
+:Display: XMI
+:Summary: Regras de Escrita do XMI
+
+!O XMI
+
+A XML Metadata Interchange (XMI) é um standart da OMG [1] para a troca de metadata usando a linguagem XML. O uso mais comum do XMI é a descrição de modelos UML.
+
+Existem várias versões de XMI disponíveis: 1.0, 1.1, 1.2, 2.0 e 2.1. Infelizmente a compatibilidade entre a versão 1.x e 2.x não existe devido a modificações profundas da sintax como por exemplo o desaparecimento dos elementos header e content existentes na versão 1.x.
+
+Devido a este facto e depois de terem sido analisadas várias ferramentas, optou-se por usar XMI na versão 2.1 visto esta ser a última versão do idioma XMI e existir uma ferramenta em “community edition” que permite a criação de diagramas UML e sua exportação para o idioma XMI. A ferramenta tem o nome de Magic Draw.
+
+!A sintaxe
+
+!!xmi:XMI 
+
+O xmi:XMI é o elemento de topo de um ficheiro XMI. Possui os seguintes atributos:
+
+||xmi:version||Versão do XMI contido no ficheiro||
+||timestamp||Data de geração do ficheiro||
+||xmlns:uml||url do shema do UML descrito||
+||xmlns:xmi||url do schema do XMI contido no ficheiro||
+
+Nenhum dos atributos acima é considerado quando se faz a leitura do conteúdo XMI.
+
+!!uml:model
+
+Este elemento possui, no seu interior, todo o modelo UML, ou seja, toda a informação representativa das diferentes associações, classes, interfaces e seus respectivos atributos. Nenhum dos atributos deste modelo é considerado.
+
+
+!!uml:class
+
+O elemento uml:class representa uma classe e todos os seus constituintes (métodos, atributos, etc). 
+
+Os atributos relevantes deste elemento são:
+
+||xmi:type||Tipo do elemento XMI. Pode aparecer como nome do elemento XML ou neste atributo. Neste caso concreto o seu valor será uml:class||
+||xmi:id||Identificador único do elemento||
+||name||Nome da classe||
+||visibility||Visibilidade da classe, isto é, se é publica, privada, etc.||
+
+!!uml:interface
+
+Semelhante ao anterior, o elemento uml:interface representa uma interface. Os atributos considerados neste elemento são os mesmo que no elemento anterior.
+
+!!xmi:extension
+
+Este elemento destina-se a inserir informações que só o gerador do XMI sabe compreender, ou seja, é uma extensão ao standart. No caso concreto da ferramenta [2], este elemento destina-se a armazenar várias informações sobre os vários elementos do diagrama UML como posicionamento, textos, etc.
+
+A informação deste elemento é não standart logo é ignorada excepto numa ocasião: na descoberta de um tipo de uma propriedade que seja primitivo. Quando um determinado atributo tem como tipo um que seja primitivo, a sua sintaxe XML é a seguinte:
+
+	<type xmi:type='uml:PrimitiveType' 
+		href='UML_Standard_Profile.xml|_9_0_2_91a0295_1110274713995_297054_0'>
+		<xmi:Extension 
+			xmi:Extender='MagicDraw UML 10.5'
+			xmi:ExtenderID='MagicDraw UML 10.5'>
+				<referenceExtension
+				referentPath='UML Standard Profile::UML Standard 	
+				Profile::datatypes::String' referentType='PrimitiveType'
+			/>
+		</xmi:Extension>
+	</type>
+
+
+No exemplo acima, o elemento referenceExtension possui a informação sobre o tipo do atributo no formato "UML Standard Profile::UML Standard Profile::datatypes:: TIPO"
+
+!!xmi:documentation
+
+O elemento xmi:documentation destina-se a documentação. Este elemento é ignorado.
+
+!!uml:generalization
+
+O uml:generalization é um elemento que aparece quando o elemento uml:Class corrente possui um tipo base.
+
+Este elemento possui dois atributos base, xmi:id e general, e um terceiro que ocorre quando o documento xmi possui o tipo dos elementos num atributo. O nome desse atributo é o xmi:type.
+
+Recapitulando:
+||xmi:type||Tipo do elemento XMI. Pode aparecer como nome do elemento XML ou neste atributo. Neste caso concreto o seu valor será uml:class.||
+||xmi:id||Identificador do elemento.||
+||general||Identificador do elemento que representa a classe base do elemento corrente.||
+
+Dos dois elementos base, xmi:id e general, só o segundo é tido em conta para efeitos de leitura e conversão para o modelo de dados.
+
+!!uml:operation
+
+O elemento uml:operation representa um método de uma classe. É filho de uml:class e os atributos que considerados são:
+
+||xmi:type||Tipo do elemento XMI. Pode aparecer como nome do elemento XML ou neste atributo. Neste caso concreto o seu valor será uml:operation.||
+||xmi:id||Identificador único do elemento uml:operation||
+||isAbstract||Indica se o método é abstracto ou não. Os valores possiveis são true e false||
+||name||Nome do método||
+||visibility||Visibilidade do método||
+
+Se um elemento não possuir o atributo name ele simplesmente é ignorado. Por não possuir o elemento name significa que ele faz parte de uma associação, mas a classe corrente não é aquela que contém o atributo da associação. Por isso, este elemento é ignorado e é posteriormente inserido quando estiver a ser feito o parse ao outro extremo da associação (o qual já possui o atributo name). Nessa inserção a propriedade InfoOnly é colocada a true de modo a saber que este atributo é só informativo. O exemplo seguinte clarifica o que este assunto:
+
+!!uml:property
+
+Este elemento xml corresponde a um atributo de uma classe. Em algumas versões de xmi este elemento também é chamado de uml:attribute. Deste elemento os atributos que são lidos são:
+
+||xmi:type||Tipo do elemento XMI. Pode aparecer como nome do elemento XML ou neste atributo. Neste caso concreto o seu valor será uml:property.||
+||xmi:id||Identificador único do elemento uml:property||
+||name||Nome do atributo||
+||visibility||Visibilidade do atributo||
+||type||Atributo que possui o identificador do tipo do atributo. Este atributo só ocorre quando o faz parte de uma associação.||
+
+Como filhos este elemento possui o elemento uml:primitivetype que, tal como o atributo type, representa o tipo de elemento. Ambos são exclusivos, ou seja, quando um deles aparece, ou outro não. Existe grande diferença entre ambos. No caso do elemento filho, uml:primitivetype indica que o tipo do atributo é um tipo primitivo (mais informações sobre este elemento na descrição do elemento uml:parameter). No caso do atributo type, e como explicado na tabela acima, o tipo é uma das classes representadas em xmi sendo o seu valor identificador da respectiva classe.
+
+!!uml:parameter
+
+O elemento uml:parameter é em tudo idêntico a um elemento uml:property mas representa um parâmetro de um método. Para além dos atributos que uml:property possui, uml:parameter possui ainda o atributo direction que representa a direcção do parâmetro. Os seus valores possíveis são in, out, inout e return.
+
+!!uml:primitivetype
+
+O uml:primitivetype representa o tipo do elemento no qual está contido (uml:parameter ou uml:property). No seu interior, existe um xmi:extension o qual foi explicado no ponto #.2.4. O exemplo de um uml:primitivetype é o tipo String.
+
+!!uml:datatype
+
+uml:datatype é exactamente igual e representa o mesmo que o elemento uml:primitivetype excepto que o segundo apresenta elementos como String, e o segundo representa elementos como Integers, Char e Booleans.
+
+!!uml:interfacerealization
+
+O elemento uml:interfaceralization representa a interface da qual o elemento pai deriva (isto implica que o elemento pai é uml:class ou uml:interface).  Este elemento possui os atributos:
+
+||xmi:type||Tipo do elemento XMI. Pode aparecer como nome do elemento XML ou neste atributo. Neste caso concreto o seu valor será uml: interfacerealization.||
+||xmi:id||Identificador único do elemento uml:property||
+||name||Nome da interface||
+||supplier||Identificador da interface da qual o elemento corrente deriva||
+
+!!uppervalue
+
+Representa a multiplicidade mais alta do elemento. Por exemplo, se a multiplicidade for 0..* o uppervalue será 		*. Caso a multiplicidade seja um valor fixo, como 1, o uppervalue será 1.
+
+Em conjunto com este elemento existe um elemento lowervalue que representa o valor mais baixo da multiplicidade (no caso de ser 0..* o valor será 0). Este elemento não é contemplado visto que o elemento uppervalue é representativo de todas as multiplicidades:
+
+	* 0..* ou 1..* o uppervalue terá em ambos os casos o valor *. Isto significa que o o elemento possui um contentor dos respectivos elementos;
+	*0 ou 1 tanto uppervalue como o lowervalue terão os mesmo valores.
+
+!!!Referências Externas
+	* "XMI Specification":http://www.omg.org/technology/documents/formal/xmi.htm
+	* "XMI Reference":http://www.zvon.org/xxl/XMI/Output/
+
+
+
+
+
+

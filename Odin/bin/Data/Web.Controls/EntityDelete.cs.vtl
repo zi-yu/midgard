@@ -1,0 +1,144 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $IdToDelete = "IdToDelete" )
+#set( $ext = "Delete" )
+#set( $par = "(" )
+#set( $value = ".value" )
+#set( $persistance = "Persistance" )
+#set( $persistanceSession = "Persistance.GetSession()" )
+
+using System;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Loki.DataRepresentation;
+using $CoreNamespace;
+using $DALNamespace;
+
+namespace $namespace {
+
+	/// <summary>
+    /// Deletes an $entity.Name object from the data source
+    /// </summary>
+	public class $entity.Name$ext : BaseFieldControl<$entity.Name> {
+	
+		#region Fields
+		
+		private string redirectTo;
+		
+		#endregion Fields
+		
+		#region Properties
+		
+		/// <summary>
+        /// URL to follow after deletion
+        /// </summary>
+		public string OnDeleteRedirectTo {
+			get { return redirectTo; }
+			set { redirectTo = value; }
+		}
+		
+		#endregion Properties
+	
+		#region Events
+		
+		/// <summary>
+        /// Initializes this control
+        /// </summary>
+        /// <param name="args">Event arguments</param>
+		protected override void OnInit( EventArgs args )
+		{
+			base.OnInit(args);
+		}
+		
+		/// <summary>
+        /// OnLoad configuration
+        /// </summary>
+        /// <param name="e">Event arguments</param>
+		protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            if( Page.IsPostBack ) {
+				string toRemove = Page.Request.Form["$entity.Name$IdToDelete"];
+				if( !string.IsNullOrEmpty(toRemove) && HttpContext.Current.Items["$entity.Name$IdToDelete"] == null ) {
+					HttpContext.Current.Items["$entity.Name$IdToDelete"] = string.Empty;
+					Delete$entity.Name ( int.Parse(toRemove) );
+				}
+			}
+			RegisterDeleteJS();
+        }
+
+		/// <summary>
+        /// Deletes a $entity.Name instance from the data source
+        /// </summary>
+        /// <param name="id">The $entity.Name Id</param>
+        void Delete$entity.Name ( int id )
+        {
+			$entity.Name$persistance persistance = $entity.Name$persistanceSession;
+			persistance.Delete(id);
+			persistance.Flush();
+			
+			if( !string.IsNullOrEmpty(OnDeleteRedirectTo) ) {
+				Page.Response.Redirect(OnDeleteRedirectTo);
+			}
+        }
+		
+		#endregion
+	
+		#region BaseFieldControl<$entity.Name> Implementation
+		
+		/// <summary>
+        /// Renders an $entity.Name delete link
+        /// </summary>
+        /// <param name="writer">The HtmlTextWriter</param>
+        /// <param name="t">The $entity.Name instance</param>
+        /// <param name="renderCount">The render count</param>
+        /// <param name="flipFlop">True if render count is odd</param>
+		protected override void Render( HtmlTextWriter writer, $entity.Name entity, int renderCount, bool flipFlop )
+		{
+            writer.Write("<a href='javascript:Delete$entity.Name$par{0})'>Delete</a>", entity.Id.ToString());
+		}
+		
+		#endregion BaseFieldControl<$entity.Name> Implementation
+
+        #region Delete JS
+
+		/// <summary>
+        /// Registers the necessary JavaScript
+        /// </summary>
+        private void RegisterDeleteJS()
+        {
+            string script = @"<script type='text/javascript'>
+	var theForm = document.forms['" + Page.Form.ClientID + @"'];
+    if (!theForm) {
+        theForm = document.form;
+    }
+    function Delete$entity.Name ( id )
+    {
+        if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+		        theForm.$entity.Name$IdToDelete$value = id;
+		        theForm.submit();
+		    }
+	}
+	</script>";
+	
+			Page.ClientScript.RegisterClientScriptBlock(typeof($entity.Name),"Delete$entity.Name", script);
+			Page.ClientScript.RegisterHiddenField("$entity.Name$IdToDelete", "");
+        }
+
+        #endregion
+
+    };
+
+}

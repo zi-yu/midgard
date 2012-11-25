@@ -1,0 +1,41 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set ( $designer = "Designer" )
+#set ( $designers = ".Designers" )
+
+using System;
+using System.IO;
+using System.ComponentModel;
+using System.Web.UI.Design.WebControls;
+
+namespace $namespace$designers {
+
+	public class $entity.Name$field.PropertyName$designer : CompositeControlDesigner {
+	
+		#region CompositeControlDesigner Implementation
+
+        public override string GetDesignTimeHtml()
+        {
+			StringWriter writer = new StringWriter();
+			writer.WriteLine("<span style='border: 1px solid black; background-color: yellow;'>");
+			writer.WriteLine( "$entity.Name$field.PropertyName" );
+			writer.WriteLine("</span>");
+            return writer.ToString();
+        }
+
+        #endregion CompositeControlDesigner Implementation
+		
+	};
+
+};

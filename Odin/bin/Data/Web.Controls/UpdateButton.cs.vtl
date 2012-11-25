@@ -1,0 +1,107 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $fieldControl = "FieldControl" )
+
+using System;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Loki.DataRepresentation;
+
+namespace $namespace {
+
+	/// <summary>
+    /// Starts an entity update action
+    /// </summary>
+    /// <remarks>
+    /// This control has to be child of an IEntityEditor
+    /// </remarks>
+	public class UpdateButton : Button {
+
+		#region Events
+
+		/// <summary>
+        /// Triggred event when the update process succeeds
+        /// </summary>
+        public event EventHandler Success;
+		
+		/// <summary>
+        /// Triggred event when the update process fails
+        /// </summary>
+        public event EventHandler Failure;
+
+		/// <summary>
+        /// Initialization
+        /// </summary>
+        /// <param name="args">Arguments</param>
+        protected override void OnInit(EventArgs args)
+        {
+			Text = "Update";
+            base.OnInit(args);
+        }
+
+		/// <summary>
+        /// The click event will start the update cycle
+        /// </summary>
+        /// <param name="args">Event arguments</param>
+        protected override void OnClick(EventArgs args)
+        {
+            base.OnClick(args);
+
+            IEntityEditor parent = Parent as IEntityEditor;
+            if (parent == null) {
+                throw new Exception("Parent it's not IEntityEditor");
+            }
+
+            bool result = true;
+            parent.OnUpdate();
+            if (result && Page.IsValid) {
+                OnSuccess(parent, EventArgs.Empty);
+            } else {
+                OnFailure(parent, EventArgs.Empty);
+            }
+        }
+
+        #endregion Events
+
+        #region Virtual Members
+
+		/// <summary>
+        /// Invokes all the listeners to the Success event
+        /// </summary>
+        /// <param name="src">Sender</param>
+        /// <param name="args">Arguments</param>
+        protected virtual void OnSuccess( object src, EventArgs args)
+        {
+            if (Success != null) {
+                Success(src, args);
+            }
+        }
+
+		/// <summary>
+        /// Invokes all the listeners to the Failure event
+        /// </summary>
+        /// <param name="src">Sender</param>
+        /// <param name="args">Arguments</param>
+        protected virtual void OnFailure(object src, EventArgs args)
+        {
+            if (Failure != null) {
+                Failure(src, args);
+            }
+        }
+
+        #endregion Virtual Members
+		
+	};
+
+}

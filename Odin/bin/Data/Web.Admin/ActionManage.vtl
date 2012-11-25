@@ -1,0 +1,57 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $list = "List" )
+#set( $count = "Count" )
+#set( $test = $obj) 
+#set( $pagedList = "PagedList" )
+#set( $search = "Search" )
+#set( $item = "Item" )
+#set( $editPage = "Edit.aspx" )
+#set( $delete = "Delete" )
+<%@ Page Language="C#" MasterPageFile="~/Admin/adminMaster.master"  %>
+<%@ Register TagPrefix="$projectName" Assembly="$assembly" Namespace="$controls" %>
+<%@ Register TagPrefix="Admin" Assembly="$assembly" Namespace="$controlsNamespace" %>
+<script type="text/C#" runat="server">
+	protected override void OnInit( EventArgs e ) {
+		HttpContext.Current.Session["CurrentEntity"] = "$entity.ToLower()";
+		HttpContext.Current.Session["CurrentAction"] = "$action";
+	}
+</script>
+<asp:Content ContentPlaceHolderID="content" runat="server">
+	<$projectName:$entity$pagedList ItemsPerPage="50" runat="server" >
+	<table>
+		<tr>
+#foreach( $field in $obj.DirectPreviewFields )
+			<th>$field.PropertyName</th>
+#end
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+		<$projectName:$entity$item runat="server">
+		<tr>
+#foreach( $field in $obj.DirectPreviewFields )
+#if( $field.Type.IsIntrinsic )
+			<td><$projectName:$field.Parent.Name$field.PropertyName runat="server" /></td>
+#else
+			<td><$projectName:$field.Parent.Name$field.PropertyName Url="/Admin/$field.Type.Name.ToLower()$editPage" runat="server" /></td>
+#end
+#end
+			<td><Admin:EditLink runat="server" /></td>
+			<td><$projectName:$entity$delete runat="server" /></td>
+		</tr>
+		</$projectName:$entity$item>
+	</table>
+	</$projectName:$entity$pagedList>
+
+</asp:Content>

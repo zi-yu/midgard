@@ -1,0 +1,80 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EABD48F3-4557-4F9E-B5D0-92FD82DE42F9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OdinUtilities</RootNamespace>
+    <AssemblyName>OdinUtilities</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\Tools\Key\Midgard.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;VS2005</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>TRACE;VS2005</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DesignPatterns, Version=1.1.0.0, Culture=neutral, PublicKeyToken=09352869ad1dca42">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Tools\General\DesignPatterns.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Src\AssemblyInfo.cs" />
+    <Compile Include="Src\Exceptions.cs" />
+    <Compile Include="Src\ExceptionsFactory.cs" />
+    <Compile Include="Src\CopyBaseFiles.cs" />
+    <Compile Include="Src\CopyBaseFilesFactory.cs" />
+    <Compile Include="Src\CopyFile.cs" />
+    <Compile Include="Src\CopyFileFactory.cs" />
+    <Compile Include="Src\GenerateBaseTests.cs" />
+    <Compile Include="Src\GenerateBaseTestsFactory.cs" />
+    <Compile Include="Src\GenerateConfigApp.cs" />
+    <Compile Include="Src\GenerateConfigAppFactory.cs" />
+    <Compile Include="Src\GenerateBase.cs" />
+    <Compile Include="Src\GenerateBaseFactory.cs" />
+    <Compile Include="Src\Template.cs" />
+    <Compile Include="Src\TemplateFactory.cs" />
+    <Compile Include="Src\Xslt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Src\XsltFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Loki\Loki.csproj">
+      <Project>{541EC53F-37BD-4D1B-9154-38B5D8F9A84F}</Project>
+      <Name>Loki</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

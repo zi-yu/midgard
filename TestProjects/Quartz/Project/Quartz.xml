@@ -1,0 +1,17 @@
+﻿<project name="Quartz" outputPath="." author="pds" >
+	<loader>
+		<plugin name="Loader.Quartz" />
+	</loader>
+	<codeGenerator>
+		<plugin name="Quartz.Global" >
+			<param name="Namespace" value="Frontend" />
+		</plugin>
+		<plugin name="Quartz.Node" >
+			<param name="Namespace" value="Frontend" />
+			<param name="BaseClass" value="BaseNode" />
+			<param name="SwitchBased" value="true" />
+		</plugin>
+	</codeGenerator>
+	<buildGenerator/>
+	<entities/>
+</project>

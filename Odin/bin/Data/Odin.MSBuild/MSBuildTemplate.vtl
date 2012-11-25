@@ -1,0 +1,105 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set($dllExtention = ".dll")
+#set($projExtention = ".csproj")
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProductVersion>8.0.50727</ProductVersion>
+		<SchemaVersion>2.0</SchemaVersion>
+		<ProjectGuid>{$information.Guid}</ProjectGuid>
+#if( $information.ProjectType.ToString() == "Web" )
+		<ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+		<OutputType>Library</OutputType>
+#else
+		<OutputType>$projectType</OutputType>
+#end
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<RootNamespace>$projectName</RootNamespace>
+		<AssemblyName>$extensionName.$projectName</AssemblyName>
+		<SignAssembly>false</SignAssembly>
+		<AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
+		<DelaySign>false</DelaySign>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+#if( $information.ProjectType.ToString() == "Web" )		
+		<OutputPath>bin/</OutputPath>		
+#else
+		<OutputPath>../$webProjectName/bin/</OutputPath>		
+#end
+		<DefineConstants>TRACE;DEBUG</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+#if( $information.ProjectType.ToString() == "Web" )		
+		<OutputPath>bin/</OutputPath>		
+#else
+		<OutputPath>../$webProjectName/bin/</OutputPath>		
+#end
+		<DefineConstants>TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+#if( $information.Assemblies.Count != 0 || $information.GacAssemblies.Count != 0 )
+	<ItemGroup>
+#foreach($assembly in $information.Assemblies)
+		<Reference Include="../$webProjectName/bin/$assembly" />
+#end
+#foreach($assemblies in $information.GacAssemblies)
+		<Reference Include="$assemblies" />
+#end
+	</ItemGroup>
+#end
+#if( $information.Files.Count != 0  )
+	<ItemGroup>
+#if( $information.Resources.Count != 0  )
+		 <Compile Include="app_globalresource\Resource.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DesignTime>True</DesignTime>
+			<DependentUpon>Resource.resx</DependentUpon>
+		</Compile>
+#end		
+#foreach( $file in $information.Files )
+		$file.ToString()
+#end
+	</ItemGroup>
+#end
+#if( $information.References.Count != 0  )
+	<ItemGroup>
+#foreach($reference in $information.References)
+		<ProjectReference Include="../$reference.Name/$reference.Name$projExtention">
+		  <Project>{$reference.Guid}</Project>
+		  <Name>$reference.Name</Name>
+		</ProjectReference>
+#end
+	</ItemGroup>
+#end
+#if( $information.Resources.Count != 0  )
+	<ItemGroup>
+		<EmbeddedResource Include="app_globalresource\Resource.resx">
+			<SubType>Designer</SubType>
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resource.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+#end
+	<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,23 @@
+:Display: Regras de Formatação
+:Summary: Resumo das Regras de Escrita do Wiki
+
+(Ver o código que gerou esta página - informação mais detalhada "aqui":http://www.flexwiki.com/default.aspx/FlexWiki/FormattingRules.html )
+
+!Título 1
+!!Título 3
+!!!Título 2
+
+*bold*
+''itálico''
+"link":http://zi-yu.com:8080/midgard/
+
+ Para colocar texto (género código) colocar um espaço antes
+
+	* 1º Elemento de uma lista
+	* 2º Elemento de uma lista
+
+	1. 1º Elemento de uma lista ordenada
+	1. 1º Elemento de uma lista ordenada
+
+||TD 1||Definição de uma tabela||
+||TD 2||TD 3||

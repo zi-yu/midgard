@@ -1,0 +1,51 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $editor = "Editor" )
+#set( $editorId = "EditorId" )
+#set( $count = "1" )
+<%@ Page Language="C#" MasterPageFile="~/Admin/adminMaster.master"  %>
+<%@ Register TagPrefix="$projectName" Assembly="$assembly" Namespace="$controls" %>
+<%@ Register TagPrefix="Admin" Assembly="$assembly" Namespace="$controlsNamespace" %>
+<script type="text/C#" runat="server">
+	protected override void OnInit( EventArgs e ) {
+		HttpContext.Current.Session["CurrentEntity"] = "$entity.ToLower()";
+		HttpContext.Current.Session["CurrentAction"] = "$action";
+	}
+</script>
+<asp:Content ContentPlaceHolderID="content" runat="server">
+	<h2>Create $obj.Name</h2>
+	
+	<asp:ValidationSummary runat="server" />
+	
+	<table>
+		<tr>
+			<th>Field</th>
+			<th>Value</th>
+		</tr>
+		<$projectName:$entity$editor runat="server" Source="New" ID="$entity$editorId$count" >
+#foreach( $field in $obj.AllFields )#if( !$field.Mult.ToString().EndsWith("ToMany") )
+		<!-- $field.Mult.ToString() -->
+		<tr>
+			<td><b>$field.PropertyName</b></td>
+			<td><$projectName:$obj.Name$field.PropertyName$editor runat="server" /></td>
+		</tr>
+#end#end
+		<tr>
+			<td></td>
+			<td><Admin:AdminUpdateButton runat="server" /></td>
+		</tr>
+		</$projectName:$entity$editor>
+	</table>
+	#set( $count = $count + 1 )
+</asp:Content>

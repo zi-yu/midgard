@@ -1,0 +1,66 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Web;
+using System.Threading;
+using System.Globalization;
+
+namespace $modulesNamespace {
+
+	/// <summary>
+    /// This is the I18N Module responsible for the internacionalization
+    /// </summary>
+    /// <remarks>
+    /// Note that this implementation is Independent from the .NET Resources Framework
+    /// </remarks>
+	public class IndependentLanguageModule : IHttpModule {
+		
+		#region IHttpModule Members
+
+        /// <summary>
+        /// Inits the Module
+        /// </summary>
+        /// <param name="context">Request Context</param>
+		public void Init( HttpApplication context ) {
+			context.PreRequestHandlerExecute += new EventHandler(PreRequestHandlerExecute);
+		}
+
+        /// <summary>
+        /// Clean up resources
+        /// </summary>
+		public void Dispose() {
+
+		}
+
+		#endregion
+
+		#region Events
+
+        /// <summary>
+        /// Responsible to get the current request's language
+        /// </summary>
+        /// <param name="sender">Event Originator</param>
+        /// <param name="e">Arguments</param>
+		private void PreRequestHandlerExecute( object sender, EventArgs e ) 
+        {
+			string option = HttpContext.Current.Request.UserLanguages[0];
+			Thread.CurrentThread.CurrentUICulture = new CultureInfo( option );
+		}
+
+		#endregion
+	};
+	
+}

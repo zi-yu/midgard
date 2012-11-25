@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Midgard.Interop", "Interop\Midgard.Interop.csproj", "{7171A7F7-BB0E-45DC-8EA9-AC60BD2CF8FD}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{9BE56845-0219-48AB-9260-74B9C87154F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Midgard.XmlForms", "XmlForms\Midgard.XmlForms.csproj", "{8447DC45-F9FD-4FE3-A345-39BFA37589FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7171A7F7-BB0E-45DC-8EA9-AC60BD2CF8FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7171A7F7-BB0E-45DC-8EA9-AC60BD2CF8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7171A7F7-BB0E-45DC-8EA9-AC60BD2CF8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7171A7F7-BB0E-45DC-8EA9-AC60BD2CF8FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BE56845-0219-48AB-9260-74B9C87154F6}.Debug|Any CPU.ActiveCfg = Debug
+		{9BE56845-0219-48AB-9260-74B9C87154F6}.Debug|Any CPU.Build.0 = Debug
+		{9BE56845-0219-48AB-9260-74B9C87154F6}.Release|Any CPU.ActiveCfg = Release
+		{9BE56845-0219-48AB-9260-74B9C87154F6}.Release|Any CPU.Build.0 = Release
+		{8447DC45-F9FD-4FE3-A345-39BFA37589FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8447DC45-F9FD-4FE3-A345-39BFA37589FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8447DC45-F9FD-4FE3-A345-39BFA37589FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8447DC45-F9FD-4FE3-A345-39BFA37589FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

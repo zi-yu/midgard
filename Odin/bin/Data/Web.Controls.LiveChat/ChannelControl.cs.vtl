@@ -1,0 +1,187 @@
+#set( $controls = ".Controls" )
+#set( $leaveChat = ".WebServices.Chat.LeaveChat " )
+
+using System;
+using System.Web.UI;
+using System.Collections.Generic;
+using $coreMamespace;
+using $dalMamespace;
+
+namespace $namespace$controls {
+
+	public class ChannelControl : ChannelItem {
+	
+		#region Fields
+		
+		private int latestCount = 5;
+		private string name = "Test";
+		
+		#endregion Fields
+		
+		#region Properties
+		
+		public int LatestCount {
+			get { return latestCount; }
+			set { latestCount = value; }
+		}
+		
+		public string Name {
+            get { return name; }
+            set { name = value; }
+        }
+		
+		#endregion Properties
+		
+		#region ChannelItem Implementation
+
+        protected override Channel GetSourceObject()
+        {
+            return GetChannelForName(Name);
+        }
+
+        #endregion ChannelItem Implementation
+		
+		#region Control Rendering & Events
+
+        protected override void OnInit(EventArgs args)
+        {
+            base.OnInit(args);
+            Page.Items["CurrentChannelName"] = Name;
+        }
+		
+		protected override void Render( HtmlTextWriter writer )
+		{
+			FetchCurrent();
+			writer.Write("<div id='chat'>");
+			WriteParticipants(writer);
+			WriteEntries(writer);
+			writer.Write("</div>");
+            WriteJavascript(writer);
+		}
+		
+        private void WriteJavascript(HtmlTextWriter writer)
+        {
+            writer.Write("<script type=\"text/javascript\">");
+            writer.Write("var channel='{0}';", Name);
+            int principal = -1;
+            if( Context.User is Principal ) {
+                principal = ((Principal)Context.User).Id;
+            }
+            writer.Write("var principal={0};", principal);
+            writer.Write("window.onunload=function(){$prefix$leaveChat(principal, channel);}");
+            writer.WriteLine("</script>");
+        }
+
+        private void WriteParticipants(HtmlTextWriter writer)
+        {
+            Principal principal = Context.User as Principal;
+            bool add = true;
+
+            writer.Write("<ul id='participants'>");
+
+            List<ChannelParticipant> list = GetParticipants(Current);
+            foreach (ChannelParticipant participant in list) {
+                if( participant.Principal == null  ){
+                    continue;
+                }
+                writer.Write("<ul>{0}</ul>", participant.Principal.Name);
+                if (principal != null && participant.Principal != null && participant.Principal.Id == principal.Id) {
+                    add = false;
+                }
+            }
+
+            if (add) {
+                string name = null;
+                if (principal != null) {
+                    name = principal.Name;
+                    AddPrincipalToParticipants(principal);
+                } else {
+                    name = "Guest";
+                }
+                writer.Write("<ul>{0}</ul>", name);
+            }
+            writer.Write("</ul>");
+        }
+		
+		private void WriteEntries( HtmlTextWriter writer )
+		{
+            writer.Write("<dl id='entries'>");
+            List<ChannelEntry> list = GetLatest();
+            list.Reverse();
+			foreach( ChannelEntry entry in list ) {
+				string name = "Guest";
+                if (entry.Principal != null) {
+                    name = entry.Principal.Name;
+                }
+				writer.Write("<dt>{0}</dt>", name);
+				writer.Write("<dd>{0}</dd>", entry.Text);
+			}
+			writer.Write("</dl>");
+		}
+		
+		#endregion Control Rendering
+		
+		#region DataAccess
+		
+		private List<ChannelParticipant> GetParticipants(Channel current)
+        {
+            using (ChannelParticipantPersistance persistance = ChannelParticipantPersistance.GetSession()) {
+                return persistance.TypedQuery("from ChannelParticipant p where p.Channel.Id={0}", current.Id);
+            }
+        }
+		
+		private List<ChannelEntry> GetLatest()
+		{
+			using( ChannelEntryPersistance persistance = ChannelEntryPersistance.GetSession() ) {
+				List<ChannelEntry> entries = persistance.TypedQuery(0, LatestCount, "from ChannelEntry e where e.Channel.Id = {0} order by e.Id desc", 
+						Current.Id
+					);
+				return entries;
+			}
+		}
+		
+		private void AddPrincipalToParticipants( Principal principal )
+		{
+			using( ChannelPersistance persistance = ChannelPersistance.GetSession() ) {
+				ChannelParticipantPersistance participantPersistance = ChannelParticipantPersistance.AttachSession(persistance);
+				
+				persistance.StartTransaction();
+				
+				ChannelParticipant toadd = participantPersistance.Create();
+				toadd.Principal = principal;
+				toadd.Channel = Current;
+				
+				if (Current.Participants == null) {
+                    Current.Participants = new System.Collections.ArrayList();
+                }
+				
+				Current.Participants.Add(toadd);
+				
+				participantPersistance.Update(toadd);
+				persistance.Update(Current);
+				
+				persistance.CommitTransaction();
+			}
+		}
+		
+		private Channel GetChannelForName(string name)
+        {
+            using (ChannelPersistance persistance = ChannelPersistance.GetSession()) {
+                List<Channel> list = persistance.SelectByName(name);
+                if (list.Count > 0) {
+                    return list[0];
+                }
+                Channel channel = persistance.Create();
+                channel.Name = name;
+                persistance.Update(channel);
+                persistance.Flush();
+
+                return channel;
+            }
+        }
+		
+		#endregion DataAccess
+	
+	};
+
+}

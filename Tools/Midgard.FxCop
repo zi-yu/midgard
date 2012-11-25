@@ -1,0 +1,962 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.35" Name="Midgard">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">http://www.gotdotnet.com/team/fxcop//xsl/1.35/FxCopReport.xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>10</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>1</RuleExceptionsThreshold>
+  <Spelling Locale="en-us" />
+  <VersionAware>False</VersionAware>
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+  <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
+  <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
+ </ProjectOptions>
+ <Targets>
+  <Target Name="$(ProjectDir)/../Deploy/Loki.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Deploy/Odin.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Deploy/Plugins/BuildGenerator/BuildUtilities.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Deploy/Plugins/CodeGenerator/NHibernateUtilities.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Deploy/Plugins/CodeGenerator/OdinUtilities.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Deploy/Plugins/CodeGenerator/WebUtilities.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Deploy/Plugins/Loader/XmiLoader.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="1.35">
+  <Targets>
+   <Target Name="$(ProjectDir)/../Deploy/Loki.dll">
+    <Modules>
+     <Module Name="loki.dll">
+      <Namespaces>
+       <Namespace Name="Loki.DataRepresentation">
+        <Types>
+         <Type Name="Entity">
+          <Members>
+           <Member Name="Id">
+            <Accessors>
+             <Accessor Name="get_Id():System.String">
+              <Messages>
+               <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2007-02-15 19:10:39Z">
+                <Issue Name="IsNullOrEmpty">
+                 <Item>op_Equality</Item>
+                 <Item>String.Empty</Item>
+                 <Item>Entity.get_Id():String</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="EntityClass">
+          <Members>
+           <Member Name="CheckParent(Loki.DataRepresentation.EntityClass):System.Void">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>EntityClass.CheckParent(EntityClass):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="EntityField">
+          <Members>
+           <Member Name="FieldModifier">
+            <Accessors>
+             <Accessor Name="set_FieldModifier(System.String):System.Void">
+              <Messages>
+               <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2007-02-15 19:10:39Z">
+                <Issue Name="IsNullOrEmpty">
+                 <Item>op_Inequality</Item>
+                 <Item>String.Empty</Item>
+                 <Item>EntityField.set_FieldModifier(String):Void</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="Id">
+            <Accessors>
+             <Accessor Name="get_Id():System.String">
+              <Messages>
+               <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2007-02-15 19:10:39Z">
+                <Issue Name="IsNullOrEmpty">
+                 <Item>op_Equality</Item>
+                 <Item>String.Empty</Item>
+                 <Item>EntityField.get_Id():String</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="EntityMethod">
+          <Members>
+           <Member Name="ResolveConflits(System.Xml.XmlNode):System.Void">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="Breaking">
+              <Issue>
+               <Item>EntityMethod.ResolveConflits(XmlNode):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Loki.DataRepresentation.Loaders">
+        <Types>
+         <Type Name="ConfigLoader">
+          <Members>
+           <Member Name="GetAttribute(System.Xml.XmlNode,System.String):System.String">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>ConfigLoader.GetAttribute(XmlNode, String):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetPlugins(System.Xml.XmlNode):System.Collections.Generic.Dictionary`2&lt;System.String,System.String&gt;">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>ConfigLoader.GetPlugins(XmlNode):Dictionary`2&lt;System.String,System.String&gt;</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ToBool(System.String):System.Boolean">
+            <Messages>
+             <Message Id="value" TypeName="AvoidUnnecessaryStringCreation" Category="Microsoft.Performance" CheckId="CA1807" Created="2007-02-15 19:10:39Z">
+              <Issue Name="UseStringCompareParameter">
+               <Item>ConfigLoader.ToBool(String):Boolean</Item>
+               <Item>String.op_Equality(String, String):Boolean</Item>
+               <Item>value</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>ConfigLoader.ToBool(String):Boolean</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Loki.Generic">
+        <Types>
+         <Type Name="BuildAggregator">
+          <Members>
+           <Member Name="project">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>BuildAggregator.project</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Log">
+          <Members>
+           <Member Name=".cctor()">
+            <Messages>
+             <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>Loki.Generic.Log</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Project">
+          <Members>
+           <Member Name="GetAttribute(System.Xml.XmlDocument,System.String):System.String">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>Project.GetAttribute(XmlDocument, String):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Loki.Generic.Factories">
+        <Types>
+         <Type Name="RelationDependencyFactory">
+          <Members>
+           <Member Name="create(Loki.DataRepresentation.EntityClass,Loki.DataRepresentation.EntityClass,Loki.DataRepresentation.Model):Loki.Generic.RelationDependency">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>RelationDependencyFactory.create(EntityClass, EntityClass, Model):RelationDependency</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetEntityIndex(System.String,Loki.DataRepresentation.Model):System.Int32">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>RelationDependencyFactory.GetEntityIndex(String, Model):Int32</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Odin.Core">
+        <Types>
+         <Type Name="PluginManager`1">
+          <Members>
+           <Member Name="LoadAssemblies(System.String):System.Reflection.Assembly[]">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>PluginManager`1.LoadAssemblies(String):Assembly[]</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Registered">
+            <Messages>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>PluginManager`1.Registered:T[]</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Deploy/Odin.dll">
+    <Modules>
+     <Module Name="odin.dll">
+      <Namespaces>
+       <Namespace Name="Odin.Core">
+        <Types>
+         <Type Name="Generator">
+          <Members>
+           <Member Name="GeneratePlugin(Loki.Generic.ProjectPluginParameters,Odin.Core.PluginManager`1&lt;T&gt;,System.Collections.Generic.List`1&lt;T&gt;):System.Void">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>Generator.GeneratePlugin(ProjectPluginParameters, PluginManager`1&lt;T&gt;, List`1&lt;T&gt;):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetLoaderPlugins():Loki.Interfaces.IPlugin[]">
+            <Messages>
+             <Message Id="Plugins" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Member">
+               <Item>Plugins</Item>
+               <Item>Generator.GetLoaderPlugins():IPlugin[]</Item>
+              </Issue>
+              <Notes>
+               <User Name="PRE">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetPlugins():Loki.Interfaces.IPlugin[]">
+            <Messages>
+             <Message Id="Plugins" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Member">
+               <Item>Plugins</Item>
+               <Item>Generator.GetPlugins():IPlugin[]</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Deploy/Plugins/CodeGenerator/NHibernateUtilities.dll">
+    <Modules>
+     <Module Name="nhibernateutilities.dll">
+      <Namespaces>
+       <Namespace Name="Odin.Plugin">
+        <Types>
+         <Type Name="GenerateConfig">
+          <Members>
+           <Member Name=".cctor()">
+            <Messages>
+             <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>Odin.Plugin.GenerateConfig</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ModelSchema">
+          <Members>
+           <Member Name=".cctor()">
+            <Messages>
+             <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>Odin.Plugin.ModelSchema</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="CheckInverse(System.Object,System.Object):System.String">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="Breaking">
+              <Issue>
+               <Item>ModelSchema.CheckInverse(Object, Object):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Generate(System.Object):System.String">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="Breaking">
+              <Issue>
+               <Item>ModelSchema.Generate(Object):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Get(System.Object):System.String">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="Breaking">
+              <Issue>
+               <Item>ModelSchema.Get(Object):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetLength(System.Object):System.String">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="Breaking">
+              <Issue>
+               <Item>ModelSchema.GetLength(Object):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetRootName(System.Object):System.String">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="Breaking">
+              <Issue>
+               <Item>ModelSchema.GetRootName(Object):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="InverseKey(System.Object,System.Object):System.String">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="Breaking">
+              <Issue>
+               <Item>ModelSchema.InverseKey(Object, Object):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="PersistanceClasses">
+          <Members>
+           <Member Name="GetFields(Loki.DataRepresentation.EntityClass):System.Collections.Generic.List`1&lt;Loki.DataRepresentation.EntityField&gt;">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>PersistanceClasses.GetFields(EntityClass):List`1&lt;Loki.DataRepresentation.EntityField&gt;</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Deploy/Plugins/CodeGenerator/OdinUtilities.dll">
+    <Modules>
+     <Module Name="odinutilities.dll">
+      <Namespaces>
+       <Namespace Name="Odin.Plugin">
+        <Types>
+         <Type Name="GenerateBase">
+          <Members>
+           <Member Name="Generate():System.Void">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Local">
+               <Item>entity</Item>
+               <Item>Loki.DataRepresentation.EntityClass</Item>
+               <Item>GenerateBase.Generate():Void</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Local">
+               <Item>entity</Item>
+               <Item>Loki.DataRepresentation.EntityClass</Item>
+               <Item>GenerateBase.Generate():Void</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="GenerateBaseTests">
+          <Members>
+           <Member Name="Generate():System.Void">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Local">
+               <Item>entity</Item>
+               <Item>Loki.DataRepresentation.EntityClass</Item>
+               <Item>GenerateBaseTests.Generate():Void</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Deploy/Plugins/CodeGenerator/WebUtilities.dll">
+    <Modules>
+     <Module Name="webutilities.dll">
+      <Namespaces>
+       <Namespace Name="Odin.Plugin">
+        <Types>
+         <Type Name="Admin">
+          <Members>
+           <Member Name="GenerateActionCsFile(System.Collections.Generic.Dictionary`2&lt;System.String,System.Object&gt;,System.String,System.String):System.Void">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>Admin.GenerateActionCsFile(Dictionary`2&lt;System.String,System.Object&gt;, String, String):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetEntities():System.Collections.Generic.List`1&lt;Loki.DataRepresentation.EntityClass&gt;">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Local">
+               <Item>e</Item>
+               <Item>Loki.DataRepresentation.EntityClass</Item>
+               <Item>Admin.GetEntities():List`1&lt;Loki.DataRepresentation.EntityClass&gt;</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Authentication">
+          <Members>
+           <Member Name="GenerateSendmail():System.Void">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>Authentication.GenerateSendmail():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Controls">
+          <Members>
+           <Member Name="GenerateEntityFieldControlDesigner(Loki.DataRepresentation.Entity,Loki.DataRepresentation.EntityField):System.Void">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>Controls.GenerateEntityFieldControlDesigner(Entity, EntityField):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GenerateEntityFieldEditorDesigner(Loki.DataRepresentation.Entity,Loki.DataRepresentation.EntityField):System.Void">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>Controls.GenerateEntityFieldEditorDesigner(Entity, EntityField):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GenerateEntityJson(Loki.DataRepresentation.Entity):System.Void">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>Controls.GenerateEntityJson(Entity):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GenerateEntityXml(Loki.DataRepresentation.Entity):System.Void">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>Controls.GenerateEntityXml(Entity):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="I18NIndependent">
+          <Members>
+           <Member Name="GetListCSV(System.Collections.Generic.List`1&lt;System.String&gt;):System.String">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>I18NIndependent.GetListCSV(List`1&lt;System.String&gt;):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="LiveChat">
+          <Members>
+           <Member Name="BuildChannelEntryConnection(Loki.DataRepresentation.EntityClass,Loki.DataRepresentation.EntityClass):System.Void">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>LiveChat.BuildChannelEntryConnection(EntityClass, EntityClass):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="BuildChannelParticipantConnection(Loki.DataRepresentation.EntityClass,Loki.DataRepresentation.EntityClass):System.Void">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>LiveChat.BuildChannelParticipantConnection(EntityClass, EntityClass):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Providers">
+          <Members>
+           <Member Name="GenerateRoleProvider(System.Collections.Generic.Dictionary`2&lt;System.String,System.Object&gt;):System.Void">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>Providers.GenerateRoleProvider(Dictionary`2&lt;System.String,System.Object&gt;):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RequestLogger">
+          <Members>
+           <Member Name="CreateLogger():Loki.DataRepresentation.EntityClass">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>RequestLogger.CreateLogger():EntityClass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="SetupConnection(Loki.DataRepresentation.EntityClass,Loki.DataRepresentation.EntityClass):System.Void">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>RequestLogger.SetupConnection(EntityClass, EntityClass):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="WebUtilities">
+        <Types>
+         <Type Name="Dependencies">
+          <Members>
+           <Member Name="GetDependencies():System.Collections.Generic.IList`1&lt;System.String&gt;">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>Dependencies.GetDependencies():IList`1&lt;System.String&gt;</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="HasDependency(System.String):System.Boolean">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>Dependencies.HasDependency(String):Boolean</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ResourceRegister">
+          <Members>
+           <Member Name=".cctor()">
+            <Messages>
+             <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>WebUtilities.ResourceRegister</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Deploy/Plugins/Loader/XmiLoader.dll">
+    <Modules>
+     <Module Name="xmiloader.dll">
+      <Namespaces>
+       <Namespace Name="Loader.Xmi">
+        <Types>
+         <Type Name="Translator">
+          <Messages>
+           <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Created="2007-02-15 19:10:39Z">
+            <Issue>
+             <Item>Loader.Xmi.Translator</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".cctor()">
+            <Messages>
+             <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Created="2007-02-15 19:10:39Z">
+              <Issue>
+               <Item>Loader.Xmi.Translator</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="XmiLoader">
+          <Members>
+           <Member Name="AddIds():System.Void">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Local">
+               <Item>entity</Item>
+               <Item>Loki.DataRepresentation.EntityClass</Item>
+               <Item>XmiLoader.AddIds():Void</Item>
+               <Item>isint</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="CreateEntityField(System.Xml.XmlNode):Loki.DataRepresentation.EntityField">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>XmiLoader.CreateEntityField(XmlNode):EntityField</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="CreateEntityInterface(System.Xml.XmlNode):Loki.DataRepresentation.EntityInterface">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>XmiLoader.CreateEntityInterface(XmlNode):EntityInterface</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="CreateEntityMethod(System.Xml.XmlNode):Loki.DataRepresentation.EntityMethod">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>XmiLoader.CreateEntityMethod(XmlNode):EntityMethod</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="CreateEntityParameter(System.Xml.XmlNode):Loki.DataRepresentation.EntityParameter">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>XmiLoader.CreateEntityParameter(XmlNode):EntityParameter</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetNodeName(System.Xml.XmlNode):System.String">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>XmiLoader.GetNodeName(XmlNode):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="IsAttributeValid(System.Xml.XmlAttribute):System.Boolean">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>XmiLoader.IsAttributeValid(XmlAttribute):Boolean</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="LowerValue(Loki.DataRepresentation.IEntity,System.Xml.XmlNode):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Parameter">
+               <Item>entity</Item>
+               <Item>Loki.DataRepresentation.IEntityAttribute</Item>
+               <Item>XmiLoader.LowerValue(IEntity, XmlNode):Void</Item>
+               <Item>isint</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ParseBool(System.Xml.XmlAttribute):System.Boolean">
+            <Messages>
+             <Message Id="value" TypeName="AvoidUnnecessaryStringCreation" Category="Microsoft.Performance" CheckId="CA1807" Created="2007-02-15 19:10:39Z">
+              <Issue Name="UseStringCompareLocal">
+               <Item>XmiLoader.ParseBool(XmlAttribute):Boolean</Item>
+               <Item>String.op_Equality(String, String):Boolean</Item>
+               <Item>value</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ParseInterfaceRealization(Loki.DataRepresentation.IEntity,System.Xml.XmlNode):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Parameter">
+               <Item>entity</Item>
+               <Item>Loki.DataRepresentation.Entity</Item>
+               <Item>XmiLoader.ParseInterfaceRealization(IEntity, XmlNode):Void</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ParseOperation(Loki.DataRepresentation.IEntity,System.Xml.XmlNode):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Parameter">
+               <Item>entity</Item>
+               <Item>Loki.DataRepresentation.Entity</Item>
+               <Item>XmiLoader.ParseOperation(IEntity, XmlNode):Void</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ParseParameter(Loki.DataRepresentation.IEntity,System.Xml.XmlNode):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Parameter">
+               <Item>entity</Item>
+               <Item>Loki.DataRepresentation.EntityMethod</Item>
+               <Item>XmiLoader.ParseParameter(IEntity, XmlNode):Void</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>entity</Item>
+               <Item>Loki.DataRepresentation.EntityMethod</Item>
+               <Item>XmiLoader.ParseParameter(IEntity, XmlNode):Void</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ParsePrimitiveType(Loki.DataRepresentation.IEntity,System.Xml.XmlNode):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Parameter">
+               <Item>entity</Item>
+               <Item>Loki.DataRepresentation.EntityField</Item>
+               <Item>XmiLoader.ParsePrimitiveType(IEntity, XmlNode):Void</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>entity</Item>
+               <Item>Loki.DataRepresentation.IEntityAttribute</Item>
+               <Item>XmiLoader.ParsePrimitiveType(IEntity, XmlNode):Void</Item>
+               <Item>isint</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ParseProperty(Loki.DataRepresentation.IEntity,System.Xml.XmlNode):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Parameter">
+               <Item>entity</Item>
+               <Item>Loki.DataRepresentation.EntityClass</Item>
+               <Item>XmiLoader.ParseProperty(IEntity, XmlNode):Void</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ResolveReference(Loki.DataRepresentation.IEntityAttribute):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Parameter">
+               <Item>field</Item>
+               <Item>Loki.DataRepresentation.EntityField</Item>
+               <Item>XmiLoader.ResolveReference(IEntityAttribute):Void</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ResolveReferenceMultiplicity(Loki.DataRepresentation.EntityField):System.Void">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2007-02-15 19:10:39Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>XmiLoader.ResolveReferenceMultiplicity(EntityField):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ResolveReferenceMultiplicity(Loki.DataRepresentation.IEntityAttribute):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Parameter">
+               <Item>field</Item>
+               <Item>Loki.DataRepresentation.EntityField</Item>
+               <Item>XmiLoader.ResolveReferenceMultiplicity(IEntityAttribute):Void</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="UpperValue(Loki.DataRepresentation.IEntity,System.Xml.XmlNode):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2007-02-15 19:10:39Z">
+              <Issue Name="Parameter">
+               <Item>entity</Item>
+               <Item>Loki.DataRepresentation.IEntityAttribute</Item>
+               <Item>XmiLoader.UpperValue(IEntity, XmlNode):Void</Item>
+               <Item>isint</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Notes>
+   <User Name="PRE">
+    <Note Id="0" Modified="2007-02-15 19:12:19Z">Who cares...</Note>
+   </User>
+  </Notes>
+  <Rules>
+   <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+    <Resolution Name="Default">'{0}' appears to have no upstream public or protected callers.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812">
+    <Resolution Name="Default">'{0}' is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUnnecessaryStringCreation" Category="Microsoft.Performance" CheckId="CA1807">
+    <Resolution Name="UseStringCompareLocal">{0} calls {1} after converting '{2}', a local, to upper or lowercase. If possible, eliminate the string creation and call the overload of String.Compare that performs a case-insensitive comparison.</Resolution>
+    <Resolution Name="UseStringCompareParameter">{0} calls {1} after converting '{2}', a parameter, to upper or lowercase. If possible, eliminate the string creation and call the overload of String.Compare that performs a case-insensitive comparison.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+    <Resolution Name="Default">It appears that field '{0}' is never used or is only ever assigned to. Use this field or remove it.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800">
+    <Resolution Name="Local">'{0}', a local, is cast to type '{1}' multiple times in method {2}. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant {3} instruction.</Resolution>
+    <Resolution Name="Parameter">'{0}', a parameter, is cast to type '{1}' multiple times in method {2}. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant {3} instruction.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" />
+   <Rule TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810">
+    <Resolution Name="Default">Initialize all static fields in {0} when those fields are declared and remove the explicit static constructor.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+    <Resolution Name="Default">The 'this' parameter (or 'Me' in VB) of {0} is never used. Mark the member as static (or Shared in VB) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   </Rule>
+   <Rule TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819">
+    <Resolution Name="Default">Change {0} to return a collection or make it a method.</Resolution>
+   </Rule>
+   <Rule TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820">
+    <Resolution Name="IsNullOrEmpty">Replace the call to String.{0}({1}) in '{2}' with a call to String.IsNullOrEmpty.</Resolution>
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

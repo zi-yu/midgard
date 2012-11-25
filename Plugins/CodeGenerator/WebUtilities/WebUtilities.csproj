@@ -1,0 +1,103 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{037C6AA2-8420-4FAF-87ED-CB13007CAA14}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebUtilities</RootNamespace>
+    <AssemblyName>WebUtilities</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DesignPatterns, Version=1.1.0.0, Culture=neutral, PublicKeyToken=09352869ad1dca42">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Tools\General\DesignPatterns.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authentication.cs" />
+    <Compile Include="AuthenticationFactory.cs" />
+    <Compile Include="Controls.cs" />
+    <Compile Include="ControlsFactory.cs" />
+    <Compile Include="Admin.cs" />
+    <Compile Include="AdminFactory.cs" />
+    <Compile Include="Atlas.cs" />
+    <Compile Include="AtlasFactory.cs" />
+    <Compile Include="Xml2aspx.cs" />
+    <Compile Include="Xml2aspxFactory.cs" />
+    <Compile Include="I18NIndependent.cs" />
+    <Compile Include="I18NIndependentFactory.cs" />
+    <Compile Include="HttpCompression.cs" />
+    <Compile Include="HttpCompressionFactory.cs" />
+    <Compile Include="LiveChat.cs" />
+    <Compile Include="LiveChatFactory.cs" />
+    <Compile Include="I18N.cs" />
+    <Compile Include="I18NFactory.cs" />
+    <Compile Include="RequestLogger.cs" />
+    <Compile Include="RequestLoggerFactory.cs" />
+    <Compile Include="QuoteOfTheDay.cs" />
+    <Compile Include="QuoteOfTheDayFactory.cs" />
+    <Compile Include="ResourceRegister.cs" />
+    <Compile Include="XsltControl.cs" />
+    <Compile Include="XsltControlFactory.cs" />
+    <Compile Include="WebConfig.cs" />
+    <Compile Include="WebConfigFactory.cs" />
+    <Compile Include="Providers.cs" />
+    <Compile Include="ProvidersFactory.cs" />
+    <Compile Include="Default.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DefaultFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dependencies.cs" />
+    <Compile Include="GlobalAsax.cs" />
+    <Compile Include="GlobalAsaxFactory.cs" />
+    <Compile Include="ExceptionLogger.cs" />
+    <Compile Include="ExceptionLoggerFactory.cs" />
+    <Compile Include="WebPluginBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Loki\Loki.csproj">
+      <Project>{541EC53F-37BD-4D1B-9154-38B5D8F9A84F}</Project>
+      <Name>Loki</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

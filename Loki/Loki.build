@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<project name="Loki" default="build-all" basedir=".">
+
+	<description>Midgard Core</description>
+	<property name="debug" value="true" unless="${property::exists('debug')}"/>
+	<property name="CLI" value="${framework::get-target-framework()}" />
+
+	<property name="version" value="1.0" unless="${property::exists('version')}" />
+
+	<!-- Compile Macros -->
+	<property name="PrettyConsole" value="PRETTY_CONSOLE_LOG" />
+	<property name="PrettyConsole" value="NO_PRETTY_CONSOLE_LOG" if="${string::contains( framework::get-target-framework(), 'mono')}" />
+	<property name="Platform" value="MSNET" />
+	<property name="Platform" value="MONO" if="${string::contains( framework::get-target-framework(), 'mono')}" />
+
+	<target name="clean" description="remove all generated files">
+		<delete>
+			<fileset>
+				<include name="*~" />
+				<include name="bin/*.dll" />
+				<include name="bin/*.exe" />
+				<include name="bin/*.pdb" />
+				<include name="bin/*.mdb" />
+				<include name="bin/*.xml" />
+				<include name="bin/*~" />
+				<include name="bin/.*" />
+			</fileset>
+		</delete>
+  	</target>
+
+  	<!-- compila o projecto -->
+	<target name="build-all" description="compiles Loki.dll">
+
+		<csc target="library" output="bin/Loki.dll"
+			debug="${debug}" doc="bin/Loki.xml"
+			optimize="true"
+			define="NANT,${PrettyConsole},${Platform}">
+
+			<nowarn>
+	            <!-- do not report warnings for missing XML comments -->
+				<warning number="1591" />
+				<warning number="1570" />
+				<warning number="1572" />
+				<warning number="1573" />
+				<warning number="1699" if="${platform::is-unix()}" />
+				<warning number="0649" />
+				<warning number="0169" />
+				<warning number="0414" if="${platform::is-unix()}"/>
+			</nowarn>
+
+			<sources>
+				<include name="Src/**/*.cs" />
+			</sources>
+
+			<references>
+				<include name="bin/DesignPatterns.dll" />
+				<include name="bin/log4net.dll" />
+				<include name="bin/NVelocity.dll" />
+				<include name="bin/Commons.dll" />
+				<include name="System.Xml.dll" />
+				<include name="System.Data.dll" />
+			</references>
+		</csc>
+		
+        <copy todir="../Odin/bin/">
+            <fileset basedir="bin">
+                <include name="*.dll" />
+            </fileset>
+        </copy>
+
+	    <echo message="Loki compiled successfully!" />
+		<echo message="" />
+		<echo message="Debug Build     : ${debug}" />
+		<echo message="Compiling With  : NANT" />
+		<echo message="                : ${PrettyConsole}" />
+		<echo message="                : ${Platform}" />
+		<echo message="" />
+		<echo message="OS              : ${platform::get-name()}" />
+		<echo message="Target Platform : ${framework::get-target-framework()}" />
+  	</target>
+
+</project>

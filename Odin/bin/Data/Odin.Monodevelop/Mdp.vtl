@@ -1,0 +1,63 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set($dllExtention = ".dll")
+#set($projExtention = ".mdp")
+<Project name="$projectName" fileversion="2.0" language="C#" clr-version="Net_2_0" ctype="DotNetProject">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="DotNetProjectConfiguration">
+      <Output directory="./bin/" assembly="$projectName" />
+#if( $projectType == "Web" )
+      <Build debugmode="True" target="Library" />
+#else
+      <Build debugmode="True" target="$projectType" />
+#end
+      <Execution runwithwarnings="True" consolepause="True" runtime="MsNet" clr-version="Net_2_0" />
+      <CodeGeneration compiler="Csc" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" generatexmldocumentation="False" ctype="CSharpCompilerParameters" />
+    </Configuration>
+    <Configuration name="Release" ctype="DotNetProjectConfiguration">
+      <Output directory="./bin/" assembly="$projectName" />
+#if( $projectType == "Web" )
+      <Build debugmode="True" target="Library" />
+#else
+      <Build debugmode="True" target="$projectType" />
+#end
+      <Execution runwithwarnings="True" consolepause="True" runtime="MsNet" clr-version="Net_2_0" />
+      <CodeGeneration compiler="Csc" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" generatexmldocumentation="False" ctype="CSharpCompilerParameters" />
+    </Configuration>
+  </Configurations>
+  <DeploymentInformation strategy="File">
+    <excludeFiles />
+  </DeploymentInformation>
+  <Contents>
+#foreach( $file in $information.Files )
+#if($file.Type.ToString()=="Compile")
+#set( $action = "Compile" )
+#else
+#set( $action = "Nothing" )
+#end
+    <File name="$relative.ToProjectComponent($file)" subtype="Code" buildaction="$action" />
+#end
+  </Contents>
+  <References>
+#foreach($assembly in $information.GacAssemblies)
+	<ProjectReference type="Gac" localcopy="True" refto="$assembly, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+#end
+#foreach($assembly in $information.Assemblies)
+	<ProjectReference type="Assembly" localcopy="True" refto="../WebUserInterface/bin/$assembly" />
+#end
+#foreach($reference in $information.References)
+	<ProjectReference type="Project" localcopy="True" refto="$reference.Name" />
+#end
+  </References>
+</Project>

@@ -1,0 +1,71 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
+using System.Web.UI;
+using System.Web;
+
+namespace $namespace {
+	public class TopMenu : Control {
+
+		#region Fields
+		
+		private string[] array = { "Home", "Create", "Manage", "Search" }; 
+
+		#endregion
+
+		#region Private
+
+		private string GetUrl( string s ) {
+			string entity = HttpContext.Current.Session["CurrentEntity"].ToString();
+			return string.Format("{0}{1}.aspx", entity, s );
+		}
+
+		private void WriteMenu( HtmlTextWriter writer, object entity ) {
+			if( entity != null && entity.ToString() != string.Empty ) {
+				object action = HttpContext.Current.Session["CurrentAction"];
+				if( action != null && action.ToString() != string.Empty ) {
+					string a = action.ToString();
+					foreach( string s in array ) {
+						if( action != null && s == a ) {
+							writer.WriteLine( "<li><a class='active' href='{0}'>{1}</a></li>", GetUrl( s ), s );
+						} else {
+							writer.WriteLine( "<li><a href='{0}'>{1}</a></li>", GetUrl( s ), s );
+						}
+					}
+				}
+			}
+		} 
+
+		#endregion
+
+		#region Overriden Methods
+		
+		protected override void Render( HtmlTextWriter writer ) {
+			object entity = HttpContext.Current.Session["CurrentEntity"];
+			writer.WriteLine( "<div id='nav'>" );
+			writer.WriteLine( "<ul>" );
+
+			WriteMenu( writer, entity );
+
+			writer.WriteLine( "<li class='time'>Server Time: {0}</li>", DateTime.Now.ToString( "HH:mm" ) );
+			writer.WriteLine( "</ul>" );
+			writer.WriteLine( "</div>" );
+			base.Render( writer );
+		}
+
+		#endregion
+	}
+}

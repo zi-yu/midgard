@@ -1,0 +1,112 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Web;
+using System.Threading;
+using System.Resources;
+using System.Globalization;
+using System.Reflection;
+
+namespace $namespace {
+		
+	/// <summary>
+    /// This class agregates localized resources for a specific culture
+    /// </summary>
+	public class LanguageResources {
+		
+        #region Public Members
+
+        /// <summary>
+        /// Get's this LanguageResources name
+        /// </summary>
+        public string LanguageName {
+            get { return language; }
+        }
+
+        /// <summary>
+        /// Gets the culture associated with this LanguageResources
+        /// </summary>
+		public CultureInfo Culture {
+            get { return culture; }
+            set { culture = value; }
+        }
+		
+        /// <summary>
+        /// Get's a localized string via a specified key
+        /// </summary>
+        /// <param name="key">The key to search</param>
+        /// <returns>The localized resource</returns>
+		public string Get( string key )
+        {
+            try {
+                return resources[key];
+            } catch( Exception ex ) {
+                ExceptionLogger.Log(new Exception("Error Getting localization for '"+key+"'",ex));
+                return string.Format("@({0})", key);
+            }
+        }
+
+        /// <summary>
+        /// Registers a new key/resource pair for this Culture
+        /// </summary>
+        /// <param name="key">The resource's Key</param>
+        /// <param name="resource">The Localized resource</param>
+        public virtual void Register( string key, string resource )
+        {
+            resources[key] = resource;
+        }
+
+        #endregion Public Members
+
+        #region Instance Fields
+
+        private DateTime date = DateTime.Now;
+        private string language = null;
+        private CultureInfo culture = null;
+        private Dictionary<string,string> resources = new Dictionary<string,string>();
+		
+		#endregion Instance Fields
+
+        #region Ctor & Utils
+
+        /// <summary>
+        /// LanguageResources Contructor
+        /// </summary>
+        /// <param name="lang">Associated language</param>
+        public LanguageResources(string lang)
+        {
+            language = lang;
+            try {
+                culture = CultureInfo.GetCultureInfo(lang);
+            } catch (Exception ex) {
+                ExceptionLogger.Log(ex);
+                culture = CultureInfo.InvariantCulture;
+            }
+        }
+
+        /// <summary>
+        /// Get's this Object's Description
+        /// </summary>
+        /// <returns>String</returns>
+        public override string ToString()
+        {
+            return string.Format("{{Culture:{0} Count:{1} Created:{2}}}", LanguageName, resources.Count, date);
+        }
+
+        #endregion Ctor & Utils
+
+    };
+}

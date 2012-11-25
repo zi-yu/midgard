@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<TrueFalse>
+		<facet code="true" name="true"/>
+		<facet code="false" name="false"/>
+	</TrueFalse>
+	
+	<Modulos>
+		<facet code="Cliente" name="Cliente"/>
+		<facet code="CockpitAgente" name="CockpitAgente"/>
+		<facet code="Configuracao" name="Configuracao"/>
+		<facet code="Comercializacao" name="Comercializacao"/>
+	</Modulos>
+	
+	<Metodo>
+		<facet code="GET" name="GET" />
+		<facet code="POST" name="POST" />
+	</Metodo>
+
+	<ModuloBanca>
+		<facet code="Banca1" name="Banca1" />
+		<facet code="Banca2" name="Banca2" />
+		<facet code="Banca3" name="Banca3" />
+	</ModuloBanca>
+
+	<Providers>
+		<facet code="Shark" name="Shark" />
+		<facet code="PiMC" name="PiMC" />
+	</Providers>
+
+	<TiposAccaoWizard>
+		<facet code="NEXT" name="NEXT" />
+		<facet code="PREVIOUS" name="PREVIOUS" />
+		<facet code="FINISH" name="FINISH" />
+		<facet code="END" name="END" />
+	</TiposAccaoWizard>
+
+	<Perfilagens>
+		<facet code="perfilA" name="perfilA" />
+		<facet code="perfilB" name="perfilB" />
+	</Perfilagens>
+
+	<PerfilagemPropriedades>
+		<facet code="Visible" name="Visible" />
+		<facet code="Readonly" name="Readonly" />
+		<facet code="Enabled" name="Enabled" />
+	</PerfilagemPropriedades>
+
+	<ManagedNodesTypes>
+		<facet code="visiblenodes" name="visiblenodes" />
+		<facet code="nonvisiblenodes" name="nonvisiblenodes" />
+		<facet code="enablednodes" name="enablednodes" />
+		<facet code="disablednodes" name="disablednodes" />
+		<facet code="readOnlyNodes" name="readOnlyNodes" />
+		<facet code="clearnodes" name="clearnodes" />
+		<facet code="nonmandatorynodes" name="nonmandatorynodes" />
+		<facet code="mandatorynodes" name="mandatorynodes" />
+		<facet code="oneOfWhichNodes" name="oneOfWhichNodes" />
+		<facet code="bannednodes" name="bannednodes" />
+		<facet code="allowednodes" name="allowednodes" />
+		<facet code="executeNode" name="executeNode" />
+	</ManagedNodesTypes>
+
+	<ManagedNodesOperations>
+		<facet code="LESSTHAN" name="LESSTHAN" />
+		<facet code="LESSTHANOREQUALS" name="LESSTHANOREQUALS" />
+		<facet code="GREATERTHAN" name="GREATERTHAN" />
+		<facet code="GREATERTHANOREQUALS" name="GREATERTHANOREQUALS" />
+		<facet code="EQUALS" name="EQUALS" />
+		<facet code="DIFERS" name="DIFERS" />
+		<facet code="ISCHECKED" name="ISCHECKED" />
+	</ManagedNodesOperations>
+
+	<OtherValidationsTypes>
+		<facet code="compare" name="compare" />
+	</OtherValidationsTypes>
+
+	<OtherValidationsOperators>
+		<facet code="Datatypecheck" name="Datatypecheck"/>
+		<facet code="Equal" name="Equal"/>
+		<facet code="Greaterthan" name="Greaterthan"/>
+		<facet code="Greaterthanequal" name="Greaterthanequal"/>
+		<facet code="Lessthan" name="Lessthan"/>
+		<facet code="Lessthanequal" name="Lessthanequal"/>
+		<facet code="Notequal" name="Notequal"/>
+	</OtherValidationsOperators>
+
+	<OtherValidationsDataTypes>
+		<facet code="Currency" name="Currency"/>
+		<facet code="Date" name="Date"/>
+		<facet code="Double" name="Double"/>
+		<facet code="Integer" name="Integer"/>
+		<facet code="String" name="String"/>
+	</OtherValidationsDataTypes>
+
+	<MasterPageFile>
+		<facet code="~/base/TemplatePagesV2/BasicMaster.ascx" name="BasicMaster"/>
+		<facet code="~/base/TemplatePagesV2/FakeVerticalTabsMaster.ascx" name="FakeVerticalTabsMaster"/>
+		<facet code="~/base/TemplatePagesV2/NoErrorsMaster.ascx" name="NoErrorsMaster"/>
+	</MasterPageFile>
+
+	<TimeOutTypes>
+		<facet code="ASPX" name="ASPX"/>
+		<facet code="CONSULTA" name="CONSULTA"/>
+		<facet code="MODIFICA" name="MODIFICA"/>
+	</TimeOutTypes>
+
+	<TypeControles>
+		<facet code="NPTTextBox" name="NPTTextBox"/>
+		<facet code="NPTNumeroConta" name="NPTNumeroConta"/>
+		<facet code="NPTIBAN" name="NPTIBAN"/>
+		<facet code="NPTIDCB" name="NPTIDCB"/>
+		<facet code="NPTIDPN" name="NPTIDPN"/>
+		<facet code="NPTNIB" name="NPTNIB"/>
+		<facet code="NPTNumeroAdesão" name="NPTNumeroAdesão"/>
+		<facet code="NPTNúmeroCartão" name="NPTNúmeroCartão"/>
+	</TypeControles>
+
+	<TextAreaMode>
+		<facet code="SingleLine" name="SingleLine"/>
+		<facet code="MultiLine" name="MultiLine"/>
+		<facet code="Password" name="Password"/>
+	</TextAreaMode>
+
+	<ButtonAction>
+		<facet code="None" name="None"/>
+		<facet code="ConfirmAndSubmitAlways" name="ConfirmAndSubmitAlways"/>
+		<facet code="ConfirmAndSubmitOnOK" name="ConfirmAndSubmitOnOK"/>
+	</ButtonAction>
+
+	<ValueType>
+    <!-- ESInteraction.NPT.Base.V2.Types  -->
+    <facet code="IBAN" name="IBAN" />
+    <facet code="IDCB" name="IDCB" />
+    <facet code="IDPN" name="IDPN" />
+    <facet code="Monetario" name="Monetario" />
+    <facet code="NIB" name="NIB" />
+    <facet code="NIF" name="NIF" />
+    <facet code="NumeroConta" name="NumeroConta" />
+    <!-- ESInteraction.TEA.Base.Types -->
+    <facet code="Alpha" name="Alpha" />
+    <facet code="AlphaNumeric" name="AlphaNumeric" />
+    <facet code="Date" name="Date" />
+    <facet code="NullableBool" name="NullableBool" />
+    <facet code="NullableDecimal" name="NullableDecimal" />
+    <facet code="NullableInt" name="NullableInt" />
+    <facet code="NullableTime" name="NullableTime" />
+    <facet code="Numeric" name="Numeric" />
+	</ValueType>
+
+  <DataGridFormatType>
+  </DataGridFormatType>
+  
+  
+	<DescriptionType>
+	</DescriptionType>
+
+	<SelectTriggerMode>
+		<facet code="ONCLICK" name="ONCLICK"/>
+		<facet code="ONDOUBLECLICK" name="ONDOUBLECLICK"/>
+	</SelectTriggerMode>
+
+	<DataGridEditControls>
+		<facet code="NPTTextBox" name="TextBox" />
+		<facet code="NPTCheckBox" name="CheckBox" />
+		<facet code="NPTDropDownList" name="DropDownList" />
+		<facet code="NPTDatePicker" name="DatePicker" />
+	</DataGridEditControls>
+
+	
+
+	<DataGridConfigMode>
+		<facet code="Standard" name="Standard" />
+		<facet code="Advanced" name="Advanced" />
+	</DataGridConfigMode>
+
+	<SearchPersonType>
+		<facet code="Física" name="Física"/>
+		<facet code="Moral" name="Moral"/>
+		<facet code="Qualquer" name="Qualquer"/>
+	</SearchPersonType>
+
+	<SearchFormat>
+		<facet code="Pessoa" name="Pessoa"/>
+		<facet code="Contrato" name="Contrato"/>
+		<facet code="idcb" name="idcb"/>
+	</SearchFormat>
+
+	<SearchAccountsAnswerFilter>
+		<facet code="Todas" name="Todas"/>
+		<facet code="DOSuporte" name="DOSuporte"/>
+	</SearchAccountsAnswerFilter>
+
+	<SearchControl>
+		<facet code="AUTOMATICO" name="AUTOMATICO"/>
+		<facet code="MANUAL" name="MANUAL"/>
+	</SearchControl>
+
+	<LOV>
+		<facet code="TIPO_CLIENTE" name="TIPO_CLIENTE"/>
+		<facet code="ESTADO_CIVIL" name="ESTADO_CIVIL"/>
+		<facet code="SIM_NAO" name="SIM_NAO"/>
+		<facet code="TITULO_HONORIFICO" name="TITULO_HONORIFICO"/>
+		<facet code="REGIME_MATRIMONIAL" name="REGIME_MATRIMONIAL"/>
+		<facet code="NATUREZA_JURIDICA" name="NATUREZA_JURIDICA"/>
+		<facet code="SEXO" name="SEXO"/>
+		<facet code="PAIS" name="PAIS"/>
+		<facet code="SITUACAO_LABORAL" name="SITUACAO_LABORAL"/>
+		<facet code="HABILITACOES_LITERARIAS" name="HABILITACOES_LITERARIAS"/>
+		<facet code="AREA_ESCOLAR" name="AREA_ESCOLAR"/>
+		<facet code="MOEDA" name="MOEDA"/>
+		<facet code="SEGMENTO" name="SEGMENTO"/>
+		<facet code="ESTADO_CONTRATO" name="ESTADO_CONTRATO"/>
+		<facet code="EMIGRANTE" name="EMIGRANTE"/>
+		<facet code="TIPO_MOVIMENTO" name="TIPO_MOVIMENTO"/>
+		<facet code="PRODUTOS" name="PRODUTOS"/>
+		<facet code="TIPO_DOCUMENTO" name="TIPO_DOCUMENTO"/>
+		<facet code="LOCAL_EMISSAO_BI" name="LOCAL_EMISSAO_BI"/>
+		<facet code="REPARTICAO_FINANCAS" name="REPARTICAO_FINANCAS"/>
+		<facet code="DEFICIENTE" name="DEFICIENTE"/>
+		<facet code="HABITACAO_PRINCIPAL" name="HABITACAO_PRINCIPAL"/>
+		<facet code="PROFISSAO" name="PROFISSAO"/>
+		<facet code="SITUACAO_PROFISSIONAL" name="SITUACAO_PROFISSIONAL"/>
+		<facet code="MORADA_TIPO_REFERENCIA" name="MORADA_TIPO_REFERENCIA"/>
+		<facet code="CONTRATO_DOMICILIACAO" name="CONTRATO_DOMICILIACAO"/>
+		<facet code="SECTOR_INSTITUCIONAL" name="SECTOR_INSTITUCIONAL"/>
+		<facet code="GIC" name="GIC"/>
+		<facet code="TIPO_SERVICO" name="TIPO_SERVICO"/>
+		<facet code="OUTROS_BANCOS" name="OUTROS_BANCOS"/>
+		<facet code="TIPO_RELACAO" name="TIPO_RELACAO"/>
+		<facet code="GRAU_PARENTESTO" name="GRAU_PARENTESTO"/>
+		<facet code="PAI_FILHO" name="PAI_FILHO"/>
+		<facet code="FUNCOES_RELACOES" name="FUNCOES_RELACOES"/>
+		<facet code="CONSERVATORIAS" name="CONSERVATORIAS"/>
+		<facet code="TIPO_PARTICIPACAO" name="TIPO_PARTICIPACAO"/>
+		<facet code="GIC_TIPO_ORIGINADOR" name="GIC_TIPO_ORIGINADOR"/>
+		<facet code="TIPO_CLIENTE_SAC" name="TIPO_CLIENTE_SAC"/>
+		<facet code="PRODUTOS_CONTA" name="PRODUTOS_CONTA"/>
+		<facet code="CREDOR_DOMICILIACAO" name="CREDOR_DOMICILIACAO"/>
+		<facet code="CONTRATO_DOMICILIACAO" name="CONTRATO_DOMICILIACAO"/>
+		<facet code="PROFISSAO_FAMILIA" name="PROFISSAO_FAMILIA"/>
+		<facet code="CATEGORIA_PESSOA" name="CATEGORIA_PESSOA"/>
+		<facet code="NATUREZA_JURIDICA" name="NATUREZA_JURIDICA"/>
+		<facet code="TIPO_IDCB" name="TIPO_IDCB"/>
+		<facet code="DESCRICAO_BEM" name="DESCRICAO_BEM"/>
+		<facet code="TIPO_ONUS" name="TIPO_ONUS"/>
+		<facet code="ENTIDADE_AVALIADORA" name="ENTIDADE_AVALIADORA"/>
+		<facet code="PATRIMONIO_MOBILIARIO" name="PATRIMONIO_MOBILIARIO"/>
+		<facet code="PATRIMONIO_IMOBILIARIO" name="PATRIMONIO_IMOBILIARIO"/>
+		<facet code="TIPO_CONTRATO" name="TIPO_CONTRATO"/>
+		<facet code="CONDICOES_ASSINATURA" name="CONDICOES_ASSINATURA"/>
+		<facet code="CANAL_ANGARIADOR" name="CANAL_ANGARIADOR"/>
+		<facet code="MOTIVO_ABERTURA" name="MOTIVO_ABERTURA"/>
+		<facet code="PAIS_RESIDENCIA" name="PAIS_RESIDENCIA"/>
+		<facet code="ESCALOES_RENDIMENTO" name="ESCALOES_RENDIMENTO"/>
+		<facet code="DESIGNACAO_NATUREZA" name="DESIGNACAO_NATUREZA"/>
+		<facet code="OBJECTO_AUTORIZACAO" name="OBJECTO_AUTORIZACAO"/>
+		<facet code="ARRUAMENTO" name="ARRUAMENTO"/>
+		<facet code="BALCOES_REDE_COMERCIAL" name="BALCOES_REDE_COMERCIAL"/>
+		<facet code="PRODUTOS_CONTA_SERVICO" name="PRODUTOS_CONTA_SERVICO"/>
+		<facet code="BALCOES_CDTIBL_01" name="BALCOES_CDTIBL_01"/>
+		<facet code="BALCOES_CDTIBL_03" name="BALCOES_CDTIBL_03"/>
+		<facet code="BALCOES_CDTIBL_0103" name="BALCOES_CDTIBL_0103"/>
+		<facet code="TIPO_MORADA" name="TIPO_MORADA"/>
+		<facet code="BALCOES_ESTRUTURA_DONO" name="BALCOES_ESTRUTURA_DONO"/>
+		<facet code="BALCOES_ESTRUTURA_OPERACIONAL" name="BALCOES_ESTRUTURA_OPERACIONAL"/>
+		<facet code="BALCOES_ESTRUTURA_PROXIMIDADE" name="BALCOES_ESTRUTURA_PROXIMIDADE"/>
+		<facet code="BALCOES_REDE_COMERCIAL_CREDIFLASH" name="BALCOES_REDE_COMERCIAL_CREDIFLASH"/>
+		<facet code="ESTRUTURAS" name="ESTRUTURAS"/>
+		<facet code="PODER_NEG_CLIENTES" name="PODER_NEG_CLIENTES"/>
+		<facet code="LOCALIZACAO_INSTALACOES" name="LOCALIZACAO_INSTALACOES"/>
+		<facet code="DIMENSAO_INSTALACOES" name="DIMENSAO_INSTALACOES"/>
+		<facet code="ORGANIZACAO_CONTABILISTICA" name="ORGANIZACAO_CONTABILISTICA"/>
+		<facet code="CAPTACAO_CLIENTES" name="CAPTACAO_CLIENTES"/>
+		<facet code="SIM_NAO_NAOSABE" name="SIM_NAO_NAOSABE"/>
+		<facet code="SALARIOS_ATRASO" name="SALARIOS_ATRASO"/>
+		<facet code="DIVIDAS_ESTADO" name="DIVIDAS_ESTADO"/>
+		<facet code="AMBITO_MERCADO" name="AMBITO_MERCADO"/>
+		<facet code="CAE" name="CAE"/>
+		<facet code="CATEGORIA_ESTABELECIMENTO" name="CATEGORIA_ESTABELECIMENTO"/>
+		<facet code="TIPOS_INSTALACAO" name="TIPOS_INSTALACAO"/>
+		<facet code="DIVERSIF_CLIENTES" name="DIVERSIF_CLIENTES"/>
+		<facet code="QUADROS_ESPECIALIZADOS" name="QUADROS_ESPECIALIZADOS"/>
+		<facet code="SUB_PRINCIPAIS_FORNECEDORES" name="SUB_PRINCIPAIS_FORNECEDORES"/>
+		<facet code="CICLO_VIDA_PRODUTO" name="CICLO_VIDA_PRODUTO"/>
+		<facet code="PROPRIEDADE_INSTALACOES" name="PROPRIEDADE_INSTALACOES"/>
+		<facet code="PROPRIEDADE_EQUIPAMENTOS" name="PROPRIEDADE_EQUIPAMENTOS"/>
+		<facet code="APOIO_SOCIO" name="APOIO_SOCIO"/>
+		<facet code="CAP_GESTAO" name="CAP_GESTAO"/>
+		<facet code="EXPERIENCIAS_ANTERIORES_CRIACAO_EMPRESAS" name="EXPERIENCIAS_ANTERIORES_CRIACAO_EMPRESAS"/>
+		<facet code="TECNOLOGIA_PROCESSOS" name="TECNOLOGIA_PROCESSOS"/>
+		<facet code="POSICIONAMENTO_PRODUTOS" name="POSICIONAMENTO_PRODUTOS"/>
+		<facet code="INOVACAO_NEGOCIO" name="INOVACAO_NEGOCIO"/>
+		<facet code="NIVEL_CUMPRIMENTO_NEGOCIOS" name="NIVEL_CUMPRIMENTO_NEGOCIOS"/>
+		<facet code="SIM_NAO_NAOSABE2" name="SIM_NAO_NAOSABE2"/>
+		<facet code="SIM_NAO_NAOSABE3" name="SIM_NAO_NAOSABE3"/>
+		<facet code="SIM_NAO_NAOSABE4" name="SIM_NAO_NAOSABE4"/>
+		<facet code="EXPERIENCIA_DSV_PROJECTOS_IMOB" name="EXPERIENCIA_DSV_PROJECTOS_IMOB"/>
+		<facet code="HISTORICO_VENDAS_IMOB" name="HISTORICO_VENDAS_IMOB"/>
+		<facet code="COMPETENCIA_TECNICA_PROJ_IMOB" name="COMPETENCIA_TECNICA_PROJ_IMOB"/>
+		<facet code="POLITICA_MARKETING" name="POLITICA_MARKETING"/>
+		<facet code="MODO_DSV_PRJ" name="MODO_DSV_PRJ"/>
+		<facet code="PESO_CAPITAIS_ALHEIOS" name="PESO_CAPITAIS_ALHEIOS"/>
+		<facet code="TIPO_CARTEIRA" name="TIPO_CARTEIRA"/>
+		<facet code="REDE_ANGARIADORA" name="REDE_ANGARIADORA"/>
+		<facet code="CARTORIO_NOTARIAL" name="CARTORIO_NOTARIAL"/>
+		<facet code="ORIGEM_CAPITAIS" name="ORIGEM_CAPITAIS"/>
+		<facet code="AVALIACAO_RISCO" name="AVALIACAO_RISCO"/>
+		<facet code="OUTRO_SEGMENTO_IMOB" name="OUTRO_SEGMENTO_IMOB"/>
+		<facet code="CARGOS_PUBLICOS" name="CARGOS_PUBLICOS"/>
+		<facet code="FUNCAO_DESEMPENHADA" name="FUNCAO_DESEMPENHADA"/>
+		<facet code="NOMES_FUNCIONARIOS" name="NOMES_FUNCIONARIOS"/>
+		<facet code="MOTIVOS_AGENDAMENTO" name="MOTIVOS_AGENDAMENTO"/>
+		<facet code="PODER_NEG_CLIENTES2" name="PODER_NEG_CLIENTES2"/>
+		<facet code="ACTIVIDADE_PRINCIPAL" name="ACTIVIDADE_PRINCIPAL"/>
+		<facet code="FORM_SGEF" name="FORM_SGEF"/>
+		<facet code="ENTIDADES_BANCARIAS" name="ENTIDADES_BANCARIAS"/>
+		<facet code="TIPO_PRAZO" name="TIPO_PRAZO"/>
+		<facet code="INCIDENTES" name="INCIDENTES"/>
+		<facet code="TARIFACAO" name="TARIFACAO"/>
+		<facet code="TIPO_TAXA" name="TIPO_TAXA"/>
+		<facet code="NATUREZA_DIFERENCIAL" name="NATUREZA_DIFERENCIAL"/>
+		<facet code="TAXA_MERCADO" name="TAXA_MERCADO"/>
+		<facet code="DESCONTINUIDADE" name="DESCONTINUIDADE"/>
+		<facet code="TIPO_COMUNICACAO" name="TIPO_COMUNICACAO"/>
+		<facet code="TIPO_NEGOCIACAO" name="TIPO_NEGOCIACAO"/>
+		<facet code="PERIODICIDADE" name="PERIODICIDADE"/>
+		<facet code="SUPORTE_COMUNICACAO" name="SUPORTE_COMUNICACAO"/>
+		<facet code="ESTADO_CORRESPONDENCIA" name="ESTADO_CORRESPONDENCIA"/>
+		<facet code="TIPO_EMISSAO_CORRESPONDENCIA" name="TIPO_EMISSAO_CORRESPONDENCIA"/>
+		<facet code="QUALIDADE_MORADA" name="QUALIDADE_MORADA"/>
+		<facet code="ESTRUTURAS_TODAS" name="ESTRUTURAS_TODAS"/>
+		<facet code="MODO_PAGAMENTO" name="MODO_PAGAMENTO"/>
+		<facet code="REGIME_CREDITO" name="REGIME_CREDITO"/>
+	</LOV>
+
+	<LOVDataTextField>
+		<facet code="a" name="a"/>
+		<facet code="i" name="i"/>
+		<facet code="d" name="d"/>
+	</LOVDataTextField>
+
+	<Structs>
+		<facet code="Pais" name="Pais"/>
+		<facet code="Estruturas" name="Estruturas"/>
+		<facet code="Balcoes" name="Balcoes"/>
+		<facet code="BalcoesRede" name="BalcoesRede"/>
+		<facet code="Comercial" name="Comercial"/>
+		<facet code="Conservatorias" name="Conservatorias"/>
+	</Structs>
+
+	<LabelPosition>
+		<facet code="Left" name="Left"/>
+		<facet code="Right" name="Right"/>
+	</LabelPosition>
+
+  <ContextParams>
+    <facet code="Param1" name="name1"/>
+    <facet code="Param2" name="name2"/>
+  </ContextParams>
+
+  <Pedidos>
+    <facet code="F" name="Facultativo"/>
+    <facet code="O" name="Obrigatório"/>
+    <facet code="I" name="Incondicional"/>
+  </Pedidos>
+
+</root>

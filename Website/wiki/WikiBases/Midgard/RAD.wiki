@@ -1,0 +1,3 @@
+:Summary: Rapid Application Development
+
+RAD signidica Rapid Application Development.

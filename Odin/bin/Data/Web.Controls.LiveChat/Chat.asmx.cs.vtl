@@ -1,0 +1,97 @@
+#set( $web = ".WebServices" )
+
+using System;
+using System.Web.UI;
+using System.Web.Services;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
+using $coreMamespace;
+using $dalMamespace;
+
+namespace $prefix$web {
+
+    [WebService(Namespace = "http://zi-yu.com/")]
+    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+    public class Chat : System.Web.Services.WebService {
+
+        #region Web Methods
+
+        [WebMethod]
+        public void LeaveChat( int principalId, string channelName )
+        {
+            Channel channel = GetChannelForName(channelName);
+            RemoveParticipant(channel, principalId);
+        }
+
+        [WebMethod]
+        public void AddEntry(int principalId, string channelName, string text)
+        {
+            Channel channel = GetChannelForName(channelName);
+            Principal principal = GetPrincipal(principalId);
+
+            AddChannelEntry(principal, channel, text);
+        }
+
+        #endregion Web Methods
+
+        #region Data Access
+
+        private Channel GetChannelForName(string name)
+        {
+            using (ChannelPersistance persistance = ChannelPersistance.GetSession()) {
+                List<Channel> list = persistance.SelectByName(name);
+                if (list.Count > 0) {
+                    return list[0];
+                }
+                Channel channel = persistance.Create();
+                channel.Name = name;
+                persistance.Update(channel);
+                persistance.Flush();
+
+                return channel;
+            }
+        }
+
+        private Principal GetPrincipal(int principalId)
+        {
+            if (principalId < 0) {
+                return null;
+            }
+
+            using (PrincipalPersistance persistance = PrincipalPersistance.GetSession()) {
+                List<Principal> list = persistance.SelectById(principalId);
+                if (list.Count > 0) {
+                    return list[0];
+                }
+                return null;
+            }
+        }
+
+        private void AddChannelEntry(Principal principal, Channel channel, string text)
+        {
+            using (ChannelEntryPersistance persistance = ChannelEntryPersistance.GetSession()) {
+                ChannelEntry entry = persistance.Create();
+                entry.Text = text;
+                entry.Channel = channel;
+                entry.Principal = principal;
+                entry.Date = DateTime.Now;
+                persistance.Update(entry);
+                persistance.Flush();
+            }
+        }
+
+        private void RemoveParticipant(Channel channel, int principalId)
+        {
+            if (principalId < 0) {
+                return;
+            }
+            using (ChannelParticipantPersistance persistance = ChannelParticipantPersistance.GetSession()) {
+                string hql = string.Format("from ChannelParticipant p where p.Channel.Id = {0} and p.Principal.Id = {1}", channel.Id, principalId);
+                int deleted = persistance.Delete(hql);
+                persistance.Flush();
+            }
+        }
+
+        #endregion DataAccess
+    };
+}

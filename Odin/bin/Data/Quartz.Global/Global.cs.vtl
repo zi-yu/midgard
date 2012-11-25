@@ -1,0 +1,44 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections;
+using Safira.Quartz.QOOL;
+
+namespace $namespace {
+	public class Global {
+	
+		#region Fields
+		
+		private static Hashtable processEvents = new Hashtable();
+		
+		#endregion Fields
+		
+		#region Delegates
+		
+		public delegate void QuartzEvent();
+		
+		#endregion Delegates
+		
+		#region Properties
+
+#foreach( $field in $transictions )
+		public static NamedEvent $field.FriendlyEventName {
+			get{ return new NamedEvent( "$field.EventName" ); }
+		}
+#end
+
+		#endregion Properties
+			
+	}
+}

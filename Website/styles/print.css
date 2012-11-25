@@ -1,0 +1,15 @@
+body {
+	font-family: "Times New Roman", serif;
+	font-size: 12pt;
+}
+
+#header, #left_menu, #right_menu, .footer, #wiki_header   {
+	display: none;
+}
+
+a:after
+{
+	color: Black;
+	text-decoration: none;
+	content: " [" attr(href) "] ";
+}

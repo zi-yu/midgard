@@ -1,0 +1,75 @@
+#set( $module = ".Modules" )
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Web;
+using $dalNamespace;
+using $coreNamespace;
+using System.Web.UI;
+
+namespace $webNamespace$module {
+
+    public class RequestLoggerModule : IHttpModule {
+
+        #region IHttpModule Members
+
+        public void Init(HttpApplication context)
+        {
+            context.EndRequest += new EventHandler(context_EndRequest);
+        }
+
+        public void Dispose()
+        {
+        }
+
+        #endregion
+
+        #region Events
+
+        void context_EndRequest(object sender, EventArgs e)
+        {
+            HttpContext context = HttpContext.Current;
+            if ( !ToLog(context) ) {
+                return;
+            }
+            using (RequestLoggerPersistance persistance = RequestLoggerPersistance.GetSession()) {
+                RequestLogger logger = persistance.Create();
+
+                logger.Date = context.Timestamp;
+                logger.Ip = context.Request.UserHostAddress;
+                logger.Principal = GetPrincipal(context);
+                logger.Referrer = GetReferrer(context);
+                logger.RequestTime = (DateTime.Now - logger.Date).Milliseconds;
+                logger.Url = context.Request.RawUrl;
+                logger.UserAgent = context.Request.UserAgent;
+
+                persistance.Update(logger);
+            }
+        }
+
+        #endregion Events
+
+        #region Utilities
+
+        private Principal GetPrincipal(HttpContext context)
+        {
+            return context.User as Principal;
+        }
+
+        private string GetReferrer(HttpContext context)
+        {
+            if( context.Request.UrlReferrer != null ) {
+                return context.Request.UrlReferrer.AbsoluteUri;
+            }
+            return null;
+        }
+
+        private bool ToLog(HttpContext context)
+        {
+			return context.CurrentHandler is Page;
+        }
+
+        #endregion Utilities
+    };
+}

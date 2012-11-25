@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<project name="Loki" default="build-all" basedir=".">
+
+	<description>Midgard Tests</description>
+	<property name="debug" value="true" unless="${property::exists('debug')}"/>
+	<property name="CLI" value="${framework::get-target-framework()}" />
+
+	<property name="version" value="1.0" unless="${property::exists('version')}" />
+
+	<target name="clean" description="remove all generated files">
+		<delete>
+			<fileset>
+				<include name="*~" />
+				<include name="bin/*.dll" />
+				<include name="bin/*.exe" />
+				<include name="bin/*.pdb" />
+				<include name="bin/*.mdb" />
+				<include name="bin/*.xml" />
+				<include name="bin/*~" />
+				<include name="bin/.*" />
+			</fileset>
+		</delete>
+  	</target>
+
+  	<!-- compila o projecto -->
+	<target name="build-all" description="compiles Midgard.Tests.dll">
+
+		<csc target="library" output="../Odin/bin/Midgard.Tests.dll"
+			debug="${debug}"
+			optimize="true"
+			define="NANT">
+
+			<nowarn>
+	            <!-- do not report warnings for missing XML comments -->
+				<warning number="1591" />
+				<warning number="1570" />
+				<warning number="1572" />
+				<warning number="1573" />
+				<warning number="1699" />
+				<warning number="0649" />
+				<warning number="0169" />
+				<warning number="0414" if="${platform::is-unix()}"/>
+			</nowarn>
+
+			<sources>
+				<include name="Src/**/*.cs" />
+			</sources>
+
+			<references>
+				<include name="bin/nunit.framework.dll" />
+				<include name="../Odin/bin/Odin.dll" />
+				<include name="../Odin/bin/Loki.dll" />
+				<include name="../Odin/bin/Plugins/CodeGenerator/OdinUtilities.dll" />
+				<include name="../Odin/bin/Plugins/CodeGenerator/NHibernateUtilities.dll" />
+				<include name="../Odin/bin/DesignPatterns.dll" />
+				<include name="../Odin/bin/log4net.dll" />
+				<include name="../Odin/bin/NVelocity.dll" />
+				<include name="../Odin/bin/Commons.dll" />
+				<include name="System.Data.dll" />
+			</references>
+		</csc>
+	
+
+	    <echo message="Midgard.Tests compiled successfully!" />
+		<echo message="" />
+		<echo message="Debug Build     : ${debug}" />
+		<echo message="" />
+		<echo message="OS              : ${platform::get-name()}" />
+		<echo message="Target Platform : ${framework::get-target-framework()}" />
+  	</target>
+
+  	<!-- corre os testes -->
+	<target name="run" description="runs the tests">
+		<echo message="Running Midgard tests..." />
+		<nunit2 verbose="true" failonerror="false">
+		    <formatter type="Plain" />
+		    <test assemblyname="../Odin/bin/Midgard.Tests.dll" />
+		</nunit2>
+	</target>
+
+</project>

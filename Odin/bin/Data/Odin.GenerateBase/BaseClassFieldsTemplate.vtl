@@ -1,0 +1,182 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $toString = ".ToString()" )
+	// WARNING: Generated File! Do not modify by hand!
+	// *************************************************************
+
+using System;
+using System.Xml;
+using System.Xml.Serialization;
+using System.IO;
+using System.Collections.Generic;
+using Loki.DataRepresentation;
+using Loki;
+
+namespace $namespace {
+#set($parent = " ")
+#set($accessInter = " ")
+#set($parent = $entityClass.Parent.Name)
+#set($accessInter = " ")
+	//[Serializable()]
+	$entity.Visibility #if($entity.IsAbstract)abstract#end partial class $entity.Name : ##
+#if($parent != " ")$parent, ##
+#end##
+IDescriptable, IComparable ##
+#foreach($interface in $entity.Interfaces),$interface.Name #end {
+
+		#region Fields
+
+#foreach($field in $entityClass.Fields)
+#* *# #if($field.Mult.ToString().EndsWith("ToMany") )##
+		#set ($type = "System.Collections.IList")##
+#* *# #else##
+		#set($type = $field.Type.AccessInterface)##
+#* *# #end##
+#if( $type == "DateTime")
+		$field.Visibility $type $field.Name = DateTime.Now;
+#else
+		$field.Visibility $type $field.Name;
+#end
+#end##
+		#endregion Fields
+
+		#region Properties
+
+#foreach($field in $entityClass.Fields)##
+#* *# #if($field.Mult.ToString().EndsWith("ToMany"))##
+		#set ($type = "System.Collections.IList")##
+		[XmlIgnore()]
+#* *# #else##
+		#set($type = $field.Type.AccessInterface)##
+#* *# #end##
+		public $type $field.PropertyName
+		{
+			set{ $field.Name = value;}
+			get{ return $field.Name;}
+		}
+
+#end##
+		#endregion Properties
+		
+		#region IDescriptable Implementation
+		
+#set($modifier = "override")##
+#if($entity.RootEntity)#set($modifier = "virtual")#end##
+		public $modifier string ToHtml()
+		{
+			throw new NotImplementedException();
+		}
+		
+		public $modifier string ToXml()
+		{
+			XmlSerializer serializer = new XmlSerializer( typeof($entity.Name) );
+			using( TextWriter writer = new StringWriter() ) {
+				serializer.Serialize( writer, this );
+				return writer.ToString();
+			}
+		}
+		
+		public $modifier string ToLog()
+		{
+#if( $entity.HasMainField )
+			return string.Format("[{0}:{1}] {2}", TypeName, Id, $entity.MainProperty.PropertyName);
+#else
+			return string.Format("{0}:{1}", TypeName, Id);
+#end
+		}
+		
+		public $modifier string ToJson()
+		{
+			StringWriter writer = new StringWriter();
+			writer.Write("{ ");
+			string str = null;
+#foreach( $field in $entity.Fields )
+#*	*##if( $field.Type.IsIntrinsic )
+			str = $field.PropertyName$toString;
+			str = str.Replace('\"', '\'').Replace('\n', ' ');
+			writer.Write("\"$field.PropertyName\" : \"{0}\", ", str);
+#*	*##end
+#end
+			writer.Write("\"TypeName\" : \"{0}\" ", TypeName);
+			writer.Write("}");
+			return writer.ToString();
+		}
+
+		public $modifier string TypeName { 
+			get { return "$entity.Name"; }
+		}
+		
+		#endregion IDescriptable Implementation
+		
+#*	*##if($entity.RootEntity)##
+		#region IComparable Implementation
+		
+		public int CompareTo( object obj )
+		{
+			$entity.Name other = obj as $entity.Name;
+			if( other == null ) {
+				// we don't know how to compare diferent entities
+				return 0;
+			}
+			
+			return other.Id.CompareTo(this.Id);
+		}
+
+		#endregion IComparable Implementation
+#*	*##end##
+
+		#region Overrided Members
+		
+		public override string ToString()
+		{
+#if( $entity.HasMainField )
+			return $entity.MainProperty.PropertyName$toString;
+#else
+			return string.Format("{0}:{1}", TypeName, Id);
+#end
+		}
+		
+		#endregion Overrided Members
+		
+#*		*##if( $entity.Name == "Principal" )		
+		#region IPrincipal Members
+
+		System.Security.Principal.IIdentity identity = null;
+
+		[XmlIgnore()]
+		public System.Security.Principal.IIdentity Identity {
+			get { return identity; }
+			set { identity = value; }
+		}
+
+		public bool IsInRole( string role ) {
+			if( string.IsNullOrEmpty( role ) ) {
+				return false;
+			}
+			if( role == "user" ) {
+				return true;
+			}
+			foreach( Roles r in Roles ) {
+				if( r.Name == role ) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+		#endregion
+		
+#*		*##end##
+	};
+}

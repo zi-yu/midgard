@@ -1,0 +1,109 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $fieldControl = "FieldControl" )
+#set ( $designer = "Designer" )
+#set ( $designers = ".Designers" )
+#set ( $roles = ".Roles" )
+#set ( $list = "PagedList" )
+#set ( $id = ".Id" )
+
+using System;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.Security;
+using System.ComponentModel;
+using Loki.DataRepresentation;
+using $CoreNamespace;
+using Roles = $CoreNamespace$roles;
+
+namespace $namespace {
+
+    /// <summary>
+    /// Renders in XHTML the content of a $entity.Name's $field.PropertyName
+    /// </summary>
+	public class $entity.Name$field.PropertyName : BaseFieldControl<$entity.Name>, INamingContainer {
+	
+#if( !$field.Type.IsIntrinsic && $field.Mult.ToString().EndsWith("ToOne") )##
+		#region Control Fields & Properties
+		
+		private string url = "#";
+		
+		/// <summary>
+        /// URL to show this object's detail
+        /// </summary>
+		public string Url {
+			get { return url; }
+			set { url = value; }
+		}
+		
+		#endregion Control Fields
+		
+#end##	
+		#region BaseFieldControl<$entity.Name> Implementation
+		
+#if( $field.Mult.ToString().EndsWith("Many") )
+		private $field.Type.Name$list list = new $field.Type.Name$list ();
+		
+		/// <summary>
+        /// Initialization
+        /// </summary>
+        /// <param name="args">Arguments</param>
+		protected override void OnInit( EventArgs args )
+        {
+			base.OnInit(args);
+			while (Controls.Count > 0) {
+                Control control = Controls[0];
+                list.Controls.Add(control);
+            }
+            Controls.Add(list);
+        }
+
+#end
+		/// <summary>
+        /// Renders an entity object's information
+        /// </summary>
+        /// <param name="writer">The HtmlTextWriter</param>
+        /// <param name="t">The entity instance</param>
+        /// <param name="renderCount">The render count</param>
+        /// <param name="flipFlop">True if render count is odd</param>
+		protected override void Render( HtmlTextWriter writer, $entity.Name entity, int renderCount, bool flipFlop )
+		{
+#if( $field.Type.IsIntrinsic )
+			writer.Write( entity.$field.PropertyName );
+#elseif( $field.Mult.ToString().EndsWith("ToOne") )
+			if( entity.$field.PropertyName != null ) {
+				writer.Write( "<a href=\"{0}?$field.Type.Name={2}\">{1}</a>", 
+								Url, entity.$field.PropertyName,
+								entity.$field.PropertyName$id 
+						);
+			} else {
+				writer.Write("[none]");
+			}
+#elseif( $field.Mult.ToString() == "OneToMany" )
+			list.Where = "e.$entity.Name$id = " + entity.Id;
+			list.RenderControl(writer);
+#elseif( $field.Mult.ToString() == "ManyToMany" )
+			list.Select = "select elements(e.$field.PropertyName) from $entity.Name e ";
+			list.Where = "e.Id = " + entity.Id;
+			list.RenderControl(writer);
+#else
+			writer.Write("Not Implemented!");
+#end
+		}
+		
+		#endregion BaseFieldControl<$entity.Name> Implementation
+		
+	};
+
+}

@@ -1,0 +1,29 @@
+#set( $controls = ".Controls" )
+#set( $admincontrols = ".Admin.Controls" )
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using $webNamespace$controls;
+
+namespace $webNamespace$admincontrols {
+
+    public class LatestReferrals : RequestLoggerPagedList {
+
+        #region Control Events
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            Start = 0;
+            ItemsPerPage = 50;
+            Select = "from RequestLogger e";
+            Where = string.Format("e.Referrer not like '%{0}%'", Page.Request.Url.Host);
+            OrderBy = "Id";
+            OrderByParam = "desc";
+        }
+
+        #endregion Control Events
+
+    };
+}

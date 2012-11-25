@@ -1,0 +1,95 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+
+	// WARNING: This file is only generated in the first time you generate the classes.
+	//			If you want to generate again you must delete this file.
+	// *************************************************************
+
+using System;
+using System.Collections.Generic;
+using Loki.DataRepresentation;
+using Loki;
+
+namespace $namespace {
+
+#set($parent = " ")
+#set($accessInter = " ")
+#set($parent = $entityClass.Parent.Name)
+#set($accessInter = " ")
+	$entity.Visibility #if($entity.IsAbstract)abstract#end partial class $entity.Name : ##
+#if($parent != " ")$parent, ##
+#end##
+IDescriptable, IComparable ##
+#foreach($interface in $entity.Interfaces),$interface.Name#end {
+
+#foreach($method in $entity.Methods)##
+#*	*##set($first = "true")##
+#*	*##set($totalParams = "")##
+#*	*##foreach($param in $method.Parameters)##
+#*		*##set($mult = "")##
+#*		*##if( $param.Mult.ToString() == "OneToMany" )#set($mult = "[]")#end##
+#*		*##if($param.IsReturn)##
+#*			*##set($totalParams = "$totalParams out")##
+#*		*##end##
+#*		*##if($first == "true")##
+#*			*##set($totalParams = "$totalParams $param.Type.Name$mult $param.Name")##
+#*			*##set($first = "false")##
+#*		*##else##
+#*			*##set($totalParams = "$totalParams , $param.Type.Name$mult $param.Name")##
+#*		*##end##
+#*	*##end##
+#*	*##set($mult = "")##
+#*	*##if( $method.ReturnEntity.Mult.ToString() == "OneToMany" )#set($mult = "[]")#end##
+#*	*##set($retType = "void")##
+#*	*##set($retType = $method.ReturnEntity.Type.Name)
+										
+	$retType$mult $method.Name ($totalParams )
+	{
+		throw new NotImplementedException();
+	}
+#end##
+
+#foreach($interface in $entity.Interfaces)##
+	#region $interface.Name Implementation
+#*	*##foreach($method in $interface.Methods)
+#*		*##set($first = "true")##
+#*		*##set($totalParams = "")##
+#*		*##foreach($param in $method.Parameters)##
+#*			*##set($mult = "")##
+#*			*##if( $param.Mult.ToString() == "OneToMany" )#set($mult = "[]")#end##
+#*			*##if($param.IsReturn)##
+#*				*##set($totalParams = "$totalParams out")##
+#*			*##end##
+#*			*##if($first == "true")##
+#*				*##set($totalParams = "$totalParams $param.Type.Name$mult $param.Name")##
+#*				*##set($first = "false")##
+#*			*##else##
+#*				*##set($totalParams = "$totalParams , $param.Type.Name$mult $param.Name")##
+#*			*##end##
+#*		*##end##
+#*		*##set($mult = "")##
+#*		*##if( $method.ReturnEntity.Mult.ToString() == "OneToMany" )#set($mult = "[]")#end##
+#*		*##set($retType = "void")##
+#*		*##set($retType = $method.ReturnEntity.Type.Name)
+										
+	public $retType$mult $method.Name ($totalParams )
+	{
+		throw new NotImplementedException();
+	}
+
+#*		*##end
+	#endregion $interface.Name Implementation
+#end
+};
+}

@@ -1,0 +1,120 @@
+#set( $cs = ".cs" )
+#set( $ponto = "." )
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+/*****************************************************************************
+* $Workfile: $node.Name$cs $
+*
+* $Revision: 1.1 $
+* $Author: pyrus $author $
+* $Transictions: 
+#foreach( $transiction in $node.Transictions )
+*   $transiction.EventName
+#end
+*
+* ----------------------------------------------------------------------------
+* $History: $node.Name$cs $
+* 
+*****************************************************************************/
+using System;
+using System.Data;
+using System.Xml;
+using Safira.Quartz.Interfaces;
+using Safira.Quartz.Screen;
+using Safira.Quartz.QOOL;
+using Safira.Quartz.QOOL.Business;
+
+namespace $namespace.$process.Name {
+
+	/// <summary>
+	/// Summary description for $node.Name
+	/// </summary>
+	/// <remarks>
+	///  Label: $node.HtmlFormatedLabel
+	/// </remarks>
+	public class $node.Name : $base {
+
+		#region Lifecyle Events
+		
+		/// <summary>
+		/// Node Start
+		/// </summary>
+		public void OnInit()
+		{			
+		}
+		
+		/// <summary>
+		/// Node End
+		/// </summary>
+		public void OnUnload()
+		{			
+		}
+		
+		#endregion Lifecyle Events
+	
+		#region Node Events
+
+#foreach( $transiction in $node.Transictions )
+		/// <summary>
+		/// '$transiction.EventName' event handler for $process.Name$ponto$node.Name
+		/// </summary>
+		/// <returns>The next event in the workflow</returns>
+		/// <remarks>
+		///  $transiction.HtmlFormatedLabel
+        /// </remarks>
+		public IEvent On$transiction.FriendlyEventName ()
+		{
+#if( $switchBased )
+			return new NamedEvent( "E_SUCCESS" );
+#else
+			// TODO
+			throw new NotImplementedException();
+#end
+		}
+		
+#end	
+		#endregion Node Events
+	
+		#region Base Implementation
+
+#if( $switchBased )
+		protected override IEvent InnerExecute()
+		{
+			IEvent ev = null;
+			OnInit();
+			switch (TriggerEvent.Name)
+			{
+#foreach( $transiction in $node.Transictions )
+				case "$transiction.EventName":
+					ev = On$transiction.FriendlyEventName ();
+					break;
+#end
+			}
+            OnUnload();
+			return ev;
+		}
+#end
+
+		#endregion Base Implementation
+		
+		#region Ctor
+		
+		public $node.Name ()
+		{
+		}
+		
+		#endregion Ctor
+		
+	};
+}

@@ -1,0 +1,133 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Web.UI;
+using Loki.DataRepresentation;
+
+namespace $namespace {
+
+	/// <summary>
+    /// This interface specifies that an object is an Entity editor
+    /// </summary>
+	public interface IEntityEditor {
+	
+		/// <summary>
+        /// Called by Midgard framework when to update an object
+        /// </summary>
+        /// <returns></returns>
+		bool OnUpdate();
+	};
+	
+	/// <summary>
+    /// This interface specifies that and object is an Entity Field editor
+    /// </summary>
+    /// <typeparam name="T">The Entity type</typeparam>
+	public interface IEntityFieldEditor<T> where T : IDescriptable {
+	
+		/// <summary>
+        /// Updates an object
+        /// </summary>
+        /// <param name="t">An instance of the Entity type</param>
+		void Update( T t );
+	};
+
+	/// <summary>
+    /// Base class for all the Entity editing
+    /// </summary>
+    /// <typeparam name="T">The Entity type to edit</typeparam>
+	public abstract class BaseEntityEditor<T> : BaseEntityItem<T>, IEntityEditor where T : IDescriptable {
+	
+		#region Ctor & Events
+		
+		/// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="per">The Persistance object</param>
+		public BaseEntityEditor( IPersistance<T> per ) : base(per)
+		{
+		}
+		
+		/// <summary>
+        /// Initializes this control
+        /// </summary>
+        /// <param name="args">Event arguments</param>
+		protected override void OnInit( EventArgs args ) 
+		{
+			if( Source == SourceType.None ) {
+				Source = SourceType.New;
+			}
+			base.OnInit(args);
+		}
+		
+		#endregion Ctor & Events
+		
+		#region Update Methods
+		
+		/// <summary>
+        /// Responsible for the update of the current object
+        /// </summary>
+        /// <remarks>
+        /// This method searches all sons for controls that implement <code>IEntityFieldEditor<T></code>
+        /// and call it's Update method
+        /// </remarks>
+        /// <returns>True if the update succeded</returns>
+		public virtual bool OnUpdate()
+		{
+			if( !Page.IsValid ) {
+				return false;
+			}
+			try {
+				FetchCurrent();
+				UpdateFields( Current );
+				Persistance.Update( Current );
+				Persistance.Flush();
+				return true;
+			} catch( Exception ex ) {
+				ExceptionLogger.Log(ex);
+				return false;
+			}
+		}
+		
+		/// <summary>
+        /// Updates the current object fields
+        /// </summary>
+        /// <param name="t">The object</param>
+		protected void UpdateFields( T t )
+		{
+			foreach( Control control in Controls ) {
+				UpdateFields( control, t );
+			}
+		}
+		
+		/// <summary>
+        /// Updates the current object recursevely
+        /// </summary>
+        /// <param name="control">The current control</param>
+        /// <param name="t">The object to update</param>
+		protected void UpdateFields( Control control, T t )
+		{
+			if( control is IEntityFieldEditor<T> ) {
+				((IEntityFieldEditor<T>) control).Update(t);
+			} else {
+				foreach( Control son in control.Controls ) {
+					UpdateFields( son, t );
+				}				
+			}		
+		}
+		
+		#endregion Update
+		
+	};
+
+}

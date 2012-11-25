@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<project name="Plugins" default="build-all" basedir=".">
+
+	<description>Midgard Plugins</description>
+	<property name="debug" value="true" unless="${property::exists('debug')}"/>
+	<property name="CLI" value="${framework::get-target-framework()}" />
+
+	<property name="version" value="1.0" unless="${property::exists('version')}" />
+
+	<target name="clean" description="remove all generated files">
+		<delete>
+			<fileset>
+				<include name="*~" />
+				<include name="bin/*.dll" />
+				<include name="bin/*.exe" />
+				<include name="bin/*.pdb" />
+				<include name="bin/*.mdb" />
+				<include name="bin/*.xml" />
+				<include name="bin/*~" />
+				<include name="bin/.*" />
+			</fileset>
+		</delete>
+  	</target>
+
+	<target name="build-all" description="compiles plugins" depends="build-xmiLoader, build-quartzLoader, build-quartz-utilities, build-odin-utilities build-nhibernate-utilities, build-build-utilities, build-web-utilities">
+    </target>
+
+  	<!-- compila o projecto -->
+	<target name="build-odin-utilities" description="compiles OdinUtilities.dll">
+
+		<csc target="library" output="../Odin/bin/Plugins/CodeGenerator/OdinUtilities.dll"
+			debug="${debug}" doc="bin/OdinUtilities.xml"
+			optimize="true"
+			define="NANT">
+
+			<nowarn>
+	            <!-- do not report warnings for missing XML comments -->
+				<warning number="1591" />
+				<warning number="1570" />
+				<warning number="1572" />
+				<warning number="1573" />
+				<warning number="0649" />
+				<warning number="0169" />
+				<warning number="1699" />
+				<warning number="0414" if="${platform::is-unix()}"/>
+			</nowarn>
+
+			<sources>
+				<include name="CodeGenerator/Utilities/**/*.cs" />
+			</sources>
+
+			<references>
+				<include name="../Odin/bin/Loki.dll" />
+				<include name="../Odin/bin/DesignPatterns.dll" />
+			</references>
+		</csc>
+
+  	</target>
+
+	<!-- compila o projecto -->
+	<target name="build-nhibernate-utilities" description="compiles NHibernateUtilities.dll">
+
+		<csc target="library" output="../Odin/bin/Plugins/CodeGenerator/NHibernateUtilities.dll"
+			debug="${debug}" doc="bin/NHibernateUtilities.xml"
+			optimize="true"
+			define="NANT">
+
+			<nowarn>
+	            <!-- do not report warnings for missing XML comments -->
+				<warning number="1591" />
+				<warning number="1570" />
+				<warning number="1572" />
+				<warning number="1573" />
+				<warning number="0649" />
+				<warning number="0169" />
+				<warning number="1699" />
+				<warning number="0414" if="${platform::is-unix()}"/>
+			</nowarn>
+
+			<sources>
+				<include name="CodeGenerator/NHibernateUtilities/**/*.cs" />
+			</sources>
+
+			<references>
+				<include name="../Odin/bin/Loki.dll" />
+				<include name="../Odin/bin/DesignPatterns.dll" />
+			</references>
+		</csc>
+
+  	</target>
+	
+	<!-- compila as web utilities -->
+	<target name="build-web-utilities" description="compiles WebUtilities.dll">
+
+		<csc target="library" output="../Odin/bin/Plugins/CodeGenerator/WebUtilities.dll"
+			debug="${debug}" doc="bin/WebUtilities.xml"
+			optimize="true"
+			define="NANT">
+
+			<nowarn>
+	            <!-- do not report warnings for missing XML comments -->
+				<warning number="1591" />
+				<warning number="1570" />
+				<warning number="1572" />
+				<warning number="1573" />
+				<warning number="0649" />
+				<warning number="0169" />
+				<warning number="1699" />
+				<warning number="0414" if="${platform::is-unix()}"/>
+			</nowarn>
+
+			<sources>
+				<include name="CodeGenerator/WebUtilities/**/*.cs" />
+			</sources>
+
+			<references>
+				<include name="../Odin/bin/Loki.dll" />
+				<include name="../Odin/bin/DesignPatterns.dll" />
+			</references>
+		</csc>
+
+  	</target>
+  	
+  	<!-- compila as Quartz utilities -->
+	<target name="build-quartz-utilities" description="compiles QuartzUtilities.dll">
+
+		<csc target="library" output="../Odin/bin/Plugins/CodeGenerator/QuartzUtilities.dll"
+			debug="${debug}" doc="bin/QuartzUtilities.xml"
+			optimize="true"
+			define="NANT">
+
+			<nowarn>
+	            <!-- do not report warnings for missing XML comments -->
+				<warning number="1591" />
+				<warning number="1570" />
+				<warning number="1572" />
+				<warning number="1573" />
+				<warning number="0649" />
+				<warning number="0169" />
+				<warning number="1699" />
+				<warning number="0414" if="${platform::is-unix()}"/>
+			</nowarn>
+
+			<sources>
+				<include name="CodeGenerator/QuartzUtilities/**/*.cs" />
+			</sources>
+
+			<references>
+				<include name="../Odin/bin/Loki.dll" />
+				<include name="../Odin/bin/Plugins/Loader/QuartzLoader.dll" />
+				<include name="../Odin/bin/DesignPatterns.dll" />
+			</references>
+		</csc>
+
+  	</target>
+
+	<!-- compila o build -->
+	<target name="build-build-utilities" description="compiles BuildUtilities.dll">
+
+		<csc target="library" output="../Odin/bin/Plugins/BuildGenerator/BuildUtilities.dll"
+			debug="${debug}" doc="bin/BuildUtilities.xml"
+			optimize="true"
+			define="NANT">
+
+			<nowarn>
+				<!-- do not report warnings for missing XML comments -->
+				<warning number="1591" />
+				<warning number="1570" />
+				<warning number="1572" />
+				<warning number="1573" />
+				<warning number="0649" />
+				<warning number="0169" />
+				<warning number="1699" />
+				<warning number="0414" if="${platform::is-unix()}"/>
+			</nowarn>
+
+			<sources>
+				<include name="BuildGenerator/BuildUtilities/**/*.cs" />
+			</sources>
+
+			<references>
+				<include name="../Odin/bin/Loki.dll" />
+				<include name="../Odin/bin/DesignPatterns.dll" />
+			</references>
+		</csc>
+	</target>
+
+	<!-- compila o build -->
+	<target name="build-xmiLoader" description="compiles XmiLoader.dll">
+
+		<csc target="library" output="../Odin/bin/Plugins/Loader/XmiLoader.dll"
+			debug="${debug}" doc="bin/XmiLoader.xml"
+			optimize="true"
+			define="NANT">
+
+			<nowarn>
+				<!-- do not report warnings for missing XML comments -->
+				<warning number="1591" />
+				<warning number="1570" />
+				<warning number="1572" />
+				<warning number="1573" />
+				<warning number="0649" />
+				<warning number="0169" />
+				<warning number="1699" />
+				<warning number="0414" if="${platform::is-unix()}"/>
+			</nowarn>
+
+			<sources>
+				<include name="Loader/XmiLoader/**/*.cs" />
+			</sources>
+
+			<references>
+				<include name="../Odin/bin/Loki.dll" />
+				<include name="../Odin/bin/DesignPatterns.dll" />
+			</references>
+		</csc>
+	</target>
+
+
+	<!-- compila o build -->
+	<target name="build-quartzLoader" description="compiles XmiLoader.dll">
+
+		<csc target="library" output="../Odin/bin/Plugins/Loader/QuartzLoader.dll"
+			debug="${debug}" doc="bin/XmiLoader.xml"
+			optimize="true"
+			define="NANT">
+
+			<nowarn>
+				<!-- do not report warnings for missing XML comments -->
+				<warning number="1591" />
+				<warning number="1570" />
+				<warning number="1572" />
+				<warning number="1573" />
+				<warning number="0649" />
+				<warning number="0169" />
+				<warning number="1699" />
+				<warning number="0414" if="${platform::is-unix()}"/>
+			</nowarn>
+
+			<sources>
+				<include name="Loader/Quartz/**/*.cs" />
+			</sources>
+
+			<references>
+				<include name="../Odin/bin/Loki.dll" />
+				<include name="../Odin/bin/DesignPatterns.dll" />
+			</references>
+		</csc>
+	</target>
+
+
+</project>

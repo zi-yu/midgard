@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+  <Operation>
+    <facet code="0" name="List"/>
+    <facet code="1" name="Create/Edit"/>
+    <facet code="2" name="Delete"/>
+  </Operation>
+  
+  <Connector>
+    <facet code="0" name="Entity"/>
+    <facet code="1" name="Link"/>
+    <facet code="2" name="Button"/>
+  </Connector>
+</root>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FederationConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DefaultNamespace>Midgard</DefaultNamespace>
+  <About>Midgard's Wiki</About>
+  <Borders></Borders>
+  <WikiTalkVersion>1</WikiTalkVersion>
+  <DefaultDirectoryForNewNamespaces>.</DefaultDirectoryForNewNamespaces>
+  <Namespaces>
+    <Namespace Root="Midgard" Secure="false" Namespace="Midgard" />
+  </Namespaces>
+</FederationConfiguration>

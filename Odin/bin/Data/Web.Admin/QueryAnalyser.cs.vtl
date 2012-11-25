@@ -1,0 +1,71 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using $dalNamespace;
+using IList = System.Collections.IList;
+using NHibernate;
+
+namespace $namespace {
+
+	public class QueryAnalyser : Page {
+				#region Fields
+
+		private IList queryResults;
+		protected TextBox query;
+		protected GridView results;
+
+		#endregion
+
+		#region Control Events
+
+		protected void ExecuteQuery( object sender, EventArgs e ) {
+			try {
+				queryResults = NHibernateUtilities.HqlQuery( query.Text );
+				Information.AddInformation( "Query completed successfully!" );
+			} catch( QueryException qe ) {
+				Information.AddError( qe.Message );
+			}
+		}
+
+		#endregion
+		
+		#region Events
+		
+		protected override void OnLoad( EventArgs e ) {
+			HttpContext.Current.Session["CurrentEntity"] = "queryanalyser";
+			HttpContext.Current.Session["CurrentAction"] = "";
+		}
+
+		protected override void Render( HtmlTextWriter writer ) {
+			if( queryResults!= null && queryResults.Count > 0 ) {
+				results.Visible = true;
+				results.DataSource = queryResults;
+				results.DataBind();
+				results.Style.Clear();
+				results.Style.Add( "border-collapse", "none" );
+			} else {
+				results.Visible = false;
+			}
+
+			base.Render( writer );
+		}
+
+		#endregion
+	}
+	
+}

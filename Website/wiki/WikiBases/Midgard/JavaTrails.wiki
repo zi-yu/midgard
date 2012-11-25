@@ -1,0 +1,8 @@
+:Parent: Midgard.FerramentasRAD
+:Summary: Java Trails
+
+!!!Referências Externas
+	* "Trails Home":https://trails.dev.java.net/
+	* "Trails Article #1":http://today.java.net/pub/a/today/2005/06/23/trails.html
+	* "Trails Article #2":http://today.java.net/pub/a/today/2005/11/04/further-down-the-trail.html
+	* "Video de Demonstração":https://trails.dev.java.net/files/documents/2296/13104/trails_withnarration.mov

@@ -1,0 +1,36 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+<%@ Page Language="C#" MasterPageFile="~/Admin/adminMaster.master" %>
+<%@ Register TagPrefix="Admin" Assembly="$assembly" Namespace="$controlsNamespace" %>
+<%@ Register TagPrefix="$projectName" Assembly="$assembly" Namespace="$webControls" %>
+
+<asp:Content ContentPlaceHolderID="content" runat="server">
+	<h2>Latest Referrals</h2>
+	<admin:LatestReferrals runat="server" >
+		<table>
+			<tr>
+				<th>Url</th>
+				<th>Date</th>
+				<th>View</th>
+			</tr>
+			<$projectName:RequestLoggerItem runat="server">
+			<tr>
+				<td><$projectName:RequestLoggerReferrer runat="server" /></td>
+				<td><$projectName:RequestLoggerDate runat="server" /></td>
+				<td><Admin:EditLink runat="server" /></td>
+			</tr>
+			</$projectName:RequestLoggerItem>
+		</table>
+	</admin:LatestReferrals>
+</asp:content>

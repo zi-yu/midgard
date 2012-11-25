@@ -1,0 +1,53 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Web.UI;
+using System.Resources;
+using System.Reflection;
+
+namespace $controlsNamespace {
+	public class Label : Control {
+		
+		#region Fields
+
+		private string key = null;
+
+		#endregion
+
+		#region Properties
+
+		public string Key {
+			get { return key; }
+			set { key = value; }
+		}
+
+		#endregion
+
+		#region Overriden
+		
+		protected override void Render( HtmlTextWriter writer ) 
+		{
+			try {
+				writer.Write( LanguageManager.Instance.Get(Key) );
+			} catch( Exception ex ) {
+				writer.Write("@(Error for localized {0})", Key);
+				writer.Write("<!-- {0} -->", ex.ToString());
+			}
+		} 
+
+		#endregion
+	}
+}

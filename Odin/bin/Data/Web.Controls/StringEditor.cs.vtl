@@ -1,0 +1,58 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Loki.DataRepresentation;
+
+namespace $namespace {
+
+	public abstract class StringEditor<T> : BaseEntityFieldEditor<T> where T : IDescriptable {
+	
+		#region Fields
+		
+		protected TextBox text = new TextBox();
+		
+		#endregion Fields
+		
+		#region Events
+		
+		protected override void OnInit( EventArgs args )
+		{
+			base.OnInit(args);
+			text.ID = TargetName;
+			Controls.Add(text);
+		}
+		
+		protected override void Render( HtmlTextWriter writer, T t, int renderCount, bool flipFlop )
+		{
+			text.Text = GetCaption(t);
+			foreach (Control control in Controls) {
+                control.RenderControl(writer);
+            }
+		}
+		
+		#endregion Events
+		
+		#region Abstract Members
+		
+		protected abstract string GetCaption( T t );
+		
+		protected abstract string TargetName { get; }
+		
+		#endregion
+		
+	};
+
+}

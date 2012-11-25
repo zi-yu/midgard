@@ -1,0 +1,20 @@
+:Display: AndroMDA
+:Parent: Midgard.FerramentasRAD
+:Summary: Ferramenta AndroMDA
+
+AndroMDA é uma ferramenta [MDA]. Recebe vários tipos de diagramas UML sob a forma de [XMI] e com base em vários plugins gera os vários componentes da aplicação. Suporta a geração de componentes para qualquer linguagem, embora só tenham implementação para o mundo Java, nomeadamente usam o Hibernate (inspiração do NHibernate) para persistência, geram EJB's, ''WebServices'', Structs (páginas web) e Spring.
+
+!!!O Que é que o Andro MDA Faz
+	* Dado [XMI] gera todo o projecto para ''J2EE''
+		* Gera uma classe abstracta para cada entidade e outra com a sua implementação
+		* Gera uma classe abstracta de persistência (DAO) e sua implementação em cima do Hibernate
+		* Com base em casos de utilização e diagramas de sequência gera Structs (páginas web)
+			* Produzem uma aplicação web muito simples de edição do modelo de dados
+		* Geram Web Services de acesso ao modelo de dados
+	* Possibilidade de integrar o AndroMDA em ferramentas de build como o Ant e o Maven
+	* Usam o Velocity (inspiração do NVelocity) como motor de templates para gerar código
+	* Tem uma ferramenta que lê schema da BD e o transforma em XMI (bom para gerar código para um modelo relacional já existente)
+
+!!!Referências Externas
+	* "AndroMDA Site":http://www.andromda.org
+	* "O que é o AndroMDA":http://www.andromda.org/whatisit.html

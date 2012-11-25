@@ -1,0 +1,23 @@
+<%@ Control Language="C#" AutoEventWireup="false" Inherits="System.Web.UI.UserControl" %>
+<%@ Register TagPrefix="$prefix" Assembly="$assembly" Namespace="$controls" %>
+
+<atlas:ScriptManager runat="server" EnablePartialRendering="true">
+    <Services>
+        <atlas:ServiceReference GenerateProxy="true" Path="~/WebServices/LiveChat/Chat.asmx" />
+    </Services>
+</atlas:ScriptManager>
+
+<atlas:TimerControl runat="server" Interval="1500" ID="myTimer"/>
+<atlas:UpdatePanel runat="server" ID="panel">
+    <ContentTemplate>
+       <$prefix:ChannelControl runat="server" />
+    </ContentTemplate>
+    <Triggers>
+        <atlas:ControlEventTrigger ControlID="myTimer" EventName="Tick" />
+    </Triggers>
+</atlas:UpdatePanel>
+
+
+<hr />
+
+<$prefix:ChannelASyncPost runat="server" />	

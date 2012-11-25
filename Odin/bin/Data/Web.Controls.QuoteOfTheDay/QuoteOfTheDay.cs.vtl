@@ -1,0 +1,23 @@
+#set( $controls = ".Controls" )
+
+using System;
+using System.Web.UI;
+
+namespace $namespace$controls {
+
+	public class Quote : QuoteOfTheDayItem {
+	
+		#region QuoteOfTheDayItem Implementation
+		
+		protected override void OnInit( EventArgs args )
+		{
+			Source = SourceType.ByTheDay;
+			Controls.Add( new QuoteOfTheDayQuote() );
+			base.OnInit(args);
+		}
+		
+		#endregion
+	
+	};
+
+}

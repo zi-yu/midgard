@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<shape xmlns:trq="http://www.midgard.zi-yu.com/XmlForms/">
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	~
+	~ Attributes that will be passed onto the shape factory, and that have
+	~ nothing to do with the XML forms.
+	~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<attributes element="WebPage"  type="Screen" moniker="Midgard.Interop.Shapes.WebPage,Midgard.Interop">
+		<text pattern="{0}\n-{1}-">
+		<item ref="title" />
+       <item ref="entity" />
+    </text>
+	</attributes>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	~
+	~ Properties that will be displayed up for display in the XML forms
+	~ screen.
+	~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<properties title="Web Page">
+		<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~
+		~ Especificar de Propriedades
+		~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+		<tab name="Properties" tooltip="Element properties">
+
+			<string id="title" label="Title:">
+				<annotation>Page title</annotation>
+				<required/>
+			</string>
+			
+			<string id="entity" label="Entity:">
+				<annotation>Entity name</annotation>
+				<mask>[a-zA-Z]</mask>
+				<required/>
+			</string>
+
+			<comboBox id="operation" label="Operation:" configFile="Combos.xml" xPath="Operation/facet">
+				<annotation>Operation Type</annotation>
+			</comboBox>
+
+			<include file="Fields.xml" xPath="root/*" excludedProperties=""/>
+
+		</tab>
+
+	</properties>
+</shape>

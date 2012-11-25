@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<shape xmlns:trq="http://www.midgard.zi-yu.com/XmlForms/">
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	~
+	~ Attributes that will be passed onto the shape factory, and that have
+	~ nothing to do with the XML forms.
+	~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<attributes element="field" type="ItemList" moniker="Midgard.Interop.Shapes.FieldItem,Midgard.Interop">
+		<text pattern="{0}">
+			<item ref="value"/>
+		</text>
+	</attributes>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	~
+	~ Properties that will be displayed up for display in the XML forms
+	~ screen.
+	~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<properties title="Add/Edit: Entity Field">
+		<size height="280"/>
+		<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~
+		~ Especificação Funcional
+		~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+		<tab name="Field" tooltip="Entity Field">
+			<string id="value" label="Field:">
+				<annotation>Entity field</annotation>
+				<mask>[a-zA-Z]</mask>
+				<required/>
+			</string>   
+		</tab>
+	</properties>
+</shape>

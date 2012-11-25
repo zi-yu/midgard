@@ -1,0 +1,54 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+				BoolEditor<$entity.Name>, INamingContainer {
+		
+		#region Base Implementation
+		
+		/// <summary>
+        /// Initializes this control
+        /// </summary>
+        /// <param name="args">Event arguments</param>
+		protected override void OnInit( EventArgs args )
+		{
+			base.OnInit(args);
+			AddValidators();
+		}
+		
+		/// <summary>
+        /// Indicates if the boolean is true or false
+        /// </summary>
+        /// <param name="entity">The $entity.Name instance</param>
+        /// <returns>The boolean value</returns>
+		protected override bool Checked( $entity.Name entity )
+		{
+			return entity.$field.PropertyName;
+		}
+		
+		/// <summary>
+        /// Updates an $entity.Name
+        /// </summary>
+        /// <param name="entity">An instance of $entity.Name</param>
+		public override void Update( $entity.Name entity )
+		{
+			entity.$field.PropertyName = check.Checked;
+		}
+		
+		/// <summary>
+        /// Field to be edited
+        /// </summary>
+		protected override string TargetName { 
+			get { return "$field.Name"; }
+		}
+		
+		#endregion

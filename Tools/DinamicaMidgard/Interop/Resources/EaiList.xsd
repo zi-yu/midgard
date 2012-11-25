@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by rth77 (rth77) -->
+<xsd:schema targetNamespace="http://www.tranquilidade.pt/EAI/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.tranquilidade.pt/EAI/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:element name="eaiList">
+		<xsd:annotation>
+			<xsd:documentation>List of EAI services.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="service">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="summary"/>
+						</xsd:sequence>
+						<xsd:attribute name="code" type="xsd:string" use="required"/>
+						<xsd:attribute name="name" type="xsd:string" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<project name="Midgard" default="build" basedir="../">
+	
+	<description>Midgard</description>
+	<property name="debug" value="true" unless="${property::exists('debug')}"/>
+	<property name="version" value="0.1" />
+
+	<target name="clean" description="Removes all generated files">
+		<nant buildfile="Loki/Loki.build" target="clean" inheritall="true" />
+		<nant buildfile="Odin/Odin.build" target="clean" inheritall="true" />
+		<nant buildfile="Plugins/Plugins.build" target="clean" inheritall="true" />
+		<nant buildfile="Tests/Tests.build" target="clean" inheritall="true" />
+		<delete dir="Deploy" failonerror="false" />
+		<delete >
+			<fileset>
+				<exclude name="TestProjects/Sms/Project/*" />
+				<exclude name="TestProjects/Blog/Project/*" />
+				<exclude name="TestProjects/Quartz/Project/*" />
+				<exclude name="TestProjects/Quartz/XmlLibraries/**/*" />
+				<include name="TestProjects/**/*" />
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="prepare" description="Copies necessary files" >
+		<copy file="Tools/General/DesignPatterns.dll" todir="Loki/bin/" />
+		<copy file="Tools/General/log4net.dll" todir="Loki/bin/" />
+		<copy file="Tools/General/NVelocity.dll" todir="Loki/bin/" />
+		<copy file="Tools/General/Commons.dll" todir="Loki/bin/" />
+		<copy file="Tools/General/Mono.GetOptions.dll" todir="Odin/bin/" />
+		<copy file="Tools/General/nunit.framework.dll" todir="Tests/bin/" />
+		<copy file="Tools/General/nunit.framework.dll" todir="Odin/bin/" />
+	</target>
+
+	<target name="build" description="Build's Midgard" depends="clean, prepare">
+		<nant buildfile="Loki/Loki.build" target="build-all" inheritall="true" />
+		<nant buildfile="Odin/Odin.build" target="build-all" inheritall="true" />
+		<nant buildfile="Plugins/Plugins.build" target="build-all" inheritall="true" />
+		<nant buildfile="Tests/Tests.build" target="build-all" inheritall="true" unless="${string::contains( framework::get-target-framework(), 'mono')}" />
+	</target>
+
+	<target name="test" description="Runs the Tests" depends="build">
+		<nant buildfile="Tests/Tests.build" target="run" inheritall="true" />
+	</target>
+
+	<target name="deploy" description="Deploys Midgard" depends="build, test">
+		<copy file="Tools/General/DesignPatterns.dll" todir="Deploy" />
+		<copy file="Tools/General/log4net.dll" todir="Deploy" />
+		<copy file="Tools/General/NVelocity.dll" todir="Deploy" />
+		<copy file="Tools/General/Commons.dll" todir="Deploy" />
+		<copy file="Tools/General/Mono.GetOptions.dll" todir="Deploy" />
+		<copy file="Tools/General/nunit.framework.dll" todir="Deploy" />
+		
+		<copy file="Tools/General/NHibernate.dll" todir="Deploy/CoreAssemblies" />
+		<copy file="Tools/General/NVelocity.dll" todir="Deploy/CoreAssemblies" />
+    <copy file="Tools/General/Template.properties.txt" todir="Deploy/" />
+    <copy file="Tools/General/Commons.dll" todir="Deploy/CoreAssemblies" />
+		<copy file="Tools/General/Microsoft.Web.Atlas.dll" todir="Deploy/CoreAssemblies" />
+		<copy file="Tools/General/Iesi.Collections.dll" todir="Deploy/CoreAssemblies" />
+
+		<copy file="Odin/bin/Odin.exe" todir="Deploy/" />
+		<copy file="Odin/bin/Odin.dll" todir="Deploy/" />
+		<copy file="Odin/bin/Loki.dll" todir="Deploy/" />
+
+		<copy todir="Deploy/">
+			<fileset basedir="Odin/bin/">
+				<include name="Plugins/**/*" />
+				<exclude name="Plugins/CodeGenerator/NeoUtilities.dll" />
+				<include name="Data/**/*" />
+			</fileset>
+		</copy>
+		
+		<copy todir="Deploy/Admin">
+			<fileset basedir="Odin/Admin/">
+				<include name="Images/**/*" />
+				<include name="Style/**/*" />
+			</fileset>
+		</copy>
+
+	</target>
+
+	<target name="test-projects" description="Build's Midgard Test Projects" depends="deploy">
+		<call target="sms-project" />
+		<call target="blog-project" />
+	</target>
+
+	<target name="sms-project" description="Build's Midgard SMS Project">
+		<exec workingdir="Deploy" basedir="Deploy" program="Odin.exe" 
+			commandline="--verbose --project:../TestProjects/Sms/Project/Sms.xml" 
+			useruntimeengine="true" />
+		<nant buildfile="TestProjects/Sms/Sms.build" target="build-all" inheritall="true"  />
+	</target>
+	
+	<target name="blog-project" description="Build's Midgard Blog Project">
+		<exec workingdir="Deploy" basedir="Deploy" program="Odin.exe" 
+			commandline="--project:../TestProjects/Blog/Project/Blog.xml" 
+			useruntimeengine="true" />
+		<nant buildfile="TestProjects/Blog/Blog.build" target="build-all" inheritall="true"  />
+	</target>
+	
+	<target name="quartz-project" description="Build's Quartz Project">
+		<exec workingdir="Deploy" basedir="Deploy" program="Odin.exe" 
+			commandline="--project:../TestProjects/Quartz/Project/Quartz.xml" 
+			useruntimeengine="true" />
+	</target>
+
+	<target name="all" description="Build's Midgard Test Projects" depends="test-projects">
+	</target>
+
+	<target name="document" description="Build's Midgard Documentation">
+		<ndoc>
+			<assemblies basedir="Odin/bin">
+				<include name="Odin.exe" />
+				<include name="Odin.dll" />
+				<include name="Loki.dll" />
+				<include name="Plugins/CodeGenerator/OdinUtilities.dll" />
+			</assemblies>
+			<summaries basedir="Tools/Docs">
+				<include name="NamespaceSummary.xml" />
+			</summaries>
+			<documenters>
+				<documenter name="MSDN">
+					<property name="OutputDirectory" value="Tools/Docs/Html" />
+					<property name="HtmlHelpName" value="Midgard" />
+					<property name="IncludeFavorites" value="False" />
+					<property name="Title" value="Midgard" />
+					<property name="SplitTOCs" value="False" />
+					<property name="DefaulTOC" value="" />
+					<property name="ShowVisualBasic" value="False" />
+					<property name="ShowMissingSummaries" value="True" />
+					<property name="ShowMissingRemarks" value="True" />
+					<property name="ShowMissingParams" value="True" />
+					<property name="ShowMissingReturns" value="True" />
+					<property name="ShowMissingValues" value="True" />
+					<property name="DocumentInternals" value="False" />
+					<property name="DocumentProtected" value="True" />
+					<property name="DocumentPrivates" value="False" />
+					<property name="DocumentEmptyNamespaces" value="False" />
+					<property name="IncludeAssemblyVersion" value="True" />
+					<property name="CopyrightText" value="Copyright (c) Zi-Yu.com" />
+                    <property name="CopyrightHref" value="http://midgard.zi-yu.com" />      
+                </documenter>
+            </documenters> 
+        </ndoc>
+
+	</target>
+
+</project>

@@ -1,0 +1,183 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1425B72B-E694-4F1D-828C-31D72F2DEFB5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Odin</RootNamespace>
+    <AssemblyName>Odin</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Tools\Key\Midgard.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;VS2005</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;VS2005</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DesignPatterns, Version=1.1.0.0, Culture=neutral, PublicKeyToken=09352869ad1dca42">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Tools\General\DesignPatterns.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Src\AssemblyInfo.cs" />
+    <Compile Include="Src\Core\Generator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Loki\Loki.csproj">
+      <Project>{541EC53F-37BD-4D1B-9154-38B5D8F9A84F}</Project>
+      <Name>Loki</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\NHibernate.GenerateConfig\Configuration.cfg.xml.vtl" />
+    <None Include="bin\Data\NHibernate.ModelSchema\Model.hbm.xml.vtl" />
+    <None Include="bin\Data\NHibernate.PersistanceClasses\NHibernateUtility.vtl" />
+    <None Include="bin\Data\NHibernate.PersistanceClasses\Persistance.vtl" />
+    <None Include="bin\Data\NHibernate.PersistanceClasses\PersistanceClasses.vtl" />
+    <None Include="bin\Data\Odin.CopyBaseFiles\CopyAssemblies.vtl" />
+    <None Include="bin\Data\Odin.GenerateBaseTests\BaseClassTestsTemplate.vtl" />
+    <None Include="bin\Data\Odin.GenerateBase\BaseClassFieldsTemplate.vtl" />
+    <None Include="bin\Data\Odin.GenerateBase\BaseClassMethodsTemplate.vtl" />
+    <None Include="bin\Data\Odin.GenerateBase\BaseInterfaceTemplate.vtl" />
+    <None Include="bin\Data\Odin.GenerateConfigApp\GenerateConfigApp.vtl" />
+    <None Include="bin\Data\Odin.MSBuild\MSBuildTemplate.vtl" />
+    <None Include="bin\Data\Odin.MSBuild\SolutionTemplate.vtl" />
+    <None Include="bin\Data\Odin.Nant\NantTemplate.vtl" />
+    <None Include="bin\Data\Quartz.Global\Global.cs.vtl" />
+    <None Include="bin\Data\Templates\Midgard.txt.template" />
+    <None Include="bin\Data\Web.Admin\Action.cs.vtl" />
+    <None Include="bin\Data\Web.Admin\ActionCreate.vtl" />
+    <None Include="bin\Data\Web.Admin\ActionDefault.vtl" />
+    <None Include="bin\Data\Web.Admin\ActionManage.vtl" />
+    <None Include="bin\Data\Web.Admin\ActionSearch.vtl" />
+    <None Include="bin\Data\Web.Admin\Admin.master.cs.vtl" />
+    <None Include="bin\Data\Web.Admin\Admin.master.vtl" />
+    <None Include="bin\Data\Web.Admin\AdminDefault.aspx.cs.vtl" />
+    <None Include="bin\Data\Web.Admin\AdminDefault.aspx.vtl" />
+    <None Include="bin\Data\Web.Admin\ActionEdit.vtl" />
+    <None Include="bin\Data\Web.Admin\HttpHeaders.cs.vtl" />
+    <None Include="bin\Data\Web.Admin\HttpHeaders.vtl" />
+    <None Include="bin\Data\Web.Admin\Information.cs.vtl" />
+    <None Include="bin\Data\Web.Admin\LeftMenu.cs.vtl" />
+    <None Include="bin\Data\Web.Admin\OfflineModule.cs.vtl" />
+    <None Include="bin\Data\Web.Admin\QueryAnalyser.cs.vtl" />
+    <None Include="bin\Data\Web.Admin\QueryAnalyser.vtl" />
+    <None Include="bin\Data\Web.Admin\SendMail.cs.vtl" />
+    <None Include="bin\Data\Web.Admin\SendMail.vtl" />
+    <None Include="bin\Data\Web.Admin\SmtpSettings.cs.vtl" />
+    <None Include="bin\Data\Web.Admin\SmtpSettings.vtl" />
+    <None Include="bin\Data\Web.Admin\StateManager.cs.vtl" />
+    <None Include="bin\Data\Web.Admin\StateManager.vtl" />
+    <None Include="bin\Data\Web.Admin\TopMenu.cs.vtl" />
+    <None Include="bin\Data\Web.Authentication\AuthenticateModule.cs.vtl" />
+    <None Include="bin\Data\Web.Authentication\Roles.xml.vtl" />
+    <None Include="bin\Data\Web.Authentication\RoleVisible.cs.vtl" />
+    <None Include="bin\Data\Web.Authentication\Login.aspx.cs.vtl" />
+    <None Include="bin\Data\Web.Authentication\Login.aspx.vtl" />
+    <None Include="bin\Data\Web.Authentication\Login.cs.vtl" />
+    <None Include="bin\Data\Web.Controls.LiveChat\ChannelASyncPost.cs.vtl" />
+    <None Include="bin\Data\Web.Controls.LiveChat\ChannelControl.cs.vtl" />
+    <None Include="bin\Data\Web.Controls.LiveChat\ChannelSyncPost.cs.vtl" />
+    <None Include="bin\Data\Web.Controls.LiveChat\Chat.ascx.vtl" />
+    <None Include="bin\Data\Web.Controls.LiveChat\Chat.asmx.cs.vtl" />
+    <None Include="bin\Data\Web.Controls.LiveChat\Chat.asmx.vtl" />
+    <None Include="bin\Data\Web.Controls.QuoteOfTheDay\QuoteOfTheDay.cs.vtl" />
+    <None Include="bin\Data\Web.Controls.XsltControl\XsltControl.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\AdminBanner.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\BaseEntityCount.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\BaseEntityEdit.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\BaseEntityFieldEditor.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\BaseEntityItem.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\BaseFieldControl.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\BaseList.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\BasePagedList.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\BasePagination.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\BoolEditor.cs.vtl" />
+    <None Include="bin\Data\Web.Authentication\RoleManager.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\EditControl_DoubleField.vtl" />
+    <None Include="bin\Data\Web.Controls\DoubleEditor.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\DateTimeEditor.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\EditControl.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\EditControl_BoolField.vtl" />
+    <None Include="bin\Data\Web.Controls\EditControl_DateTimeField.vtl" />
+    <None Include="bin\Data\Web.Controls\EditControl_EntityField.vtl" />
+    <None Include="bin\Data\Web.Controls\EditControl_IntField.vtl" />
+    <None Include="bin\Data\Web.Controls\EditControl_StringField.vtl" />
+    <None Include="bin\Data\Web.Controls\EntityCount.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\EntityDelete.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\EntityDeleteAll.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\EntityEdit.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\EntityItem.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\EntityJson.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\EntityList.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\EntityPagedList.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\EntityPagination.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\EntityXml.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\FieldControl.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\IntEditor.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\Login.cs.vtl" />
+    <None Include="bin\Data\Web.Authentication\SendMail.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\SourceType.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\StringEditor.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\UpdateButton.cs.vtl" />
+    <None Include="bin\Data\Web.Controls\Validators.vtl" />
+    <None Include="bin\Data\Web.Default\Default.aspx.cs.vtl" />
+    <None Include="bin\Data\Web.Default\Default.aspx.vtl" />
+    <None Include="bin\Data\Web.Default\Error.aspx.vtl" />
+    <None Include="bin\Data\Web.Default\Maintenance.aspx.vtl" />
+    <None Include="bin\Data\Web.ExceptionLogger\ExceptionLogger.vtl" />
+    <None Include="bin\Data\Web.GlobalAsax\Global.asax.cs.vtl" />
+    <None Include="bin\Data\Web.GlobalAsax\Global.asax.vtl" />
+    <None Include="bin\Data\Web.HttpCompression\CompressionModule.cs.vtl" />
+    <None Include="bin\Data\Web.I18N.Independent\Label.cs.vtl" />
+    <None Include="bin\Data\Web.I18N.Independent\LanguageManager.cs.vtl" />
+    <None Include="bin\Data\Web.I18N.Independent\LanguageModule.cs.vtl" />
+    <None Include="bin\Data\Web.I18N.Independent\LanguageResources.cs.vtl" />
+    <None Include="bin\Data\Web.I18N.Independent\LocalizationTemplate.cs.vtl" />
+    <None Include="bin\Data\Web.I18N.Independent\Resources.xml.vtl" />
+    <None Include="bin\Data\Web.I18N\LanguageManager.cs.vtl" />
+    <None Include="bin\Data\Web.I18N\Label.cs.vtl" />
+    <None Include="bin\Data\Web.I18N\LanguageModule.cs.vtl" />
+    <None Include="bin\Data\Web.I18N\Resource.Designer.cs.vtl" />
+    <None Include="bin\Data\Web.I18N\Resource.resx.vtl" />
+    <None Include="bin\Data\Web.Providers\MidgardRoleProvider.vtl" />
+    <None Include="bin\Data\Web.Providers\MidgardUserProvider.vtl" />
+    <None Include="bin\Data\Web.RequestLogger\LatestReferrals.cs.vtl" />
+    <None Include="bin\Data\Web.RequestLogger\LatestRequests.cs.vtl" />
+    <None Include="bin\Data\Web.RequestLogger\RequestLoggerModule.cs.vtl" />
+    <None Include="bin\Data\Web.WebConfig\WebConfig.vtl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Data\Examples\Sms.xml" />
+    <Content Include="bin\Data\Readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

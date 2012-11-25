@@ -1,0 +1,12 @@
+!O que é o Ruby
+
+O Ruby é uma framework de programação open source que teve a sua origem no Japão em 1990. Possui uma syntax limpa, simples e elegante. Conjunga o conceito do Smalltalk, com a facilidade de aprendizagem de linguagens como o Python e o pragmatismo do Perl. O que a linguagem promete é o desenvolvimento de aplicações Web 2.0 "with joy and less code".
+
+!O que é o Rails
+
+O Rails é uma framework feita em ruby aplicações Web 2.0 que possuam bases de dados. O que promete o rails? Desenvolvimento deste tipo de aplicações 10 vezes mais rápido sem fazer qualquer sacrifício
+
+
+
+:Summary: Ruby On Rails 
+

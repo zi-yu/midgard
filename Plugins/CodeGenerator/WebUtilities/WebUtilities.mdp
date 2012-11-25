@@ -1,0 +1,53 @@
+<Project name="WebUtilities" fileversion="2.0" language="C#" clr-version="Net_2_0" ctype="DotNetProject">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="DotNetProjectConfiguration">
+      <Output directory="../../../Odin/bin/Plugins/CodeGenerator" assembly="WebUtilities" />
+      <Build debugmode="True" target="Library" />
+      <Execution runwithwarnings="True" consolepause="True" runtime="MsNet" clr-version="Net_2_0" />
+      <CodeGeneration compiler="Csc" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" generatexmldocumentation="False" ctype="CSharpCompilerParameters" />
+    </Configuration>
+    <Configuration name="Release" ctype="DotNetProjectConfiguration">
+      <Output directory="./bin/" assembly="WebUtilities" />
+      <Build debugmode="False" target="Library" />
+      <Execution runwithwarnings="True" consolepause="True" runtime="MsNet" clr-version="Net_2_0" />
+      <CodeGeneration compiler="Csc" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" generatexmldocumentation="False" ctype="CSharpCompilerParameters" />
+    </Configuration>
+  </Configurations>
+  <DeploymentInformation strategy="File">
+    <excludeFiles />
+  </DeploymentInformation>
+  <Contents>
+    <File name="./Admin.cs" subtype="Code" buildaction="Compile" />
+    <File name="./AdminFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Authentication.cs" subtype="Code" buildaction="Compile" />
+    <File name="./AuthenticationFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Controls.cs" subtype="Code" buildaction="Compile" />
+    <File name="./ControlsFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Default.cs" subtype="Code" buildaction="Compile" />
+    <File name="./DefaultFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Dependencies.cs" subtype="Code" buildaction="Compile" />
+    <File name="./ExceptionLogger.cs" subtype="Code" buildaction="Compile" />
+    <File name="./ExceptionLoggerFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./GlobalAsax.cs" subtype="Code" buildaction="Compile" />
+    <File name="./GlobalAsaxFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./I18N.cs" subtype="Code" buildaction="Compile" />
+    <File name="./I18NFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Providers.cs" subtype="Code" buildaction="Compile" />
+    <File name="./ProvidersFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./QuoteOfTheDay.cs" subtype="Code" buildaction="Compile" />
+    <File name="./QuoteOfTheDayFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./RequestLogger.cs" subtype="Code" buildaction="Compile" />
+    <File name="./RequestLoggerFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./ResourceRegister.cs" subtype="Code" buildaction="Compile" />
+    <File name="./WebConfig.cs" subtype="Code" buildaction="Compile" />
+    <File name="./WebConfigFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./WebPluginBase.cs" subtype="Code" buildaction="Compile" />
+    <File name="./WebUtilities.csproj" subtype="Code" buildaction="Nothing" />
+    <File name="./XsltControl.cs" subtype="Code" buildaction="Compile" />
+    <File name="./XsltControlFactory.cs" subtype="Code" buildaction="Compile" />
+  </Contents>
+  <References>
+    <ProjectReference type="Project" localcopy="True" refto="Loki" />
+    <ProjectReference type="Assembly" localcopy="True" refto="../../../Loki/bin/DesignPatterns.dll" />
+  </References>
+</Project>

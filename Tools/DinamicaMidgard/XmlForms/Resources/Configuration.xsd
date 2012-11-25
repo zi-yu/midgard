@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:simpleType name="monikerType">
+		<xsd:annotation>
+			<xsd:documentation>Defines the possible values for a .NET type moniker.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="propertyTypeType">
+		<xsd:annotation>
+			<xsd:documentation>Defines the possible values for a property type.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\w+:\w+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="namespacePrefixType">
+		<xsd:annotation>
+			<xsd:documentation>Defines the possible values for a namespace prefix.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\w+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="configuration">
+		<xsd:annotation>
+			<xsd:documentation>Root element of configuration file.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="properties">
+					<xsd:annotation>
+						<xsd:documentation>Enumeration of all the configured properties.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="property">
+								<xsd:annotation>
+									<xsd:documentation>Definition of an XML property.</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:attribute name="type" type="propertyTypeType" use="required"/>
+									<xsd:attribute name="moniker" type="monikerType" use="required"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+					<xsd:unique name="uqPropertiesType">
+						<xsd:selector xpath="property"/>
+						<xsd:field xpath="@type"/>
+					</xsd:unique>
+				</xsd:element>
+				<xsd:element name="namespaces">
+					<xsd:annotation>
+						<xsd:documentation>Enumeration of all the custom namespaces.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="namespace">
+								<xsd:annotation>
+									<xsd:documentation>Defnition of a namespace.</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:attribute name="prefix" type="namespacePrefixType" use="required"/>
+									<xsd:attribute name="uri" type="xsd:anyURI" use="required"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+					<xsd:unique name="uqNamespacePrefix">
+						<xsd:selector xpath="namespace"/>
+						<xsd:field xpath="@prefix"/>
+					</xsd:unique>
+				</xsd:element>
+				<xsd:element name="shapeLibrary">
+					<xsd:annotation>
+						<xsd:documentation>Enumeration of settings reporting to the shape library.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="location">
+								<xsd:annotation>
+									<xsd:documentation>Location of the shape files. If @dir starts with a ~, it is relative to the assembly. Otherwise, it is an absolute path.</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:attribute name="dir" type="xsd:string" use="required"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

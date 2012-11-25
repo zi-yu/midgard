@@ -1,0 +1,38 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
+using System.Web.UI;
+using System.Web;
+using System.Security.Permissions;
+using System.Configuration;
+using System.Web.Configuration;
+using System.Net.Configuration;
+using System.Globalization;
+
+namespace $namespace {
+
+	[AspNetHostingPermission( SecurityAction.LinkDemand, Level = AspNetHostingPermissionLevel.Minimal )]
+	[AspNetHostingPermission( SecurityAction.InheritanceDemand, Level = AspNetHostingPermissionLevel.Minimal )]
+	public class SendMail : Page {
+		
+		protected override void OnLoad( EventArgs e ) {
+			HttpContext.Current.Session["CurrentEntity"] = "sendmail";
+			HttpContext.Current.Session["CurrentAction"] = "";
+		}
+		
+	}
+	
+}

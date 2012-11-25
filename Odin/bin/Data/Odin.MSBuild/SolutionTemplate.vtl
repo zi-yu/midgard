@@ -1,0 +1,47 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set($projExtension = ".csproj")
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+#foreach( $build in $buildInformation )
+Project("{$projectGuid}") = "$build.Name", "$build.Name/$build.Name$projExtension", "{$build.Guid}"
+EndProject
+#end
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+#foreach( $build in $buildInformation )
+		{$build.Guid}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{$build.Guid}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$build.Guid}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$build.Guid}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{$build.Guid}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{$build.Guid}.Release|.NET.ActiveCfg = Release|Any CPU
+		{$build.Guid}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$build.Guid}.Release|Any CPU.Build.0 = Release|Any CPU
+		{$build.Guid}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{$build.Guid}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+#end
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

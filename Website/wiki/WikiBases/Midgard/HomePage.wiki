@@ -1,0 +1,27 @@
+:Display: Midgard Wiki
+:Summary: Documentação do Projecto Midgard
+
+O Midgard é uma ferramenta [RAD] para suporte ao desenvolvimento de aplicações Web, com ênfase na camada de apresentação. Para uma descrição mais detalhada ver a [Apresentacao] do projecto.
+
+!!!Geral
+	* "Projecto na SF.net":https://sourceforge.net/projects/midgard-rad/
+		* "Bugs":https://sourceforge.net/tracker/?atid=786739&group_id=153184&func=browse
+		* "Tasks":https://sourceforge.net/pm/?group_id=153184
+		* "CVS":https://sourceforge.net/cvs/?group_id=153184
+		* "Downloads":https://sourceforge.net/project/showfiles.php?group_id=153184
+	* [Planeamento]
+
+!!!Midgard
+	* [Loki]
+	* [Odin]
+	* [Plugins]
+		* ListaDePlugins
+
+!!!Elementos de estudo
+	* [XMI]
+	* [ORM]
+	* FerramentasRAD
+	* [FerramentasTemplate]
+
+!!!Utilização do Wiki
+	* RegrasDeFormatacao

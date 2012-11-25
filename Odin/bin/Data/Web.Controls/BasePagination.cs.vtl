@@ -1,0 +1,114 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Web.UI;
+using Loki.DataRepresentation;
+
+namespace $namespace {
+
+	/// <summary>
+    /// Base control for BasePagedList pagination
+    /// </summary>
+    /// <typeparam name="T">The entity type</typeparam>
+	public abstract class BasePagination<T> : Control where T : IDescriptable {
+
+		#region Ctor & Control Fields
+		
+		private int itemsPerPage = 25;
+		private int currentPage = 1;
+	
+		#endregion Control Fields
+		
+		#region Control Properties
+		
+		/// <summary>
+        /// Number of objects to render
+        /// </summary>
+		public int ItemsPerPage{
+			get{ return itemsPerPage; }
+			set{ itemsPerPage = value; }
+		}
+		
+		#endregion Control Properties
+	
+		#region Control Events
+		
+		/// <summary>
+        /// Initializes this control
+        /// </summary>
+        /// <param name="args">Event arguments</param>
+		protected override void OnInit( EventArgs args )
+		{
+			string current = Page.Request.QueryString["Page"];
+			if(!string.IsNullOrEmpty(current))
+				currentPage = int.Parse(current);
+			base.OnInit(args);
+		}
+		
+		/// <summary>
+        /// Renders this control
+        /// </summary>
+        /// <param name="writer">The HtmlTextWriter</param>
+		protected override void Render( HtmlTextWriter writer )
+		{
+			int numberOfPages = (int)Math.Ceiling((double)(GetTotalItems()/itemsPerPage));
+			writer.Write("<ul>");
+			writer.Write("<li><a href='{0}?Page=1'>First</a></li>", Page.Request.RawUrl);
+			writer.Write("<li><a href='{0}?Page={1}'>Previous</a></li>", Page.Request.RawUrl, GetPrevious());
+			for(int iter = 1; iter <= numberOfPages; ++iter){
+				if(iter == currentPage)
+				{
+					writer.Write("<li class='selected'><a href='{0}?Page={1}'>{1}</a></li>", Page.Request.RawUrl);
+				}
+				else
+					writer.Write("<li><a href='{0}?Page={1}'>{1}</a></li>", Page.Request.RawUrl);
+
+			}
+			writer.Write("</ul>");	
+		}
+		
+		#endregion Control Rendering
+				
+		#region Private Methods
+
+		/// <summary>
+        /// Get's the previous page
+        /// </summary>
+        /// <returns>The page number</returns>
+		private int GetPrevious(){
+		
+			if(currentPage == 1)
+				return 1;
+			else
+			{
+				return currentPage - 1;
+			}			
+		}
+
+		#endregion Private Methods
+		
+		#region Abstract Members
+		
+		/// <summary>
+        /// Gets the total number of objects to show
+        /// </summary>
+        /// <returns>The objects number</returns>
+		protected abstract int GetTotalItems();
+		
+		#endregion Abstract Members
+		
+	};
+
+}

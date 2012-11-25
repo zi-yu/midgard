@@ -1,0 +1,40 @@
+﻿<project name="Blog" outputPath="." author="ZI-YU.com" >
+	<loader>
+		<plugin name="Loader.Xmi" />
+	</loader>
+	<codeGenerator>
+		<plugin name="Odin.GenerateBase" />
+		<plugin name="NHibernate.PersistanceClasses" />
+		<plugin name="NHibernate.ModelSchema" />
+		<plugin name="NHibernate.GenerateConfig" >
+			<param name="ConnectionString" value="server=.;uid=midgard;pwd=spoon;database=Blog" />
+			<param name="Database" value="MsSql2000" />
+		</plugin>
+		<plugin name="Odin.CopyBaseFiles" />
+		<plugin name="Odin.GenerateConfigApp" />
+		<plugin name="Web.ExceptionLogger" />
+		<plugin name="Web.Authentication" />
+		<plugin name="Web.I18N.Independent" />
+		<plugin name="Web.Admin" />
+		<plugin name="Web.Controls" />
+		<plugin name="Web.Controls.XsltControl" />
+		<plugin name="Web.Controls.QuoteOfTheDay" />
+		<plugin name="Web.Providers" />
+		<plugin name="Web.Default" />
+		<plugin name="Web.WebConfig" />
+		<plugin name="Web.GlobalAsax" />
+		<plugin name="Web.RequestLogger" />
+		<plugin name="Odin.GenerateBaseTests" />
+	</codeGenerator>
+	<buildGenerator>
+		<plugin name="Odin.MSBuild" />
+		<plugin name="Odin.Nant" />
+	</buildGenerator>
+	<entities>
+		<entity name="Roles">
+			<field name="name" isPreview="true" represents="true">
+				<maxsize value="" />
+			</field>
+		</entity>
+	</entities>
+</project>

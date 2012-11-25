@@ -1,0 +1,1834 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<eaiList>
+  <service code="WS08008" name="PesquisarOcorrencias">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(  -08-2004) UN5 -Consultar Processo Si</summary>
+  </service>
+  <service code="WS08018" name="ListarApolicesOcorrencia">
+    <summary>-----------------------------------------
+LOG DE ALTERAÇÕES
+--------------------------------------</summary>
+  </service>
+  <service code="WS08016" name="ConsultarSinistro">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(21-12-2005) Incluir o campo de output </summary>
+  </service>
+  <service code="WS08015" name="ListarHistoricoGestores">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(  -08-2004) UN5 -Consultar Processo Si</summary>
+  </service>
+  <service code="WS08014" name="ListarAveriguacoes">
+    <summary>Este WebService tem como objectivo disponibilizar informação sobre as Averiguações de uma determinad</summary>
+  </service>
+  <service code="WS08013" name="ConsultarOcorrencia">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(  -08-2004) UN5 -Consultar Processo Si</summary>
+  </service>
+  <service code="WS08019" name="ListarPeritagensSinistro">
+    <summary>Este WebService tem como objectivo disponibilizar informação sobre as Peritagens de um determinado S</summary>
+  </service>
+  <service code="WS08020" name="ConsultarIDS">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(  -08-2004) UN5 -Consultar Processo Si</summary>
+  </service>
+  <service code="WS08021" name="ConsultarSinistrado">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(  -08-2004) UN5 -Consultar Processo Si</summary>
+  </service>
+  <service code="WS08023" name="ListarPensoes">
+    <summary>
+LOG DE ALTERAÇÕES
+----------------------------------------
+(  -08-2004) UN5 -Consultar Processo </summary>
+  </service>
+  <service code="WS08024" name="ListarProvisoes">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(  -08-2004) UN5 -Consultar Processo Si</summary>
+  </service>
+  <service code="WS08025" name="ListarPagamentosReembolsos">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(  -08-2004) UN5 -Consultar Processo Si</summary>
+  </service>
+  <service code="WS08026" name="ConsultarRecibo">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(27-10-2004) UN5 -Consultar Processo Si</summary>
+  </service>
+  <service code="WS08001" name="CalcularProvisaoPagamentos">
+    <summary>Este Web Service recebe os dados referentes a um sinistro e devolve o valor da Provisão Inicial de P</summary>
+  </service>
+  <service code="WS08003" name="ListarSinistrosOcorrencia">
+    <summary>LOG DE ALTERAÇÔES AO WEB SERVICE:
+---------
+UN5 - Consultas Sinistros - Alteração ao Web Service
+</summary>
+  </service>
+  <service code="WS08004" name="PesquisarDuplicacoesOcorrencias">
+    <summary>LOG DE ALTERAÇÕES
+---------------------------------------------------
+
+(23-03-2005) - UN6 - Notif</summary>
+  </service>
+  <service code="WS08002" name="CriarOcorrenciaReclamanteSinistro">
+    <summary>LOG ALTERACÕES
+-------------------------------------------------------------------
+(23-03-2005) UN</summary>
+  </service>
+  <service code="WS08006" name="ConsultarEstruturaOcorrencia">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(  -08-2004) UN5 -Consultar Processo Si</summary>
+  </service>
+  <service code="WS08007" name="ConsultarReclamante">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(  -08-2004) UN5 -Consultar Processo Si</summary>
+  </service>
+  <service code="WS08028" name="InserirAlterarServicosPrestados">
+    <summary>LOG DE ALTERAÇÕES:
+----------------------------------------------------------------------------
+(2</summary>
+  </service>
+  <service code="WS08029" name="ConsultarServicosPrestados">
+    <summary>LOG DE ALTERAÇÕES:
+----------------------------------------------------------------------------
+(2</summary>
+  </service>
+  <service code="WS08030" name="InserirAlterarReclamante">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(13-04-2005) UN6- Notificar Ocorrencia
+</summary>
+  </service>
+  <service code="WS08031" name="InserirOcorrencia">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(13-04-2005) UN6- Notificar Ocorrencia
+</summary>
+  </service>
+  <service code="WS08032" name="LigarDesligarOcorrenciaApolice">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(13-04-2005) UN6- Notificar Ocorrencia
+</summary>
+  </service>
+  <service code="WS08200" name="ListaReclamantesOcorrencia">
+    <summary>
+Este WebService tem como objectivo disponibilizar a Lista de Reclamantes para uma ocorrencia. Para</summary>
+  </service>
+  <service code="WS08033" name="InserirAlterarOcorrencia">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+
+(04-10-2005-VF) UN6- Notificar Ocorrê</summary>
+  </service>
+  <service code="WS08035" name="InserirSinistro">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(04-11-2005-VF) UN6
+------------------</summary>
+  </service>
+  <service code="WS08036" name="ListarObjectosCoberturas">
+    <summary>(08-11-2005-UN6)
+
+O objectivo deste serviço é obter a lista das possíveis Coberturas para conexão </summary>
+  </service>
+  <service code="WS08037" name="IniciarProcessoNotificacaoOcorrencia">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(2005) UN6- Notificar Ocorrência
+(05-0</summary>
+  </service>
+  <service code="WS08038" name="RegistarNotificacao">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+
+(2005) UN6- Notificar Ocorrência
+(07</summary>
+  </service>
+  <service code="WS01038" name="PesquisarCodigosPostais">
+    <summary>
+Este web service tem como objectivo pesquisar códigos postais, utilizando os critérios de pesquisa</summary>
+  </service>
+  <service code="WS01012" name="ListarNomesCliente">
+    <summary>Este serviço permite obter a lista de todos os nomes do cliente permitindo o filtro por data, tipo d</summary>
+  </service>
+  <service code="WS01017" name="ListarMoradasClientes">
+    <summary>Este serviço permite obter a lista de todas as moradas do cliente, permitindo filtros por situação d</summary>
+  </service>
+  <service code="WS01019" name="ConsultarDadosEspecificosMediador">
+    <summary>Este serviço permite obter os dados especificos do cliente enquanto Mediador.
+
+O Serviço recebe o </summary>
+  </service>
+  <service code="WS01020" name="ConsultarDadosLogisticosMediador">
+    <summary>Este serviço permite obter os dados logisticos do cliente enquanto Mediador.
+
+O Serviço recebe o N</summary>
+  </service>
+  <service code="WS01018" name="ListarApolicesMorada">
+    <summary>Este serviço permite obter a lista de Apólices de uma morada do cliente.
+
+Apenas tem de suportar p</summary>
+  </service>
+  <service code="WS01021" name="ListarRelacoesCliente">
+    <summary>Este serviço permite obter a lista de relações do cliente.
+
+Apenas tem de suportar paginação simpl</summary>
+  </service>
+  <service code="WS01022" name="ListarHistoricoCliente">
+    <summary>*log 13/03/06 - Foi pedido que fosse informada a data (com a inclusão da hora) da alteração mais rec</summary>
+  </service>
+  <service code="WS01008" name="ListarApolices">
+    <summary>Este Serviço permite obter a lista de apólices associadas a um cliente, permitindo paginação e filtr</summary>
+  </service>
+  <service code="WS01009" name="ListarSinistros">
+    <summary>Este Serviço permite obter a lista de sinistros associados a um cliente, permitindo paginação e filt</summary>
+  </service>
+  <service code="WS01010" name="ListarRecibos">
+    <summary>
+
+-------------------------------------------------------------------------------------------&lt; Alt</summary>
+  </service>
+  <service code="WS01003" name="ConsultarDadosClienteIndividual">
+    <summary>Este serviço permite obter os dados complementares de um cliente individual. Para tal recebe o númer</summary>
+  </service>
+  <service code="WS01004" name="ConsultarDadosClienteColectivo">
+    <summary>Este serviço permite obter os Dados complementares de Cliente Colectivo.
+
+Recebe o Número do Clien</summary>
+  </service>
+  <service code="WS01026" name="ListarPotenciaisDuplicados">
+    <summary>Este serviço devolve uma lista de possiveis endereços caso sejam detectadas incorreções na morada, p</summary>
+  </service>
+  <service code="WS01027" name="PesquisarClientesUP">
+    <summary>-------------------------------------------------------------------------------------------&lt; Alterac</summary>
+  </service>
+  <service code="WS01013" name="ConsultarDadosBasicosCliente">
+    <summary>Este serviço permite obter os dados básicos do cliente.
+
+O Serviço recebe o Número do Cliente e in</summary>
+  </service>
+  <service code="WS01014" name="ConsultarDadosComplementaresCliente">
+    <summary>Este serviço permite obter os dados complementares do cliente.
+
+O Serviço recebe o Número do Clien</summary>
+  </service>
+  <service code="WS01032" name="NormalizarNomeMorada">
+    <summary>Este serviço tem como objectivo devolver uma lista de possiveis endereços caso sejam detectadas inco</summary>
+  </service>
+  <service code="WS01039" name="ConsultarNomeCliente">
+    <summary>Este Serviço permite obter um resumo do cliente, como por exemplo o número total de sinistros, o núm</summary>
+  </service>
+  <service code="WS01040" name="InserirDadosCliente">
+    <summary>Este WebService permite inserir um Cliente Individual ou Colectivo, contemplando os dados Basicos e </summary>
+  </service>
+  <service code="WS01041" name="AlterarDadosCliente">
+    <summary>* 12/04/06 - Possibilitar a alteração de Nomes e Moradas caso a respectiva estrutura venha abastecid</summary>
+  </service>
+  <service code="WS01042" name="InserirNomes">
+    <summary>Este serviço tem como objectivo inserir Nomes para um  Cliente. O serviço permite o tratamento de um</summary>
+  </service>
+  <service code="WS01043" name="InserirMoradas">
+    <summary>Este serviço permite inserir ou alterar uma morada para um Cliente já existente. O serviço pode rece</summary>
+  </service>
+  <service code="WS01045" name="InserirRelacao">
+    <summary>Este serviço permite associar a um cliente nova relação com outro cliente ou com outra qualquer enti</summary>
+  </service>
+  <service code="WS01047" name="ConsultarDadosCliente">
+    <summary>Este serviço tem como objectivo obter a informação conjunta dos Dados Basicos e Dados Complementares</summary>
+  </service>
+  <service code="WS01035" name="ActualizarCliente">
+    <summary>Este serviço permite a actualização dos dados do cliente invocando a API de gestão de Clientes PZ1UG</summary>
+  </service>
+  <service code="WS01036" name="ValidarCodigoPostal">
+    <summary>Este serviço permite validar o codigo postal introduzido, invocando a API PZ1PCUH com o seguintes va</summary>
+  </service>
+  <service code="WS01050" name="ListarNibsCliente">
+    <summary>Este serviço permite aceder à lista de Nibs de um cliente.
+
+Este serviço não efectua qualquer tipo</summary>
+  </service>
+  <service code="WS01051" name="ListarOcorrenciasCliente">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(12-11-2004) UN5 -Consultar Processo Si</summary>
+  </service>
+  <service code="WS01058" name="ConsultarHistoricoCliente">
+    <summary>Este serviço tem como objectivo obter o detalhe dos dados do cliente anteriores à efectivação de uma</summary>
+  </service>
+  <service code="WS01046" name="AlterarRelacao">
+    <summary>Este serviço permite alterar uma relação entre um cliente e outro cliente ou outra qualquer entidade</summary>
+  </service>
+  <service code="WS01059" name="ModificarNomesMoradas">
+    <summary>* 12/04/06 - Em vez de abastecer a data do dia na Data Inicio do Processo, utilizar o campo de input</summary>
+  </service>
+  <service code="WS01061" name="ValidarDataInicioProcessoModCliente">
+    <summary>*log 13/03/06
+em vez da Data Entrada utilizar Ultima-Alteracao
+
+*log 26/01/06
+em vez da Data his</summary>
+  </service>
+  <service code="WS01055" name="GerirRelacaoReclamante">
+    <summary>Este serviço permite substituir uma relação de reclamante entre um cliente (NumeroCliente)  e outro </summary>
+  </service>
+  <service code="WS01063" name="ObterResumoClienteCogen">
+    <summary>Este serviço permite obter uma informação resumida do valor de cliente com base na informação reside</summary>
+  </service>
+  <service code="WS01064" name="ObterInfGestaoResumo">
+    <summary>Este serviço permite obter a informação de gestão de cliente com base na informação residente no SIG</summary>
+  </service>
+  <service code="WS01065" name="ListarApolicesAssociadas">
+    <summary>Este Serviço permite obter a lista de apólices associadas (filhas) de um contrato de Grupo de um cli</summary>
+  </service>
+  <service code="WS01066" name="PortfAgenteListarClientes">
+    <summary>Este Serviço permite obter a lista de Clientes do agente em contexto. Para tal terá que receber, com</summary>
+  </service>
+  <service code="WS01067" name="PortfAgenteListarApolices">
+    <summary>Este Serviço permite obter a lista de Apólices do agente em contexto. Para tal terá que receber, com</summary>
+  </service>
+  <service code="WS01068" name="PortfAgenteListarOcorrencias">
+    <summary>Este Serviço permite obter a lista de Ocorrências do agente em contexto. Para tal terá que receber, </summary>
+  </service>
+  <service code="WS01069" name="PortfAgenteListarRecibos">
+    <summary>Este Serviço permite obter a lista de Recibos  do agente em contexto. Para tal terá que receber, com</summary>
+  </service>
+  <service code="WS01070" name="PortfAgenteResumoApolice">
+    <summary>Este Serviço permite obter o resumo de um contrato pertencente ao agente em contexto. Para tal terá </summary>
+  </service>
+  <service code="WS01071" name="PortfAgenteResumoRecibo">
+    <summary>Este Serviço permite obter o resumo de um recibo pertencente ao agente em contexto. Para tal terá qu</summary>
+  </service>
+  <service code="WS01072" name="AssociarProspect">
+    <summary>Este Serviço permite associar um cliente a um agente, criando o conceito de Prospect.
+Como informaç</summary>
+  </service>
+  <service code="WS01073" name="ConsultarDadosClienteT">
+    <summary>Este serviço permite obter os alguns dados específicos de um cliente T assim como uma lista dos reci</summary>
+  </service>
+  <service code="WS01074" name="ObterNomesClientes">
+    <summary>Este serviço permite obter o nome de várias entidades apenas numa só chamada.
+Este serviço está lim</summary>
+  </service>
+  <service code="WS07001" name="PesquisarLocaisdeRisco">
+    <summary>Este Web Service tem como objectivo retornar uma lista de Locais de Risco, com base nos critérios de</summary>
+  </service>
+  <service code="WS04001" name="ConsultarDadosVeiculoApolice">
+    <summary>Este serviço recebe o número de apólice e a data de ocorrência que utiliza para preencher o campo de</summary>
+  </service>
+  <service code="WS04008" name="ConsultarContrato">
+    <summary>Este Serviços vai devolver toda a informação associada aos dados complementares de uma apólice numa </summary>
+  </service>
+  <service code="WS04004" name="ListarObjectosSegurosApolice">
+    <summary>------------------------------------
+(07-11-2005) UN6 - Actualização do serviço de acordo com o imp</summary>
+  </service>
+  <service code="WS04003" name="ValidarApolicePorData">
+    <summary>LOG DE ALTERAÇÕES
+---------------------------------------------------------------------------------</summary>
+  </service>
+  <service code="WS04005" name="ConsultarTipoProduto">
+    <summary>Este serviço permite aceder ao ecrã de caracteristicas do produto e obter toda a informação associad</summary>
+  </service>
+  <service code="WS04010" name="PesquisarApolices">
+    <summary>LOG DE ALTERAÇÕES
+-----------------------------------------------------------------------
+(25-02-2</summary>
+  </service>
+  <service code="WS04009" name="PesquisarApolicesNome">
+    <summary>TG: 18/4/2005 
+Incluir o acesso ao serviço WS04012 ValidarApoliceSaco de modo a popular o novo camp</summary>
+  </service>
+  <service code="WS04012" name="VerificarApolicesSaco">
+    <summary>Este serviço permite verificar se uma determinada apólice é real ou é saco.
+
+O sistema invoca a tr</summary>
+  </service>
+  <service code="WS04011" name="ObterDadosApolice">
+    <summary>Log: TG 15/4/2005
+
+O serviço foi alterado de modo a invocar o serviço WS04012 VerificarApolicesSac</summary>
+  </service>
+  <service code="WS04013" name="ObterEstruturaContrato">
+    <summary>(08-11-2005-UN6)
+(21-11-2005-UN6) OUTPUT dos dados do veículo
+(21-12-2005-UN6) Descrição do Object</summary>
+  </service>
+  <service code="WS0F002" name="ListarTipoSinistros">
+    <summary>Este serviço vai disponibilizar a lista de descrições tipificadas possíveis para o tipo de sinistro,</summary>
+  </service>
+  <service code="WS0F004" name="ListarCAE">
+    <summary>Este serviço tem como objectivo listar os códigos CAE.
+
+A tabela Z1CA - Codigos CAE, que se encont</summary>
+  </service>
+  <service code="WS0F005" name="ListarProfissoes">
+    <summary>Este serviço tem como objectivo obter a lista de Profissões.
+
+A tabela Z1PR - Profissões, que se e</summary>
+  </service>
+  <service code="WSWF020" name="ListarUtilizadoresPorProcesso">
+    <summary>Log de Alterações
+
+TG:27/3/2006
+Substituição das actuais invocações ao W4 pela invocação da  stor</summary>
+  </service>
+  <service code="WSWS019" name="AnexarDocumento">
+    <summary>Este serviço permite a anexação de um documento a um processo de workflow.
+
+Este documento deverá </summary>
+  </service>
+  <service code="WSWF018" name="ApresentarDadosNegocioTarefa">
+    <summary>Log de Alterações
+
+TG:6/10/2005
+Esta alteração adiciona a invocação de um WebService do W4 antes </summary>
+  </service>
+  <service code="WSWF017" name="ColocarEntidadeAusente">
+    <summary>Este serviço permite colocar um determinado utilizador como ausente para a aplicação de Workflow.
+
+</summary>
+  </service>
+  <service code="WSWF016" name="ObterDicionario">
+    <summary>Este serviço disponibiliza a lista dos títulos de comentários possiveis para um determinado processo</summary>
+  </service>
+  <service code="WSWF015" name="ConsultarHistoricoProcesso">
+    <summary>Este serviço disponibiliza a lista de tarefas histórica do processo, isto é, as várias actividades d</summary>
+  </service>
+  <service code="WSWF014" name="ListarTarefasComFiltro">
+    <summary>Este serviço permite obter a lista de tarefas de ocordo com os filtros recebidos em input.
+
+Este s</summary>
+  </service>
+  <service code="WSWF013" name="ListarDocumentos">
+    <summary>Este serviço disponibiliza a lista dos documentos associados ao processo recebido em contexto de inp</summary>
+  </service>
+  <service code="WSWF012" name="ListarComentarios">
+    <summary>Este serviço disponibiliza a lista dos comentários associados ao processo recebido em contexto de in</summary>
+  </service>
+  <service code="WSWF011" name="InserirComentarios">
+    <summary>Este serviço pemite a inserção de um comentário associado ao processo.
+
+Este serviço deve mapear o</summary>
+  </service>
+  <service code="WSWF010" name="ExecutarTarefa">
+    <summary>Este serviço irá permitir a execução de uma determinada tarefa, alterando o seu estado.
+
+Este serv</summary>
+  </service>
+  <service code="WSWF009" name="EncerrarProcesso">
+    <summary>Este serviço irá permitir o encarramento de um processo que se encontre na actividade inicial.
+
+Es</summary>
+  </service>
+  <service code="WSWF001" name="PesquisarProcessos">
+    <summary>Log de Alterações:
+
+TG 10/1/2006: Foram acrescentados campos para dar suporte aos valores-2 para a</summary>
+  </service>
+  <service code="WSWF006" name="DelegarTarefa">
+    <summary>Este serviço irá permitir a delegação de uma tarefa num outro utilizador
+
+Este serviço deve mapear</summary>
+  </service>
+  <service code="WSWF005" name="ColocarTarefaAguardar">
+    <summary>Este serviço irá permitir a alteração do estado de uma actividade para &quot;A aguardar&quot;.
+
+
+Este servi</summary>
+  </service>
+  <service code="WSWF004" name="CancelarTarefa">
+    <summary>Este serviço irá permitir o cancelamento de um actividade, isto é, reporá o estado do processo exact</summary>
+  </service>
+  <service code="WSWF003" name="ImgObterTasks">
+    <summary>Este serviço irá disponibilizar os Dados de Negócio para um determinado processo recebido em context</summary>
+  </service>
+  <service code="WSWF002" name="PesquisarTarefas">
+    <summary>ste serviço permite disponibilizar uma lista de processos de acordo com o preenchimento dos campos d</summary>
+  </service>
+  <service code="WSWF022" name="ConsultarDadosUtilizador">
+    <summary>Este serviço disponibiliza os dados do utilizador recebido em contexto de input:
+
+Este serviço dev</summary>
+  </service>
+  <service code="WSWF023" name="ListarEstruturaUtilizador">
+    <summary>Este serviço disponibiliza a lista de utilizadores com acesso ao Workflow,e que poderáo ser potencia</summary>
+  </service>
+  <service code="WSWF007" name="ListarProcessosUtilizador">
+    <summary>Log de Alterações 
+
+TG:18/11/2005
+
+Incluir no output do serviço um indicador da existência ou nã</summary>
+  </service>
+  <service code="WSWF024" name="ListarTarefasPorProcesso">
+    <summary>Este serviço deverá ter como input o processo e recebe como parametros de ouptut todas as tarefas de</summary>
+  </service>
+  <service code="WSWF025" name="ListarProcessosIniciar">
+    <summary>Este serviço disponibiliza uma lista de processos para os quais o utilizador de login tem perfil de </summary>
+  </service>
+  <service code="WSWF026" name="IniciarProcesso">
+    <summary>Este serviço permite a criação de um processo e o processamento da primeira actividade desse mesmo p</summary>
+  </service>
+  <service code="WSWF028" name="ColocarEntidadePresente">
+    <summary>Este serviço permite colocar um determinado utilizador como presente para a aplicação de Workflow.
+</summary>
+  </service>
+  <service code="WSWF027" name="ObterDicionarioItem">
+    <summary>Este serviço deve mapear o WebService do Workflow GetDictionaryItem Method
+
+Workflow.Dataminer.Get</summary>
+  </service>
+  <service code="WSWF031" name="ListarTarefasPorProcessoFiltrado">
+    <summary>Este serviço disponibiliza a lista de tarefas do utilizador  para um determinado processo recebido e</summary>
+  </service>
+  <service code="WSWF032" name="TratarTarefa">
+    <summary>Log de Alterações:
+
+TG 31/3/2006: Esta alteração pretende que a invocação do serviço de Inserir Do</summary>
+  </service>
+  <service code="WSWF034" name="IniciarPedidoInformacaoApolice">
+    <summary>TG:1/8/2005 
+Tratamento do Grupo de Produtos para encaminhamento do pedido de informação de apolice</summary>
+  </service>
+  <service code="WSWF035" name="RegisterCol">
+    <summary>Este serviço deve mapear com o WebService do Workflow  
+
+Dispatcher.RegisterCol Method 
+
+de acor</summary>
+  </service>
+  <service code="WSWF036" name="UnRegisterCol">
+    <summary></summary>
+  </service>
+  <service code="WSWF037" name="ListarVariaveisNegocio">
+    <summary>Log de Alterações
+
+TG:2/5/2006: Alteração com vista a apresentar as descrições das variáveis de um</summary>
+  </service>
+  <service code="WSWF038" name="ObterURL">
+    <summary>Este serviço receb como input o identificador da tarefa e devolve o respectivo URL.
+
+As especifica</summary>
+  </service>
+  <service code="WSWF040" name="ObterListaTarefas">
+    <summary>Este serviço permite obter a lista de tarefas de ocordo com os filtros recebidos em input.
+
+O sist</summary>
+  </service>
+  <service code="WSWF041" name="ObterProcessoActor">
+    <summary>Este serviço permite verificar se existe pelo menos uma actividade pendente na lista de tarefas de u</summary>
+  </service>
+  <service code="WSWF042" name="ListarUtilizadoresW4">
+    <summary>Este serviço permite listar os utilizadores do W4 filtrados por UserID ou UserName.
+
+Este serviço </summary>
+  </service>
+  <service code="WSWF043" name="ListarPedidos">
+    <summary>Este serviço permite listar os processos de Workflow relativos a um cliente. Apenas pesquisa process</summary>
+  </service>
+  <service code="WSWF045" name="ListarProcessosListaPedidos">
+    <summary>Log de Alterações:
+
+TG 11/1/2006: Inclusão do Id do Processo no output do serviço.
+
+____________</summary>
+  </service>
+  <service code="WSWF046" name="ObtemTotalizadorProcessos">
+    <summary>Este serviço permite obter o número total de pedidos, por estado, para determinado cliente. 
+Este e</summary>
+  </service>
+  <service code="WSWF047" name="ObterRegras">
+    <summary>Log de Alterações
+
+TG:2/5/2006: Alteração com vista a apresentar as descrições associadas aos nome</summary>
+  </service>
+  <service code="WSWF049" name="ObterNumeroProcesso">
+    <summary></summary>
+  </service>
+  <service code="WSWF050" name="ObterURLProcesso">
+    <summary>Este serviço receb como input os dados de Processo
+e devolve o respectivo URL:
+            NomePro</summary>
+  </service>
+  <service code="WSWF051" name="GetFullTask">
+    <summary>Este serviço foi solicitado no âmbito da migração do Front End do W4 para .NET e que se designa por </summary>
+  </service>
+  <service code="WSWF052" name="VerificaActividadeparaDocumento">
+    <summary>Este serviço deve invocar a store procedure W4P_ImgVerificaWorklist com o USER-ID e DocumentID de mo</summary>
+  </service>
+  <service code="WSWF053" name="VerificarParticipacaoActor">
+    <summary>Este serviço permite verificar se um determinado utilizador é participante duma detemrinada instânci</summary>
+  </service>
+  <service code="WS08050" name="AlterarGestorSinistro">
+    <summary>Log de Alterações:
+
+
+TG 6/6/2005
+
+Substituição do acesso à transacção W821 pelo acesso à API PZ</summary>
+  </service>
+  <service code="WS08052" name="AlterarGestorListaOcorrencias">
+    <summary>Este serviço permite a alteracao do código de gestor para uma lista de ocorrencias
+
+O sistema deve</summary>
+  </service>
+  <service code="WS08051" name="AlterarGestorOcorrencia">
+    <summary>Log de alterações
+
+TG 17/4/2006 : Ateração de modo a dar suporte à alteração do gestor ao nivel do</summary>
+  </service>
+  <service code="WS08053" name="PesquisarOcorrenciasNome">
+    <summary>Log de Alterações
+
+TG: 5/7/2005
+Tratamento do GrupoProdutos no output do serviço
+
+TG: 11/8/2005</summary>
+  </service>
+  <service code="WS08054" name="ConsultarDadosOcorrencia">
+    <summary>Este serviço obtem um conjunto de informação para ser disponibilizada por ocorrencia, recebida em co</summary>
+  </service>
+  <service code="WS08055" name="ListarOcorrencias">
+    <summary>Este serviço permite disponibilizar uma lista de ocorrências por diferentes critérios de pesquisa:
+</summary>
+  </service>
+  <service code="WS06001" name="InserirComentarios">
+    <summary>Este serviço permite a inserção de comentários associados a um objecto de negócio, Ocorrência, Recla</summary>
+  </service>
+  <service code="WS08056" name="AlterarAgrupamento">
+    <summary>Este serviço permite a alteração dos dados de um agrupamento
+
+O sistema invoca a transacção W881 c</summary>
+  </service>
+  <service code="WS08057" name="InserirAgrupamento">
+    <summary>Este serviço permite a alteração dos dados de um agrupamento
+
+O sistema invoca a transacção W880 c</summary>
+  </service>
+  <service code="WS08058" name="LigacaoOcorrenciaAgrupamento">
+    <summary>Este serviço permite a criação de uma ligação entre uma ocorrência e um agrupamento.
+
+O sistema in</summary>
+  </service>
+  <service code="WS08059" name="RemoverOcorrenciaAgrupamento">
+    <summary>Este serviço permite a remoção de uma ocorrência de um agrupamento.
+
+O sistema invoca a transacção</summary>
+  </service>
+  <service code="WS08060" name="CriarPedidoAveriguacao">
+    <summary>Este serviço permite registar um pedido de averiguação para uma ocorrência recebida em input.
+
+O s</summary>
+  </service>
+  <service code="WS08061" name="EncerrarOcorrencia">
+    <summary>Este serviço permite efectuar o encerramento de uma ocorrência recebida em input.
+
+
+O sistema inv</summary>
+  </service>
+  <service code="WS08062" name="ReabrirOcorrencia">
+    <summary>Este serviço permite efectuar a reabertura de uma ocorrencia.
+
+O sistema invoca a transacção W8A1 </summary>
+  </service>
+  <service code="WS08063" name="AlterarOcorrencia">
+    <summary>LOG DE ALTERAÇÕES 
+---------------------------------------- 
+
+(23-03-2005) - UN6 - Notificação Oc</summary>
+  </service>
+  <service code="WS08066" name="AlterarDadosSalarios">
+    <summary>Log:
+
+TG 21/3/2004 : Alteração da chamada ao central,&lt;passa a invocar a API PZ8B1UH em vez da tran</summary>
+  </service>
+  <service code="WS08068" name="CalcularSalarioReal">
+    <summary>Log de alterações:
+
+TG - 21/3/2005 - substituição do acesso à transacção Z8TD pela invocação da AP</summary>
+  </service>
+  <service code="WS08071" name="AlterarDadosLesao">
+    <summary>Log de alterações:
+
+TG - 21/3/2005 - substituição do acesso à transacção Z8TD pela invocação da AP</summary>
+  </service>
+  <service code="WS08072" name="AlterarSituacaoFinal">
+    <summary>Log de alterações:
+
+TG - 21/3/2005 - substituição do acesso à transacção Z8TD pela invocação da AP</summary>
+  </service>
+  <service code="WS08073" name="InserirRegistosIncapacidade">
+    <summary>Log de alterações
+
+TG- 7/6/2004: Tratamento do NumeroCliente na transacção 3270 Z8TE
+
+TG: 24/6/2</summary>
+  </service>
+  <service code="WS08074" name="ConsultarResumoFinanceiroAgrupamento">
+    <summary>Este serviço permite aceder à transacção Z8CF - Resumo Financeiro da Catástrofe com os parametros de</summary>
+  </service>
+  <service code="WS08075" name="AlterarSinistro">
+    <summary>Log de Alterações:
+
+TG 5/4/2005
+
+Substituição do acesso à transacção W821 pelo acesso à API PZ8C</summary>
+  </service>
+  <service code="WS08076" name="EncerrarSinistro">
+    <summary>TG: 16/5/2005
+
+Alteração do serviço de modo a passar a invoca a API PZ8CAUH com a função ES
+
+TG-</summary>
+  </service>
+  <service code="WS08077" name="AceitarSinistro">
+    <summary>Log de alterações
+
+TG- 2/6/2004: Tratamento de mensagens de erro numa estrutura codigo + descrição</summary>
+  </service>
+  <service code="WS08078" name="ReabrirSinistro">
+    <summary>Log de Alterações:
+
+
+TG 3/6/2005
+
+Substituição do acesso à transacção W821 pelo acesso à API PZ</summary>
+  </service>
+  <service code="WS08080" name="EliminarSinistro">
+    <summary>O sistema invoca a transacção W8E0 sem qualquer parametro.
+
+Na presença do ecrã  invoca a transacç</summary>
+  </service>
+  <service code="WS08081" name="InserirSinistroEsqueleto">
+    <summary>Log de alterações:
+
+TG: 30/3/2005
+
+A alteração deste serviço para permitir a criação de um sinis</summary>
+  </service>
+  <service code="WS08084" name="AceitarGestao">
+    <summary>Este serviço permite aceitar a gestão de uma ocorrência, isto é, alterar uma ocorrência e de um recl</summary>
+  </service>
+  <service code="WS08085" name="PedirSincronizacaoOcorrencia">
+    <summary>Log de Alterações
+
+TG:06/10/2005
+Invocar a API PZ8CLUH para actualizar o campo IND-GESTAO-CCS 
+
+</summary>
+  </service>
+  <service code="WS08086" name="TransferirOcorrenciaApolice">
+    <summary>Este serviço permite receber uma ocorrência, que se encontra associada a uma determinada apólice e t</summary>
+  </service>
+  <service code="WS08087" name="LigarSinistroCobertura">
+    <summary>Este serviço permite a ligação de um sinistro a uma cobertura com os dados recebidos nos parametros </summary>
+  </service>
+  <service code="WS08090" name="AlterarSinistroPensao">
+    <summary>Este serviço permite a alteração de dados associados ao sinistro pensão.
+
+Este serviço invoca a AP</summary>
+  </service>
+  <service code="WS08091" name="CriarPensao">
+    <summary>Este serviço permite a criação de uma pensão para um determinado NumeroSinistroPensao.
+
+O sistema </summary>
+  </service>
+  <service code="WS08093" name="AlterarDadosGeraisPensao">
+    <summary>Log de Alterações:
+
+TG: 23/5/2006
+
+Inclusão de novo campo de output:
+
+IndLigacaoNIB = Z8B3-IND</summary>
+  </service>
+  <service code="WS08094" name="CalcularDadosFinanceirosPensao">
+    <summary>Este serviço permite efectuar o calculo dos valores financeiros de pensão.
+
+O sistema invoca a API</summary>
+  </service>
+  <service code="WS08095" name="AlterarDadosFinanceirosPensao">
+    <summary>Log de Alterações
+
+TG:10/10/2005
+
+Registo do motivo de alterações quando o estado for Em Pagamen</summary>
+  </service>
+  <service code="WS08096" name="AlterarEstadoPensao">
+    <summary>Este serviço permite a alteração do estado da pensão.
+
+Em função do valor do campo Tipo de Pension</summary>
+  </service>
+  <service code="WS08098" name="NavegarDadosOcorrencia">
+    <summary>Log de Alterações
+
+TG:25/10/2005
+Substituir o acesso ao serviço WS08013_ConsultarOcorrencia pela </summary>
+  </service>
+  <service code="WS08100" name="CancelarPeriodoIncapacidade">
+    <summary>Log de Alterações:
+
+TG 13/1/2006: Alteração do serviço com vista a tratar os periodos de incapacid</summary>
+  </service>
+  <service code="WS08101" name="EmitirReciboPensao">
+    <summary>Este serviço permite criar um movimento de pagamento de pensão para uma determinada pensao  cujo val</summary>
+  </service>
+  <service code="WS08097" name="CalcularReciboPensao">
+    <summary>Este serviço permite efectuar o calculo do valor dos recibos de pensão,  quer seja um primeiro recib</summary>
+  </service>
+  <service code="WS08103" name="RatearPensao">
+    <summary>Este serviço permite efectuar o calculo dos novos valores percentuais para as pensões de um sinistro</summary>
+  </service>
+  <service code="WS08120" name="ListarPlanoTratamentoProgramado">
+    <summary>Log de Alterações
+
+TG:30/11/2005 Inclusão de informação para GPS
+Alteração referente à inclusão d</summary>
+  </service>
+  <service code="WS70001" name="GetTables">
+    <summary>EditFormat:GetTables</summary>
+  </service>
+  <service code="WS70002" name="GetTableFilteredByValue">
+    <summary>EditFormat para EFTs associadas
+</summary>
+  </service>
+  <service code="WS70003" name="GetTableFiltered">
+    <summary></summary>
+  </service>
+  <service code="WS06003" name="ObterListaMarcaVeiculoEurotax">
+    <summary>
+Invoca o serviço COM PrdBODP.BODP.GetListaMarcaVeiculoEurotax.
+
+Lista de marcas obtidas.
+Se cat</summary>
+  </service>
+  <service code="WS06002" name="PesquisarMarcaVeiculo">
+    <summary>
+Invoca o serviço COM PrdBODP.BODP.PesquisaMarcaVeiculo.
+
+
+Lista de marcas obtidas para o critér</summary>
+  </service>
+  <service code="WS06004" name="ObterListaModeloVeiculo">
+    <summary>
+Invocar serviço COM PrdBODP.BODP.GetListaModeloVeiculo
+
+
+Lista de modelos obtidos.
+Se categori</summary>
+  </service>
+  <service code="WS06005" name="CriarPedidoNumeracao">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(10-03-2006) Documentação Numerada
+---</summary>
+  </service>
+  <service code="WS06006" name="ListarLotesAtribuidos">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(10-03-2006) Documentação Numerada
+---</summary>
+  </service>
+  <service code="WS06007" name="AlterarEstadoLoteDocumentoNumerado">
+    <summary>
+LOG DE ALTERAÇÕES
+----------------------------------------
+(10-03-2006) Documentação Numerada
+-</summary>
+  </service>
+  <service code="WS06008" name="CriarReservaDocumetancaoNumerada">
+    <summary>
+LOG DE ALTERAÇÕES
+----------------------------------------
+(10-03-2006) Documentação Numerada
+-</summary>
+  </service>
+  <service code="WS06009" name="CriarGuiaDocumetancaoNumerada">
+    <summary>
+LOG DE ALTERAÇÕES
+----------------------------------------
+(10-03-2006) Documentação Numerada
+-</summary>
+  </service>
+  <service code="WS06010" name="ImprimirGuiaDocumetancaoNumerada">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(10-03-2006) Documentação Numerada
+---</summary>
+  </service>
+  <service code="WS06011" name="ConsultarCertificadoProvisorio">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(10-03-2006) Documentação Numerada
+---</summary>
+  </service>
+  <service code="WS06012" name="AlterarCertificadoProvisorio">
+    <summary>LOG DE ALTERAÇÕES
+----------------------------------------
+(10-03-2006) Documentação Numerada
+---</summary>
+  </service>
+  <service code="WS06013" name="ListarDocumentosNumerados">
+    <summary>
+LOG DE ALTERAÇÕES
+----------------------------------------
+(10-03-2006) Documentação Numerada
+-</summary>
+  </service>
+  <service code="WS06014" name="AlterarSemEfeitoCertificadoProvisorio">
+    <summary>
+LOG DE ALTERAÇÕES
+----------------------------------------
+(10-03-2006) Documentação Numerada
+-</summary>
+  </service>
+  <service code="WS06015" name="CancelarReservaDocumentoNumerado">
+    <summary>
+
+LOG DE ALTERAÇÕES
+----------------------------------------
+(10-03-2006) Documentação Numerada
+</summary>
+  </service>
+  <service code="WS06016" name="ObterDelegacaoDoUtilizador">
+    <summary>
+
+LOG DE ALTERAÇÕES
+----------------------------------------
+(23-03-2006) Documentação Numerada
+</summary>
+  </service>
+  <service code="WS06017" name="ObterDelegacoesMediadores">
+    <summary>
+LOG DE ALTERAÇÕES
+----------------------------------------
+(23-03-2006) Documentação Numerada
+(</summary>
+  </service>
+  <service code="WS06018" name="AlterarDataTriplicado">
+    <summary>
+LOG DE ALTERAÇÕES
+----------------------------------------
+(12-04-2006) Documentação Numerada
+-</summary>
+  </service>
+  <service code="WSAA001" name="ListarDireccoesClassificacaoContabilistica">
+    <summary>Devolve a lista de todas as direcções envolvidas na Classificação Contabilística das facturas, e os </summary>
+  </service>
+  <service code="WSAA002" name="ListarUtilizadoresIniciaisAprovacaoPorDireccao">
+    <summary>Devolve, com base numa direcção, a lista de todos os utilizadores e respectivos Roles, que podem ini</summary>
+  </service>
+  <service code="WSAA005" name="ValidarPlafond">
+    <summary>Valida se o Utilizador tem plafond suficiente. Se sim devolve OK, senão devolve o Utilizador e o Rol</summary>
+  </service>
+  <service code="WSAA003" name="ListarUtilizadoresParecerPorDireccao">
+    <summary>Devolve, com base numa direcção, a lista de todos os utilizadores que pertencem ao perfil PARECER. E</summary>
+  </service>
+  <service code="WSAA004" name="SuperiorHierarquiaAprovacao">
+    <summary>Devolve o Utilizador e o Role do nível superior de Aprovação. Entra em linha de conta com a gestão d</summary>
+  </service>
+  <service code="WS05005" name="ObterDetalheRecibo">
+    <summary>LOG ALTERACÕES
+-------------------------------------------------------------------
+(29-09-2005) UN</summary>
+  </service>
+  <service code="WS05006" name="ConsultarDadosPagamentoCaixa">
+    <summary>LOG ALTERACÕES
+-------------------------------------------------------------------
+(20-10-2005) UN</summary>
+  </service>
+  <service code="WS05007" name="ConsultarDadosPagamentoCartaCheque">
+    <summary>(19-05-2006) UN8 - ConsultarDadosPagamentoCartaCheque - Inclusão da descodificação do atributo Estad</summary>
+  </service>
+  <service code="WS05008" name="ConsultarDadosPagamentoTEF">
+    <summary>LOG ALTERACÕES
+-------------------------------------------------------------------
+(20-10-2005) UN</summary>
+  </service>
+  <service code="WS05009" name="ConsultarReferenciaATM">
+    <summary>Com base no nº de documento, obter o valor e a referência para pagamento por multibanco.
+
+Chamada </summary>
+  </service>
+  <service code="WS05010" name="ConsultarTransaccoesFinanceiras">
+    <summary>LOG ALTERACÕES
+-------------------------------------------------------------------
+(29-09-2005) UN</summary>
+  </service>
+  <service code="WSIX001" name="ImportarDocumentoSemContexto">
+    <summary>Sem documentação!</summary>
+  </service>
+  <service code="WSIX002" name="ImportarDocumentoSINISTROS">
+    <summary></summary>
+  </service>
+  <service code="WSIX003" name="PesquisarDocumentosSINISTROS">
+    <summary></summary>
+  </service>
+  <service code="WSIX028" name="ImportarDocumentoComContextoSINISTROS">
+    <summary>Arvore WSDL entrada Serviço de Imagem
+
+o	ImportarDocumentoComContextoRequest
+o	SessionData
+&quot;	Use</summary>
+  </service>
+  <service code="WSIX006" name="AlterarIndexacaoPRODUCAO">
+    <summary></summary>
+  </service>
+  <service code="WSIX010" name="AlterarIndexacaoSINISTROS">
+    <summary>Log de Alterações:
+
+______________________________________________________
+
+</summary>
+  </service>
+  <service code="WSIX013" name="ApagarPaginaECriarNovoDocumentoPRODUCAO">
+    <summary></summary>
+  </service>
+  <service code="WSIX014" name="ApagarPaginaECriarNovoDocumentoSINISTROS">
+    <summary></summary>
+  </service>
+  <service code="WSIX015" name="ConsultarDocumento">
+    <summary></summary>
+  </service>
+  <service code="WSIX016" name="ConsultarIndicesCLIENTES">
+    <summary></summary>
+  </service>
+  <service code="WSIX018" name="ConsultarIndicesDOCEMI">
+    <summary></summary>
+  </service>
+  <service code="WSIX019" name="ConsultarIndicesPRODUCAO">
+    <summary></summary>
+  </service>
+  <service code="WSIX020" name="ConsultarIndicesSINISTROS">
+    <summary></summary>
+  </service>
+  <service code="WSIX023" name="ImportarDocumentoPRODUCAO">
+    <summary></summary>
+  </service>
+  <service code="WSIX024" name="PesquisarDocumentosCLIENTES">
+    <summary></summary>
+  </service>
+  <service code="WSIX026" name="PesquisarDocumentosDOCEMI">
+    <summary></summary>
+  </service>
+  <service code="WSIX027" name="PesquisarDocumentosPRODUCAO">
+    <summary></summary>
+  </service>
+  <service code="WSIX034" name="AlterarIndexacaoWORKFLOW">
+    <summary></summary>
+  </service>
+  <service code="WSIX042" name="ListarAutorizacoesPorOperacaoDocumento">
+    <summary>Sem documentação!</summary>
+  </service>
+  <service code="WSIX043" name="ListarGruposConfidencialidade">
+    <summary>Sem documentação!</summary>
+  </service>
+  <service code="WSIX038" name="ValidarRegra">
+    <summary>Sem documentação!</summary>
+  </service>
+  <service code="WSIX039" name="ObterMetaVariaveis">
+    <summary>Sem documentação!</summary>
+  </service>
+  <service code="WSIX040" name="ObterListaValoresMetaVariaveis">
+    <summary>Sem documentação!</summary>
+  </service>
+  <service code="WSIX041" name="ObterCodigoBarras">
+    <summary>Sem documentação!</summary>
+  </service>
+  <service code="WSIX036" name="AlterarIndexacaoSINISTROSparaPRODUCAO">
+    <summary></summary>
+  </service>
+  <service code="WSIX037" name="AlterarIndexacaoPRODUCAOparaSINISTROS">
+    <summary></summary>
+  </service>
+  <service code="WSIX044" name="ImportarConsultarDocumentoComContextoSINISTRO">
+    <summary>
+
+</summary>
+  </service>
+  <service code="WSIX046" name="NotificarReencaminhaImagem">
+    <summary>Este serviço permite a notificação do CCS quando for reencaminhada uma imagem de uma ocorrência que </summary>
+  </service>
+  <service code="WSIX048" name="PesquisarDocumentosESIA">
+    <summary></summary>
+  </service>
+  <service code="WSIX047" name="ConsultarIndicesESIA">
+    <summary></summary>
+  </service>
+  <service code="WSAA006" name="ContasCorretor">
+    <summary>Este serviço permite obter as contas associadas ao corretor.</summary>
+  </service>
+  <service code="WSAA007" name="ChangePassword">
+    <summary>Foi criado no contexto do projecto *.net.</summary>
+  </service>
+  <service code="WSAA008" name="GetUserData">
+    <summary></summary>
+  </service>
+  <service code="WSAA009" name="GetDataForAllUsers">
+    <summary></summary>
+  </service>
+  <service code="WSAA010" name="ValidarLimite">
+    <summary></summary>
+  </service>
+  <service code="WSAA011" name="ObterLimite">
+    <summary></summary>
+  </service>
+  <service code="WSAA012" name="ListarDireccoesComerciais">
+    <summary>Este serviço lista as Direcções existentes na Estrutura Comercial no AAA (elementos de nível 30 da e</summary>
+  </service>
+  <service code="WSAA013" name="ListarDelegacoesPorDireccao">
+    <summary>Este serviço lista as Delegações dentro de uma Direcção existentes na Estrutura Comercial no AAA (el</summary>
+  </service>
+  <service code="WSAA014" name="PesquisarTecnicosComerciais">
+    <summary>Este serviço permite pesquisar contas de Técnicos Comerciais (nível 50) na est. comercial existente </summary>
+  </service>
+  <service code="WSAA015" name="PesquisarMediadores">
+    <summary>Este serviço permite pesquisar contas de Mediadores (nível 60) sobre a estrutura comercial no AAA .
+</summary>
+  </service>
+  <service code="WSAA016" name="ObterContaTecnicoComercial">
+    <summary>Este serviço recebe um User ID de um utilizador que seja Técnico Comercial, e devolve a informação d</summary>
+  </service>
+  <service code="WSAA020" name="ListarAtributosDelegacaoCompetencias">
+    <summary>Este serviço recebe um código da delegação competências pretendido (OID) e devolve a lista de atribu</summary>
+  </service>
+  <service code="WSAA021" name="ValidarDelegacaoCompetencia">
+    <summary>Este serviço invoca o serviço ObterValor para determinar qual o limite máximo de desconto comercial </summary>
+  </service>
+  <service code="WSAA017" name="Create">
+    <summary></summary>
+  </service>
+  <service code="WSAA018" name="ChangePassword">
+    <summary></summary>
+  </service>
+  <service code="WSAA019" name="ResetPassword">
+    <summary></summary>
+  </service>
+  <service code="WSAA034" name="AAA_ListActions">
+    <summary></summary>
+  </service>
+  <service code="WSAA022" name="AAA_Authorize">
+    <summary></summary>
+  </service>
+  <service code="WSAA023" name="AAA_AuthorizeList">
+    <summary></summary>
+  </service>
+  <service code="WSAA024" name="AAA_AuthorizeWithPath">
+    <summary></summary>
+  </service>
+  <service code="WSAA025" name="AAA_AuthorizeWithPayload">
+    <summary></summary>
+  </service>
+  <service code="WSAA050" name="ActionsSearchByID">
+    <summary></summary>
+  </service>
+  <service code="WSAA042" name="ActionsSearch">
+    <summary></summary>
+  </service>
+  <service code="WSAA056" name="ContactsSearchExact">
+    <summary></summary>
+  </service>
+  <service code="WSAA028" name="ContactsGetCompanies">
+    <summary></summary>
+  </service>
+  <service code="WSAA029" name="ContactsGetDepartments">
+    <summary></summary>
+  </service>
+  <service code="WSAA031" name="ContactsGetOffices">
+    <summary></summary>
+  </service>
+  <service code="WSAA043" name="ContactsSearch">
+    <summary></summary>
+  </service>
+  <service code="WSAA051" name="GroupsSearchByID">
+    <summary></summary>
+  </service>
+  <service code="WSAA037" name="GroupsListRelated">
+    <summary></summary>
+  </service>
+  <service code="WSAA044" name="GroupsSearch">
+    <summary></summary>
+  </service>
+  <service code="WSAA052" name="LocationsSearchByID">
+    <summary></summary>
+  </service>
+  <service code="WSAA038" name="LocationsListRelated">
+    <summary></summary>
+  </service>
+  <service code="WSAA045" name="LocationsSearch">
+    <summary></summary>
+  </service>
+  <service code="WSAA053" name="OntologiesSearchByID">
+    <summary></summary>
+  </service>
+  <service code="WSAA032" name="OntologiesGetPath">
+    <summary></summary>
+  </service>
+  <service code="WSAA033" name="OntologiesGetSubTreeXML">
+    <summary></summary>
+  </service>
+  <service code="WSAA039" name="OntologiesListRelated">
+    <summary></summary>
+  </service>
+  <service code="WSAA046" name="OntologiesSearch">
+    <summary></summary>
+  </service>
+  <service code="WSAA057" name="PeopleSearchExtended">
+    <summary></summary>
+  </service>
+  <service code="WSAA026" name="PeopleGetADAttributes">
+    <summary></summary>
+  </service>
+  <service code="WSAA027" name="PeopleGetAllAttributes">
+    <summary></summary>
+  </service>
+  <service code="WSAA030" name="PeopleGetFunctionalAttributes">
+    <summary></summary>
+  </service>
+  <service code="WSAA035" name="PeopleListOntologies">
+    <summary></summary>
+  </service>
+  <service code="WSAA047" name="PeopleSearch">
+    <summary></summary>
+  </service>
+  <service code="WSAA049" name="PeopleSearchAD">
+    <summary></summary>
+  </service>
+  <service code="WSAA054" name="PeopleSearchByID">
+    <summary></summary>
+  </service>
+  <service code="WSAA055" name="RolesSearchByID">
+    <summary></summary>
+  </service>
+  <service code="WSAA040" name="RolesListRelated">
+    <summary></summary>
+  </service>
+  <service code="WSAA048" name="RolesSearch">
+    <summary></summary>
+  </service>
+  <service code="WSAA036" name="ActionsListRelated">
+    <summary></summary>
+  </service>
+  <service code="WSAA042" name="Logon">
+    <summary></summary>
+  </service>
+  <service code="WSAA058" name="ObterDadosContactoTodasDelegacoes">
+    <summary></summary>
+  </service>
+  <service code="WSAA059" name="ObterDadosContactoDelegacoes">
+    <summary></summary>
+  </service>
+  <service code="WSAA060" name="AtribuirSubstituto">
+    <summary></summary>
+  </service>
+  <service code="WSAA061" name="RetirarSubstitutos">
+    <summary></summary>
+  </service>
+  <service code="WSAA062" name="ObterContaDelegacao">
+    <summary>Este serviço permite por meio do UserID obter a Conta (ou Contas) da Delegação (nível 40) na estrutu</summary>
+  </service>
+  <service code="WS08110" name="ConsultarContaInterna">
+    <summary>*log 03-05-06 
+Inclusão do campo TipoExtracto
+
+* log 15-12-2005 
+Inclusão do campo de output: Co</summary>
+  </service>
+  <service code="WS08111" name="GerirContaInterna">
+    <summary>* 03/05/06 - Inclusão do campo TipoExtracto
+
+Este serviço tem como objectivo criar uma conta inter</summary>
+  </service>
+  <service code="WSGP001" name="CriarPedidoRenovacaoLinhaServico">
+    <summary></summary>
+  </service>
+  <service code="WSGP002" name="CriarPedidoRenovacaoProtocolo">
+    <summary></summary>
+  </service>
+  <service code="WSGP003" name="CriarPedidoRenovacaoServico">
+    <summary></summary>
+  </service>
+  <service code="WSGP004" name="CriarPedidoAutorizacaoEncomendaServico">
+    <summary></summary>
+  </service>
+  <service code="WSGP005" name="CriarPedidoCriacaoEncomendaServico">
+    <summary></summary>
+  </service>
+  <service code="WSGP006" name="CriarPedidoAprovacaoResultadoServico">
+    <summary></summary>
+  </service>
+  <service code="WSGP007" name="CriarPedidoNaoConformidadeResultadoServico">
+    <summary></summary>
+  </service>
+  <service code="WSGP009" name="CriarPedidoNaoConformidadePagamento">
+    <summary></summary>
+  </service>
+  <service code="WS08127" name="PesquisarRegistoPagamento">
+    <summary>log 07/02/06 * incluir campo de output IndicadorCoseguro 
+
+log 12/01/06 * alteração do abastecimen</summary>
+  </service>
+  <service code="WS08128" name="GerirRegistoPagamento">
+    <summary>log 28/03/06 - Inclusão dos campos de data e descricao do Serviço.
+
+log 06/12/05 - Inclusão do cam</summary>
+  </service>
+  <service code="WS08129" name="EliminarRegistoPagamento">
+    <summary>Este serviço tem como objectivo eliminar um registo de pagamento. Esta situação só pode ocorrer desd</summary>
+  </service>
+  <service code="WS08130" name="AlterarSituacaoRegistoPagamento">
+    <summary>Este serviço tem como objectivo alterar a situação dum registo de pagamento (de 01 para 02).
+
+O Se</summary>
+  </service>
+  <service code="WS08131" name="ListarConformidades">
+    <summary>Este serviço tem como objectivo pesquisar e listar conformidades.
+
+Apenas tem de suportar paginaçã</summary>
+  </service>
+  <service code="WS08132" name="GerirConformidades">
+    <summary>Este serviço tem como objectivo criar ou alterar uma conformidade.
+
+O Serviço recebe os Dados do P</summary>
+  </service>
+  <service code="WS08133" name="ListarNaoConformidades">
+    <summary>Este serviço tem como objectivo pesquisar e listar não conformidades.
+
+Apenas tem de suportar pagi</summary>
+  </service>
+  <service code="WS08134" name="GerirNaoConformidade">
+    <summary>Este serviço tem como objectivo gerir não conformidade.
+
+O Serviço recebe os Dados do Pagamento e </summary>
+  </service>
+  <service code="WS08135" name="EliminarNaoConformidade">
+    <summary>Este serviço tem como objectivo eliminar (passar a revogado) uma não conformidade.
+
+O Serviço rece</summary>
+  </service>
+  <service code="WS08136" name="ObterCapitalDisponivel">
+    <summary>Este serviço permite obter o capital disponivel de uma cobertura.
+
+Para obter esta informação deve</summary>
+  </service>
+  <service code="WS08137" name="ObterClienteReclamante">
+    <summary>Este serviço tem como objectivo obter o Numero de Cliente a partir do número do Reclamante.
+
+O Ser</summary>
+  </service>
+  <service code="WS08138" name="AjustarProvisao">
+    <summary>log 16/11/05 - Incluir o campo User no input do serviço e abastecer o respectivo campo na API.
+
+Es</summary>
+  </service>
+  <service code="WS08139" name="CoseguroCotaParte">
+    <summary>Este serviço tem como objectivo obter a percentagem referente à Cota Parte de coseguro correspondent</summary>
+  </service>
+  <service code="WS08140" name="ListarHistoricoPagamento">
+    <summary>Este serviço tem como objectivo listar os registos referentes  ao histórico de pagamento.
+
+O Servi</summary>
+  </service>
+  <service code="WS08141" name="PesquisarRegistoPagamentoMassivo">
+    <summary>* 12/04/06 - Colocar zeros à esquerda no número do sinistro
+
+Este Serviço permite obter uma lista </summary>
+  </service>
+  <service code="WS22001" name="ScreenTransaction">
+    <summary>Acesso a transacção 3270</summary>
+  </service>
+  <service code="WS40002" name="SetStatus">
+    <summary></summary>
+  </service>
+  <service code="WS40001" name="GetStatus">
+    <summary></summary>
+  </service>
+  <service code="WS42001" name="RequestWriteLog">
+    <summary></summary>
+  </service>
+  <service code="WS43003" name="UpdateClassData">
+    <summary></summary>
+  </service>
+  <service code="WS43001" name="CreateClassData">
+    <summary></summary>
+  </service>
+  <service code="WS43002" name="GetClassData">
+    <summary></summary>
+  </service>
+  <service code="WS44002" name="ObterFormatoTipoAccao">
+    <summary></summary>
+  </service>
+  <service code="WS44001" name="InserirPedidoAccao">
+    <summary></summary>
+  </service>
+  <service code="WS45003" name="PesquisarModelo">
+    <summary></summary>
+  </service>
+  <service code="WS45001" name="AlterarModelo">
+    <summary></summary>
+  </service>
+  <service code="WS45002" name="InserirModelo">
+    <summary></summary>
+  </service>
+  <service code="WS44003" name="ObterNumeroProcesso">
+    <summary></summary>
+  </service>
+  <service code="WS43008" name="DeleteClassList">
+    <summary></summary>
+  </service>
+  <service code="WS43004" name="GetClassDataList">
+    <summary></summary>
+  </service>
+  <service code="WS43005" name="DeleteClass">
+    <summary></summary>
+  </service>
+  <service code="WS43006" name="CreateClassList">
+    <summary></summary>
+  </service>
+  <service code="WS43007" name="UpdateClassList">
+    <summary></summary>
+  </service>
+  <service code="WSSA008" name="ConsultarCustosServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA001" name="PesquisarServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA002" name="ConsultarServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA003" name="ListarServicosServicoPacote">
+    <summary></summary>
+  </service>
+  <service code="WSSA004" name="ListarResultadosServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA005" name="ListarTiposPrestadorServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA006" name="ListarDocumentosAEnviar">
+    <summary></summary>
+  </service>
+  <service code="WSSA007" name="ListarCustosServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA104" name="ListarProtocolosLinhaServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA101" name="PesquisarLinhaServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA102" name="ConsultarLinhaServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA103" name="ListarServicosLinhaServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA201" name="PesquisarPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA202" name="ConsultarPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA203" name="ListarContactosPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA204" name="ListarLocaisPrestacaoPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA205" name="ListarCaracteristicasLocalPrestacao">
+    <summary></summary>
+  </service>
+  <service code="WSSA206" name="ListarServicosLocalPrestacao">
+    <summary></summary>
+  </service>
+  <service code="WSSA207" name="ListarEntidadesLocalPrestacao">
+    <summary></summary>
+  </service>
+  <service code="WSSA208" name="ListarPeriodosScoring">
+    <summary></summary>
+  </service>
+  <service code="WSSA210" name="ModificarDadosPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA211" name="ModificarLocaisPrestacaoPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA213" name="ModificarServicosLocalPrestacao">
+    <summary></summary>
+  </service>
+  <service code="WSSA214" name="ModificarEntidadesAssociadasLocalPrestacao">
+    <summary></summary>
+  </service>
+  <service code="WSSA215" name="ModificarHorariosLocalPrestacao">
+    <summary></summary>
+  </service>
+  <service code="WSSA217" name="GerirDisponibilidade">
+    <summary></summary>
+  </service>
+  <service code="WSSA218" name="GerirIndisponibilidade">
+    <summary></summary>
+  </service>
+  <service code="WSSA219" name="ConsultarDisponibilidade">
+    <summary></summary>
+  </service>
+  <service code="WSSA220" name="ListarDisponibilidadeConcelho">
+    <summary></summary>
+  </service>
+  <service code="WSSA221" name="ListarDisponibilidadeServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA222" name="ListarIndisponibilidade">
+    <summary></summary>
+  </service>
+  <service code="WSSA224" name="GerirDadosClientePrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA225" name="RemoverLocaisPrestacao">
+    <summary></summary>
+  </service>
+  <service code="WSSA226" name="RemoverServicosLocalPrestacao">
+    <summary></summary>
+  </service>
+  <service code="WSSA228" name="CriarPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA231" name="ModificarScoring">
+    <summary></summary>
+  </service>
+  <service code="WSSA233" name="RemoverEntidadesAssociadasLocalPrestacao">
+    <summary></summary>
+  </service>
+  <service code="WSSA234" name="ListarCriteriosScoring">
+    <summary></summary>
+  </service>
+  <service code="WSSA235" name="SeleccionarPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA236" name="ValidarDisponibilidadePrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA237" name="GerirDisponibilidadeConcelho">
+    <summary></summary>
+  </service>
+  <service code="WSSA238" name="GerirDisponibilidadeServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA239" name="GerirCapacidadeConcelho">
+    <summary></summary>
+  </service>
+  <service code="WSSA240" name="GerirCapacidadeServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA241" name="ListarCapacidadeConcelho">
+    <summary></summary>
+  </service>
+  <service code="WSSA242" name="ListarCapacidadeServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA243" name="SimularScoring">
+    <summary></summary>
+  </service>
+  <service code="WSSA244" name="ListarConcelhosPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA246" name="ConsultarCapacidadeReal">
+    <summary></summary>
+  </service>
+  <service code="WSSA247" name="GerirIndisponibilidadeParcial">
+    <summary></summary>
+  </service>
+  <service code="WSSA248" name="ValidarCapacidadePrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA251" name="ListarServicosEncomendas">
+    <summary></summary>
+  </service>
+  <service code="WSSA212" name="ModificarCaracteristicasLocalPrestacao">
+    <summary></summary>
+  </service>
+  <service code="WSSA216" name="ModificarConcelhosLimitrofesLocalPrestacao">
+    <summary></summary>
+  </service>
+  <service code="WSSA229" name="CriarLocalPrestacaoPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA249" name="ValidarServicosPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA250" name="ValidarProtocolosPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA310" name="ValidarServicosProtocolos">
+    <summary></summary>
+  </service>
+  <service code="WSSA301" name="PesquisarProtocolo">
+    <summary></summary>
+  </service>
+  <service code="WSSA302" name="ConsultarProtocolo">
+    <summary></summary>
+  </service>
+  <service code="WSSA303" name="ListarLocaisPrestacaoProtocolo">
+    <summary></summary>
+  </service>
+  <service code="WSSA305" name="ListarServicosLinhaServicoProtocolo">
+    <summary></summary>
+  </service>
+  <service code="WSSA306" name="GerirProtocolo">
+    <summary></summary>
+  </service>
+  <service code="WSSA307" name="ListarLinhasServicoPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA308" name="ListarHistoricoProtocolo">
+    <summary></summary>
+  </service>
+  <service code="WSSA309" name="ListarCustoServicosProtocolo">
+    <summary></summary>
+  </service>
+  <service code="WSSA304" name="ListarLinhasServicoLocalPrestacao">
+    <summary></summary>
+  </service>
+  <service code="WSSA415" name="ConsultarCalendarioEncomenda">
+    <summary></summary>
+  </service>
+  <service code="WSSA401" name="PesquisarEncomenda">
+    <summary></summary>
+  </service>
+  <service code="WSSA402" name="ConsultarEncomenda">
+    <summary></summary>
+  </service>
+  <service code="WSSA403" name="ListarServicosEncomenda">
+    <summary></summary>
+  </service>
+  <service code="WSSA404" name="ListarDocumentosEnviadosPrestadorServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA406" name="CriarEncomenda">
+    <summary></summary>
+  </service>
+  <service code="WSSA407" name="AssociarSinistro">
+    <summary></summary>
+  </service>
+  <service code="WSSA409" name="ConsultarSinistroEncomenda">
+    <summary></summary>
+  </service>
+  <service code="WSSA413" name="ListarEncomendasDuplicadas">
+    <summary></summary>
+  </service>
+  <service code="WSSA414" name="ValidarServicosEncomenda">
+    <summary></summary>
+  </service>
+  <service code="WSSA518" name="ConsultarDadosDiagnostico">
+    <summary></summary>
+  </service>
+  <service code="WSSA501" name="PesquisarResultadoServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA502" name="ConsultarResultadoServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA504" name="ConsultarDadosIncapacidade">
+    <summary></summary>
+  </service>
+  <service code="WSSA505" name="ListarNaoConformidades">
+    <summary></summary>
+  </service>
+  <service code="WSSA507" name="GerirDadosBasicosResultadoServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA510" name="RemoverCodigosDiagnostico">
+    <summary></summary>
+  </service>
+  <service code="WSSA517" name="ListarResultadosServicoDuplicados">
+    <summary></summary>
+  </service>
+  <service code="WSSA408" name="ModificarEstadoEncomenda">
+    <summary></summary>
+  </service>
+  <service code="WSSA411" name="ListarEstadoGeracaoDocumentos">
+    <summary></summary>
+  </service>
+  <service code="WSSA503" name="ListarCodigosDiagnostico">
+    <summary></summary>
+  </service>
+  <service code="WSSA508" name="GerirDadosDiagnosticoResultadoServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA509" name="GerirCodigosDiagnosticoResultadoServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA511" name="CriarConformidade">
+    <summary></summary>
+  </service>
+  <service code="WSSA512" name="CriarNaoConformidade">
+    <summary></summary>
+  </service>
+  <service code="WSSA513" name="ModificarEstadoNaoConformidade">
+    <summary></summary>
+  </service>
+  <service code="WSSA514" name="ModificarEstadoResultadoServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA515" name="ListarConformidades">
+    <summary></summary>
+  </service>
+  <service code="WSSA516" name="GerirDadosIncapacidadeResultadoServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA806" name="ListarCriteriosTipoPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA801" name="PesquisarCriteriosScoring">
+    <summary></summary>
+  </service>
+  <service code="WSSA802" name="GerirCriteriosScoring">
+    <summary></summary>
+  </service>
+  <service code="WSSA803" name="ListarTiposPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA804" name="GerirCriteriosTipoPrestador">
+    <summary></summary>
+  </service>
+  <service code="WSSA805" name="ListarEstruturaScoring">
+    <summary></summary>
+  </service>
+  <service code="WSSA904" name="ModificarCustoLinhaServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA901" name="ListarCustosRenovacao">
+    <summary></summary>
+  </service>
+  <service code="WSSA902" name="ConsultarEstadoRenovacao">
+    <summary></summary>
+  </service>
+  <service code="WSSA903" name="ModificarCustoServico">
+    <summary></summary>
+  </service>
+  <service code="WSSA900" name="ListarHistorico">
+    <summary></summary>
+  </service>
+  <service code="WSAC001" name="AgendaComercial_ActualizarCliente">
+    <summary>LOG DE ALTERAÇÕES:
+--------------------------------------------------------------------------------</summary>
+  </service>
+  <service code="WSAC002" name="AgendaComercial_PartilharCliente">
+    <summary>LOG DE ALTERAÇÕES:
+--------------------------------------------------------------------------------</summary>
+  </service>
+  <service code="WSAC003" name="AgendaComercial_CriarLead">
+    <summary>LOG DE ALTERAÇÕES:
+--------------------------------------------------------------------------------</summary>
+  </service>
+  <service code="WSAC004" name="AgendaComercial_ValidarLeadProduto">
+    <summary>LOG DE ALTERAÇÕES:
+--------------------------------------------------------------------------------</summary>
+  </service>
+  <service code="WSAC005" name="AgendaComercial_ActualizarUser">
+    <summary>LOG DE ALTERAÇÕES:
+--------------------------------------------------------------------------------</summary>
+  </service>
+  <service code="WSAC006" name="AgendaComercial_ActualizarBU">
+    <summary>LOG DE ALTERAÇÕES:
+--------------------------------------------------------------------------------</summary>
+  </service>
+  <service code="WSAC007" name="AgendaComercial_CriarProduto">
+    <summary>LOG DE ALTERAÇÕES:
+--------------------------------------------------------------------------------</summary>
+  </service>
+  <service code="WSD4028" name="ObterDadosComplementaresReduzidos">
+    <summary></summary>
+  </service>
+  <service code="WSD4001" name="ObterDadosBasicos">
+    <summary></summary>
+  </service>
+  <service code="WSD4002" name="ObterDadosBasicosAntecedRisco">
+    <summary></summary>
+  </service>
+  <service code="WSD4003" name="ObterOutput">
+    <summary></summary>
+  </service>
+  <service code="WSD4004" name="PesquisarCliente">
+    <summary></summary>
+  </service>
+  <service code="WSD4006" name="IniciarNovoContrato">
+    <summary></summary>
+  </service>
+  <service code="WSD4007" name="EnviarDadosBasicos">
+    <summary></summary>
+  </service>
+  <service code="WSD4009" name="AceitarContracto">
+    <summary></summary>
+  </service>
+  <service code="WSD4010" name="InserirRazaoNaoAceitacaoSimulacao">
+    <summary></summary>
+  </service>
+  <service code="WSD4011" name="EliminarTransaccaoProvisional">
+    <summary></summary>
+  </service>
+  <service code="WSD4012" name="EliminarRenovacaoProvisional">
+    <summary></summary>
+  </service>
+  <service code="WSD4013" name="SimularRenovacao">
+    <summary></summary>
+  </service>
+  <service code="WSD4014" name="EnviarComentarios">
+    <summary></summary>
+  </service>
+  <service code="WSD4015" name="EnviarLocalRisco">
+    <summary></summary>
+  </service>
+  <service code="WSD4016" name="EnviarRelacoes">
+    <summary></summary>
+  </service>
+  <service code="WSD4017" name="ObterExperienciaSeguro">
+    <summary></summary>
+  </service>
+  <service code="WSD4018" name="ConverterEmContracto">
+    <summary></summary>
+  </service>
+  <service code="WSD4019" name="PesquisarContractos">
+    <summary></summary>
+  </service>
+  <service code="WSD4020" name="ObterHistoricoTransacoes">
+    <summary></summary>
+  </service>
+  <service code="WSD4021" name="ObterTransaccoesMaisRecentes">
+    <summary></summary>
+  </service>
+  <service code="WSD4023" name="ObterLocalRisco">
+    <summary></summary>
+  </service>
+  <service code="WSD4024" name="ValidarTimestamp">
+    <summary></summary>
+  </service>
+  <service code="WSD4025" name="ObterDadosMatricula">
+    <summary></summary>
+  </service>
+  <service code="WSD4026" name="TarifarContracto">
+    <summary></summary>
+  </service>
+  <service code="WSD4027" name="ObterDadosBasicosReduzidos">
+    <summary></summary>
+  </service>
+  <service code="WSD4005" name="ObterDadosComplementares">
+    <summary></summary>
+  </service>
+  <service code="WSD4008" name="EnviarDadosComplementares">
+    <summary></summary>
+  </service>
+  <service code="WSD4022" name="ObterAgravamentosDescontos">
+    <summary></summary>
+  </service>
+</eaiList>

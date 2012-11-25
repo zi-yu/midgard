@@ -1,0 +1,57 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $list = "List" )
+#set( $count = "Count" )
+#set( $test = $obj) 
+#set( $pagedList = "PagedList" )
+#set( $search = "Search" )
+<%@ Page Language="C#" MasterPageFile="~/Admin/adminMaster.master" %>
+<%@ Register TagPrefix="$projectName" Assembly="$assembly" Namespace="$controls" %>
+<script type="text/C#" runat="server">
+	protected override void OnInit( EventArgs e ) {
+		HttpContext.Current.Session["CurrentEntity"] = "$entity.ToLower()";
+		HttpContext.Current.Session["CurrentAction"] = "Home";
+	}
+</script>
+<asp:Content ContentPlaceHolderID="content" runat="server">
+	<h2>$entity Information</h2>
+	<p>This Entity has <b><$projectName:$entity$count runat="server" /></b> elements.</p>
+	<h2>Field Information</h2>
+#if( $obj.Fields.Count  > 0 )
+	<table>
+		<tr>
+			<th>Field Name</th>
+			<th>Field Type</th>
+			<th>Regex</th>
+		<tr>			
+#foreach($field in $obj.Fields)
+		<tr>
+			<td><b>$field.Name</b></td>
+			<td>$field.Type.Name</td>
+			<td>
+#if( $field.Regex.Count > 0 )
+#foreach($regex in $field.Regex)
+				$regex<br/>
+#end
+#else
+				This field has no Regular expressions
+#end
+			</td>
+		<tr>	
+#end
+	</table>
+#else	
+	<p>The entity has no fields</p>
+#end
+</asp:Content>

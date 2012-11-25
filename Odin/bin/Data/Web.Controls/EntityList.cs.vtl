@@ -1,0 +1,89 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $list = "List" )
+#set( $item = "Item" )
+#set( $count = "Count" )
+#set( $delete = "Delete" )
+#set( $session = "Persistance.GetSession()" )
+#set( $persistance = "Persistance" )
+#set( $DeleteAll = "DeleteAll()" )
+
+using System;
+using System.Collections.Generic;
+using System.Web.UI;
+using $CoreNamespace;
+using $DALNamespace;
+
+namespace $namespace {
+
+	/// <summary>
+    /// Control that can render a collection of $entity.Name 
+    /// </summary>
+	public class $entity.Name$list : BaseList<$entity.Name> {
+	
+		#region Abstract Members
+		
+		/// <summary>
+        /// Gets the $entity.Name collection
+        /// </summary>
+        /// <returns>The collection</returns>
+		protected override List<$entity.Name> GetCollection()
+		{
+			$entity.Name$persistance persistance = $entity.Name$session;
+			return persistance.Select();
+		}
+		
+		#endregion Abstract Members
+		
+		#region BaseList<$entity.Name> Implementation
+		
+		/// <summary>
+        /// Adds a default control tree
+        /// </summary>
+		protected override void AddDefaultControlTree()
+		{
+			$entity.Name$item entity = new $entity.Name$item ();
+		
+			Controls.Add( new LiteralControl("<table>") );
+			Controls.Add( new LiteralControl("<tr><th colspan=\"$entity.AllFields.Count.ToString()\"> Listing <i>") );
+			Controls.Add( new $entity.Name$count () );
+			Controls.Add( new LiteralControl("</i> entities of <i>$entity.Name</i></th></tr>") );
+			Controls.Add( new LiteralControl("<tr>") );
+#foreach( $field in $entity.AllFields )#if( !$field.Mult.ToString().EndsWith("Many") )
+			Controls.Add( new LiteralControl("<th>$field.PropertyName</th>") );
+#end#end
+			Controls.Add( new LiteralControl("<th>") );
+			Controls.Add( new $entity.Name$DeleteAll );
+			Controls.Add( new LiteralControl("</th>") );
+			Controls.Add( new LiteralControl("</tr>") );
+			entity.Controls.Add( new LiteralControl("<tr>") );
+#foreach( $field in $entity.AllFields )#if( !$field.Mult.ToString().EndsWith("Many") )
+			entity.Controls.Add( new LiteralControl("<td>") );
+			entity.Controls.Add( new $field.ParentName$field.PropertyName () );
+			entity.Controls.Add( new LiteralControl("</td>") );
+#end#end
+			entity.Controls.Add( new LiteralControl("<td>") );
+			entity.Controls.Add( new $entity.Name$delete () );
+			entity.Controls.Add( new LiteralControl("</td>") );
+			entity.Controls.Add( new LiteralControl("</tr>") );
+			Controls.Add( entity );
+			Controls.Add( new LiteralControl("</table>") );
+			
+		}
+		
+		#endregion BaseList<$entity.Name> Implementation
+		
+	};
+
+}

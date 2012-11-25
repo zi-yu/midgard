@@ -1,0 +1,40 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+
+using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using $webControls;
+using Loki.DataRepresentation;
+
+namespace $controlsNamespace {
+
+    public class EditLink : Control {
+
+        protected override void Render(HtmlTextWriter writer)
+        {
+            IDescriptableHandler handler = Parent as IDescriptableHandler;
+            if (handler != null) {
+                IDescriptable source = handler.Descriptable;
+                writer.Write("<a href=\"{2}Edit.aspx?{0}={1}\">Edit</a>", source.TypeName, source.Id, source.TypeName.ToLower());
+            } else {
+                throw new Exception("Parent isn't IDescriptableHandler, it's " + Parent.GetType().Name);
+            }
+        }
+
+    }
+
+}

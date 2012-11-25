@@ -1,0 +1,41 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $separator = "" )
+<?xml version="1.0" ?>
+<resources cache="true">
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Entry Template
+		* Use this template to add new Entries
+	 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	 <!--
+	<entry key="UniqueKeyName">
+#foreach( $lang in $languages)
+		<lang key="$lang">Entry for language $lang</lang>
+#end
+	</entry>
+	-->
+	
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Localization
+	 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	 
+#foreach( $token in $tokens )
+	<entry key="$token.Key">
+#foreach( $lang in $languages )
+		<lang key="$lang">$token.Sample</lang>
+#end
+	</entry>
+	
+#end
+</resources>

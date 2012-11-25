@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<project name="Sms" default="buildDataAccessLayer" basedir="..">
+	
+	<description>Sms</description>
+	<property name="debug" value="true" unless="${property::exists('debug')}"/>
+	<property name="version" value="0.1" />
+
+  <target name="clean" description="remove all generated files">
+  </target>
+
+	<target name="distclean" description="Removes all generated files">
+    <delete>
+      <fileset>
+        <include name="*~" />
+        <include name="bin/*.*" />
+        <include name="DataAccessLayer/*.*" />
+        <include name="Core/*.*" />
+      </fileset>
+    </delete>
+	</target>
+
+	<target name="buildCore" description="Build's Sms Core" >
+    <csc target="library" output="bin/Sms.Core.dll"
+          debug="${debug}"
+          optimize="true"
+          define="NANT">
+
+      <nowarn>
+        <!-- do not report warnings for missing XML comments -->
+        <warning number="1591" />
+        <warning number="1570" />
+        <warning number="1572" />
+        <warning number="1573" />
+        <warning number="1699" if="${platform::is-unix()}"/>
+        <warning number="0649" />
+        <warning number="0169" />
+        <warning number="0414" if="${platform::is-unix()}"/>
+      </nowarn>
+
+      <sources>
+        <include name="Core/**/*.cs" />
+      </sources>
+
+      <references>
+        <include name="bin/Loki.dll" />
+      </references>
+    </csc>
+  </target>
+
+  <target name="buildDataAccessLayer" description="Build's Sms DataAccessLayer" depends="buildCore" >
+    <csc target="library" output="bin/Sms.DataAccessLayer.dll"
+      debug="${debug}"
+      optimize="true"
+      define="NANT">
+
+      <nowarn>
+        <!-- do not report warnings for missing XML comments -->
+        <warning number="1591" />
+        <warning number="1570" />
+        <warning number="1572" />
+        <warning number="1573" />
+        <warning number="1699" />
+        <warning number="0649" />
+        <warning number="0169" />
+        <warning number="0414" if="${platform::is-unix()}"/>
+      </nowarn>
+
+      <sources>
+        <include name="DataAccessLayer/**/*.cs" />
+      </sources>
+
+      <references>
+        <include name="bin/Loki.dll" />
+        <include name="bin/Sms.Core.dll" />
+        <include name="bin/NHibernate.dll" />
+      </references>
+    </csc>
+  </target>
+
+  <target name="test" description="" depends="buildDataAccessLayer" >
+    <csc target="exe" output="bin/test.exe"
+      debug="${debug}"
+      optimize="true"
+      define="NANT">
+
+      <nowarn>
+        <!-- do not report warnings for missing XML comments -->
+        <warning number="1591" />
+        <warning number="1570" />
+        <warning number="1572" />
+        <warning number="1573" />
+        <warning number="1699" />
+        <warning number="0649" />
+        <warning number="0169" />
+        <warning number="0414" if="${platform::is-unix()}"/>
+      </nowarn>
+
+      <sources>
+        <include name="bin/Test.cs" />
+      </sources>
+
+      <references>
+        <include name="bin/Loki.dll" />
+        <include name="bin/Sms.Core.dll" />
+        <include name="bin/Sms.DataAccessLayer.dll" />
+        <include name="bin/NHibernate.dll" />
+      </references>
+    </csc>
+  </target>
+</project>

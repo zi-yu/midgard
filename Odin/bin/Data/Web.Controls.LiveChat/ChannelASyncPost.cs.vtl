@@ -1,0 +1,60 @@
+#set( $controls = ".Controls" )
+#set( $addEntry = ".WebServices.Chat.AddEntry" )
+
+using System;
+using System.Web.UI;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
+using $coreMamespace;
+using $dalMamespace;
+
+namespace $namespace$controls {
+
+	public class ChannelASyncPost : Control {
+		
+		#region Fields
+
+        private TextBox text = new TextBox();
+        private string buttonCpation = "Send";
+
+        public string ButtonCaption {
+            get { return buttonCpation; }
+            set { buttonCpation = value; }
+        }
+
+        #endregion Fields
+
+        #region Control Rendering & Events
+
+        protected override void OnInit(EventArgs args)
+        {
+            base.OnInit(args);
+            Controls.Add(text);
+        }
+
+        protected override void Render( HtmlTextWriter writer )
+		{
+            WriteJavascript(writer);
+            writer.Write("<div id='chatSyncPost'>");
+            text.RenderControl(writer);
+            writer.Write("<input type='button' onclick='addChannelEntry();' value='{0}' id='sendMessage' name='sendMessage' />", ButtonCaption);
+            writer.Write("</div>");
+		}
+
+        private void WriteJavascript(HtmlTextWriter writer)
+        {
+            writer.Write("<script type=\"text/javascript\">");
+            writer.Write("function addChannelEntry() {");
+            writer.Write("var label=document.getElementById('{0}');", text.ClientID);
+            writer.Write("var text=label.value;");
+            writer.Write("$prefix$addEntry(principal, channel, text);");
+            writer.Write("label.value='';");
+            writer.Write("}");
+            writer.WriteLine("</script>");
+        }
+				
+		#endregion Control Rendering
+	
+	};
+
+}

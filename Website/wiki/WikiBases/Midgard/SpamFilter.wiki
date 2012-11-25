@@ -1,0 +1,17 @@
+:Summary: My Referral SPAM Rules
+
+Algumas regras que tentam ignorar algum referral para sites menos próprios.
+
+ free
+ ring
+ a1a1
+ d1d1
+ b1
+ viagra
+ buy
+ purchase
+ sale
+ order
+ casino
+ money
+ zi-yu.com:8080

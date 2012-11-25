@@ -1,0 +1,159 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Web.Security;
+using $coreNamespace;
+using $dalNamespace;
+using System.Text.RegularExpressions;
+using System.Security.Cryptography;
+using Roles = $roles;
+
+namespace $namespace {
+	public class MidgardRoleProvider : RoleProvider {
+
+		#region Fields
+
+		
+		#endregion
+
+		#region AbstractMembers from MembershipProvider
+
+		public override void AddUsersToRoles( string[] usernames, string[] roleNames ) {
+			using( UserRolesPersistance userRolesPersistance = UserRolesPersistance.GetSession() ) {
+				foreach( string user in usernames ) {
+					foreach( string role in roleNames ) {
+						UserRoles userRole = new UserRoles();
+						userRole.Username = user;
+						userRole.Rolename = role;
+
+						userRolesPersistance.Update( userRole );
+					}
+				}
+			}
+		}
+
+		public override void CreateRole( string roleName ) {
+			using( RolesPersistance rolesPersistance = RolesPersistance.GetSession() ) {
+				Roles role = new Roles();
+				role.Name = roleName;
+
+				rolesPersistance.Update( role );
+			}
+		}
+
+		public override bool DeleteRole( string roleName, bool throwOnPopulatedRole ) {
+			using( RolesPersistance rolesPersistance = RolesPersistance.GetSession() ) {
+				List<Roles> roles = rolesPersistance.SelectByName( roleName );
+
+				foreach( Roles role in roles ) {
+					rolesPersistance.Delete( role );
+				}
+
+				return true;
+			}
+		}
+
+		public override string[] FindUsersInRole( string roleName, string usernameToMatch ) {
+			using( UserRolesPersistance userRolesPersistance = UserRolesPersistance.GetSession() ) {
+				throw new Exception( "The method or operation is not implemented." );
+			}
+		}
+
+		public override string[] GetAllRoles() {
+			using( RolesPersistance rolesPersistance = RolesPersistance.GetSession() ) {
+				List<Roles> roles = rolesPersistance.Select();
+				string[] rolesStr = new string[roles.Count];
+				for( int i = 0; i < roles.Count; ++i ) {
+					rolesStr[i] = roles[i].Name;
+				}
+				return rolesStr;
+			}
+		}
+
+		public override string[] GetRolesForUser( string username ) {
+			throw new Exception( "The method or operation is not implemented." );
+			using( UserRolesPersistance userRolesPersistance = UserRolesPersistance.GetSession() ) {
+				List<UserRoles> roles = userRolesPersistance.SelectByUsername( username );
+				string[] rolesStr = new string[roles.Count];
+				for( int i = 0 ; i < roles.Count ; ++i ) {
+					rolesStr[i] = roles[i].Rolename;
+				}
+				return rolesStr;
+			}
+		}
+
+		public override string[] GetUsersInRole( string roleName ) {
+			using( UserRolesPersistance userRolesPersistance = UserRolesPersistance.GetSession() ) {
+				List<UserRoles> roles = userRolesPersistance.SelectByUsername( username );
+				string[] rolesStr = new string[roles.Count];
+				for( int i = 0 ; i < roles.Count ; ++i ) {
+					rolesStr[i] = roles[i].Rolename;
+				}
+				return rolesStr;
+			}
+		}
+
+		public override bool IsUserInRole( string username, string roleName ) {
+			using( UserRolesPersistance userRolesPersistance = UserRolesPersistance.GetSession() ) {
+				List<UserRoles> roles = userRolesPersistance.SelectByUsername( username );
+				foreach( UserRoles role in roles ) {
+					if( role.Rolename == roleName ) {
+						return true;	
+					}
+				}
+				return false;
+			}
+		}
+
+		public override void RemoveUsersFromRoles( string[] usernames, string[] roleNames ) {
+			using( UserRolesPersistance userRolesPersistance = UserRolesPersistance.GetSession() ) {
+				List<UserRoles> roles = userRolesPersistance.SelectByUsername( username );
+				foreach( string roleName in roleNames ) {
+					List<UserRoles> roles = userRolesPersistance.SelectByRolename( roleName );
+					foreach( string username in usernames ) {
+						foreach( UserRoles userRole in roles ) {
+							if( userRole.Username == username ) {
+								userRolesPersistance.Delete( userRole );
+							}
+						}
+					}
+				}
+			}
+		}
+
+		public override bool RoleExists( string roleName ) {
+			using( RolesPersistance rolesPersistance = RolesPersistance.GetSession() ) {
+				return rolesPersistance.SelectByName( roleName ).Count > 0;
+			}
+		}
+		
+		#region Properties
+
+		public override string ApplicationName {
+			get {
+				throw new Exception( "The method or operation is not implemented." );
+			}
+			set {
+				throw new Exception( "The method or operation is not implemented." );
+			}
+		}
+		
+		#endregion
+		
+		#endregion
+
+	}
+}

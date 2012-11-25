@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CommandBarName" xml:space="preserve">
+    <value>Midgard Dynamic</value>
+    <comment>Name of the command-bar.</comment>
+  </data>
+  <data name="ButtonValidate" xml:space="preserve">
+    <value>Validate</value>
+    <comment>Text for validate button.</comment>
+  </data>
+  <data name="ButtonValidateTooltip" xml:space="preserve">
+    <value>Validate diagram</value>
+    <comment>Tooltip for validate button.</comment>
+  </data>
+  <data name="ExportPleaseWait" xml:space="preserve">
+    <value>Please wait while this operation is processing...</value>
+    <comment>Message shown in the Export: Please Wait.</comment>
+  </data>
+  <data name="ShapeLineColorOk" xml:space="preserve">
+    <value />
+    <comment>Ok Color.</comment>
+  </data>
+  <data name="ShapeLineColorError" xml:space="preserve">
+    <value>2</value>
+    <comment>Error color.</comment>
+  </data>
+  <data name="ExportPageNotMidgard" xml:space="preserve">
+    <value>Page is not a process.</value>
+  </data>
+  <data name="ExportPageIsValid" xml:space="preserve">
+    <value>Page is valid.</value>
+  </data>
+  <data name="ExportErrorsInPage" xml:space="preserve">
+    <value>Found {0} error(s) in page {1}.
+
+</value>
+  </data>
+  <data name="ExportShapeError" xml:space="preserve">
+    <value>Shape '{0}': {1}
+</value>
+  </data>
+  <data name="ExportPageOk" xml:space="preserve">
+    <value>Operation executed sucessfully.</value>
+  </data>
+  <data name="ExportNoPagesProcessed" xml:space="preserve">
+    <value>No page processed.</value>
+  </data>
+  <data name="ExportAllOk" xml:space="preserve">
+    <value>Exported {0} pages with sucess.</value>
+  </data>
+  <data name="ExportErrorsInPages" xml:space="preserve">
+    <value>Found {0} error(s) in Midgard page {1}.</value>
+  </data>
+  <data name="ExportPageShapeError" xml:space="preserve">
+    <value>Page '{0}':Shape '{1}': {2}
+</value>
+  </data>
+  <data name="ProcessIdValidator" xml:space="preserve">
+    <value>Duplicate Process ID.</value>
+    <comment>Duplicate Process ID.</comment>
+  </data>
+  <data name="NodeIdValidator" xml:space="preserve">
+    <value>Duplicate Node ID.</value>
+    <comment>Duplicate Node ID.</comment>
+  </data>
+  <data name="EventNotConnected" xml:space="preserve">
+    <value>Event must be connected on both ends.</value>
+    <comment>Event must be connected on both ends.</comment>
+  </data>
+  <data name="EventConnectedFromInvalidShape" xml:space="preserve">
+    <value>Connected shape is invalid.</value>
+    <comment>Invalid from connection.</comment>
+  </data>
+  <data name="EventConnectedFromEndShape" xml:space="preserve">
+    <value>Can't begin in a final shape</value>
+    <comment>Invalid from connection, cannot be an End shape.</comment>
+  </data>
+  <data name="EventConnectedToInvalidShape" xml:space="preserve">
+    <value>Connected shape is invalid.</value>
+    <comment>Invalid To connection.</comment>
+  </data>
+  <data name="EventConnectedToStartShape" xml:space="preserve">
+    <value>The event can't start in a begin shape.</value>
+    <comment>Invalid To connection, cannot be a Start shape.</comment>
+  </data>
+  <data name="EventConnectedFromEventShape" xml:space="preserve">
+    <value>Event</value>
+    <comment>Invalid from connection.</comment>
+  </data>
+  <data name="EventConnectedToEventShape" xml:space="preserve">
+    <value>To the event.</value>
+    <comment>Invalid To connection, cannot be an Event shape.</comment>
+  </data>
+  <data name="NodeShapeNotConnected" xml:space="preserve">
+    <value>No incoming connections to this shape.</value>
+    <comment>No incoming connections to this shape.</comment>
+  </data>
+  <data name="StartShapeNotConnected" xml:space="preserve">
+    <value>No outgoing connections from this shape.</value>
+    <comment>No outgoing connections from this shape.</comment>
+  </data>
+  <data name="ButtonExport" xml:space="preserve">
+    <value>Export</value>
+    <comment>Text for export button.</comment>
+  </data>
+  <data name="ButtonExportTooltip" xml:space="preserve">
+    <value>Export diagram to XML</value>
+    <comment>Tooltip for export button.</comment>
+  </data>
+  <data name="ValidatePageOk" xml:space="preserve">
+    <value>Page sucessfully validated.</value>
+  </data>
+  <data name="TransitionConnectedFromInvalidShape" xml:space="preserve">
+    <value>Transition is not connected to a valid shape.</value>
+    <comment>Error if transition is bad connected</comment>
+  </data>
+  <data name="TransitionConnectedFromTransitionShape" xml:space="preserve">
+    <value>Transition.</value>
+  </data>
+  <data name="TransitionConnectedToInvalidShape" xml:space="preserve">
+    <value>Transition is not connected to a valid shape.</value>
+  </data>
+  <data name="TransitionConnectedToTransitionShape" xml:space="preserve">
+    <value>Transition.</value>
+  </data>
+  <data name="TransitionNotConnected" xml:space="preserve">
+    <value>Transitions must be connected in both points.</value>
+  </data>
+  <data name="ExportInterrupted" xml:space="preserve">
+    <value>User stop operation.</value>
+  </data>
+  <data name="ShapeLineColorNoMatch" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="NoDiagram" xml:space="preserve">
+    <value>No diagram to export.</value>
+  </data>
+  <data name="ShapeTextMaxSize" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="ShapeTextTruncate" xml:space="preserve">
+    <value>...</value>
+  </data>
+</root>

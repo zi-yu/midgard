@@ -1,0 +1,11 @@
+:Display: Ferramentas de geração através de Templates
+:Summary: Ferramentas de Templates
+
+Apesar de se terem procurado várias ferramentas deste tipo, apenas foi encontrado para .NET o NVelocity. O NVelocity é um projecto cujo seu precedênte é o Velocity, mas este é para a plataforma Java.
+Logo esta análise será baseada nas capacidades e fraquezas do NVelocity, não havendo ponto de comparação com outras ferramentas.
+
+	* NVelocity
+
+
+
+

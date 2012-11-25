@@ -1,0 +1,94 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Web;
+using $coreNamespace;
+using $dalNamespace;
+using System.Threading;
+#if( $dependencies.HasDependency( "I18N" ) )
+using WebUserInterface.app_globalresource;
+#end
+using System.Globalization;
+using System.Security.Principal;
+
+namespace $namespace {
+	public class AuthenticateModule : IHttpModule {
+
+		#region Private
+
+		private void SetDefaultLanguage() {
+			string option = HttpContext.Current.Request.UserLanguages[0];
+			SetLanguage( option );
+		}
+
+		private void SetLanguage( string lang ) {
+			if( string.IsNullOrEmpty( lang ) ) {
+				lang = "en";
+			}
+			Thread.CurrentThread.CurrentUICulture = new CultureInfo( lang );
+		}
+
+		private void AuthenticateUser() {
+			HttpContext context = HttpContext.Current;
+
+			object user = context.Cache[context.User.Identity.Name];
+			if( user == null ) {
+				using( PrincipalPersistance persistance = PrincipalPersistance.GetSession() ) {
+					List<Principal> p = persistance.SelectByName( context.User.Identity.Name );
+					if( p != null && p.Count > 0 ) {
+						p[0].LastLogin = DateTime.Now;
+						p[0].Identity = context.User.Identity;
+
+						persistance.Update( p[0] );
+						HttpContext.Current.User = p[0];
+						HttpContext.Current.Cache[context.User.Identity.Name] = context.User;
+						SetLanguage( p[0].Locale );
+					}
+				}
+			} else {
+				HttpContext.Current.User = (Principal)user;
+			}
+		}
+
+		#endregion
+		
+		#region IHttpModule Members
+
+		public void Init( HttpApplication context ) {
+			context.AuthenticateRequest += new EventHandler( AuthenticateRequest );
+		}
+
+		public void Dispose() {}
+
+		#endregion
+
+		#region Events
+
+		private void AuthenticateRequest( object sender, EventArgs e ) {
+			if( HttpContext.Current.Request.IsAuthenticated ) {
+				if( HttpContext.Current.User is Principal ) {
+					return;
+				}
+				AuthenticateUser();
+			} else {
+				SetDefaultLanguage();
+				HttpContext.Current.User = new GenericPrincipal( new GenericIdentity( "guest" ), new string[] { "guest" } );
+			}
+		}
+
+		#endregion
+	}
+}

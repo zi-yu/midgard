@@ -1,0 +1,4 @@
+Title: Midgard Wiki
+Description: Midgard's Wiki
+Namespace: Midgard
+Contact: 

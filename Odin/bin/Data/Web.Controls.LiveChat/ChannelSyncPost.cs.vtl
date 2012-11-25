@@ -1,0 +1,100 @@
+#set( $controls = ".Controls" )
+
+using System;
+using System.Web.UI;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
+using $coreMamespace;
+using $dalMamespace;
+
+namespace $namespace$controls {
+
+	public class ChannelSyncPost : Control {
+		
+		#region Fields
+
+        private TextBox text = new TextBox();
+        private string buttonCaption = "Send";
+
+        public string ButtonCaption {
+            get { return buttonCaption; }
+            set { buttonCaption = value; }
+        }
+
+        #endregion Fields
+
+        #region Control Rendering & Events
+
+        protected override void OnInit(EventArgs args)
+        {
+            base.OnInit(args);
+            Controls.Add(text);
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            if (Page.IsPostBack && !string.IsNullOrEmpty(text.Text)) {
+                string name = (string) Page.Items["CurrentChannelName"];
+                if (name == null) {
+                    throw new Exception("No 'CurrentChannelName' found at Items");
+                }
+                AddChannelEntry(name, text.Text);
+            }
+        }
+
+        protected override void Render( HtmlTextWriter writer )
+		{
+            WriteJavascript(writer);
+            writer.Write("<div id='chatSyncPost'>");
+            text.RenderControl(writer);
+            writer.Write("<input  type='submit' value='{0}' name='chatSyncPostButton' id='chatSyncPost' />", ButtonCaption, text.ClientID);
+            writer.Write("</div>");
+		    
+		}
+
+        private void WriteJavascript(HtmlTextWriter writer)
+        {
+            writer.WriteLine("<script type=\"text/javascript\">");
+            //writer.WriteLine("document.getElementById('chat').channelName = '{0}';", Name);
+            writer.WriteLine("</script>");
+        }
+				
+		#endregion Control Rendering
+		
+		#region DataAccess	
+	
+        private Channel GetChannelForName(string name)
+        {
+            using (ChannelPersistance persistance = ChannelPersistance.GetSession()) {
+                List<Channel> list = persistance.SelectByName(name);
+                if (list.Count > 0) {
+                    return list[0];
+                }
+                Channel channel = persistance.Create();
+                channel.Name = name;
+                persistance.Update(channel);
+                persistance.Flush();
+
+                return channel;
+            }
+        }
+
+        private void AddChannelEntry(string name, string text)
+        {
+            Channel channel = GetChannelForName(name);
+            using (ChannelEntryPersistance persistance = ChannelEntryPersistance.GetSession()) {
+                ChannelEntry entry = persistance.Create();
+                entry.Text = text;
+                entry.Channel = channel;
+                entry.Principal = Context.User as Principal;
+                persistance.Update(entry);
+                persistance.Flush();
+            }
+        }
+		
+		#endregion DataAccess
+	
+	};
+
+}

@@ -1,0 +1,1001 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dictionary>
+	<field code="AccoesMarketing" name="AccoesMarketing" id="txtAccoesMarketing" label="Acções Marketing" summary="As acções de marketing existentes para cada apólice" type="" size="" lovType="" cgiType="AccoesMarketing" />
+	<field code="RecheioEspecialRecheioTotal" name="RecheioEspecialRecheioTotal" id="cboRecheioEspecialRecheioTotal" label="% Recheio Especial no Recheio Total" summary="% de Recheio Especial no Recheio Total" type="LIS" cgiType="ddl" />
+	<field code="AceitaPrescricao" name="AceitaPrescricao" id="txtAceitaPrescricao" label="Aceita Prescrição" summary="" type="" size="" lovType="" cgiType="AceitaPrescricao" />
+	<field code="AcidenteViacao" name="AcidenteViacao" id="txtAcidenteViacao" label="Acidente Viação" summary="" type="" size="" lovType="" cgiType="AcidenteViacao" />
+	<field code="ActualizacaoAutomaticaCapital" name="ActualizacaoAutomaticaCapital" id="cboActualizacaoAutomaticaCapital" label="Actualização Automática Capital" summary="Indicador de actualização automática de capital" type="LIS" cgiType="ddl" />
+	<field code="AjudasNauticas" name="AjudasNauticas" id="txtAjudasNauticas" label="Tem Ajudas Náuticas" summary="Indicador de existência de ajudas náuticas" cgiType="AjudasNauticas" />
+	<field code="Ajuste" name="Ajuste" id="txtAjuste" label="Disponibilidade Parcial" summary="" type="string" size="" lovType="" cgiType="Ajuste" />
+	<field code="Alcool" name="Alcool" id="chkAlcool" label="Álcool" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="AmbulanciaMedicalizada" name="AmbulanciaMedicalizada" id="txtAmbulanciaMedicalizada" label="Ambulância Medicalizada" summary="" type="string" size="" lovType="SIM-NAO-SN" cgiType="AmbulanciaMedicalizada" />
+	<field code="AndarMorada" name="AndarMorada" id="txtAndarMorada" label="Andar" summary="Andar" type="TEX" size="16" cgiType="txt" />
+	<field code="AnoConstrucao" name="AnoConstrucao" id="txtAnoConstrucao" label="Ano Construção" summary="Ano de construção" type="INT" size="4" cgiType="int" />
+	<field code="AnoConstrucaoEmbarcacao" name="AnoConstrucaoEmbarcacao" id="txtAnoConstrucaoEmbarcacao" label="Ano Construção / Reconstrução" summary="Ano de construção / reconstrução" type="INT" size="4" cgiType="int" />
+	<field code="AnoConstrucaoMotor" name="AnoConstrucaoMotor" id="txtAnoConstrucaoMotor" label="Ano Construção Motor" summary="Ano de construção do motor" type="INT" size="4" cgiType="int" />
+	<field code="AnoInicioActividade" name="AnoInicioActividade" id="txtAnoInicioActividade" label="Ano Início Actividade" summary="Ano de Início da Actividade da Empresa" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="ApetrechosPalamenta" name="ApetrechosPalamenta" id="txtApetrechosPalamenta" label="Tem Apetrechos / Palamenta" summary="Indicador de existência de apetrechos / palamenta" cgiType="ApetrechosPalamenta" />
+	<field code="AreaDestinataria" name="AreaDestinataria" id="cboAreaDestinataria" label="Área" summary="Area referente à distribuição de documentos numerados" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="BalsasEquipamentoSalvamento" name="BalsasEquipamentoSalvamento" id="txtBalsasEquipamentoSalvamento" label="Tem Balsas / Equipamento de Salvamento" summary="Indicador de existência de balsas / equipamento de salvamento" cgiType="BalsasEquipamentoSalvamento" />
+	<field code="BancoCliente" name="BancoCliente" id="txtBancoCliente" label="Banco" summary="Instituição bancária" type="TEX" size="60" cgiType="txt" />
+	<field code="BandeiraEmbarcacao" name="BandeiraEmbarcacao" id="txtBandeiraEmbarcacao" label="Bandeira" summary="Bandeira da embarcação" cgiType="BandeiraEmbarcacao" />
+	<field code="BocaEmbarcacao" name="BocaEmbarcacao" id="txtBocaEmbarcacao" label="Boca" summary="Boca da embarcação" cgiType="BocaEmbarcacao" />
+	<field code="CAEPrestador" name="CAEPrestador" id="txtCAEPrestador" label="CAE" summary="" type="string" size="" lovType="" cgiType="CAEPrestador" />
+	<field code="CampoAlterado" name="CampoAlterado" id="txtCampoAlterado" label="Campo Alterado" summary="" type="string" size="" lovType="" cgiType="CampoAlterado" />
+	<field code="CanalCaptacaoCliente" name="CanalCaptacaoCliente" id="txtCanalCaptacaoCliente" label="Captação" summary="Canal de Captação do Cliente" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="CanalCobranca" name="CanalCobranca" id="txtCanalCobranca" label="Canal Cobrança" summary="Canal de cobrança do recibo" type="" size="" lovType="" cgiType="CanalCobranca" />
+	<field code="CanalPagamentoRecebimento" name="CanalPagamentoRecebimento" id="txtCanalPagamentoRecebimento" label="Canal Pag/Recebimento" summary="Canal de pagamento/recebimento" type="" size="" lovType="" cgiType="CanalPagamentoRecebimento" />
+	<field code="Capacidade" name="Capacidade" id="txtCapacidade" label="Capacidade" summary="" type="integer" size="" lovType="" cgiType="Capacidade" />
+	<field code="CapacidadeTeorica" name="CapacidadeTeorica" id="txtCapacidadeTeorica" label="Capacidade" summary="" type="string" size="" lovType="" cgiType="CapacidadeTeorica" />
+	<field code="CapitalCaesDeCaca" name="CapitalCaesDeCaca" id="txtCapitalCaesDeCaca" label="Capital Cobertura Cães de Caça" summary="Valor do capital da cobertura Cães de Caça" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="CapitalDanosEmEspingardas" name="CapitalDanosEmEspingardas" id="txtCapitalDanosEmEspingardas" label="Capital Cobertura Danos em Espingardas" summary="Valor do capital da cobertura Danos em Espingardas" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="CapitalDisponivel" name="CapitalDisponivel" id="txtCapitalDisponivel" label="Capital Disponível" summary="" type="string" size="" lovType="" cgiType="CapitalDisponivel" />
+	<field code="CapitalRecheioComum" name="CapitalRecheioComum" id="txtCapitalRecheioComum" label="Capital Recheio Comum" summary="Valor do capital de Recheio Comum." type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="CapitalRecheioEspecial" name="CapitalRecheioEspecial" id="txtCapitalRecheioEspecial" label="Capital Recheio Especial" summary="Valor do capital de Recheio Especial." type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="CapitalRecheioTotal" name="CapitalRecheioTotal" id="txtCapitalRecheioTotal" label="Capital Recheio Total" summary="Valor total do recheio" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="CapitalResponsabilidadeCivil" name="CapitalResponsabilidadeCivil" id="txtCapitalResponsabilidadeCivil" label="Capital RC" summary="Capital de Responsabilidade Civil" type="" size="" lovType="" cgiType="CapitalResponsabilidadeCivil" />
+	<field code="CapitalSeguro" name="CapitalSeguro" id="txtCapitalSeguro" label="Capital Seguro" summary="Valor do capital seguro" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="CapitalSeguroApolice" name="CapitalSeguroApolice" id="txtCapitalSeguroApolice" label="Capital Total" summary="Valor do capital seguro total" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="CapitalSeguroObjecto" name="CapitalSeguroObjecto" id="txtCapitalSeguroObjecto" label="Capital Objecto" summary="Valor do capital seguro do objecto" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="CapitalVeiculo" name="CapitalVeiculo" id="txtCapitalVeiculo" label="Capital Veículo" summary="Valor do capital do veículo&#xA;Este campo só se encontra disponível após ter sido seleccionado um veículo, ou seleccionado o botão “Outro Veículo”, no ecrã EM4056 (Ecrã Criar Simulação – Seleccionar Veículo).&#xA;Se tiver sido seleccionado um veículo no ecrã EM4056 (Ecrã Criar Simulação – Seleccionar Veículo), deverá ser preenchido automaticamente com informação do veículo seleccionado, estando disponível para alteração." type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="CapitalVeículosEmGaragem" name="CapitalVeículosEmGaragem" id="txtCapitalVeículosEmGaragem" label="Capital Veículos em Garagem" summary="Valor do capital da cobertura Veículos em Garagem" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="CapitaniaRegistoEmbarcacao" name="CapitaniaRegistoEmbarcacao" id="txtCapitaniaRegistoEmbarcacao" label="Capitania de Registo" summary="Capitania de registo da embarcação" cgiType="CapitaniaRegistoEmbarcacao" />
+	<field code="CaracterizacaoMedidasPreventivas" name="CaracterizacaoMedidasPreventivas" id="txtCaracterizacaoMedidasPreventivas" label="Caracterize as Medidas" summary="Descrição das medidas preventivas" type="TEX" size="200" cgiType="txt" />
+	<field code="CaracterizacaoSinistros" name="CaracterizacaoSinistros" id="txtCaracterizacaoSinistros" label="Caracterize os Sinistros" summary="Descrição dos sinistros" type="TEX" size="200" cgiType="txt" />
+	<field code="Carrocaria" name="Carrocaria" id="txtCarrocaria" label="Carroçaria" summary="Tipo de carroçaria do veículo" size="4" cgiType="Carrocaria" />
+	<field code="Categoria" name="Categoria" id="cboCategoria" label="Categoria" summary="Categoria do reboque ou veículo" type="LIS" lovType="4A" cgiType="ddl" />
+	<field code="Chassis" name="Chassis" id="txtChassis" label="Nº Chassis" summary="Número de chassis" type="TEX" size="16" cgiType="txt" />
+	<field code="CilindradaVeiculo" name="CilindradaVeiculo" id="txtCilindradaVeiculo" label="Cilindrada" summary="Cilindrada do veículo (tratado como texto)" type="TEX" size="5" cgiType="txt" />
+	<field code="Cilindros" name="Cilindros" id="txtCilindros" label="Cilindros" summary="Tipo de cilindros do veículo" type="TEX" size="2" cgiType="txt" />
+	<field code="CirculacaoAeroportos" name="CirculacaoAeroportos" id="rdoCirculacaoAeroportos" label="Circula com a viatura em aeroportos?" summary="Indicador de circulação em aeroportos" type="RAD" cgiType="rdl" />
+	<field code="Classificacao" name="Classificacao" id="txtClassificacao" label="Classificação" summary="Classificação do Local de Prestação" type="" size="" lovType="" cgiType="Classificacao" />
+	<field code="Clausula" name="Clausula" id="txtClausula" label="Cláusulas" summary="Claúsulas" cgiType="Clausula" />
+	<field code="ClausulasAssociadas" name="ClausulasAssociadas" id="cboClausulasAssociadas" label="Cláusulas Associadas" summary="" type="list" size="" lovType="" cgiType="ddl" />
+	<field code="Cobertura" name="Cobertura" id="txtCobertura" label="Cobertura" summary="Cobertura da Apólice" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="CoberturaDanosProprios" name="CoberturaDanosProprios" id="rdoCoberturaDanosProprios" label="Pretende Subscrever Cobertura Danos Próprios" summary="Indicador de existência de cobertura de Danos Próprios" type="RAD" cgiType="rdl" />
+	<field code="Codigo" name="Codigo" id="txtCodigo" label="Código Diagnóstico" summary="" type="string" size="" lovType="" cgiType="Codigo" />
+	<field code="CodigoContaInterna" name="CodigoContaInterna" id="txtCodigoContaInterna" label="Cód. Conta" summary="Código da Conta Interna" type="" size="" lovType="" cgiType="CodigoContaInterna" />
+	<field code="CodigoEntidadeATM" name="CodigoEntidadeATM" id="txtCodigoEntidadeATM" label="Entidade" summary="Código de Entidade da referência ATM" type="" size="" lovType="" cgiType="CodigoEntidadeATM" />
+	<field code="CodigoErro" name="CodigoErro" id="txtCodigoErro" label="Código Erro" summary="Código de erro devolvido pelo BES" type="" size="" lovType="" cgiType="CodigoErro" />
+	<field code="CodigoLesao" name="CodigoLesao" id="txtCodigoLesao" label="Causa de Lesão" summary="" type="string" size="" lovType="LESAO" cgiType="CodigoLesao" />
+	<field code="CodigoPagamentoRecebimento" name="CodigoPagamentoRecebimento" id="txtCodigoPagamentoRecebimento" label="Cód Pag / Rec" summary="" type="string" size="" lovType="REGRA-PAGAM" cgiType="CodigoPagamentoRecebimento" />
+	<field code="CodigoPostal" name="CodigoPostal" id="txtCodigoPostal" label="Cód Postal" summary="Código Postal da Morada do Cliente" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="CodigoPostalPrestador" name="CodigoPostalPrestador" id="txtCodigoPostalPrestador" label="Cód Postal" summary="" type="string" size="" lovType="" cgiType="CodigoPostalPrestador" />
+	<field code="CodigoProfissao" name="CodigoProfissao" id="txtCodigoProfissao" label="Código Profissão" summary="Código de profissão" size="10" cgiType="CodigoProfissao" />
+	<field code="CodigosDiagnostico" name="CodigosDiagnostico" id="cboCodigosDiagnostico" label="Cód Diagnóstico" summary="" type="list" size="" lovType="CODIGO-DIAGNOSTICO" cgiType="ddl" />
+	<field code="ComPagamento" name="ComPagamento" id="chkComPagamento" label="Serviço com Pagamento" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="ComplementoMorada" name="ComplementoMorada" id="txtComplementoMorada" label="Complemento" summary="Complemento da morada" type="TEX" size="30" cgiType="txt" />
+	<field code="Concelho" name="Concelho" id="txtConcelho" label="Concelho" summary="Concelho da Morada de Cliente" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="ConcelhoEntidade" name="ConcelhoEntidade" id="txtConcelhoEntidade" label="Concelho" summary="" type="string" size="" lovType="" cgiType="ConcelhoEntidade" />
+	<field code="ConcelhoPrestador" name="ConcelhoPrestador" id="txtConcelhoPrestador" label="Concelho" summary="" type="string" size="" lovType="" cgiType="ConcelhoPrestador" />
+	<field code="Concelhos" name="Concelhos" id="cboConcelhos" label="Concelhos Limítrofes" summary="" type="list" size="" lovType="CX" cgiType="ddl" />
+	<field code="ConfrontacoesNascente" name="ConfrontacoesNascente" id="txtConfrontacoesNascente" label="Nascente" summary="Confrontações a Nascente" type="TEX" size="100" cgiType="txt" />
+	<field code="ConfrontacoesNorte" name="ConfrontacoesNorte" id="txtConfrontacoesNorte" label="Norte" summary="Confrontações a Norte" type="TEX" size="100" cgiType="txt" />
+	<field code="ConfrontacoesPoente" name="ConfrontacoesPoente" id="txtConfrontacoesPoente" label="Poente" summary="Confrontações a Poente" type="TEX" size="100" cgiType="txt" />
+	<field code="ConfrontacoesSul" name="ConfrontacoesSul" id="txtConfrontacoesSul" label="Sul" summary="Confrontações a Sul" type="TEX" size="100" cgiType="txt" />
+	<field code="Contacto" name="Contacto" id="txtContacto" label="Contacto" summary="Número de Contacto da Entidade associada à Ocorrência" type="" size="" lovType="" cgiType="Contacto" />
+	<field code="ContactoGestorEspecialista" name="ContactoGestorEspecialista" id="txtContactoGestorEspecialista" label="Contacto Gestor Especialista" summary="" type="string" size="" lovType="" cgiType="ContactoGestorEspecialista" />
+	<field code="ContactoGestorSinistro" name="ContactoGestorSinistro" id="txtContactoGestorSinistro" label="Contacto Gestor Sinistro" summary="" type="string" size="" lovType="" cgiType="ContactoGestorSinistro" />
+	<field code="ContactoPreferencial" name="ContactoPreferencial" id="txtContactoPreferencial" label="Contacto Preferencial" summary="" type="string" size="" lovType="" cgiType="ContactoPreferencial" />
+	<field code="ContactoPreferencialCol" name="ContactoPreferencialCol" id="txtContactoPreferencialCol" label="Contacto Preferencial" summary="" type="string" size="" lovType="" cgiType="ContactoPreferencialCol" />
+	<field code="ContaDestinataria" name="ContaDestinataria" id="cboContaDestinataria" label="Conta Destino" summary="Conta destino dos documentos numerados" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="ContaDistribuicao" name="ContaDistribuicao" id="cboContaDistribuicao" label="Conta Distribuição" summary="Número da conta de distribuição" type="LIS" cgiType="ddl" />
+	<field code="CoseguroCemporcento" name="CoseguroCemporcento" id="txtCoseguroCemporcento" label="Pagamento 100%" summary="" type="string" size="" lovType="SIM-NAO-SN" cgiType="CoseguroCemporcento" />
+	<field code="CriterioPrimario" name="CriterioPrimario" id="cboCriterioPrimario" label="Critério Primário" summary="" type="list" size="" lovType="" cgiType="ddl" />
+	<field code="CriterioScoring" name="CriterioScoring" id="txtCriterioScoring" label="Critério Scoring" summary="" type="string" size="" lovType="" cgiType="CriterioScoring" />
+	<field code="Custo" name="Custo" id="txtCusto" label="Custo" summary="Custo Associado ao Serviço" type="" size="" lovType="" cgiType="Custo" />
+	<field code="CustoCalculado" name="CustoCalculado" id="txtCustoCalculado" label="Custo Calculado Encomenda" summary="" type="double" size="" lovType="" cgiType="CustoCalculado" />
+	<field code="CustoEncomenda" name="CustoEncomenda" id="txtCustoEncomenda" label="Custo total da encomenda" summary="Valor do Custo Total da Encomenda" type="" size="" lovType="" cgiType="CustoEncomenda" />
+	<field code="CustoEncomendaAssociada" name="CustoEncomendaAssociada" id="txtCustoEncomendaAssociada" label="Custo Encomenda Associada" summary="" type="double" size="" lovType="" cgiType="CustoEncomendaAssociada" />
+	<field code="CustoEstimado" name="CustoEstimado" id="txtCustoEstimado" label="Custo Estimado Serviço" summary="" type="double" size="" lovType="" cgiType="CustoEstimado" />
+	<field code="CustoEstimadoEncomenda" name="CustoEstimadoEncomenda" id="txtCustoEstimadoEncomenda" label="Custo Estimado Encomenda" summary="" type="double" size="" lovType="" cgiType="CustoEstimadoEncomenda" />
+	<field code="CustoEstimadoNaoProtocolado" name="CustoEstimadoNaoProtocolado" id="txtCustoEstimadoNaoProtocolado" label="Custo Estimado Encomenda" summary="" type="double" size="" lovType="" cgiType="CustoEstimadoNaoProtocolado" />
+	<field code="CustoFinalOriginal" name="CustoFinalOriginal" id="txtCustoFinalOriginal" label="Custo Original Serviço" summary="" type="double" size="" lovType="" cgiType="CustoFinalOriginal" />
+	<field code="CustoFinalServico" name="CustoFinalServico" id="txtCustoFinalServico" label="Custo Final Serviço" summary="" type="double" size="" lovType="" cgiType="CustoFinalServico" />
+	<field code="CustoForcado" name="CustoForcado" id="chkCustoForcado" label="Custo Forçado Serviço" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="CustoLinhaServico" name="CustoLinhaServico" id="txtCustoLinhaServico" label="Custo Linha Servico" summary="" type="double" size="" lovType="" cgiType="CustoLinhaServico" />
+	<field code="CustoMax" name="CustoMax" id="txtCustoMax" label="Custo Max Serviço" summary="" type="double" size="" lovType="" cgiType="CustoMax" />
+	<field code="CustoMaximo" name="CustoMaximo" id="txtCustoMaximo" label="Custo Máximo Serviço" summary="" type="double" size="" lovType="" cgiType="CustoMaximo" />
+	<field code="CustoMaximoServico" name="CustoMaximoServico" id="txtCustoMaximoServico" label="Custo Máx" summary="Custo Máximo do Serviço" type="" size="" lovType="" cgiType="CustoMaximoServico" />
+	<field code="CustoMaxProposto" name="CustoMaxProposto" id="txtCustoMaxProposto" label="Custo Máximo Serviço Proposto" summary="" type="double" size="" lovType="" cgiType="CustoMaxProposto" />
+	<field code="CustoMed" name="CustoMed" id="txtCustoMed" label="Custo Méd Serviço" summary="" type="double" size="" lovType="" cgiType="CustoMed" />
+	<field code="CustoMedidasPreventivas" name="CustoMedidasPreventivas" id="txtCustoMedidasPreventivas" label="Custo Aproximado" summary="Custo das medidas preventivas" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="CustoMedio" name="CustoMedio" id="txtCustoMedio" label="Custo Médio Serviço" summary="" type="double" size="" lovType="" cgiType="CustoMedio" />
+	<field code="CustoMedioServico" name="CustoMedioServico" id="txtCustoMedioServico" label="Custo Méd" summary="Custo médio do Serviço" type="" size="" lovType="" cgiType="CustoMedioServico" />
+	<field code="CustoMedProposto" name="CustoMedProposto" id="txtCustoMedProposto" label="Custo Médio Serviço Proposto" summary="" type="double" size="" lovType="" cgiType="CustoMedProposto" />
+	<field code="CustoServico" name="CustoServico" id="txtCustoServico" label="Custo" summary="Custo do Serviço" type="" size="" lovType="" cgiType="CustoServico" />
+	<field code="CustoServicoForcado" name="CustoServicoForcado" id="chkCustoServicoForcado" label="Custo Serviço Forçado" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="CustoServicoKC" name="CustoServicoKC" id="txtCustoServicoKC" label="Nº K/C" summary="" type="double" size="" lovType="" cgiType="CustoServicoKC" />
+	<field code="CustoServicoProposto" name="CustoServicoProposto" id="txtCustoServicoProposto" label="Custo Serviço Proposto" summary="" type="double" size="" lovType="" cgiType="CustoServicoProposto" />
+	<field code="CustoTotal" name="CustoTotal" id="txtCustoTotal" label="Custo Total Encomenda" summary="" type="double" size="" lovType="" cgiType="CustoTotal" />
+	<field code="CustoTotalEncomenda" name="CustoTotalEncomenda" id="txtCustoTotalEncomenda" label="Custo Total Encomenda" summary="" type="double" size="" lovType="" cgiType="CustoTotalEncomenda" />
+	<field code="CustoTotalServico" name="CustoTotalServico" id="txtCustoTotalServico" label="Custo Estimado Serviço" summary="" type="double" size="" lovType="" cgiType="CustoTotalServico" />
+	<field code="DadosConfirmadosPelaPessoaSegura" name="DadosConfirmadosPelaPessoaSegura" id="chkDadosConfirmadosPelaPessoaSegura" label="Os dados foram conformados pela pessoa segura" summary="Indicador de dados confirmados" type="BOOL" cgiType="ckl" />
+	<field code="DanosProprios" name="DanosProprios" id="txtDanosProprios" label="Danos Próprios" summary="Danos Próprios" type="" size="" lovType="" cgiType="DanosProprios" />
+	<field code="Data" name="Data" id="dtData" label="Data" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataActivacao" name="DataActivacao" id="dtDataActivacao" label="Data Activação" summary="Data de Activação do Documento Numerado" type="DAT" size="" lovType="" cgiType="date" />
+	<field code="DataAlta" name="DataAlta" id="dtDataAlta" label="Data Alta" summary="Data da alta" type="DAT" size="" lovType="" cgiType="date" />
+	<field code="DataAlteracao" name="DataAlteracao" id="txtDataAlteracao" label="Data Alteração" summary="Data de Alteração de Histórico de Prestadores" type="" size="" lovType="" cgiType="DataAlteracao" />
+	<field code="DataAlteracaoEstado" name="DataAlteracao" id="txtDataAlteracao" label="Data Alteração" summary="Data de Alteração de Histórico de Prestadores" type="" size="" lovType="" cgiType="DataAlteracao" />
+	<field code="DataAlteracaoHistoricoClienteInicioFiltro" name="DataAlteracaoHistoricoClienteInicioFiltro" id="txtDataAlteracaoHistoricoClienteInicioFiltro" label="Data Alteração entre" summary="Data de filtro de lista de histórico de Modificações de Cliente" type="" size="" lovType="" cgiType="DataAlteracaoHistoricoClienteInicioFiltro" />
+	<field code="DataAlteracaoResultadoServico" name="DataAlteracaoResultadoServico" id="txtDataAlteracaoResultadoServico" label="Data Alteração Resultado Serviço" summary="Data de alteração resultado serviço" type="" size="" lovType="" cgiType="DataAlteracaoResultadoServico" />
+	<field code="DataAnoMatricula" name="DataAnoMatricula" id="dtDataAnoMatricula" label="Data Matrícula" summary="Data de matrícula" type="DAT" cgiType="date" />
+	<field code="DataAnulacaoApolice" name="DataAnulacaoApolice" id="txtDataAnulacaoApolice" label="Data Efeito Anulação Apólice" summary="Data Anulação Apólice" type="" size="" lovType="" cgiType="DataAnulacaoApolice" />
+	<field code="DataAquisicaoVeiculo" name="DataAquisicaoVeiculo" id="dtDataAquisicaoVeiculo" label="Data Aquisição" summary="Data de aquisição" type="DAT" cgiType="date" />
+	<field code="DataAutorizacaoPagamento" name="DataAutorizacaoPagamento" id="txtDataAutorizacaoPagamento" label="Data Autorização" summary="Data de Autorização de Pagamento" type="" size="" lovType="" cgiType="DataAutorizacaoPagamento" />
+	<field code="DataCartaConducao" name="DataCartaConducao" id="dtDataCartaConducao" label="Data Carta" summary="Data da Carta de Condução do Cliente" type="DAT" size="" lovType="" cgiType="date" />
+	<field code="DataConferencia" name="DataConferencia" id="txtDataConferencia" label="Data Conferência" summary="Data de conferência do recibo" type="" size="" lovType="" cgiType="DataConferencia" />
+	<field code="DataCriacao" name="DataCriacao" id="dtDataCriacao" label="Data Criação Encomenda" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataCriacaoEncomenda" name="DataCriacaoEncomenda" id="dtDataCriacaoEncomenda" label="Data Criação Encomenda" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataCriacaoRegistoPagamento" name="DataCriacaoRegistoPagamento" id="txtDataCriacaoRegistoPagamento" label="Data Criação Registo Pagamento" summary="Data de criação registo pagamento" type="" size="" lovType="" cgiType="DataCriacaoRegistoPagamento" />
+	<field code="DataDevolucaoBES" name="DataDevolucaoBES" id="txtDataDevolucaoBES" label="Data Devolução BES" summary="Data de devolução da autorização do BES" type="" size="" lovType="" cgiType="DataDevolucaoBES" />
+	<field code="DataDivida" name="DataDivida" id="txtDataDivida" label="Data da Dívida" summary="Data de devido do recibo" type="" size="" lovType="" cgiType="DataDivida" />
+	<field code="DataEfectivaFim" name="DataEfectivaFim" id="dtDataEfectivaFim" label="Data Efectiva Fim Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataEfectivaFimExecucaoServico" name="DataEfectivaFimExecucaoServico" id="dtDataEfectivaFimExecucaoServico" label="Data Fim Execução Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataEfectivaFimServico" name="DataEfectivaFimServico" id="dtDataEfectivaFimServico" label="Data Efectiva Fim Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataEfectivaInicio" name="DataEfectivaInicio" id="dtDataEfectivaInicio" label="Data Efectiva Início Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataEfectivaInicioExecucaoServico" name="DataEfectivaInicioExecucaoServico" id="dtDataEfectivaInicioExecucaoServico" label="Data Início Execução Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataEfectivaInicioServico" name="DataEfectivaInicioServico" id="dtDataEfectivaInicioServico" label="Data Efectiva Início Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataEmissaoRecibo" name="DataEmissaoRecibo" id="txtDataEmissaoRecibo" label="Data Emissão" summary="Data emissão do Documento" type="" size="" lovType="" cgiType="DataEmissaoRecibo" />
+	<field code="DataEncomendaInicioFiltro" name="DataEncomendaInicioFiltro" id="dtDataEncomendaInicioFiltro" label="Data Encomenda entre" summary="Data de Filtro da Encomenda" type="DAT" size="" lovType="" cgiType="date" />
+	<field code="DataEnvioBES" name="DataEnvioBES" id="txtDataEnvioBES" label="Data Envio BES" summary="Data de envio da autorização para o BES" type="" size="" lovType="" cgiType="DataEnvioBES" />
+	<field code="DataEsperadaFimServico" name="DataEsperadaFimServico" id="dtDataEsperadaFimServico" label="Data Esperada Fim Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataEsperadaInicioServico" name="DataEsperadaInicioServico" id="dtDataEsperadaInicioServico" label="Data Esperada Início Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataEsperadaRecepcaoResultadoServico" name="DataEsperadaRecepcaoResultadoServico" id="dtDataEsperadaRecepcaoResultadoServico" label="Data Esperada Recepção Resultado" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataEstadoSinistro" name="DataEstadoSinistro" id="dtDataEstadoSinistro" label="Data Situação Sinistro" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataExpedicaoDocumento" name="DataExpedicaoDocumento" id="dtDataExpedicaoDocumento" label="Data Expedição Documento" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataFim" name="DataFim" id="dtDataFim" label="Fim Período" summary="Data fim" type="DAT" size="" lovType="" cgiType="date" />
+	<field code="DataFimApolice" name="DataFimApolice" id="dtDataFimApolice" label="Data Fim Seguro" summary="Data de fim do seguro" type="DAT" cgiType="date" />
+	<field code="DataFimEntradaEmpresa" name="DataFimEntradaEmpresa" id="dtDataFimEntradaEmpresa" label="Data Fim" summary="Data de fim na empresa" type="DAT" cgiType="date" />
+	<field code="DataFimExecucao" name="DataFimExecucao" id="dtDataFimExecucao" label="Data Fim Execução Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataFimExecucaoEncomenda" name="DataFimExecucaoEncomenda" id="dtDataFimExecucaoEncomenda" label="Data Fim Execução Encomenda" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataFimExecucaoServico" name="DataFimExecucaoServico" id="dtDataFimExecucaoServico" label="Data Fim Execução Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataFimImportacao" name="DataFimImportacao" id="dtDataFimImportacao" label="Fim Importação" summary="Data de fim de importação" type="DAT" cgiType="date" />
+	<field code="DataFimMorada" name="DataFimMorada" id="dtDataFimMorada" label="Data Fim" summary="Data de fim da morada" type="DAT" cgiType="date" />
+	<field code="DataFimParticipacaoEmpresa" name="DataFimParticipacaoEmpresa" id="dtDataFimParticipacaoEmpresa" label="Ver Ecrã." summary="Data de fim de participação na empresa" type="DAT" cgiType="date" />
+	<field code="DataFimPeriodoCusto" name="DataFimPeriodoCusto" id="dtDataFimPeriodoCusto" label="Data Fim Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataFimProcesso" name="DataFimProcesso" id="dtDataFimProcesso" label="Data Fim Processo" summary="Data em que o Processo é Concluído" type="DAT" size="" lovType="" cgiType="date" />
+	<field code="DataFimRecibo" name="DataFimRecibo" id="txtDataFimRecibo" label="e" summary="Data fim de validade do recibo" type="" size="" lovType="" cgiType="DataFimRecibo" />
+	<field code="DataFimSituacaoClinica" name="DataFimSituacaoClinica" id="txtDataFimSituacaoClinica" label="Data Fim Situação Clinica" summary="Data de fim de situação clínica" type="" size="" lovType="" cgiType="DataFimSituacaoClinica" />
+	<field code="DataFimValidade" name="DataFimValidade" id="dtDataFimValidade" label="Data Fim Validade" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataFimVersaoProtocolo" name="DataFimVersaoProtocolo" id="dtDataFimVersaoProtocolo" label="Data Fim Versão" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataHoraInicio" name="DataHoraInicio" id="txtDataHoraInicio" label="Data Hora Início" summary="Data e Hora do início do Certificado" type="" size="" lovType="" cgiType="DataHoraInicio" />
+	<field code="DataI" name="DataHoraOcorrencia" id="txtDataHoraOcorrencia" label="Data/Hora Ocorrência" summary="Data e hora da Ocorrência" type="" size="" lovType="" cgiType="DataHoraOcorrencia" />
+	<field code="DataInicio" name="DataInicio" id="dtDataInicio" label="Data Início" summary="Data de Início do Cliente." type="DAT" size="" lovType="" cgiType="date" />
+	<field code="DataInicioApolice" name="DataInicioApolice" id="dtDataInicioApolice" label="Data Início Apólice" summary="Data de início da apólice ou simulação" type="DAT" cgiType="date" />
+	<field code="DataInicioContaInterna" name="DataInicioContaInterna" id="txtDataInicioContaInterna" label="Data Início" summary="Data Início da Conta Interna" type="" size="" lovType="" cgiType="DataInicioContaInterna" />
+	<field code="DataInicioEntradaEmpresa" name="DataInicioEntradaEmpresa" id="dtDataInicioEntradaEmpresa" label="Data Início" summary="Data de início de participação na empresa" type="DAT" cgiType="date" />
+	<field code="DataInicioExecucao" name="DataInicioExecucao" id="dtDataInicioExecucao" label="Data Inicio Execução Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataInicioExecucaoEncomenda" name="DataInicioExecucaoEncomenda" id="dtDataInicioExecucaoEncomenda" label="Data Início Execução Encomenda" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataInicioExecucaoServico" name="DataInicioExecucaoServico" id="dtDataInicioExecucaoServico" label="Data Início Execução Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataInicioImportacao" name="DataInicioImportacao" id="dtDataInicioImportacao" label="Início Importação" summary="Data de início de importação" type="DAT" cgiType="date" />
+	<field code="DataInicioLinhaServico" name="DataInicioLinhaServico" id="dtDataInicioLinhaServico" label="Data Inicio Linha Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataInicioMorada" name="DataInicioMorada" id="dtDataInicioMorada" label="Data Início" summary="Data de início da morada" type="DAT" cgiType="date" />
+	<field code="DataInicioParticipacaoEmpresa" name="DataInicioParticipacaoEmpresa" id="dtDataInicioParticipacaoEmpresa" label="Ver Ecrã." summary="Data de início de participação na empresa" type="DAT" cgiType="date" />
+	<field code="DataInicioPeriodoCusto" name="DataInicioPeriodoCusto" id="dtDataInicioPeriodoCusto" label="Data Início Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataInicioProcesso" name="DataInicioProcesso" id="dtDataInicioProcesso" label="Data Início Processo" summary="Data Início do Processo" type="DAT" size="" lovType="" cgiType="date" />
+	<field code="DataInicioProtocolo" name="DataInicioProtocolo" id="dtDataInicioProtocolo" label="Data Início Protocolo" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataInicioRecibo" name="DataInicioRecibo" id="txtDataInicioRecibo" label="Periodo Validade entre" summary="Data início de validade do recibo" type="" size="" lovType="" cgiType="DataInicioRecibo" />
+	<field code="DataInicioSeguroAnterior" name="DataInicioSeguroAnterior" id="dtDataInicioSeguroAnterior" label="Tem Seguro desde" summary="Data de início do seguro anterior" type="DAT" cgiType="date" />
+	<field code="DataInicioServico" name="DataInicioServico" id="txtDataInicioServico" label="Data Início Serviço" summary="Data Início do Serviço" type="" size="" lovType="" cgiType="DataInicioServico" />
+	<field code="DataInicioSituacaoClinica" name="DataInicioSituacaoClinica" id="txtDataInicioSituacaoClinica" label="Data Início Situação Clinica" summary="Data de início de situação clínica" type="" size="" lovType="" cgiType="DataInicioSituacaoClinica" />
+	<field code="DataInicioStart" name="DataInicioStart" id="dtDataInicioStart" label="Data Início" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataInicioTransacao" name="DataInicioTransacao" id="txtDataInicioTransacao" label="Data Início Transacção" summary="Data início da transacção" type="" size="" lovType="" cgiType="DataInicioTransacao" />
+	<field code="DataInicioVersaoProtocolo" name="DataInicioVersaoProtocolo" id="dtDataInicioVersaoProtocolo" label="Data Início Versão" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataInsercaoConformidade" name="DataInsercaoConformidade" id="dtDataInsercaoConformidade" label="Data Inserção Conformidade" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataInsercaoNaoConformidade" name="DataInsercaoNaoConformidade" id="dtDataInsercaoNaoConformidade" label="Data Inserção Não Conformidade" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataInspeccaoPeriodicaValida" name="DataInspeccaoPeriodicaValida" id="dtDataInspeccaoPeriodicaValida" label="Inspecção Válida até" summary="Data de validade da inspecção periódica" type="DAT" cgiType="date" />
+	<field code="DataLimitePagamento" name="DataLimitePagamento" id="txtDataLimitePagamento" label="Data Limite Pag" summary="Data limite de pagamento do recibo" type="" size="" lovType="" cgiType="DataLimitePagamento" />
+	<field code="DataMesMatricula" name="DataMesMatricula" id="dtDataMesMatricula" label="Data 1ª Matrícula (MM/AAAA)" summary="Data da 1ª matrícula" type="DAT" cgiType="date" />
+	<field code="DataMoradaFiltro" name="DataMoradaFiltro" id="dtDataMoradaFiltro" label="Na data" summary="Filtro por data de morada" type="DAT" cgiType="date" />
+	<field code="DataNascimento" name="DataNascimento" id="dtDataNascimento" label="Data Nasc" summary="Data de Nascimento do Cliente" type="DAT" size="" lovType="" cgiType="date" />
+	<field code="DataNascimentoPessoaSegura" name="DataNascimentoPessoaSegura" id="dtDataNascimentoPessoaSegura" label="Ver Ecrã" summary="Data de nascimento da pessoa segura" type="DAT" cgiType="date" />
+	<field code="DataNascimentoPrimeiraPessoaSegura" name="DataNascimentoPrimeiraPessoaSegura" id="dtDataNascimentoPrimeiraPessoaSegura" label="Data Nascimento 1ª Pessoa Segura" summary="Data de nascimento da primeira pessoa segura" type="DAT" cgiType="date" />
+	<field code="DataNascimentoReclamante" name="DataNascimentoReclamante" id="dtDataNascimentoReclamante" label="Data Nascimento" summary="Data de Nascimento do Reclamante" type="" size="" lovType="" cgiType="date" />
+	<field code="DataNascimentoSegundaPessoaSegura" name="DataNascimentoSegundaPessoaSegura" id="dtDataNascimentoSegundaPessoaSegura" label="Data Nascimento 2ª Pessoa Segura" summary="Data de nascimento da segunda pessoa segura" type="DAT" cgiType="date" />
+	<field code="DataOcorrencia" name="DataOcorrencia" id="dtDataOcorrencia" label="Data Ocorrência" summary="Data da Ocorrência" type="DAT" size="" lovType="" cgiType="date" />
+	<field code="DataPagamento" name="DataPagamento" id="dtDataPagamento" label="Data Pag / Reemb" summary="Data de Pagamento / Reembolso" type="DAT" size="" lovType="" cgiType="date" />
+	<field code="DataPagamentoRecebimento" name="DataPagamentoRecebimento" id="txtDataPagamentoRecebimento" label="Data Pag/Recebimento" summary="Data de pagamento/recebimento" type="" size="" lovType="" cgiType="DataPagamentoRecebimento" />
+	<field code="DataPrazoEsperadoRecepcaoResultadoServico" name="DataPrazoEsperadoRecepcaoResultadoServico" id="dtDataPrazoEsperadoRecepcaoResultadoServico" label="Data Esperada Recepção Resultado" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataPrevistaRecepcao" name="DataPrevistaRecepcao" id="dtDataPrevistaRecepcao" label="Data Prevista Recepção Resultado Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataProcessamentoScoring" name="DataProcessamentoScoring" id="dtDataProcessamentoScoring" label="Data Processamento Scoring" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataProximaRenovacao" name="DataProximaRenovacao" id="dtDataProximaRenovacao" label="Data da Próxima Renovação" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataRecepcao" name="DataRecepcao" id="txtDataRecepcao" label="Prazo Recepção" summary="Data de Recepção  do Resultado de Serviço" type="" size="" lovType="" cgiType="DataRecepcao" />
+	<field code="DataRecepcaoResultadoServico" name="DataRecepcaoResultadoServico" id="dtDataRecepcaoResultadoServico" label="Data Recepção" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataRecolhaKm" name="DataRecolhaKm" id="dtDataRecolhaKm" label="Data Informação Kms" summary="Data de recolha da informação de kms do veículo" type="DAT" cgiType="date" />
+	<field code="DataReferenciaSDD" name="DataReferenciaSDD" id="txtDataReferenciaSDD" label="Data Referência SDD" summary="Data de referencia do Sistema de Débitos Directos" type="" size="" lovType="" cgiType="DataReferenciaSDD" />
+	<field code="DataSeguro" name="DataSeguro" id="dtDataSeguro" label="Tem Seguro desde" summary="Data de início do seguro anterior" type="DAT" cgiType="date" />
+	<field code="DataSimulacao" name="DataSimulacao" id="dtDataSimulacao" label="Data Simulação" summary="Data da simulação" type="DAT" cgiType="date" />
+	<field code="DataSituacaoResultadoServico" name="DataSituacaoResultadoServico" id="dtDataSituacaoResultadoServico" label="Data Situação Resultado Serviço" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="DataTransacaoPagamentoRecebimento" name="DataTransacaoPagamentoRecebimento" id="txtDataTransacaoPagamentoRecebimento" label="Data Transacção Pag/Recebimento" summary="Data de transacção pagamento/recebimento" type="" size="" lovType="" cgiType="DataTransacaoPagamentoRecebimento" />
+	<field code="DataTriplicado" name="DataTransacaoPagamentoRecebimento" id="txtDataTransacaoPagamentoRecebimento" label="Data Transacção Pag/Recebimento" summary="Data de transacção pagamento/recebimento" type="" size="" lovType="" cgiType="DataTransacaoPagamentoRecebimento" />
+	<field code="DataUltimaAlteracaoDocumento" name="DataUltimaAlteracaoDocumento" id="txtDataUltimaAlteracaoDocumento" label="Data Última Alteração Doc" summary="Data da última alteração do documento" type="" size="" lovType="" cgiType="DataUltimaAlteracaoDocumento" />
+	<field code="DataUltimoSinistro" name="DataUltimoSinistro" id="dtDataUltimoSinistro" label="Data Último Sinistro" summary="Data do último sinistro" type="DAT" cgiType="date" />
+	<field code="DataValor" name="DataValor" id="txtDataValor" label="Data Valor" summary="Data do cheque" type="" size="" lovType="" cgiType="DataValor" />
+	<field code="DataVersaoDocumento" name="DataVersaoDocumento" id="txtDataVersaoDocumento" label="Data Versão" summary="Data da Versão do Documento" type="" size="" lovType="" cgiType="DataVersaoDocumento" />
+	<field code="DataVersaoResultadoServico" name="DataVersaoResultadoServico" id="dtDataVersaoResultadoServico" label="Data Versão Resultado" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="Defeito" name="Defeito" id="txtDefeito" label="Ver Ecrã" summary="Defeito" cgiType="Defeito" />
+	<field code="DefeitoReduzaCapacidadeFisicaMental" name="DefeitoReduzaCapacidadeFisicaMental" id="txtDefeitoReduzaCapacidadeFisicaMental" label="Ver Ecrã" summary="Defeito" cgiType="DefeitoReduzaCapacidadeFisicaMental" />
+	<field code="Delegacao" name="Delegacao" id="txtDelegacao" label="Delegação" summary="" type="" size="" lovType="" cgiType="Delegacao" />
+	<field code="Desconto" name="Desconto" id="txtDesconto" label="Desconto" summary="Desconto associado à encomenda" type="" size="" lovType="" cgiType="Desconto" />
+	<field code="DescontoAgravamento" name="DescontoAgravamento" id="txtDescontoAgravamento" label="Desc./Agravamento Linha Serviço" summary="" type="double" size="" lovType="" cgiType="DescontoAgravamento" />
+	<field code="DescontoAgravamentoLinhaServico" name="DescontoAgravamentoLinhaServico" id="txtDescontoAgravamentoLinhaServico" label="Desc./Agravamento Linha Serviço" summary="" type="double" size="" lovType="" cgiType="DescontoAgravamentoLinhaServico" />
+	<field code="DescontoAgravamentoServico" name="DescontoAgravamentoServico" id="txtDescontoAgravamentoServico" label="Desc./Agravamento Serviço" summary="" type="double" size="" lovType="" cgiType="DescontoAgravamentoServico" />
+	<field code="DescontoAgravamentoServicoProposto" name="DescontoAgravamentoServicoProposto" id="txtDescontoAgravamentoServicoProposto" label="Desconto/ Agravamento Serviço Proposto" summary="" type="double" size="" lovType="" cgiType="DescontoAgravamentoServicoProposto" />
+	<field code="DescontoAplicado" name="DescontoAplicado" id="txtDescontoAplicado" label="Desc./Agravamento Serviço" summary="" type="double" size="" lovType="" cgiType="DescontoAplicado" />
+	<field code="DescontoForcado" name="DescontoForcado" id="chkDescontoForcado" label="Desconto Serviço Forçado" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="DescontoOriginal" name="DescontoOriginal" id="txtDescontoOriginal" label="Desconto Original Serviço" summary="" type="double" size="" lovType="" cgiType="DescontoOriginal" />
+	<field code="DescontoProtocolo" name="DescontoProtocolo" id="txtDescontoProtocolo" label="Desc./Agravamento Protocolo" summary="" type="double" size="" lovType="" cgiType="DescontoProtocolo" />
+	<field code="Descricao" name="Descricao" id="txtDescricao" label="Descrição" summary="Descrição do Serviço" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="DescricaoConformidade" name="DescricaoConformidade" id="txtDescricaoConformidade" label="Descrição" summary="" type="string" size="" lovType="" cgiType="DescricaoConformidade" />
+	<field code="DescricaoDiagnostico" name="DescricaoDiagnostico" id="txtDescricaoDiagnostico" label="Descrição" summary="" type="string" size="" lovType="" cgiType="DescricaoDiagnostico" />
+	<field code="DescricaoDocumento" name="DescricaoDocumento" id="txtDescricaoDocumento" label="Descrição" summary="Descrição do Documento associado ao resultado do serviço" type="" size="" lovType="" cgiType="DescricaoDocumento" />
+	<field code="DescricaoEPS" name="DescricaoEPS" id="txtDescricaoEPS" label="Descrição" summary="Descrição da transacção" type="" size="" lovType="" cgiType="DescricaoEPS" />
+	<field code="DescricaoEstadoPessoaSegura" name="DescricaoEstadoPessoaSegura" id="txtDescricaoEstadoPessoaSegura" label="Ver Ecrã" summary="Estado da pessoa segura" cgiType="DescricaoEstadoPessoaSegura" />
+	<field code="DescricaoExtra" name="DescricaoExtra" id="txtDescricaoExtra" label="Descrição" summary="Descrição do &quot;Extra&quot;" type="TEX" size="45" cgiType="txt" />
+	<field code="DescricaoIdades" name="DescricaoIdades" id="txtDescricaoIdades" label="Ver Ecrã." summary="Descrição das idades" cgiType="DescricaoIdades" />
+	<field code="DescricaoIndemnizacao" name="DescricaoIndemnizacao" id="txtDescricaoIndemnizacao" label="Descrição" summary="Descrição da transacção" type="" size="" lovType="" cgiType="DescricaoIndemnizacao" />
+	<field code="DescricaoInvalidezPermanentePessoaSegura1" name="DescricaoInvalidezPermanentePessoaSegura1" id="txtDescricaoInvalidezPermanentePessoaSegura1" label="Ver Ecrã" summary="Descrição da invalidez" cgiType="DescricaoInvalidezPermanentePessoaSegura1" />
+	<field code="DescricaoInvalidezPermanentePessoaSegura2" name="DescricaoInvalidezPermanentePessoaSegura2" id="txtDescricaoInvalidezPermanentePessoaSegura2" label="Ver Ecrã" summary="Descrição da invalidez" cgiType="DescricaoInvalidezPermanentePessoaSegura2" />
+	<field code="DescricaoItinerario" name="DescricaoItinerario" id="txtDescricaoItinerario" label="Itinerário" summary="Descrição do itinerário" type="TEX" size="100" cgiType="txt" />
+	<field code="DescricaoLinhaServico" name="DescricaoLinhaServico" id="txtDescricaoLinhaServico" label="Descrição Linha Serviço" summary="" type="string" size="" lovType="" cgiType="DescricaoLinhaServico" />
+	<field code="DescricaoMedicamentosPessoaSegura" name="DescricaoMedicamentosPessoaSegura" id="txtDescricaoMedicamentosPessoaSegura" label="Ver Ecrã" summary="Descrição dos medicamentos" cgiType="DescricaoMedicamentosPessoaSegura" />
+	<field code="DescricaoNaoConformidade" name="DescricaoNaoConformidade" id="txtDescricaoNaoConformidade" label="Descrição Não Conformidade" summary="" type="string" size="" lovType="" cgiType="DescricaoNaoConformidade" />
+	<field code="DescricaoObjectoRecheio" name="DescricaoObjectoRecheio" id="txtDescricaoObjectoRecheio" label="Descrição" summary="Descrição do recheio" cgiType="DescricaoObjectoRecheio" />
+	<field code="DescricaoPagamento" name="DescricaoPagamento" id="txtDescricaoPagamento" label="Descrição" summary="Descrição de Pagamento" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="DescricaoPossiveisDoencasPessoaSegura1" name="DescricaoPossiveisDoencasPessoaSegura1" id="txtDescricaoPossiveisDoencasPessoaSegura1" label="Ver Ecrã" summary="Descrição de doenças" cgiType="DescricaoPossiveisDoencasPessoaSegura1" />
+	<field code="DescricaoPossiveisDoencasPessoaSegura2" name="DescricaoPossiveisDoencasPessoaSegura2" id="txtDescricaoPossiveisDoencasPessoaSegura2" label="Ver Ecrã" summary="Descrição de doenças" cgiType="DescricaoPossiveisDoencasPessoaSegura2" />
+	<field code="DescricaoPostal" name="DescricaoPostal" id="txtDescricaoPostal" label="Descrição Postal" summary="Descrição Postal da Morada de Cliente" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="DescricaoPremioEstorno" name="DescricaoPremioEstorno" id="txtDescricaoPremioEstorno" label="Descrição" summary="Descrição da transacção" type="" size="" lovType="" cgiType="DescricaoPremioEstorno" />
+	<field code="DescricaoProfissao" name="DescricaoProfissao" id="txtDescricaoProfissao" label="Descrição Profissão" summary="Filtra a lista da área seguinte por Descrição Profissão." cgiType="DescricaoProfissao" />
+	<field code="DescricaoProtocolo" name="DescricaoProtocolo" id="txtDescricaoProtocolo" label="Descrição Protocolo" summary="" type="string" size="" lovType="" cgiType="DescricaoProtocolo" />
+	<field code="DescricaoResultado" name="DescricaoResultado" id="txtDescricaoResultado" label="Descrição Resultado" summary="Descrição do Resultado de Serviço" type="" size="" lovType="" cgiType="DescricaoResultado" />
+	<field code="DescricaoResultadoServico" name="DescricaoResultadoServico" id="txtDescricaoResultadoServico" label="Descrição Resultado" summary="" type="string" size="" lovType="" cgiType="DescricaoResultadoServico" />
+	<field code="DescricaoResumo" name="DescricaoResumo" id="txtDescricaoResumo" label="Descrição/Resumo" summary="" type="" size="" lovType="" cgiType="DescricaoResumo" />
+	<field code="DescricaoServico" name="DescricaoServico" id="txtDescricaoServico" label="Descrição" summary="Descrição do Serviço" type="" size="" lovType="" cgiType="DescricaoServico" />
+	<field code="DescricaoServicoNumero" name="DescricaoServicoNumero" id="txtDescricaoServicoNumero" label="Descrição Servico" summary="" type="string" size="" lovType="" cgiType="DescricaoServicoNumero" />
+	<field code="DescricaoTratamentoPessoaSegura" name="DescricaoTratamentoPessoaSegura" id="txtDescricaoTratamentoPessoaSegura" label="Ver Ecrã" summary="Descrição do tratamento" cgiType="DescricaoTratamentoPessoaSegura" />
+	<field code="DescricaoTratamentosFuturosPessoaSegura" name="DescricaoTratamentosFuturosPessoaSegura" id="txtDescricaoTratamentosFuturosPessoaSegura" label="Ver Ecrã" summary="Descrição do tratamento" cgiType="DescricaoTratamentosFuturosPessoaSegura" />
+	<field code="DescricaoUniverso" name="DescricaoUniverso" id="txtDescricaoUniverso" label="Ver Ecrã." summary="Descrição do universo" cgiType="DescricaoUniverso" />
+	<field code="DescServico" name="DescServico" id="txtDescServico" label="Descrição Serviço" summary="" type="string" size="" lovType="" cgiType="DescServico" />
+	<field code="DesportosFederados" name="DesportosFederados" id="txtDesportosFederados" label="Ver Ecrã" summary="Indicador de prática de desportos federados" cgiType="DesportosFederados" />
+	<field code="DesportosPerigosos" name="DesportosPerigosos" id="txtDesportosPerigosos" label="Ver Ecrã" summary="Indicador de prática de desportos perigosos" cgiType="DesportosPerigosos" />
+	<field code="Desvalorizacao" name="Desvalorizacao" id="txtDesvalorizacao" label="Desvaloriz" summary="Desvalorização" type="DEC" size="" lovType="" cgiType="Desvalorizacao" />
+	<field code="DesvalorizacaoFinalPresumivel" name="DesvalorizacaoFinalPresumivel" id="txtDesvalorizacaoFinalPresumivel" label="Desvalorização Final Presumível" summary="" type="double" size="" lovType="" cgiType="DesvalorizacaoFinalPresumivel" />
+	<field code="DesvalorizacoesAnterioresSinistros" name="DesvalorizacoesAnterioresSinistros" id="txtDesvalorizacoesAnterioresSinistros" label="Desvalorizações Anteriores ao Sinistro" summary="" type="string" size="" lovType="" cgiType="DesvalorizacoesAnterioresSinistros" />
+	<field code="DetalheServico" name="DetalheServico" id="txtDetalheServico" label="Detalhe Serviço" summary="Detalhe do Serviço" type="" size="" lovType="" cgiType="DetalheServico" />
+	<field code="DiagnosticoActividadeRiscoPessoaSegura" name="DiagnosticoActividadeRiscoPessoaSegura" id="txtDiagnosticoActividadeRiscoPessoaSegura" label="Ver Ecrã" summary="Diagnóstico de actividade de risco" cgiType="DiagnosticoActividadeRiscoPessoaSegura" />
+	<field code="DiaSemana" name="DiaSemana" id="txtDiaSemana" label="Dia da Semana" summary="" type="string" size="" lovType="" cgiType="DiaSemana" />
+	<field code="Diferencial" name="Diferencial" id="txtDiferencial" label="Disponibilidade Parcial" summary="" type="string" size="" lovType="" cgiType="Diferencial" />
+	<field code="DirectorTecnico" name="DirectorTecnico" id="txtDirectorTecnico" label="Director Técnico" summary="" type="string" size="" lovType="" cgiType="DirectorTecnico" />
+	<field code="Disponibilidade" name="Disponibilidade" id="txtDisponibilidade" label="Disponibilidade" summary="" type="string" size="" lovType="" cgiType="Disponibilidade" />
+	<field code="DispositivosProteccaoSeguranca" name="DispositivosProteccaoSeguranca" id="cboDispositivosProteccaoSeguranca" label="Dispositivos Protecção/ Segurança" summary="Dispositivos de protecção e segurança" type="LIS" cgiType="ddl" />
+	<field code="Distrito" name="Distrito" id="cboDistrito" label="Distrito" summary="Distrito da Morada de Cliente" type="list" size="" lovType="DI" cgiType="ddl" />
+	<field code="Documento" name="Documento" id="txtDocumento" label="Documento" summary="Documento" type="TEX" size="100" cgiType="txt" />
+	<field code="DocumentoDescCurta" name="DocumentoDescCurta" id="txtDocumentoDescCurta" label="Documento" summary="Código do Documento (recibo)" type="" size="" lovType="" cgiType="DocumentoDescCurta" />
+	<field code="Doenca" name="Doenca" id="txtDoenca" label="Ver Ecrã" summary="Doença" cgiType="Doenca" />
+	<field code="DoencaProfissional" name="DoencaProfissional" id="txtDoencaProfissional" label="Doença Profissional" summary="" type="string" size="" lovType="SIM-NAO-SN" cgiType="DoencaProfissional" />
+	<field code="Dom" name="Dom" id="txtDom" label="Domingo" summary="" type="integer" size="" lovType="" cgiType="Dom" />
+	<field code="dtlAndar" name="dtlAndar" id="txtdtlAndar" label="Andar" summary="" type="string" size="" lovType="" cgiType="dtlAndar" />
+	<field code="dtlClassificacao" name="dtlClassificacao" id="cbodtlClassificacao" label="Classificação" summary="" type="list" size="" lovType="ZGPSV_CLASSIF" cgiType="ddl" />
+	<field code="dtlCodPostal" name="dtlCodPostal" id="txtdtlCodPostal" label="Cód. Postal" summary="" type="string" size="" lovType="" cgiType="dtlCodPostal" />
+	<field code="dtlComplemento" name="dtlComplemento" id="txtdtlComplemento" label="Complemento" summary="" type="string" size="" lovType="" cgiType="dtlComplemento" />
+	<field code="dtlDataFim" name="dtlDataFim" id="dtdtlDataFim" label="Data Fim" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="dtlDataInicio" name="dtlDataInicio" id="dtdtlDataInicio" label="Data Início" summary="" type="date" size="" lovType="" cgiType="date" />
+	<field code="dtlDescricaoPostal" name="dtlDescricaoPostal" id="txtdtlDescricaoPostal" label="Descrição Postal" summary="" type="string" size="" lovType="" cgiType="dtlDescricaoPostal" />
+	<field code="dtlEmail" name="dtlEmail" id="txtdtlEmail" label="E-Mail" summary="" type="string" size="" lovType="" cgiType="dtlEmail" />
+	<field code="dtlFax" name="dtlFax" id="txtdtlFax" label="Fax" summary="" type="string" size="" lovType="" cgiType="dtlFax" />
+	<field code="dtlLocalidade" name="dtlLocalidade" id="txtdtlLocalidade" label="Localidade" summary="" type="string" size="" lovType="" cgiType="dtlLocalidade" />
+	<field code="dtlNomeArruamento" name="dtlNomeArruamento" id="txtdtlNomeArruamento" label="Nome Arruamento" summary="" type="string" size="" lovType="" cgiType="dtlNomeArruamento" />
+	<field code="dtlPais" name="dtlPais" id="cbodtlPais" label="País" summary="" type="list" size="" lovType="COUNTRY" cgiType="ddl" />
+	<field code="dtlPorta" name="dtlPorta" id="txtdtlPorta" label="Porta" summary="" type="string" size="" lovType="" cgiType="dtlPorta" />
+	<field code="dtlTelefone" name="dtlTelefone" id="txtdtlTelefone" label="Telefone" summary="" type="string" size="" lovType="" cgiType="dtlTelefone" />
+	<field code="dtlTipoArruamento" name="dtlTipoArruamento" id="cbodtlTipoArruamento" label="Tipo Arruamento" summary="" type="list" size="" lovType="TIPO-ARRUAMENTO" cgiType="ddl" />
+	<field code="Duracao" name="Duracao" id="txtDuracao" label="Duração Apólice" summary="Duração da apólice" type="INT" size="3" cgiType="int" />
+	<field code="Email" name="Email" id="txtEmail" label="Email" summary="" type="" size="" lovType="" cgiType="Email" />
+	<field code="EmailReclamante" name="EmailReclamante" id="txtEmailReclamante" label="Email" summary="" type="string" size="" lovType="" cgiType="EmailReclamante" />
+	<field code="EncomendaSemPrestador" name="EncomendaSemPrestador" id="chkEncomendaSemPrestador" label="Encomenda Sem Prestador" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="EntidadeAssociada_ConcelhoEntidade" name="EntidadeAssociada_ConcelhoEntidade" id="txtEntidadeAssociada_ConcelhoEntidade" label="Concelho" summary="" type="string" size="" lovType="" cgiType="EntidadeAssociada_ConcelhoEntidade" />
+	<field code="EntidadeAssociada_Funcao" name="EntidadeAssociada_Funcao" id="txtEntidadeAssociada_Funcao" label="Função" summary="" type="string" size="" lovType="" cgiType="EntidadeAssociada_Funcao" />
+	<field code="EntidadeAssociada_NomeEntidade" name="EntidadeAssociada_NomeEntidade" id="txtEntidadeAssociada_NomeEntidade" label="Nome Entidade" summary="" type="string" size="" lovType="" cgiType="EntidadeAssociada_NomeEntidade" />
+	<field code="EntidadeAssociada_NumeroPrestador" name="EntidadeAssociada_NumeroPrestador" id="txtEntidadeAssociada_NumeroPrestador" label="Nº Prestador" summary="" type="string" size="" lovType="" cgiType="EntidadeAssociada_NumeroPrestador" />
+	<field code="EntidadeAssociada_TelefoneContactoEntidade" name="EntidadeAssociada_TelefoneContactoEntidade" id="txtEntidadeAssociada_TelefoneContactoEntidade" label="Telefone" summary="" type="string" size="" lovType="" cgiType="EntidadeAssociada_TelefoneContactoEntidade" />
+	<field code="EntidadeAssociada_TipoEntidade" name="EntidadeAssociada_TipoEntidade" id="txtEntidadeAssociada_TipoEntidade" label="Tipo Entidade" summary="" type="string" size="" lovType="" cgiType="EntidadeAssociada_TipoEntidade" />
+	<field code="EntidadeAssociadaServico" name="EntidadeAssociadaServico" id="txtEntidadeAssociadaServico" label="Entidade Associada Serviço" summary="" type="string" size="" lovType="" cgiType="EntidadeAssociadaServico" />
+	<field code="Equipamentos" name="Equipamentos" id="cboEquipamentos" label="Características dos Equipamentos Existentes" summary="" type="list" size="" lovType="ZGPSV_CAR_EQUIP" cgiType="ddl" />
+	<field code="EsforcoExecucao" name="EsforcoExecucao" id="txtEsforcoExecucao" label="Esforço Execução Serviço" summary="" type="double" size="" lovType="" cgiType="EsforcoExecucao" />
+	<field code="Especialidades" name="Especialidades" id="cboEspecialidades" label="Especialidade" summary="" type="list" size="" lovType="ZGPSV_ESPECIAL" cgiType="ddl" />
+	<field code="Estado" name="Estado" id="txtEstado" label="Estado Registo Pagamento" summary="" type="string" size="" lovType="" cgiType="Estado" />
+	<field code="EstadoAutorizacaoNIB" name="EstadoAutorizacaoNIB" id="txtEstadoAutorizacaoNIB" label="Estado" summary="Estado da autorização associada à conta NIB" type="" size="" lovType="" cgiType="EstadoAutorizacaoNIB" />
+	<field code="EstadoAutorizacaoPagamento" name="EstadoAutorizacaoPagamento" id="txtEstadoAutorizacaoPagamento" label="Estado Autoriz. Pag" summary="Estado de Autorização de pagamento" type="" size="" lovType="" cgiType="EstadoAutorizacaoPagamento" />
+	<field code="EstadoCheque" name="EstadoCheque" id="txtEstadoCheque" label="Estado Cheque" summary="Estado do cheque" type="" size="" lovType="" cgiType="EstadoCheque" />
+	<field code="EstadoConservacaoCanalizacoes" name="EstadoConservacaoCanalizacoes" id="txtEstadoConservacaoCanalizacoes" label="Ver Ecrã" summary="Estado de conservação" type="TEX" size="100" cgiType="txt" />
+	<field code="EstadoConservacaoInstalacaoElectrica" name="EstadoConservacaoInstalacaoElectrica" id="txtEstadoConservacaoInstalacaoElectrica" label="Ver Ecrã" summary="Estado de conservação" type="TEX" size="100" cgiType="txt" />
+	<field code="EstadoConservacaoParedesExteriores" name="EstadoConservacaoParedesExteriores" id="txtEstadoConservacaoParedesExteriores" label="Ver Ecrã" summary="Estado de conservação" type="TEX" size="100" cgiType="txt" />
+	<field code="EstadoConservacaoParedesInteriores" name="EstadoConservacaoParedesInteriores" id="txtEstadoConservacaoParedesInteriores" label="Ver Ecrã" summary="Estado de conservação" type="TEX" size="100" cgiType="txt" />
+	<field code="EstadoConservacaoRedeAguasPluviais" name="EstadoConservacaoRedeAguasPluviais" id="txtEstadoConservacaoRedeAguasPluviais" label="Ver Ecrã" summary="Estado de conservação" type="TEX" size="100" cgiType="txt" />
+	<field code="EstadoConservacaoRedeEsgotos" name="EstadoConservacaoRedeEsgotos" id="txtEstadoConservacaoRedeEsgotos" label="Ver Ecrã" summary="Estado de conservação" type="TEX" size="100" cgiType="txt" />
+	<field code="EstadoConservacaoTelhado" name="EstadoConservacaoTelhado" id="txtEstadoConservacaoTelhado" label="Ver Ecrã" summary="Estado de conservação" type="TEX" size="100" cgiType="txt" />
+	<field code="EstadoDocumento" name="EstadoDocumento" id="cboEstadoDocumento" label="Estado Documento" summary="Estado do Documento." type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="EstadoLote" name="EstadoLote" id="cboEstadoLote" label="Estado" summary="Estado do Lote de Documentos Numerados" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="EstadoPagamento" name="EstadoPagamento" id="txtEstadoPagamento" label="Estado Pagamento" summary="" type="string" size="" lovType="" cgiType="EstadoPagamento" />
+	<field code="EstadoRegistoPagamento" name="EstadoRegistoPagamento" id="txtEstadoRegistoPagamento" label="Estado Registo Pagamento" summary="" type="string" size="" lovType="" cgiType="EstadoRegistoPagamento" />
+	<field code="EstadoRenovacao" name="EstadoRenovacao" id="txtEstadoRenovacao" label="Estado Renovação" summary="" type="string" size="" lovType="" cgiType="EstadoRenovacao" />
+	<field code="EstadoSinistro" name="EstadoSinistro" id="txtEstadoSinistro" label="Situação Sinistro" summary="" type="string" size="" lovType="" cgiType="EstadoSinistro" />
+	<field code="EstadoTransaccao" name="EstadoTransaccao" id="txtEstadoTransaccao" label="Estado Transacção" summary="Estado da transacção" type="" size="" lovType="" cgiType="EstadoTransaccao" />
+	<field code="EstruturaContaDistribuicao" name="EstruturaContaDistribuicao" id="txtEstruturaContaDistribuicao" label="Estrutura Conta Distribuição" summary="Estrutura da conta de distribuição" type="TEX" size="60" cgiType="txt" />
+	<field code="Estupefacientes" name="Estupefacientes" id="chkEstupefacientes" label="Estupefacientes" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="ExamesAnteriores" name="ExamesAnteriores" id="txtExamesAnteriores" label="Exames Anteriores" summary="" type="string" size="" lovType="SIM-NAO-SN" cgiType="ExamesAnteriores" />
+	<field code="ExtensaoAguasEspanholas" name="ExtensaoAguasEspanholas" id="rdoExtensaoAguasEspanholas" label="Ver Ecrã" summary="Indicador de extensão a águas espanholas" type="RAD" cgiType="rdl" />
+	<field code="ExtensaoPraticaRegatas" name="ExtensaoPraticaRegatas" id="rdoExtensaoPraticaRegatas" label="Ver Ecrã" summary="Indicador de extensão a prática de regatas" type="RAD" cgiType="rdl" />
+	<field code="Extra" name="Extra" id="txtExtra" label="Tipo" summary="Extra" type="EFT" cgiType="Extra" />
+	<field code="Fax" name="Fax" id="txtFax" label="Fax" summary="" type="string" size="" lovType="" cgiType="Fax" />
+	<field code="FeriadosConcelhios" name="FeriadosConcelhios" id="chkFeriadosConcelhios" label="Cumpre Feriados Concelhios" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="FeriadosNacionais" name="FeriadosNacionais" id="chkFeriadosNacionais" label="Cumpre Feriados Nacionais" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="Final" name="Final" id="optFinal" label="FINAL" summary="" type="bool" size="" lovType="" cgiType="Final" />
+	<field code="FisioterapeutaResponsavel" name="FisioterapeutaResponsavel" id="txtFisioterapeutaResponsavel" label="Fisioterapeuta Responsável" summary="" type="" size="" lovType="" cgiType="FisioterapeutaResponsavel" />
+	<field code="FoiHospitalizadoPessoaSegura" name="FoiHospitalizadoPessoaSegura" id="rdoFoiHospitalizadoPessoaSegura" label="Ver Ecrã" summary="Indicador de hospitalização" type="RAD" cgiType="rdl" />
+	<field code="FormaPagamento" name="FormaPagamento" id="txtFormaPagamento" label="Forma Pagamento" summary="Forma de pagamento" type="" size="" lovType="" cgiType="FormaPagamento" />
+	<field code="FormaRecebimento" name="FormaRecebimento" id="txtFormaRecebimento" label="Forma Recebimento" summary="Forma de recebimento" type="" size="" lovType="" cgiType="FormaRecebimento" />
+	<field code="Funcao" name="Funcao" id="txtFuncao" label="Função" summary="" type="string" size="" lovType="" cgiType="Funcao" />
+	<field code="FuncaoEntidade" name="FuncaoEntidade" id="txtFuncaoEntidade" label="Função" summary="" type="string" size="" lovType="" cgiType="FuncaoEntidade" />
+	<field code="GerarAlertaResultadoServico" name="GerarAlertaResultadoServico" id="chkGerarAlertaResultadoServico" label="Gerar Alerta" summary="" type="bool" size="" lovType="SIM-NAO-SN" cgiType="ckl" />
+	<field code="GestorEspecialista" name="GestorEspecialista" id="txtGestorEspecialista" label="Gestor Especialista" summary="Gestor Especialista atribuido à Ocorrência" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="GestorSinistro" name="GestorSinistro" id="txtGestorSinistro" label="Gestor Sinistro" summary="" type="string" size="" lovType="" cgiType="GestorSinistro" />
+	<field code="GPSSondaEmbarcacao" name="GPSSondaEmbarcacao" id="txtGPSSondaEmbarcacao" label="Embarcação a Segurar tem GPS / Sonda" summary="Indicador de existência de GPS/Sonda" cgiType="GPSSondaEmbarcacao" />
+	<field code="GrauInvalidez" name="GrauInvalidez" id="txtGrauInvalidez" label="Grau de Invalidez" summary="Grau de invalidez" type="INT" size="3" cgiType="int" />
+	<field code="GrauParentescoPessoaSegura" name="GrauParentescoPessoaSegura" id="cboGrauParentescoPessoaSegura" label="Ver Ecrã" summary="Grau de parentesco com a pessoa segura" type="LIS" cgiType="ddl" />
+	<field code="Grupo" name="Grupo" id="txtGrupo" label="Grupo" summary="" type="string" size="" lovType="" cgiType="Grupo" />
+	<field code="GrupoProduto" name="GrupoProduto" id="txtGrupoProduto" label="Grupo" summary="" type="string" size="" lovType="" cgiType="GrupoProduto" />
+	<field code="GrupoServico" name="GrupoServico" id="txtGrupoServico" label="Grupo" summary="" type="string" size="" lovType="" cgiType="GrupoServico" />
+	<field code="HoraContacto" name="HoraContacto" id="txtHoraContacto" label="Hora Contacto" summary="Hora de realização de Contacto" type="HOR" size="" lovType="" cgiType="HoraContacto" />
+	<field code="HoraContactoCol" name="HoraContactoCol" id="txtHoraContactoCol" label="Hora Preferencial" summary="" type="string" size="" lovType="" cgiType="HoraContactoCol" />
+	<field code="HoraInicioApolice" name="HoraInicioApolice" id="hrHoraInicioApolice" label="Hora Início Apólice" summary="Hora de início da apólice" type="HOR" cgiType="oraInicioApolice" />
+	<field code="Horario" name="Horario" id="txtHorario" label="Ver Ecrã" summary="Horário" cgiType="Horario" />
+	<field code="HorarioAbertura" name="HorarioAbertura" id="txtHorarioAbertura" label="Horário Abertura" summary="" type="string" size="" lovType="" cgiType="HorarioAbertura" />
+	<field code="HorarioEncerramento" name="HorarioEncerramento" id="txtHorarioEncerramento" label="Horário Encerramento" summary="" type="string" size="" lovType="" cgiType="HorarioEncerramento" />
+	<field code="Idade" name="Idade" id="txtIdade" label="Ver Ecrã." summary="Idade" type="INT" size="3" cgiType="int" />
+	<field code="IdContacto" name="IdContacto" id="txtIdContacto" label="Numero" summary="" type="string" size="" lovType="" cgiType="IdContacto" />
+	<field code="IdDiaSemana" name="IdDiaSemana" id="txtIdDiaSemana" label="Id Dia Semana" summary="" type="string" size="" lovType="" cgiType="IdDiaSemana" />
+	<field code="IdentificadorCustoForcado" name="IdentificadorCustoForcado" id="chkIdentificadorCustoForcado" label="Custo Forçado Serviço" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="IdentificadorLocalRisco" name="IdentificadorLocalRisco" id="txtIdentificadorLocalRisco" label="Id Local Risco" summary="Identificador do local de risco" type="TEX" size="20" cgiType="txt" />
+	<field code="IdentificarActividadePessoaSegura1" name="IdentificarActividadePessoaSegura1" id="txtIdentificarActividadePessoaSegura1" label="Ver Ecrã" summary="Descrição da actividade da pessoa segura 1" cgiType="IdentificarActividadePessoaSegura1" />
+	<field code="IdentificarActividadePessoaSegura2" name="IdentificarActividadePessoaSegura2" id="txtIdentificarActividadePessoaSegura2" label="Ver Ecrã" summary="Descrição da actividade da pessoa segura 2" cgiType="IdentificarActividadePessoaSegura2" />
+	<field code="IdFuncao" name="IdFuncao" id="cboIdFuncao" label="Função" summary="" type="list" size="" lovType="" cgiType="ddl" />
+	<field code="IdHorarioAbertura" name="IdHorarioAbertura" id="cboIdHorarioAbertura" label="Horário Abertura" summary="" type="list" size="" lovType="" cgiType="ddl" />
+	<field code="IdHorarioEncerramento" name="IdHorarioEncerramento" id="cboIdHorarioEncerramento" label="Horário Encerramento" summary="" type="list" size="" lovType="" cgiType="ddl" />
+	<field code="IdLocalPrestacao" name="IdLocalPrestacao" id="txtIdLocalPrestacao" label="IdLocalPrestacao" summary="" type="string" size="" lovType="" cgiType="IdLocalPrestacao" />
+	<field code="IdObjecto" name="IdObjecto" id="txtIdObjecto" label="Objecto" summary="" type="string" size="" lovType="" cgiType="IdObjecto" />
+	<field code="IdRegraActualizacao" name="IdRegraActualizacao" id="cboIdRegraActualizacao" label="Regra Actualização Linha Serviço" summary="" type="list" size="" lovType="ZGPS_REGRA_AC_PL" cgiType="ddl" />
+	<field code="IdResultadoServico" name="IdResultadoServico" id="txtIdResultadoServico" label="Nº Resultado Serviço" summary="" type="string" size="" lovType="" cgiType="IdResultadoServico" />
+	<field code="IdSubComponente" name="IdSubComponente" id="txtIdSubComponente" label="Área" summary="" type="string" size="" lovType="" cgiType="IdSubComponente" />
+	<field code="IdTemporal" name="IdTemporal" id="txtIdTemporal" label="{0}" summary="" type="string" size="" lovType="" cgiType="IdTemporal" />
+	<field code="IdTipoContacto" name="IdTipoContacto" id="cboIdTipoContacto" label="Tipo Contacto" summary="" type="list" size="" lovType="" cgiType="ddl" />
+	<field code="IdTipoServico" name="IdTipoServico" id="cboIdTipoServico" label="Tipo Serviço" summary="" type="list" size="" lovType="" cgiType="ddl" />
+	<field code="IdValorDomingo" name="IdValorDomingo" id="chkIdValorDomingo" label="Domingo" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="IdValorQuarta" name="IdValorQuarta" id="chkIdValorQuarta" label="Quarta" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="IdValorQuinta" name="IdValorQuinta" id="chkIdValorQuinta" label="Quinta" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="IdValorSabado" name="IdValorSabado" id="chkIdValorSabado" label="Sábado" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="IdValorSegunda" name="IdValorSegunda" id="chkIdValorSegunda" label="Segunda" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="IdValorSexta" name="IdValorSexta" id="chkIdValorSexta" label="Sexta" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="IdValorTerca" name="IdValorTerca" id="chkIdValorTerca" label="Terça" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="ImpossibilidadeExercerActividade" name="ImpossibilidadeExercerActividade" id="txtImpossibilidadeExercerActividade" label="Ver Ecrã" summary="Indicador de impossibilidade" cgiType="ImpossibilidadeExercerActividade" />
+	<field code="IndicadorAdopcaoMedidasPreventivas" name="IndicadorAdopcaoMedidasPreventivas" id="rdoIndicadorAdopcaoMedidasPreventivas" label="Foram adoptadas medidas para evitar novos Sinistro" summary="Indicador de existência de medidas preventivas" type="RAD" cgiType="rdl" />
+	<field code="IndicadorApoliceAT" name="IndicadorApoliceAT" id="rdoIndicadorApoliceAT" label="Ver Ecrã" summary="Indicador de existência de apólice AT associada" type="RAD" cgiType="rdl" />
+	<field code="IndicadorAutoGaragista" name="IndicadorAutoGaragista" id="cboIndicadorAutoGaragista" label="Tipo Seguro" summary="Este campo só serve para apresentar ou não alguns campos do ecrã" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="IndicadorBeneficiarios" name="IndicadorBeneficiarios" id="rdoIndicadorBeneficiarios" label="Ver Ecrã." summary="Indicador de tipo de beneficiários" type="RAD" cgiType="rdl" />
+	<field code="IndicadorCartaoClienteEmissao" name="IndicadorCartaoClienteEmissao" id="chkIndicadorCartaoClienteEmissao" label="Cartão em Emissão" summary="Indicador de cartão em emissão" type="BOOL" cgiType="ckl" />
+	<field code="IndicadorChequeCruzado" name="IndicadorChequeCruzado" id="txtIndicadorChequeCruzado" label="Cheque Cruzado" summary="" type="" size="" lovType="" cgiType="IndicadorChequeCruzado" />
+	<field code="IndicadorComentariosRecibos" name="IndicadorComentariosRecibos" id="txtIndicadorComentariosRecibos" label="Comentários" summary="Comentários associados ao Recibo" type="" size="" lovType="" cgiType="IndicadorComentariosRecibos" />
+	<field code="IndicadorConfrontacoes" name="IndicadorConfrontacoes" id="rdoIndicadorConfrontacoes" label="Definir Confrontações na ausência de nº de polícia" summary="Indicador de definição de confrontações do local de risco" type="RAD" cgiType="rdl" />
+	<field code="IndicadorContrato" name="IndicadorContrato" id="cboIndicadorContrato" label="Contrato" summary="Indentifica se é um contrato novo ou alteração" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="IndicadorDadosCompletos" name="IndicadorDadosCompletos" id="txtIndicadorDadosCompletos" label="Dados Completos" summary="Indica se os dados do Prestador estão completos" type="" size="" lovType="" cgiType="IndicadorDadosCompletos" />
+	<field code="IndicadorDadosPagamento" name="IndicadorDadosPagamento" id="rdoIndicadorDadosPagamento" label="Dados Reembolso iguais aos Dados de Pagamento" summary="Indicador de definição de dados de reembolso" type="RAD" cgiType="rdl" />
+	<field code="IndicadorDanosProprios" name="IndicadorDanosProprios" id="cboIndicadorDanosProprios" label="Danos Próprios" summary="Indicador de cobertura de danos próprios" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="IndicadorDeslocacoesEstrangeiro" name="IndicadorDeslocacoesEstrangeiro" id="chkIndicadorDeslocacoesEstrangeiro" label="Deslocações Estrangeiro" summary="Indicador de existência de deslocações ao estrangeiro" type="BOOL" cgiType="ckl" />
+	<field code="IndicadorEquiparacao" name="IndicadorEquiparacao" id="txtIndicadorEquiparacao" label="Equiparação" summary="Indicador de equiparação (é um valor)" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="IndicadorExistemDebitosFaltaPagamentos" name="IndicadorExistemDebitosFaltaPagamentos" id="rdoIndicadorExistemDebitosFaltaPagamentos" label="Existem débitos por falta de pagamento" summary="Indicador de existência de débitos por falta de pagamento" type="RAD" cgiType="rdl" />
+	<field code="IndicadorFranquia" name="IndicadorFranquia" id="cboIndicadorFranquia" label="Franquia" summary="Informa se o contrato tem Franquia ou não tem." type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="IndicadorImpressaoDocumento" name="IndicadorImpressaoDocumento" id="chkIndicadorImpressaoDocumento" label="Imprimir" summary="Indicador de impressão" type="BOOL" cgiType="ckl" />
+	<field code="IndicadorInvalidez" name="IndicadorInvalidez" id="cboIndicadorInvalidez" label="Possui alguma invalidez" summary="Indicador de invalidez" type="LIS" lovType="SIM-NAO" cgiType="ddl" />
+	<field code="IndicadorIrs" name="IndicadorIrs" id="txtIndicadorIrs" label="IRS" summary="" type="string" size="" lovType="SIM-NAO-SN" cgiType="IndicadorIrs" />
+	<field code="IndicadorIva" name="IndicadorIva" id="txtIndicadorIva" label="IVA" summary="" type="string" size="" lovType="SIM-NAO-SN" cgiType="IndicadorIva" />
+	<field code="IndicadorLocalRiscoMoradaTomador" name="IndicadorLocalRiscoMoradaTomador" id="rdoIndicadorLocalRiscoMoradaTomador" label="Local de Risco é Morada do Tomador" summary="Indicador de que o local de risco é morada do tomador" type="RAD" cgiType="rdl" />
+	<field code="IndicadorMatriculaNova" name="IndicadorMatriculaNova" id="rdoIndicadorMatriculaNova" label="Matrícula Nova" summary="Indicador de que a matrícula é nova" type="RAD" cgiType="rdl" />
+	<field code="IndicadorOcorrenciaSinistros" name="IndicadorOcorrenciaSinistros" id="rdoIndicadorOcorrenciaSinistros" label="Ocorrência de Sinistros" summary="Indicador de ocorrência de sinistros" type="RAD" cgiType="rdl" />
+	<field code="IndicadorOcorrenciaSinistrosmenos2anos" name="IndicadorOcorrenciaSinistrosmenos2anos" id="rdoIndicadorOcorrenciaSinistrosmenos2anos" label="Sinistros há menos 2 Anos" summary="Indicador de ocorrência de sinistros há menos de dois anos" type="RAD" cgiType="rdl" />
+	<field code="IndicadorOpcaoProduto" name="IndicadorOpcaoProduto" id="cboIndicadorOpcaoProduto" label="Opção" summary="Opções do produto (lista de checkboxes)" type="LIS" cgiType="ddl" />
+	<field code="IndicadorPreferenciaMao" name="IndicadorPreferenciaMao" id="cboIndicadorPreferenciaMao" label="É canhoto" summary="Indicador de preferência de mão" type="LIS" lovType="SIM-NAO" cgiType="ddl" />
+	<field code="IndicadorProfissionalSeguros" name="IndicadorProfissionalSeguros" id="chkIndicadorProfissionalSeguros" label="Profissional de Seguros" summary="Indicador de profissional de seguros" type="BOOL" cgiType="ckl" />
+	<field code="IndicadorRiscoSeguroCongenere" name="IndicadorRiscoSeguroCongenere" id="rdoIndicadorRiscoSeguroCongenere" label="O Risco está ou esteve seguro noutra Seguradora" summary="Indicador de existência de risco seguro em congénere" type="RAD" cgiType="rdl" />
+	<field code="IndicadorSeleccaoClausulaParticular" name="IndicadorSeleccaoClausulaParticular" id="chkIndicadorSeleccaoClausulaParticular" summary="Indicador de selecção de cláusula" type="BOOL" cgiType="ckl" />
+	<field code="IndicadorSeleccaoCoberturaOpcaoLocalRiscoObjecto" name="IndicadorSeleccaoCoberturaOpcaoLocalRiscoObjecto" id="chkIndicadorSeleccaoCoberturaOpcaoLocalRiscoObjecto" label="-" summary="Indicador de selecção de cobertura" type="BOOL" cgiType="ckl" />
+	<field code="IndicadorSeleccaoCoberturaOpcaoObjecto" name="IndicadorSeleccaoCoberturaOpcaoObjecto" id="chkIndicadorSeleccaoCoberturaOpcaoObjecto" label="-" summary="Indicador de selecção de cobertura" type="BOOL" cgiType="ckl" />
+	<field code="IndicadorSeleccaoDocumento" name="IndicadorSeleccaoDocumento" id="chkIndicadorSeleccaoDocumento" label="Recebido" summary="Indicador de selecção de documento" type="BOOL" cgiType="ckl" />
+	<field code="IndicadorSeleccaoSubsidioActivo" name="IndicadorSeleccaoSubsidioActivo" id="chkIndicadorSeleccaoSubsidioActivo" label="Ver Ecrã." summary="Indicador de selecção de subsídio activo" type="BOOL" cgiType="ckl" />
+	<field code="IndicadorTomadorPessoaSegura" name="IndicadorTomadorPessoaSegura" id="rdoIndicadorTomadorPessoaSegura" label="O Tomador é Pessoa Segura" summary="Indica se o tomador é pessoa segura." type="RAD" cgiType="rdl" />
+	<field code="IndicadorVeiculoDuasRodas" name="IndicadorVeiculoDuasRodas" id="chkIndicadorVeiculoDuasRodas" label="Utiliza como meio de transporte de e para o local veículo de duas rodas?" summary="Indicador de utilização como meio de transporte de  veículo de duas rodas" type="BOOL" cgiType="ckl" />
+	<field code="Instalacoes" name="Instalacoes" id="cboInstalacoes" label="Características das Instalações Existentes" summary="" type="list" size="" lovType="ZGPSV_CAR_INSTAL" cgiType="ddl" />
+	<field code="Intermedio" name="Intermedio" id="optIntermedio" label="INTERMÉDIO" summary="" type="bool" size="" lovType="" cgiType="Intermedio" />
+	<field code="IntervaloDataAlteracaoEstado" name="IntervaloDataAlteracaoEstado" id="txtIntervaloDataAlteracaoEstado" label="Intervalo de Data Estado" summary="Intervalo de Datas Alteração de Estado" type="" size="" lovType="" cgiType="IntervaloDataAlteracaoEstado" />
+	<field code="InvalidezPermanentePessoaSegura1" name="InvalidezPermanentePessoaSegura1" id="txtInvalidezPermanentePessoaSegura1" label="Ver Ecrã" summary="Indicador de invalidez permanente da pessoa segura 1" cgiType="InvalidezPermanentePessoaSegura1" />
+	<field code="InvalidezPermanentePessoaSegura2" name="InvalidezPermanentePessoaSegura2" id="txtInvalidezPermanentePessoaSegura2" label="Ver Ecrã" summary="Indicador de invalidez permanente da pessoa segura 2" cgiType="InvalidezPermanentePessoaSegura2" />
+	<field code="Irs" name="Irs" id="txtIrs" label="IRS" summary="" type="double" size="" lovType="" cgiType="Irs" />
+	<field code="Iva" name="Iva" id="txtIva" label="IVA" summary="" type="string" size="" lovType="" cgiType="Iva" />
+	<field code="KW" name="KW" id="txtKW" label="KW" summary="Número de KW do veículo" type="NUM" size="4" cgiType="KW" />
+	<field code="Legal" name="Legal" id="txtLegal" label="Legal" summary="" type="string" size="" lovType="TIPO-LEGALIZACAO" cgiType="Legal" />
+	<field code="Limite" name="Limite" id="txtLimite" label="Capacidade" summary="" type="integer" size="" lovType="" cgiType="Limite" />
+	<field code="LimiteCapacidade" name="LimiteCapacidade" id="cboLimiteCapacidade" label="Possui Limite Capacidade" summary="" type="list" size="" lovType="SIM-NAO-SN" cgiType="ddl" />
+	<field code="LimiteDomingo" name="LimiteDomingo" id="txtLimiteDomingo" label="Domingo" summary="" type="integer" size="" lovType="" cgiType="LimiteDomingo" />
+	<field code="LimiteMaximoResponsabilidade" name="LimiteMaximoResponsabilidade" id="txtLimiteMaximoResponsabilidade" label="Limite Máximo Responsabilidade" summary="" type="double" size="" lovType="" cgiType="LimiteMaximoResponsabilidade" />
+	<field code="LimiteMaximoResponsabilidadeNaoProtocolado" name="LimiteMaximoResponsabilidadeNaoProtocolado" id="txtLimiteMaximoResponsabilidadeNaoProtocolado" label="Limite Máximo Responsabilidade" summary="" type="double" size="" lovType="" cgiType="LimiteMaximoResponsabilidadeNaoProtocolado" />
+	<field code="LimiteMaxResponsabilidade" name="LimiteMaxResponsabilidade" id="txtLimiteMaxResponsabilidade" label="Limite Máximo Responsabilidade" summary="" type="double" size="" lovType="" cgiType="LimiteMaxResponsabilidade" />
+	<field code="LimiteQuarta" name="LimiteQuarta" id="txtLimiteQuarta" label="Quarta" summary="" type="integer" size="" lovType="" cgiType="LimiteQuarta" />
+	<field code="LimiteQuinta" name="LimiteQuinta" id="txtLimiteQuinta" label="Quinta" summary="" type="integer" size="" lovType="" cgiType="LimiteQuinta" />
+	<field code="LimiteSabado" name="LimiteSabado" id="txtLimiteSabado" label="Sábado" summary="" type="integer" size="" lovType="" cgiType="LimiteSabado" />
+	<field code="LimiteSegunda" name="LimiteSegunda" id="txtLimiteSegunda" label="Segunda" summary="" type="integer" size="" lovType="" cgiType="LimiteSegunda" />
+	<field code="LimiteSemanal" name="LimiteSemanal" id="txtLimiteSemanal" label="Capacidade" summary="" type="integer" size="" lovType="" cgiType="LimiteSemanal" />
+	<field code="LimiteSexta" name="LimiteSexta" id="txtLimiteSexta" label="Sexta" summary="" type="integer" size="" lovType="" cgiType="LimiteSexta" />
+	<field code="LimitesNavegacao" name="LimitesNavegacao" id="txtLimitesNavegacao" label="Limites de Navegação" summary="Limites de navegação" cgiType="LimitesNavegacao" />
+	<field code="LimiteTerca" name="LimiteTerca" id="txtLimiteTerca" label="Terça" summary="" type="integer" size="" lovType="" cgiType="LimiteTerca" />
+	<field code="LinhaNegocio" name="LinhaNegocio" id="cboLinhaNegocio" label="Linha Negócio" summary="Linha de Negócio associada a Apólice" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="LocalConstrucaoEmbarcacao" name="LocalConstrucaoEmbarcacao" id="txtLocalConstrucaoEmbarcacao" label="Local Construção / Reconstrução" summary="Local de construção da embarcação" cgiType="LocalConstrucaoEmbarcacao" />
+	<field code="LocalExerceActividade" name="LocalExerceActividade" id="txtLocalExerceActividade" label="Ver Ecrã" summary="Local onde exerce a actividade" cgiType="LocalExerceActividade" />
+	<field code="Localidade" name="Localidade" id="txtLocalidade" label="Localidade" summary="Localidade da Morada de Cliente" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="LocalizacaoImovel" name="LocalizacaoImovel" id="cboLocalizacaoImovel" label="Localização Imóvel" summary="Localização do imóvel" type="LIS" cgiType="ddl" />
+	<field code="LocalPagamento" name="LocalPagamento" id="txtLocalPagamento" label="Local Pagamento" summary="" type="string" size="" lovType="LOC-PAG" cgiType="LocalPagamento" />
+	<field code="LocalPagamentoRecebimento" name="LocalPagamentoRecebimento" id="txtLocalPagamentoRecebimento" label="Local Pag/Recebimento" summary="Local de pagamento/recebimento" type="" size="" lovType="" cgiType="LocalPagamentoRecebimento" />
+	<field code="LocalPrestacao" name="LocalPrestacao" id="txtLocalPrestacao" label="Local Prestação" summary="" type="" size="" lovType="" cgiType="LocalPrestacao" />
+	<field code="LookupConcelho" name="LookupConcelho" id="txtLookupConcelho" label="Concelho" summary="" type="lookup" size="" lovType="" cgiType="LookupConcelho" />
+	<field code="LookupLocalPrestacao" name="LookupLocalPrestacao" id="txtLookupLocalPrestacao" label="Local Prestação" summary="" type="lookup" size="" lovType="" cgiType="LookupLocalPrestacao" />
+	<field code="LookupPrestador" name="LookupPrestador" id="txtLookupPrestador" label="Nome Prestador" summary="" type="lookup" size="" lovType="" cgiType="LookupPrestador" />
+	<field code="LookupServico" name="LookupServico" id="txtLookupServico" label="Serviço" summary="" type="lookup" size="" lovType="" cgiType="LookupServico" />
+	<field code="ManualAutomatico" name="ManualAutomatico" id="txtManualAutomatico" label="Manual / Automático" summary="" type="string" size="" lovType="" cgiType="ManualAutomatico" />
+	<field code="ManutencaoUtilizacaoExplosivos" name="ManutencaoUtilizacaoExplosivos" id="txtManutencaoUtilizacaoExplosivos" label="Ver Ecrã" summary="Indicador de utilização de explosivos" cgiType="ManutencaoUtilizacaoExplosivos" />
+	<field code="Marca" name="Marca" id="txtMarca" label="Marca" summary="Marca do Veiculo" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="MarcaEspingarda" name="MarcaEspingarda" id="txtMarcaEspingarda" label="Marca" summary="Marca de espingarda" type="TEX" cgiType="txt" />
+	<field code="MarcaGPSSonda" name="MarcaGPSSonda" id="txtMarcaGPSSonda" label="Marca" summary="Marca de GPS/Sonda" type="TEX" size="30" cgiType="txt" />
+	<field code="MarcaMotor" name="MarcaMotor" id="txtMarcaMotor" label="Marca" summary="Marca de motor" type="TEX" size="30" cgiType="txt" />
+	<field code="MarcaOutro" name="MarcaOutro" id="txtMarcaOutro" label="Marca" summary="Marca do veículo (texto livre)" type="TEX" size="30" cgiType="txt" />
+	<field code="MarcaRadio" name="MarcaRadio" id="txtMarcaRadio" label="Marca" summary="Marca de rádio" type="TEX" size="30" cgiType="txt" />
+	<field code="Margem" name="Margem" id="txtMargem" label="Margem" summary="" type="integer" size="" lovType="" cgiType="Margem" />
+	<field code="MargemDiaria" name="MargemDiaria" id="txtMargemDiaria" label="Margem" summary="" type="integer" size="" lovType="" cgiType="MargemDiaria" />
+	<field code="MargemSemanal" name="MargemSemanal" id="txtMargemSemanal" label="Margem" summary="" type="integer" size="" lovType="" cgiType="MargemSemanal" />
+	<field code="MateriasPerigosas" name="MateriasPerigosas" id="cboMateriasPerigosas" label="Transporte Matérias Perigosas" summary="Tipo de transporte de matérias perigosas" type="LIS" lovType="MATERIAS-PERIGOSAS" cgiType="ddl" />
+	<field code="Matricula" name="Matricula" id="txtMatricula" label="" summary="Campo onde é colocada a Matrícula (conjugada com o campo TipoMatricula)" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="MedicoFisiatra" name="MedicoFisiatra" id="txtMedicoFisiatra" label="MedicoFisiatra" summary="" type="" size="" lovType="" cgiType="MedicoFisiatra" />
+	<field code="MeioTransporte" name="MeioTransporte" id="txtMeioTransporte" label="Meio Transporte" summary="" type="string" size="" lovType="MEIO-TRANSP" cgiType="MeioTransporte" />
+	<field code="MetodoPagamento" name="MetodoPagamento" id="cboMetodoPagamento" label="Método Pagamento" summary="Método de pagamento" type="LIS" lovType="METODO-PAGAM" cgiType="ddl" />
+	<field code="Modelo" name="Modelo" id="cboModelo" label="Modelo" summary="Modelo de veículo" type="LIS" cgiType="ddl" />
+	<field code="ModeloGPSSonda" name="ModeloGPSSonda" id="txtModeloGPSSonda" label="Modelo" summary="Modelo de GPS/Sonda" type="TEX" size="30" cgiType="txt" />
+	<field code="ModeloMotor" name="ModeloMotor" id="txtModeloMotor" label="Modelo" summary="Modelo de motor" type="TEX" size="30" cgiType="txt" />
+	<field code="ModeloOutro" name="ModeloOutro" id="txtModeloOutro" label="Modelo" summary="Modelo do veículo" type="TEX" size="30" cgiType="txt" />
+	<field code="ModeloRadio" name="ModeloRadio" id="txtModeloRadio" label="Modelo" summary="Modelo de rádio" type="TEX" size="30" cgiType="txt" />
+	<field code="Morada" name="Morada" id="txtMorada" label="Morada" summary="Morada do Local de Prestação" type="" size="" lovType="" cgiType="Morada" />
+	<field code="MoradaApolice" name="MoradaApolice" id="txtMoradaApolice" label="Morada associada Apólice" summary="Morada associada à apólice" type="TEX" size="80" cgiType="txt" />
+	<field code="MoradaCliente" name="MoradaCliente" id="txtMoradaCliente" label="Morada" summary="Morada concatenada do Cliente" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="MoradaLocalRisco" name="MoradaLocalRisco" id="txtMoradaLocalRisco" label="Morada" summary="Morada do local de risco" size="80" cgiType="MoradaLocalRisco" />
+	<field code="MoradaPrestador" name="MoradaPrestador" id="txtMoradaPrestador" label="Morada" summary="Morada do Prestador" type="" size="" lovType="" cgiType="MoradaPrestador" />
+	<field code="MoradaReclamante" name="MoradaReclamante" id="txtMoradaReclamante" label="Morada" summary="Morada do Reclamante" type="" size="" lovType="" cgiType="MoradaReclamante" />
+	<field code="Motivo" name="Motivo" id="txtMotivo" label="Motivo" summary="" type="string" size="" lovType="ZGPS_MOT_INDISP" cgiType="Motivo" />
+	<field code="MotivoCriacaoSemPrestador" name="MotivoCriacaoSemPrestador" id="cboMotivoCriacaoSemPrestador" label="Motivo" summary="" type="list" size="" lovType="ZGPS_MOT_ENC" cgiType="ddl" />
+	<field code="MotivoImpossibilidadeExercerActividade" name="MotivoImpossibilidadeExercerActividade" id="txtMotivoImpossibilidadeExercerActividade" label="Ver Ecrã" summary="Motivo da impossibilidade" cgiType="MotivoImpossibilidadeExercerActividade" />
+	<field code="MotivoRecusa" name="MotivoRecusa" id="cboMotivoRecusa" label="Motivo Recusa" summary="" type="list" size="" lovType="" cgiType="ddl" />
+	<field code="MotorAuxiliar" name="MotorAuxiliar" id="rdoMotorAuxiliar" label="Tem Motor Auxiliar" summary="Indicador de existência de motor auxiliar" type="RAD" cgiType="rdl" />
+	<field code="MotorPrincipal" name="MotorPrincipal" id="rdoMotorPrincipal" label="Tem Motor Principal" summary="Indicador de existência de motor principal" type="RAD" cgiType="rdl" />
+	<field code="N002AcidenteViacao" name="N002AcidenteViacao" id="chkN002AcidenteViacao" label="Acidente Viação" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="N002GruposEncomenda" name="N002GruposEncomenda" id="cboN002GruposEncomenda" label="Grupo" summary="" type="list" size="" lovType="" cgiType="ddl" />
+	<field code="N002PeriodoLaboracao" name="N002PeriodoLaboracao" id="chkN002PeriodoLaboracao" label="Acidente Ocorreu em Período Laboração" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="N002ProdutosEncomenda" name="N002ProdutosEncomenda" id="cboN002ProdutosEncomenda" label="Produto" summary="" type="list" size="" lovType="" cgiType="ddl" />
+	<field code="NaturezaLesao" name="NaturezaLesao" id="txtNaturezaLesao" label="Natureza Lesão" summary="Natureza da lesão sofrida pelo sinistrado" type="" size="" lovType="" cgiType="NaturezaLesao" />
+	<field code="NaturezaPagamento" name="NaturezaPagamento" id="txtNaturezaPagamento" label="Natureza Pagamento" summary="Natureza do Pagamento" type="TEX" size="" lovType="NATUREZA-PAGAMENTO" cgiType="txt" />
+	<field code="NecessitaAprovacao" name="NecessitaAprovacao" id="chkNecessitaAprovacao" label="Serviço Necessita Aprovação" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="NecessitaEntidadeAssociada" name="NecessitaEntidadeAssociada" id="chkNecessitaEntidadeAssociada" label="Serviço Necessita Entidade Associada" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="NexoCausalidade" name="NexoCausalidade" id="txtNexoCausalidade" label="Nexo Causalidade" summary="" type="string" size="" lovType="SIM-NAO-SN" cgiType="NexoCausalidade" />
+	<field code="NIB" name="NIB" id="txtNIB" label="NIB" summary="" type="string" size="" lovType="" cgiType="NIB" />
+	<field code="NibCliente" name="NibCliente" id="txtNibCliente" label="NIB" summary="NIB da Conta do Cliente" type="" size="" lovType="" cgiType="NibCliente" />
+	<field code="NIBPrestador" name="NIBPrestador" id="txtNIBPrestador" label="NIB" summary="" type="string" size="" lovType="" cgiType="NIBPrestador" />
+	<field code="NIF" name="NIF" id="txtNIF" label="NIF" summary="" type="string" size="" lovType="" cgiType="NIF" />
+	<field code="Nivel" name="Nivel" id="txtNivel" label="Nivel" summary="" type="string" size="" lovType="ZGPS_NIVEL_GEST" cgiType="Nivel" />
+	<field code="NivelGestaoDisponibilidade" name="NivelGestaoDisponibilidade" id="txtNivelGestaoDisponibilidade" label="Nivel Gestão Disponibilidade" summary="" type="string" size="" lovType="" cgiType="NivelGestaoDisponibilidade" />
+	<field code="NivelIndsp" name="NivelIndsp" id="cboNivelIndsp" label="Nível" summary="" type="list" size="" lovType="ZGPS_NIVEL_INDSP" cgiType="ddl" />
+	<field code="NLinhaServico" name="NLinhaServico" id="txtNLinhaServico" label="Nº Linha Servico" summary="" type="string" size="" lovType="" cgiType="NLinhaServico" />
+	<field code="Nome" name="Nome" id="txtNome" label="Nome" summary="" type="string" size="" lovType="" cgiType="Nome" />
+	<field code="NomeBeneficiário" name="NomeBeneficiário" id="txtNomeBeneficiário" label="Nome Beneficiário" summary="Nome do beneficiário" type="TEX" size="45" cgiType="txt" />
+	<field code="NomeCartao" name="NomeCartao" id="txtNomeCartao" label="Nome constar no cartão" summary="Nome que deve constar no cartão (aplica-se para o  Produto Sanos Individual)" type="TEX" size="30" cgiType="txt" />
+	<field code="NomeCliente" name="NomeCliente" id="txtNomeCliente" label="Nome" summary="Nome do Cliente. Existe uma outra label: &quot;Novo Cliente&quot; com o mesmo Nome do campo, no Pedido de Modificao de Clientes." type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NomeContacto" name="NomeContacto" id="txtNomeContacto" label="Nome Contacto" summary="Nome da pessoa a contactar nos Clientes Colectivos" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NomeContactoCol" name="NomeContactoCol" id="txtNomeContactoCol" label="Nome Contacto" summary="" type="string" size="" lovType="" cgiType="NomeContactoCol" />
+	<field code="NomeContaDistribuicao" name="NomeContaDistribuicao" id="txtNomeContaDistribuicao" label="Descrição" summary="Descrição da Conta de Distribuição" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NomeCriterio" name="NomeCriterio" id="txtNomeCriterio" label="Nome Critério" summary="" type="string" size="" lovType="" cgiType="NomeCriterio" />
+	<field code="NomeCriterioFiltro" name="NomeCriterioFiltro" id="cboNomeCriterioFiltro" label="Nome Critério" summary="" type="list" size="" lovType="" cgiType="ddl" />
+	<field code="NomeDetentorCartaConducao" name="NomeDetentorCartaConducao" id="txtNomeDetentorCartaConducao" label="Detentor da Carta de Condução" summary="Nome do detentor da carta de condução." type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NomeDoencaPessoaSegura" name="NomeDoencaPessoaSegura" id="txtNomeDoencaPessoaSegura" label="Ver Ecrã" summary="Descrição da doença" type="TEX" size="45" cgiType="txt" />
+	<field code="NomeEmbarcacao" name="NomeEmbarcacao" id="txtNomeEmbarcacao" label="Nome Embarcação" summary="Nome da embarcação" type="TEX" size="45" cgiType="txt" />
+	<field code="NomeEntidade" name="NomeEntidade" id="txtNomeEntidade" label="Entidade" summary="Nome da Entidade associada ao Contacto" type="" size="" lovType="" cgiType="NomeEntidade" />
+	<field code="NomeMedicoEspecialidadePessoaSegura" name="NomeMedicoEspecialidadePessoaSegura" id="txtNomeMedicoEspecialidadePessoaSegura" label="Ver Ecrã" summary="Nome do médico" type="TEX" size="45" cgiType="txt" />
+	<field code="NomePessoaSegura" name="NomePessoaSegura" id="txtNomePessoaSegura" label="Nome" summary="Nome da pessoa segura" type="TEX" size="45" cgiType="txt" />
+	<field code="NomePrestador" name="NomePrestador" id="txtNomePrestador" label="Nome Prestador" summary="Nome da entidade Prestador" type="" size="" lovType="" cgiType="NomePrestador" />
+	<field code="NomePrimeiraPessoaSegura" name="NomePrimeiraPessoaSegura" id="txtNomePrimeiraPessoaSegura" label="Nome 1ª Pessoa Segura" summary="Nome da primeira pessoa segura" type="TEX" size="45" cgiType="txt" />
+	<field code="NomeProprietarioLocaldeRisco" name="NomeProprietarioLocaldeRisco" id="txtNomeProprietarioLocaldeRisco" label="Nome Proprietário" summary="Nome do proprietário do local de risco" type="TEX" size="45" cgiType="txt" />
+	<field code="NomeRecebedor" name="NomeRecebedor" id="txtNomeRecebedor" label="Recebedor / Devedor" summary="Nome do Recebedor" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NomeReclamante" name="NomeReclamante" id="txtNomeReclamante" label="Reclamante" summary="Reclamante da Ocorrência" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NomeSegundaPessoaSegura" name="NomeSegundaPessoaSegura" id="txtNomeSegundaPessoaSegura" label="Nome 2ª Pessoa Segura" summary="Nome da segunda pessoa segura" type="TEX" size="45" cgiType="txt" />
+	<field code="NomeSeguradora" name="NomeSeguradora" id="txtNomeSeguradora" label="Nome Seguradora" summary="Nome da seguradora" type="TEX" size="60" cgiType="txt" />
+	<field code="NomeTitularNIB" name="NomeTitularNIB" id="txtNomeTitularNIB" label="Titular" summary="Entidade associada à conta NIB" type="" size="" lovType="" cgiType="NomeTitularNIB" />
+	<field code="NomeTomador" name="NomeTomador" id="txtNomeTomador" label="Tomador" summary="Tomador da Apólice" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NomeTrabalhador" name="NomeTrabalhador" id="txtNomeTrabalhador" label="Nome" summary="Nome do trabalhador" type="TEX" cgiType="txt" />
+	<field code="Nota" name="Nota" id="txtNota" label="Scoring" summary="" type="string" size="" lovType="" cgiType="Nota" />
+	<field code="NServico" name="NovoZBDireccao" id="txtNovoZBDireccao" label="Novo ZB" summary="Novo ZB da Direcção" type="" size="" lovType="" cgiType="NovoZBDireccao" />
+	<field code="NumeroAlvara" name="NumeroAlvara" id="txtNumeroAlvara" label="Nº Alvará" summary="" type="string" size="" lovType="" cgiType="NumeroAlvara" />
+	<field code="NumeroApolice" name="NumeroApolice" id="txtNumeroApolice" label="Nº Apólice" summary="Número da Apólice" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NumeroApoliceAssociada" name="NumeroApoliceAssociada" id="txtNumeroApoliceAssociada" label="Nº Apólice" summary="Número de apólice associada" type="TEX" size="16" cgiType="txt" />
+	<field code="NumeroApoliceATAssociada" name="NumeroApoliceATAssociada" id="txtNumeroApoliceATAssociada" label="Nº Apólice AT" summary="Número de apólice AT associada" type="TEX" size="16" cgiType="txt" />
+	<field code="NumeroApoliceHabitacaoPrincipal" name="NumeroApoliceHabitacaoPrincipal" id="txtNumeroApoliceHabitacaoPrincipal" label="Nº Apólice Habitação Principal" summary="Número da apólice da habitação principal" type="TEX" size="16" cgiType="txt" />
+	<field code="NumeroApoliceRelacionada" name="NumeroApoliceRelacionada" id="txtNumeroApoliceRelacionada" label="Nº Apólice Relacionada" summary="Número da apólice relacionada para herança de experiência de seguros" type="TEX" size="16" cgiType="txt" />
+	<field code="NumeroBI" name="NumeroBi" id="txtNumeroBi" label="BI" summary="Numero de BI" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NumeroCae" name="NumeroCae" id="txtNumeroCae" label="CAE" summary="Identificador CAE" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NumeroCartaConducao" name="NumeroCartaConducao" id="txtNumeroCartaConducao" label="Nº Carta Condução" summary="Número da Carta de Condução" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NumeroCartaoCliente" name="NumeroCartaoCliente" id="txtNumeroCartaoCliente" label="Nº Cartão" summary="Número de cartão cliente" type="TEX" size="21" cgiType="txt" />
+	<field code="NumeroCedulaProfissional" name="NumeroCedulaProfissional" id="txtNumeroCedulaProfissional" label="Nº Cédula Profissional" summary="" type="" size="" lovType="" cgiType="NumeroCedulaProfissional" />
+	<field code="NumeroCedulaResponsavelClinico" name="NumeroCedulaResponsavelClinico" id="txtNumeroCedulaResponsavelClinico" label="Nº Cédula Responsável Cliníco" summary="" type="string" size="" lovType="" cgiType="NumeroCedulaResponsavelClinico" />
+	<field code="NumeroCedulaTecnicoResponsavel" name="NumeroCedulaTecnicoResponsavel" id="txtNumeroCedulaTecnicoResponsavel" label="Nº Cédula Técnico Responsável" summary="" type="string" size="" lovType="" cgiType="NumeroCedulaTecnicoResponsavel" />
+	<field code="NumeroCertificado" name="NumeroCertificado" id="txtNumeroCertificado" label="Num. Certificado" summary="Número do certificado a activar" type="INT" size="" lovType="" cgiType="int" />
+	<field code="NumeroCertificadoProvisorio" name="NumeroCertificadoProvisorio" id="txtNumeroCertificadoProvisorio" label="Nº Certificado Provisório" summary="Número de certificado provisório" type="INT" size="10" cgiType="int" />
+	<field code="NumeroCheque" name="NumeroCheque" id="txtNumeroCheque" label="Nº Cheque" summary="" type="" size="" lovType="" cgiType="NumeroCheque" />
+	<field code="NumeroCliente" name="NumeroCliente" id="txtNumeroCliente" label="Nº Cliente" summary="Identificador do Cliente" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NumeroClienteCogen" name="NumeroClienteCogen" id="txtNumeroClienteCogen" label="Nº Cliente" summary="" type="string" size="" lovType="" cgiType="NumeroClienteCogen" />
+	<field code="NumeroCobrancaBES" name="NumeroCobrancaBES" id="txtNumeroCobrancaBES" label="Nº Cobrança BES" summary="Número de cobrança do BES" type="" size="" lovType="" cgiType="NumeroCobrancaBES" />
+	<field code="NumeroColaboradoresEmpresa" name="NumeroColaboradoresEmpresa" id="txtNumeroColaboradoresEmpresa" label="Nº Colaboradores da Empresa" summary="Este campo permite indicar o intervalo de valores de Pessoas Seguras entre 3 a 25, inclusíve." cgiType="NumeroColaboradoresEmpresa" />
+	<field code="NumeroColaboradoresFemininos" name="NumeroColaboradoresFemininos" id="txtNumeroColaboradoresFemininos" label="Ver Ecrã." summary="Este campo é validado pelo sistema, em que a soma de Colaboradores indicados na tabela, de ambos os sexos, não pode ser superior ao valor indicado no campo NumeroColaboradoresEmpresa." cgiType="NumeroColaboradoresFemininos" />
+	<field code="NumeroColaboradoresMasculinos" name="NumeroColaboradoresMasculinos" id="txtNumeroColaboradoresMasculinos" label="Ver Ecrã." summary="Este campo é validado pelo sistema, em que a soma de Colaboradores indicados na tabela, de ambos os sexos, não pode ser superior ao valor indicado no campo NumeroColaboradoresEmpresa." cgiType="NumeroColaboradoresMasculinos" />
+	<field code="NumeroConjugesFemininos" name="NumeroConjugesFemininos" id="txtNumeroConjugesFemininos" label="Ver Ecrã." summary="Este campo é validado pelo sistema, em que a soma de Conjuges, de ambos os sexos, não pode ser superior à  soma de Colaboradores indicados na tabela, de ambos os sexos." cgiType="NumeroConjugesFemininos" />
+	<field code="NumeroConjugesMasculinos" name="NumeroConjugesMasculinos" id="txtNumeroConjugesMasculinos" label="Ver Ecrã." summary="Este campo é validado pelo sistema, em que a soma de Conjuges, de ambos os sexos, não pode ser superior à  soma de Colaboradores indicados na tabela, de ambos os sexos." cgiType="NumeroConjugesMasculinos" />
+	<field code="NumeroContaCaptacao" name="NumeroContaCaptacao" id="txtNumeroContaCaptacao" label="Conta Captação" summary="Número da conta de captação" type="INT" size="10" cgiType="int" />
+	<field code="NumeroContaDistribuicao" name="NumeroContaDistribuicao" id="txtNumeroContaDistribuicao" label="Conta Distribuição" summary="Número da conta de distribuição" type="TEX" size="10" cgiType="txt" />
+	<field code="NumeroContaInterna" name="NumeroContaInterna" id="txtNumeroContaInterna" label="Nº Mediador" summary="N.º de Conta Interna" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NumeroContribuinte" name="NumeroContribuinte" id="txtNumeroContribuinte" label="NIF" summary="Número de Contribuinte" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NumeroContribuintePrestador" name="NumeroContribuintePrestador" id="txtNumeroContribuintePrestador" label="NIF" summary="Nº de Contribuinte da entidade Prestador" type="" size="" lovType="" cgiType="NumeroContribuintePrestador" />
+	<field code="NumeroCopiasDocumento" name="NumeroCopiasDocumento" id="txtNumeroCopiasDocumento" label="Nº Cópias" summary="Número de cópias do documento" type="INT" size="1" cgiType="int" />
+	<field code="NumeroDescendentesFemininos" name="NumeroDescendentesFemininos" id="txtNumeroDescendentesFemininos" label="Ver Ecrã." summary="Número de descendentes femininos" cgiType="NumeroDescendentesFemininos" />
+	<field code="NumeroDescendentesMasculinos" name="NumeroDescendentesMasculinos" id="txtNumeroDescendentesMasculinos" label="Ver Ecrã." summary="Número de descendentes masculinos" cgiType="NumeroDescendentesMasculinos" />
+	<field code="NumeroDiasDuracao" name="NumeroDiasDuracao" id="txtNumeroDiasDuracao" label="Nº Dias" summary="Número de dias de duração" type="INT" size="3" cgiType="int" />
+	<field code="NumeroDiasDuracaoApolice" name="NumeroDiasDuracaoApolice" id="txtNumeroDiasDuracaoApolice" label="Nº Dias" summary="Número de dias de duração da apólice" type="INT" size="3" cgiType="int" />
+	<field code="NumeroDiasViagem" name="NumeroDiasViagem" id="txtNumeroDiasViagem" label="Duração Viagem" summary="Número de dias de duração da viagem" type="INT" size="3" cgiType="int" />
+	<field code="NumeroDocumentoNumerado" name="NumeroDocumentoNumerado" id="txtNumeroDocumentoNumerado" label="Sequência" summary="Numero de documento, usado em campos de filtro" type="INT" size="" lovType="" cgiType="int" />
+	<field code="NumeroEncomenda" name="NumeroEncomenda" id="txtNumeroEncomenda" label="Nº Encomenda" summary="Número da Encomenda associada ao Prestador" type="" size="" lovType="" cgiType="NumeroEncomenda" />
+	<field code="NumeroEncomendaAssociada" name="NumeroEncomendaAssociada" id="txtNumeroEncomendaAssociada" label="Nº Encomenda Associada" summary="Nº da Encomenda Associada" type="" size="" lovType="" cgiType="NumeroEncomendaAssociada" />
+	<field code="NumeroEncomendasAtribuidas" name="NumeroEncomendasAtribuidas" id="txtNumeroEncomendasAtribuidas" label="Numero Encomendas" summary="" type="string" size="" lovType="" cgiType="NumeroEncomendasAtribuidas" />
+	<field code="NumeroEPS" name="NumeroEPS" id="txtNumeroEPS" label="Nº EPS" summary="Número de EPS" type="" size="" lovType="" cgiType="NumeroEPS" />
+	<field code="NumeroFactura" name="NumeroFactura" id="txtNumeroFactura" label="Nº Factura" summary="" type="string" size="" lovType="" cgiType="NumeroFactura" />
+	<field code="NumeroGuia" name="NumeroGuia" id="txtNumeroGuia" label="Num. Guia" summary="Numero da guia de remessa dos documentos" type="INT" size="" lovType="" cgiType="int" />
+	<field code="NumeroLicencaCao" name="NumeroLicencaCao" id="txtNumeroLicencaCao" label="Nº Licença" summary="Número de licença do cão" type="TEX" size="15" cgiType="txt" />
+	<field code="NumeroLicencaEspingarda" name="NumeroLicencaEspingarda" id="txtNumeroLicencaEspingarda" label="Nº Licença" summary="Número de licença da espingarda" type="TEX" size="15" cgiType="txt" />
+	<field code="NumeroLinhaServico" name="NumeroLinhaServico" id="txtNumeroLinhaServico" label="Nº Linha Serviço" summary="" type="string" size="" lovType="" cgiType="NumeroLinhaServico" />
+	<field code="NumeroLugaresVeiculo" name="NumeroLugaresVeiculo" id="txtNumeroLugaresVeiculo" label="Nº Lugares" summary="Número de lugares do veículo" type="INT" size="2" cgiType="int" />
+	<field code="NumeroMaximoProcessosPendentes" name="NumeroMaximoProcessosPendentes" id="txtNumeroMaximoProcessosPendentes" label="Nº Máx Processos Pendentes" summary="" type="integer" size="" lovType="" cgiType="NumeroMaximoProcessosPendentes" />
+	<field code="NumeroMotor" name="NumeroMotor" id="txtNumeroMotor" label="Nº Motor" summary="Número de motor" type="TEX" size="20" cgiType="txt" />
+	<field code="NumeroOcorrencia" name="NumeroOcorrencia" id="txtNumeroOcorrencia" label="Nº Ocorrência" summary="Número da Ocorrência" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NumeroPessoaSegura" name="NumeroPessoaSegura" id="txtNumeroPessoaSegura" label="Ver Ecrã" summary="Número da pessoa segura" type="INT" size="10" cgiType="int" />
+	<field code="NumeroPessoasSeguras" name="NumeroPessoasSeguras" id="rdoNumeroPessoasSeguras" label="Nº Pessoas a Segurar" summary="Número de pessoas a segurar" type="RAD" cgiType="rdl" />
+	<field code="NumeroPisos" name="NumeroPisos" id="txtNumeroPisos" label="Número Pisos" summary="Número de pisos" type="INT" size="3" cgiType="int" />
+	<field code="NumeroPortasVeiculo" name="NumeroPortasVeiculo" id="txtNumeroPortasVeiculo" label="Nº Portas" summary="Número de portas do veículo" type="INT" size="2" cgiType="int" />
+	<field code="NumeroPrestador" name="NumeroPrestador" id="txtNumeroPrestador" label="Nº Prestador" summary="Numero de Prestador" type="" size="" lovType="" cgiType="NumeroPrestador" />
+	<field code="NumeroPrestadorEntidade" name="NumeroPrestadorEntidade" id="txtNumeroPrestadorEntidade" label="Nº Prestador" summary="" type="string" size="" lovType="" cgiType="NumeroPrestadorEntidade" />
+	<field code="NumeroPrestadorSede" name="NumeroPrestadorSede" id="txtNumeroPrestadorSede" label="Numero Prestador Sede" summary="" type="string" size="" lovType="" cgiType="NumeroPrestadorSede" />
+	<field code="NumeroPrintCode" name="NumeroPrintCode" id="txtNumeroPrintCode" label="Print Code" summary="Número de print code da SegurNet" type="TEX" size="30" cgiType="txt" />
+	<field code="NumeroProcesso" name="NumeroProcesso" id="txtNumeroProcesso" label="Nº Processo" summary="Nº Processo" type="" size="" lovType="" cgiType="NumeroProcesso" />
+	<field code="NumeroProtocolo" name="NumeroProtocolo" id="txtNumeroProtocolo" label="Nº Protocolo" summary="Número do Protocolo" type="" size="" lovType="" cgiType="NumeroProtocolo" />
+	<field code="NumeroProtocoloPrestador" name="NumeroProtocolo" id="txtNumeroProtocolo" label="Nº Protocolo" summary="Número do Protocolo" type="" size="" lovType="" cgiType="NumeroProtocolo" />
+	<field code="NumeroRecibo" name="NumeroRecibo" id="dtNumeroRecibo" label="Nº Recibo" summary="Número de Recibo" type="DAT" size="" lovType="" cgiType="date" />
+	<field code="NumeroReclamante" name="NumeroReclamante" id="txtNumeroReclamante" label="Reclamante" summary="Número do Reclamante" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NumeroReferenciaSDD" name="NumeroReferenciaSDD" id="txtNumeroReferenciaSDD" label="Nº Referência SDD" summary="Número de referência do Sistema de Débitos Directos" type="" size="" lovType="" cgiType="NumeroReferenciaSDD" />
+	<field code="NumeroResultadoServico" name="NumeroResultadoServico" id="txtNumeroResultadoServico" label="Nº Resultado Serviço" summary="Número de Resultado Serviço" type="DEC" size="" lovType="" cgiType="NumeroResultadoServico" />
+	<field code="NumeroSerieGPSSonda" name="NumeroSerieGPSSonda" id="txtNumeroSerieGPSSonda" label="Nº Série" summary="Número de série do GPS/Sonda" type="TEX" size="30" cgiType="txt" />
+	<field code="NumeroSerieRadio" name="NumeroSerieRadio" id="txtNumeroSerieRadio" label="Nº Série" summary="Número de série do rádio" type="TEX" size="30" cgiType="txt" />
+	<field code="NumeroServico" name="NumeroServico" id="txtNumeroServico" label="Nº Serviço" summary="" type="" size="" lovType="" cgiType="NumeroServico" />
+	<field code="NumeroSimulacao" name="NumeroSimulacao" id="txtNumeroSimulacao" label="Nº Simulação" summary="Número de simulação" type="TEX" size="16" cgiType="txt" />
+	<field code="NumeroSinistro" name="NumeroSinistro" id="txtNumeroSinistro" label="Nº Sinistro" summary="Número de Sinistro" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="NumeroSinistrosUltimos2Anos" name="NumeroSinistrosUltimos2Anos" id="txtNumeroSinistrosUltimos2Anos" label="Nº Sinistros nos Últimos 2 anos" summary="Número de sinistros nos últimos dois anos" type="INT" size="2" cgiType="int" />
+	<field code="NumeroSolicitacao" name="NumeroSolicitacao" id="txtNumeroSolicitacao" label="Nº Solicitação" summary="" type="" size="" lovType="" cgiType="NumeroSolicitacao" />
+	<field code="NumeroSolicitacaoAssociada" name="NumeroSolicitacaoAssociada" id="txtNumeroSolicitacaoAssociada" label="Nº Solicitação" summary="" type="string" size="" lovType="" cgiType="NumeroSolicitacaoAssociada" />
+	<field code="NumeroTotalKm" name="NumeroTotalKm" id="txtNumeroTotalKm" label="Nº Kms Actuais" summary="Número total de kms do veículo" type="DEC" size="10" cgiType="NumeroTotalKm" />
+	<field code="NumeroTrabalhadoresEmpresa" name="NumeroTrabalhadoresEmpresa" id="txtNumeroTrabalhadoresEmpresa" label="Nº Trabalhadores" summary="Número de trabalhadores da empresa" type="DEC" size="10" cgiType="NumeroTrabalhadoresEmpresa" />
+	<field code="NumeroTransaccao" name="NumeroTransaccao" id="txtNumeroTransaccao" label="Nº Transacção" summary="Número da transacção financeira" type="" size="" lovType="" cgiType="NumeroTransaccao" />
+	<field code="NumeroUniversosPessoasSeguras" name="NumeroUniversosPessoasSeguras" id="txtNumeroUniversosPessoasSeguras" label="Quantos Universos de Pessoas Seguras pretende caracterizar?" summary="Número de universos de pessoas seguras" cgiType="NumeroUniversosPessoasSeguras" />
+	<field code="NumeroUtilizadorPagamentoRecebimento" name="NumeroUtilizadorPagamentoRecebimento" id="txtNumeroUtilizadorPagamentoRecebimento" label="Utilizador Pag/Recebimento" summary="Número de Empregado do Utilizador responsável pelo pagamento/recebimento" type="" size="" lovType="" cgiType="NumeroUtilizadorPagamentoRecebimento" />
+	<field code="NumeroVoo" name="NumeroVoo" id="txtNumeroVoo" label="Nº Vôo" summary="Número de vôo" type="TEX" size="30" cgiType="txt" />
+	<field code="NumLinhaServico" name="NumeroUtilizadorPagamentoRecebimento" id="txtNumeroUtilizadorPagamentoRecebimento" label="Utilizador Pag/Recebimento" summary="Número de Empregado do Utilizador responsável pelo pagamento/recebimento" type="" size="" lovType="" cgiType="NumeroUtilizadorPagamentoRecebimento" />
+	<field code="NumProtocolo" name="NumeroUtilizadorPagamentoRecebimento" id="txtNumeroUtilizadorPagamentoRecebimento" label="Utilizador Pag/Recebimento" summary="Número de Empregado do Utilizador responsável pelo pagamento/recebimento" type="" size="" lovType="" cgiType="NumeroUtilizadorPagamentoRecebimento" />
+	<field code="NumServico" name="NumeroUtilizadorPagamentoRecebimento" id="txtNumeroUtilizadorPagamentoRecebimento" label="Utilizador Pag/Recebimento" summary="Número de Empregado do Utilizador responsável pelo pagamento/recebimento" type="" size="" lovType="" cgiType="NumeroUtilizadorPagamentoRecebimento" />
+	<field code="ObjectoSeguro" name="ObjectoSeguro" id="txtObjectoSeguro" label="Objecto" summary="Objecto Seguro associado a Apólice" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="Observacoes" name="Observacoes" id="txtObservacoes" label="Observacoes" summary="Observações relativas ao desconto aplicado" type="" size="" lovType="" cgiType="Observacoes" />
+	<field code="ObservacoesGerais" name="ObservacoesGerais" id="txtObservacoesGerais" label="Observações Gerais" summary="" type="string" size="" lovType="" cgiType="ObservacoesGerais" />
+	<field code="ObservacoesGeraisNaoProtocolado" name="ObservacoesGeraisNaoProtocolado" id="txtObservacoesGeraisNaoProtocolado" label="Observações Gerais" summary="" type="string" size="" lovType="" cgiType="ObservacoesGeraisNaoProtocolado" />
+	<field code="OcupacaoPredominanteImovel" name="OcupacaoPredominanteImovel" id="txtOcupacaoPredominanteImovel" label="Ocupação Predominante Imóvel" summary="Ocupação predominante do imóvel" cgiType="OcupacaoPredominanteImovel" />
+	<field code="Opcao" name="Opcao" id="txtOpcao" label="Opção" summary="Descritivo da opção" type="TEX" size="60" cgiType="txt" />
+	<field code="Opção1Universo1" name="Opção1Universo1" id="txtOpção1Universo1" label="Opção 1" summary="Opção" cgiType="Opção1Universo1" />
+	<field code="Opção1Universo2" name="Opção1Universo2" id="txtOpção1Universo2" label="Opção 1" summary="Opção" cgiType="Opção1Universo2" />
+	<field code="Opção2Universo1" name="Opção2Universo1" id="txtOpção2Universo1" label="Opção 2" summary="Opção" cgiType="Opção2Universo1" />
+	<field code="Opção2Universo2" name="Opção2Universo2" id="txtOpção2Universo2" label="Opção 2" summary="Opção" cgiType="Opção2Universo2" />
+	<field code="Opção3Universo1" name="Opção3Universo1" id="txtOpção3Universo1" label="Opção 3" summary="Opção" cgiType="Opção3Universo1" />
+	<field code="Opção3Universo2" name="Opção3Universo2" id="txtOpção3Universo2" label="Opção 3" summary="Opção" cgiType="Opção3Universo2" />
+	<field code="Opção4Universo1" name="Opção4Universo1" id="txtOpção4Universo1" label="Opção 4" summary="Opção" cgiType="Opção4Universo1" />
+	<field code="Opção4Universo2" name="Opção4Universo2" id="txtOpção4Universo2" label="Opção 4" summary="Opção" cgiType="Opção4Universo2" />
+	<field code="Opção5Universo1" name="Opção5Universo1" id="txtOpção5Universo1" label="Opção 5" summary="Opção" cgiType="Opção5Universo1" />
+	<field code="Opção5Universo2" name="Opção5Universo2" id="txtOpção5Universo2" label="Opção 5" summary="Opção" cgiType="Opção5Universo2" />
+	<field code="OpcaoProduto" name="OpcaoProduto" id="txtOpcaoProduto" label="Opção" summary="Opção do produto" type="TEX" size="60" cgiType="txt" />
+	<field code="OrigemPedido" name="OrigemPedido" id="txtOrigemPedido" label="Origem Pedido" summary="Proviniência do Pedido Recebido pelo utilizador" type="" size="" lovType="" cgiType="OrigemPedido" />
+	<field code="OrigemRecibo" name="OrigemRecibo" id="txtOrigemRecibo" label="Origem" summary="" type="" size="" lovType="" cgiType="OrigemRecibo" />
+	<field code="OutraActividadeProfissionalPessoaSegura1" name="OutraActividadeProfissionalPessoaSegura1" id="txtOutraActividadeProfissionalPessoaSegura1" label="Ver Ecrã" summary="Outra actividade profissional da pessoa segura 1" cgiType="OutraActividadeProfissionalPessoaSegura1" />
+	<field code="OutraActividadeProfissionalPessoaSegura2" name="OutraActividadeProfissionalPessoaSegura2" id="txtOutraActividadeProfissionalPessoaSegura2" label="Ver Ecrã" summary="Outra actividade profissional da pessoa segura 2" cgiType="OutraActividadeProfissionalPessoaSegura2" />
+	<field code="OutrosBensSeguros" name="OutrosBensSeguros" id="txtOutrosBensSeguros" label="Tem Outros Bens a Segurar" summary="Indicador de existência de outros bens a segurar" cgiType="OutrosBensSeguros" />
+	<field code="P210_N030_Descricao" name="P210_N030_Descricao" id="txtP210_N030_Descricao" label="Descrição" summary="" type="string" size="" lovType="" cgiType="P210_N030_Descricao" />
+	<field code="P210_N047_Descricao" name="P210_N047_Descricao" id="txtP210_N047_Descricao" label="Descrição" summary="" type="string" size="" lovType="" cgiType="P210_N047_Descricao" />
+	<field code="Pais" name="Pais" id="cboPais" label="País" summary="País da Morada do Cliente" type="list" size="" lovType="COUNTRY" cgiType="ddl" />
+	<field code="ParteCorpo" name="ParteCorpo" id="txtParteCorpo" label="Parte Corpo" summary="Parte do corpo lesionada" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="ParteCorpoAtingida" name="ParteCorpoAtingida" id="txtParteCorpoAtingida" label="Parte Corpo Atingida" summary="Parte do Corpo atingida pelo acidente" type="" size="" lovType="" cgiType="ParteCorpoAtingida" />
+	<field code="ParteCorpoAtingido" name="ParteCorpoAtingido" id="cboParteCorpoAtingido" label="Parte do Corpo Atingida" summary="" type="list" size="" lovType="PARTE-CORPO" cgiType="ddl" />
+	<field code="ParticipaActividadeRiscoPessoaSegura" name="ParticipaActividadeRiscoPessoaSegura" id="txtParticipaActividadeRiscoPessoaSegura" label="Ver Questionário Clinico" summary="Indicador de participação em actividades de risco" cgiType="ParticipaActividadeRiscoPessoaSegura" />
+	<field code="PedidoRespondido" name="PedidoRespondido" id="cboPedidoRespondido" label="Alterações Efectuadas" summary="" type="list" size="" lovType="" cgiType="ddl" />
+	<field code="PedidoTratado" name="PedidoTratado" id="cboPedidoTratado" label="Pedido Tratado" summary="Indicação se o Pedido foi tratado pelo utilizador" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="Percentagem" name="Percentagem" id="txtPercentagem" label="Percentagem" summary="" type="double" size="" lovType="" cgiType="Percentagem" />
+	<field code="PercentagemBeneficio" name="PercentagemBeneficio" id="txtPercentagemBeneficio" label="% Benefício" summary="Percentagem de benefício" type="INT" size="3" cgiType="int" />
+	<field code="PercentagemCusto" name="PercentagemCusto" id="txtPercentagemCusto" label="% Custo" summary="" type="double" size="" lovType="" cgiType="PercentagemCusto" />
+	<field code="PercentagemCustoServico" name="PercentagemCustoServico" id="txtPercentagemCustoServico" label="% Custo Serviço" summary="" type="double" size="" lovType="" cgiType="PercentagemCustoServico" />
+	<field code="PercentagemOcupacao" name="PercentagemOcupacao" id="txtPercentagemOcupacao" label="% Ocupação" summary="" type="string" size="" lovType="" cgiType="PercentagemOcupacao" />
+	<field code="PercentCusto" name="PercentCusto" id="txtPercentCusto" label="% Custo Serviço" summary="" type="double" size="" lovType="" cgiType="PercentCusto" />
+	<field code="Periodicidade" name="Periodicidade" id="txtPeriodicidade" label="Ver Ecrã" summary="Períodicidade" cgiType="Periodicidade" />
+	<field code="PeriodicidadeAvaliacao" name="PeriodicidadeAvaliacao" id="cboPeriodicidadeAvaliacao" label="Periodicidade Avaliação" summary="" type="list" size="" lovType="ZGPS_PER_SCOR" cgiType="ddl" />
+	<field code="PeriodicidadeUniverso1" name="PeriodicidadeUniverso1" id="txtPeriodicidadeUniverso1" label="Ver Ecrã" summary="Períodicidade universo 1" cgiType="PeriodicidadeUniverso1" />
+	<field code="PeriodicidadeUniverso2" name="PeriodicidadeUniverso2" id="txtPeriodicidadeUniverso2" label="Ver Ecrã" summary="Períodicidade universo 2" cgiType="PeriodicidadeUniverso2" />
+	<field code="PeriodoAvaliacao" name="PeriodoAvaliacao" id="txtPeriodoAvaliacao" label="Período Avaliação" summary="" type="string" size="" lovType="" cgiType="PeriodoAvaliacao" />
+	<field code="PeriodoDesabitacao" name="PeriodoDesabitacao" id="cboPeriodoDesabitacao" label="Período Desabitação" summary="Período de desabitação" type="LIS" cgiType="ddl" />
+	<field code="PeriodoLaboracao" name="PeriodoLaboracao" id="chkPeriodoLaboracao" label="Ocorreu em Período de Laboração" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="PeriodoPreferencial" name="PeriodoPreferencial" id="txtPeriodoPreferencial" label="Período Preferencial" summary="" type="string" size="" lovType="" cgiType="PeriodoPreferencial" />
+	<field code="PeriodoPreferencialCliente" name="PeriodoPreferencialCliente" id="txtPeriodoPreferencialCliente" label="Período Preferencial" summary="Dia definido pelo cliente para contacto." type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="PeriodoPreferencialCol" name="PeriodoPreferencialCol" id="txtPeriodoPreferencialCol" label="Período Preferencial" summary="" type="string" size="" lovType="" cgiType="PeriodoPreferencialCol" />
+	<field code="PeriodoRenovacao" name="PeriodoRenovacao" id="txtPeriodoRenovacao" label="Período Renov" summary="Período de Renovação da Apólice" type="" size="" lovType="" cgiType="PeriodoRenovacao" />
+	<field code="PeriodoRenovacaoLinhaServico" name="PeriodoRenovacaoLinhaServico" id="txtPeriodoRenovacaoLinhaServico" label="Período Renovação" summary="" type="string" size="" lovType="" cgiType="PeriodoRenovacaoLinhaServico" />
+	<field code="PeriodoRenovacaoProtocolo" name="PeriodoRenovacaoProtocolo" id="txtPeriodoRenovacaoProtocolo" label="Período Renovação" summary="" type="string" size="" lovType="ZGPS_PER_RENOV" cgiType="PeriodoRenovacaoProtocolo" />
+	<field code="PeriodoRenovacaoServico" name="PeriodoRenovacaoServico" id="txtPeriodoRenovacaoServico" label="Período Renovação Serviço" summary="" type="string" size="" lovType="" cgiType="PeriodoRenovacaoServico" />
+	<field code="PermaneciaEstrangeiro" name="PermaneciaEstrangeiro" id="txtPermaneciaEstrangeiro" label="Ver Ecrã" summary="Permanência no estrangeiro" cgiType="PermaneciaEstrangeiro" />
+	<field code="Peso" name="Peso" id="txtPeso" label="Peso" summary="" type="integer" size="" lovType="" cgiType="Peso" />
+	<field code="PesoBrutoReboque" name="PesoBrutoReboque" id="txtPesoBrutoReboque" label="Peso" summary="Peso bruto do reboque" type="INT" size="5" cgiType="int" />
+	<field code="PesoBrutoVeiculo" name="PesoBrutoVeiculo" id="txtPesoBrutoVeiculo" label="Peso" summary="Peso bruto do veículo" type="INT" size="5" cgiType="int" />
+	<field code="PesoCriterio" name="PesoCriterio" id="txtPesoCriterio" label="Peso" summary="" type="integer" size="" lovType="" cgiType="PesoCriterio" />
+	<field code="PesoScoring" name="PesoScoring" id="txtPesoScoring" label="Peso Scoring na Selecção de Prestador" summary="" type="integer" size="" lovType="" cgiType="PesoScoring" />
+	<field code="PesoVeiculo" name="PesoVeiculo" id="txtPesoVeiculo" label="Peso" summary="Peso do veículo" type="INT" size="5" cgiType="int" />
+	<field code="PessoaContacto" name="PessoaContacto" id="txtPessoaContacto" label="Pessoa Contacto" summary="" type="string" size="" lovType="" cgiType="PessoaContacto" />
+	<field code="PilotagememqueQualidade" name="PilotagememqueQualidade" id="txtPilotagememqueQualidade" label="Ver Ecrã" summary="Pilotagem de aeronaves" cgiType="PilotagememqueQualidade" />
+	<field code="PontalEmbarcacao" name="PontalEmbarcacao" id="txtPontalEmbarcacao" label="Pontal" summary="Pontal" cgiType="PontalEmbarcacao" />
+	<field code="PortaMorada" name="PortaMorada" id="txtPortaMorada" label="Porta" summary="Número de porta" type="TEX" size="15" cgiType="txt" />
+	<field code="PossiveisEnderecosCP" name="PossiveisEnderecosCP" id="txtPossiveisEnderecosCP" label="Possiveis Endereços" summary="" type="string" size="" lovType="" cgiType="PossiveisEnderecosCP" />
+	<field code="PossuiLimiteCapacidade" name="PossuiLimiteCapacidade" id="txtPossuiLimiteCapacidade" label="Possui Limite Capacidade" summary="" type="string" size="" lovType="" cgiType="PossuiLimiteCapacidade" />
+	<field code="PotenciaVeiculo" name="PotenciaVeiculo" id="txtPotenciaVeiculo" label="Potência" summary="Potência do veículo (tratar como texto)" type="TEX" size="4" cgiType="txt" />
+	<field code="PrazoEsperadoRecepcaoResultadoServico" name="PrazoEsperadoRecepcaoResultadoServico" id="txtPrazoEsperadoRecepcaoResultadoServico" label="Prazo Esperado Recepção Resultado - Dias" summary="" type="string" size="" lovType="" cgiType="PrazoEsperadoRecepcaoResultadoServico" />
+	<field code="PrazoExec" name="PrazoExec" id="txtPrazoExec" label="Prazo Esperado Execução Serviço" summary="" type="double" size="" lovType="" cgiType="PrazoExec" />
+	<field code="PrazoExecucaoServico" name="PrazoExecucaoServico" id="txtPrazoExecucaoServico" label="Prazo Esperado Execução" summary="" type="double" size="" lovType="" cgiType="PrazoExecucaoServico" />
+	<field code="PrazoRenovacao" name="PrazoRenovacao" id="txtPrazoRenovacao" label="Prazo para Renovação" summary="" type="integer" size="" lovType="" cgiType="PrazoRenovacao" />
+	<field code="PrestadorNecessitaAprovacaoRS" name="PrestadorNecessitaAprovacaoRS" id="chkPrestadorNecessitaAprovacaoRS" label="Prestador Necessita Aprovação RS" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="PrestadorProtocolado" name="PrestadorProtocolado" id="chkPrestadorProtocolado" label="Protocolado" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="Produto" name="Produto" id="cboProduto" label="Produto" summary="Produto" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="Profissao" name="Profissao" id="cboProfissao" label="Profissão" summary="Profissão" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="ProfissaoPrimeiraPessoaSegura" name="ProfissaoPrimeiraPessoaSegura" id="txtProfissaoPrimeiraPessoaSegura" label="Profissão 1ª Pessoa Segura" summary="Profissão da primeira pessoa segura" type="TEX" size="60" cgiType="txt" />
+	<field code="ProfissaoReclamante" name="ProfissaoReclamante" id="txtProfissaoReclamante" label="Profissão" summary="Profissão do Reclamante" type="" size="" lovType="" cgiType="ProfissaoReclamante" />
+	<field code="ProfissaoSegundaPessoaSegura" name="ProfissaoSegundaPessoaSegura" id="txtProfissaoSegundaPessoaSegura" label="Profissão 2ª Pessoa Segura" summary="Profissão da segunda pessoa segura" type="TEX" size="60" cgiType="txt" />
+	<field code="ProfissaoTrabalhador" name="ProfissaoTrabalhador" id="txtProfissaoTrabalhador" label="Profissão" summary="Profissão do trabalhador" type="TEX" size="60" cgiType="txt" />
+	<field code="PrognosticoFuturo" name="PrognosticoFuturo" id="txtPrognosticoFuturo" label="Prognóstico Futuro" summary="" type="string" size="" lovType="" cgiType="PrognosticoFuturo" />
+	<field code="Qua" name="Qua" id="txtQua" label="Quarta" summary="" type="integer" size="" lovType="" cgiType="Qua" />
+	<field code="QualDoencaPessoa1" name="QualDoencaPessoa1" id="txtQualDoencaPessoa1" label="Ver Ecrã" summary="Doença da pessoa segura 1" cgiType="QualDoencaPessoa1" />
+	<field code="QualDoencaPessoa2" name="QualDoencaPessoa2" id="txtQualDoencaPessoa2" label="Ver Ecrã" summary="Doença da pessoa segura 2" cgiType="QualDoencaPessoa2" />
+	<field code="QualidadeEfectuaSeguro" name="QualidadeEfectuaSeguro" id="cboQualidadeEfectuaSeguro" label="Qualidade em que efectua o seguro" summary="Qualidade em que efectua o seguro" type="LIS" lovType="QUALID-EFECT-SEGUR" cgiType="ddl" />
+	<field code="QuantidadeNumerosAtribuida" name="QuantidadeFilhos" id="txtQuantidadeFilhos" label="Filhos" summary="N.º de filhos do Cliente" type="INT" size="" lovType="" cgiType="int" />
+	<field code="QuantidadeNumerosDisponivel" name="QuantidadeFilhos" id="txtQuantidadeFilhos" label="Filhos" summary="N.º de filhos do Cliente" type="INT" size="" lovType="" cgiType="int" />
+	<field code="QuantidadeNumerosPedida" name="QuantidadeFilhos" id="txtQuantidadeFilhos" label="Filhos" summary="N.º de filhos do Cliente" type="INT" size="" lovType="" cgiType="int" />
+	<field code="QuantidadeServico" name="QuantidadeServico" id="txtQuantidadeServico" label="Quantidade" summary="" type="" size="" lovType="" cgiType="QuantidadeServico" />
+	<field code="Qui" name="Qui" id="txtQui" label="Quinta" summary="" type="integer" size="" lovType="" cgiType="Qui" />
+	<field code="Quitacao" name="Quitacao" id="txtQuitacao" label="Quitação" summary="" type="string" size="" lovType="TIPO-TEXT" cgiType="Quitacao" />
+	<field code="RacaCao" name="RacaCao" id="txtRacaCao" label="Raça" summary="Raça do cão" type="TEX" size="20" cgiType="txt" />
+	<field code="RadioEmbarcacao" name="RadioEmbarcacao" id="txtRadioEmbarcacao" label="Embarcação a Segurar tem Rádio" summary="Indicador da existência de rádio" cgiType="RadioEmbarcacao" />
+	<field code="RamoActividade" name="RamoActividade" id="txtRamoActividade" label="Ramo Actividade" summary="Ramo de actividade" cgiType="RamoActividade" />
+	<field code="Rappel" name="Rappel" id="txtRappel" label="Rappel" summary="" type="double" size="" lovType="" cgiType="Rappel" />
+	<field code="Recebedor" name="Recebedor" id="txtRecebedor" label="Recebedor" summary="" type="string" size="" lovType="" cgiType="Recebedor" />
+	<field code="Reembolso" name="Reembolso" id="chkReembolso" label="Reembolso" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="ReferenciaATM" name="ReferenciaATM" id="txtReferenciaATM" label="Referência" summary="Referencia ATM" type="" size="" lovType="" cgiType="ReferenciaATM" />
+	<field code="ReferenciaExterna" name="ReferenciaExterna" id="txtReferenciaExterna" label="Referência Externa" summary="Referência externa" type="TEX" size="21" cgiType="txt" />
+	<field code="RegimePagamento" name="RegimePagamento" id="txtRegimePagamento" label="Regime Pag" summary="" type="string" size="" lovType="REGIME-REMUNERACAO" cgiType="RegimePagamento" />
+	<field code="RegraActualizacao" name="RegraActualizacao" id="txtRegraActualizacao" label="Regra Actualização Serviço" summary="" type="string" size="" lovType="" cgiType="RegraActualizacao" />
+	<field code="RegraActualizacaoLinhaServico" name="RegraActualizacaoLinhaServico" id="txtRegraActualizacaoLinhaServico" label="Regra Actualização Linha Serviço" summary="" type="string" size="" lovType="" cgiType="RegraActualizacaoLinhaServico" />
+	<field code="RegraActualizacaoProtocolo" name="RegraActualizacaoProtocolo" id="txtRegraActualizacaoProtocolo" label="Regra Actualização Protocolo" summary="" type="string" size="" lovType="" cgiType="RegraActualizacaoProtocolo" />
+	<field code="RegraActualizacaoServico" name="RegraActualizacaoServico" id="txtRegraActualizacaoServico" label="Regra Actualização Serviço" summary="" type="string" size="" lovType="" cgiType="RegraActualizacaoServico" />
+	<field code="ResponsavelAdministrativo" name="ResponsavelAdministrativo" id="txtResponsavelAdministrativo" label="Responsável Administrativo" summary="" type="" size="" lovType="" cgiType="ResponsavelAdministrativo" />
+	<field code="ResponsavelClinico" name="ResponsavelClinico" id="txtResponsavelClinico" label="Responsável Clínico" summary="" type="" size="" lovType="" cgiType="ResponsavelClinico" />
+	<field code="RespostaPilotagemAeronoves" name="RespostaPilotagemAeronoves" id="txtRespostaPilotagemAeronoves" label="Ver Ecrã" summary="Pilotagem de aeronaves" cgiType="RespostaPilotagemAeronoves" />
+	<field code="ResultadoServico" name="ResultadoFinalIntermedio" id="txtResultadoFinalIntermedio" label="Resultado" summary="" type="" size="" lovType="" cgiType="ResultadoFinalIntermedio" />
+	<field code="ResultadoServicoIntermedioFinal" name="ResultadoServicoIntermedioFinal" id="txtResultadoServicoIntermedioFinal" label="Resultado Intermédio/ Final" summary="" type="string" size="" lovType="ZGPS_TP_RESRV" cgiType="ResultadoServicoIntermedioFinal" />
+	<field code="RiscosPoliticos" name="RiscosPoliticos" id="txtRiscosPoliticos" label="Ver Ecrã" summary="Riscos políticos" cgiType="RiscosPoliticos" />
+	<field code="RuaMorada" name="RuaMorada" id="txtRuaMorada" summary="Rua" type="TEX" size="45" cgiType="txt" />
+	<field code="Sab" name="Sab" id="txtSab" label="Sábado" summary="" type="integer" size="" lovType="" cgiType="Sab" />
+	<field code="SalarioSubsidio" name="SalarioSubsidio" id="cboSalarioSubsidio" label="Salário/ Subsídio" summary="Tipo de salário ou subsídio" type="LIS" cgiType="ddl" />
+	<field code="Scoring" name="Scoring" id="txtScoring" label="Scoring" summary="" type="double" size="" lovType="" cgiType="Scoring" />
+	<field code="Seg" name="Seg" id="txtSeg" label="Segunda" summary="" type="integer" size="" lovType="" cgiType="Seg" />
+	<field code="SeleccaoOpcao" name="SeleccaoOpcao" id="cboSeleccaoOpcao" label="Opção" summary="Opção do produto" type="LIS" cgiType="ddl" />
+	<field code="SemPrestador" name="SemPrestador" id="chkSemPrestador" label="Encomenda Sem Prestador" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="SequenciaFinal" name="SequenciaFinal" id="txtSequenciaFinal" label="Seq. Final" summary="Último Numero da sequência de documentos" type="INT" size="" lovType="" cgiType="int" />
+	<field code="SequenciaInicial" name="SequenciaInicial" id="txtSequenciaInicial" label="Seq. Inicial" summary="Numero Inicial da Sequência de Numeração do documento" type="INT" size="" lovType="" cgiType="int" />
+	<field code="Servico" name="Servico" id="txtServico" label="Serviço" summary="" type="string" size="" lovType="" cgiType="Servico" />
+	<field code="ServicoPacote" name="ServicoPacote" id="chkServicoPacote" label="Pacote" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="ServicoReboque" name="ServicoReboque" id="rdoServicoReboque" label="Serviço de Reboque" summary="Indicador de serviço de reboque" type="RAD" cgiType="rdl" />
+	<field code="Servicos" name="Servicos" id="txtServicos" label="Serviços" summary="" type="string" size="" lovType="" cgiType="Servicos" />
+	<field code="Sex" name="Sex" id="txtSex" label="Sexta" summary="" type="integer" size="" lovType="" cgiType="Sex" />
+	<field code="Sexo" name="Sexo" id="cboSexo" label="Sexo" summary="Sexo do Cliente" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="SexoPessoaSegura" name="SexoPessoaSegura" id="cboSexoPessoaSegura" label="Sexo" summary="Sexo da pessoa segura" type="LIS" lovType="SEX" cgiType="ddl" />
+	<field code="Sigla" name="Sigla" id="txtSigla" label="Sigla" summary="Sigla de Cliente Colectivo" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="Situacao" name="Situacao" id="txtSituacao" label="Situação" summary="Situação do Prestador" type="" size="" lovType="" cgiType="Situacao" />
+	<field code="SituacaoApolice" name="SituacaoApolice" id="txtSituacaoApolice" label="Situação Apólice" summary="Situação da apólice" type="TEX" size="60" cgiType="txt" />
+	<field code="SituacaoClinica" name="SituacaoClinica" id="txtSituacaoClinica" label="Situação Clínica" summary="" type="string" size="" lovType="TIPO-INCAPAC-TEMP1" cgiType="SituacaoClinica" />
+	<field code="SituacaoCobranca" name="SituacaoCobranca" id="txtSituacaoCobranca" label="Situação Cobrança" summary="Situação de cobrança associada à autorização" type="" size="" lovType="" cgiType="SituacaoCobranca" />
+	<field code="SituacaoDocumento" name="SituacaoDocumento" id="cboSituacaoDocumento" label="Situação" summary="Situação do documento" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="SituacaoEncomenda" name="SituacaoEncomenda" id="cboSituacaoEncomenda" label="Situação" summary="Situação da Encomenda" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="SituacaoFinal" name="SituacaoFinal" id="txtSituacaoFinal" label="Situação Final" summary="" type="string" size="" lovType="SIT-FINAL" cgiType="SituacaoFinal" />
+	<field code="SituacaoFinalPresumivel" name="SituacaoFinalPresumivel" id="txtSituacaoFinalPresumivel" label="Situação Final Presumível" summary="" type="string" size="" lovType="SIT-FINAL" cgiType="SituacaoFinalPresumivel" />
+	<field code="SituacaoLinhaServico" name="SituacaoLinhaServico" id="txtSituacaoLinhaServico" label="Situação Linha Serviço" summary="" type="string" size="" lovType="ZGPS_SIT_L_SRV" cgiType="SituacaoLinhaServico" />
+	<field code="SituacaoMorada" name="SituacaoMorada" id="txtSituacaoMorada" label="Situação Morada" summary="Situação da Morada de Cliente" type="" size="" lovType="" cgiType="SituacaoMorada" />
+	<field code="SituacaoPrestador" name="SituacaoPrestador" id="txtSituacaoPrestador" label="Situação" summary="Situação da entidade Prestador" type="" size="" lovType="ZGPS_SIT_PREST" cgiType="SituacaoPrestador" />
+	<field code="SituacaoProtocolo" name="SituacaoProtocolo" id="cboSituacaoProtocolo" label="Situação Protocolo" summary="" type="list" size="" lovType="ZGPS_SIT_PROT" cgiType="ddl" />
+	<field code="SituacaoRegistoPagamento" name="SituacaoRegistoPagamento" id="txtSituacaoRegistoPagamento" label="Situação Registo Pagamento" summary="" type="string" size="" lovType="" cgiType="SituacaoRegistoPagamento" />
+	<field code="SituacaoResultadoServico" name="SituacaoResultadoServico" id="txtSituacaoResultadoServico" label="Situação Resultado Serviço" summary="" type="string" size="" lovType="ZGPS_SIT_RES_SRV" cgiType="SituacaoResultadoServico" />
+	<field code="SituacaoServico" name="SituacaoServico" id="txtSituacaoServico" label="Situação" summary="Situação em que se encontra o Serviço" type="" size="" lovType="ZGPS_SIT_SRV" cgiType="SituacaoServico" />
+	<field code="SituacaoSimulacao" name="SituacaoSimulacao" id="txtSituacaoSimulacao" label="Situação" summary="Situação da simulação" type="TEX" size="60" cgiType="txt" />
+	<field code="SofreAparelhoDigestivoPessoaSegura" name="SofreAparelhoDigestivoPessoaSegura" id="txtSofreAparelhoDigestivoPessoaSegura" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="SofreAparelhoDigestivoPessoaSegura" />
+	<field code="SofreAparelhoGenitalFemininoMamaPessoaSegura" name="SofreAparelhoGenitalFemininoMamaPessoaSegura" id="txtSofreAparelhoGenitalFemininoMamaPessoaSegura" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="SofreAparelhoGenitalFemininoMamaPessoaSegura" />
+	<field code="SofreAparelhoGenitalMasculinoPessoaSegura" name="SofreAparelhoGenitalMasculinoPessoaSegura" id="txtSofreAparelhoGenitalMasculinoPessoaSegura" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="SofreAparelhoGenitalMasculinoPessoaSegura" />
+	<field code="SofreAparelhoRespiratorioPessoaSegura" name="SofreAparelhoRespiratorioPessoaSegura" id="txtSofreAparelhoRespiratorioPessoaSegura" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="SofreAparelhoRespiratorioPessoaSegura" />
+	<field code="SofreAparelhoUrinarioPessoaSegura" name="SofreAparelhoUrinarioPessoaSegura" id="txtSofreAparelhoUrinarioPessoaSegura" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="SofreAparelhoUrinarioPessoaSegura" />
+	<field code="SofreCoracaoAparelhoCirculatorioPessoaSegura" name="SofreCoracaoAparelhoCirculatorioPessoaSegura" id="txtSofreCoracaoAparelhoCirculatorioPessoaSegura" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="SofreCoracaoAparelhoCirculatorioPessoaSegura" />
+	<field code="SofreDeficienciaFisicaDoencaCongenitaPessoaSegura" name="SofreDeficienciaFisicaDoencaCongenitaPessoaSegura" id="txtSofreDeficienciaFisicaDoencaCongenitaPessoaSegura" label="Ver Ecrã" summary="Questão do questionário clínico" cgiType="SofreDeficienciaFisicaDoencaCongenitaPessoaSegura" />
+	<field code="SofreDiabetesHipertensaoPessoaSegura" name="SofreDiabetesHipertensaoPessoaSegura" id="txtSofreDiabetesHipertensaoPessoaSegura" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="SofreDiabetesHipertensaoPessoaSegura" />
+	<field code="SofreDoencasEndocronitasMetabolicasSanguePessoaSeg" name="SofreDoencasEndocronitasMetabolicasSanguePessoaSeg" id="txtSofreDoencasEndocronitasMetabolicasSanguePessoaSeg" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="SofreDoencasEndocronitasMetabolicasSanguePessoaSeg" />
+	<field code="SofreDoencasForoOncologicoPessoaSegura" name="SofreDoencasForoOncologicoPessoaSegura" id="txtSofreDoencasForoOncologicoPessoaSegura" label="Ver Ecrã" summary="Questão do questionário clínico" cgiType="SofreDoencasForoOncologicoPessoaSegura" />
+	<field code="SofreDoencasPelePessoaSegura" name="SofreDoencasPelePessoaSegura" id="txtSofreDoencasPelePessoaSegura" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="SofreDoencasPelePessoaSegura" />
+	<field code="SofreHerniasHemorroidasFistulasPessoaSegura" name="SofreHerniasHemorroidasFistulasPessoaSegura" id="txtSofreHerniasHemorroidasFistulasPessoaSegura" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="SofreHerniasHemorroidasFistulasPessoaSegura" />
+	<field code="SofreOlhosPessoaSegura" name="SofreOlhosPessoaSegura" id="txtSofreOlhosPessoaSegura" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="SofreOlhosPessoaSegura" />
+	<field code="SofreOssosArticulacoesPessoaSegura" name="SofreOssosArticulacoesPessoaSegura" id="txtSofreOssosArticulacoesPessoaSegura" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="SofreOssosArticulacoesPessoaSegura" />
+	<field code="SofreOutrasDoencasPessoaSegura" name="SofreOutrasDoencasPessoaSegura" id="txtSofreOutrasDoencasPessoaSegura" label="Ver Ecrã" summary="Questão do questionário clínico" cgiType="SofreOutrasDoencasPessoaSegura" />
+	<field code="SofreOuvidosNarizGargantaPessoaSegura" name="SofreOuvidosNarizGargantaPessoaSegura" id="txtSofreOuvidosNarizGargantaPessoaSegura" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="SofreOuvidosNarizGargantaPessoaSegura" />
+	<field code="SofreVarizesPessoaSegura" name="SofreVarizesPessoaSegura" id="txtSofreVarizesPessoaSegura" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="SofreVarizesPessoaSegura" />
+	<field code="SubComponenteLServico" name="SubComponenteLServico" id="cboSubComponenteLServico" label="Área" summary="" type="list" size="" lovType="ZGPS_HIST_LNSERV" cgiType="ddl" />
+	<field code="SubComponentePrestador" name="SubComponentePrestador" id="cboSubComponentePrestador" label="Área" summary="" type="list" size="" lovType="ZGPS_HIST_PRESTD" cgiType="ddl" />
+	<field code="SubComponenteScoring" name="SubComponenteScoring" id="cboSubComponenteScoring" label="Área" summary="" type="list" size="" lovType="ZGPS_HIST_SCORIN" cgiType="ddl" />
+	<field code="SubComponenteServico" name="SubComponenteServico" id="cboSubComponenteServico" label="Área" summary="" type="list" size="" lovType="ZGPS_HIST_SERVIC" cgiType="ddl" />
+	<field code="SubEstadoLote" name="SubEstadoLote" id="cboSubEstadoLote" label="Sub-Estado" summary="Sub-Estado do Lote" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="SubmetidoIntervecaoCirurgicaPessoaSegura" name="SubmetidoIntervecaoCirurgicaPessoaSegura" id="txtSubmetidoIntervecaoCirurgicaPessoaSegura" label="Ver Ecrã" summary="Questão do questionário clínico" cgiType="SubmetidoIntervecaoCirurgicaPessoaSegura" />
+	<field code="SubNaturezaPagamento" name="SubNaturezaPagamento" id="txtSubNaturezaPagamento" label="Sub-Natureza Pagamento" summary="Sub natureza de pagamento" type="" size="" lovType="SUBNATUREZA-PAGAMENTO" cgiType="SubNaturezaPagamento" />
+	<field code="SubTipo" name="SubTipo" id="txtSubTipo" label="Sub-Tipo Serviço" summary="" type="string" size="" lovType="" cgiType="SubTipo" />
+	<field code="SubTipoNegocio" name="SubTipoNegocio" id="cboSubTipoNegocio" label="Sub-Tipo Negócio" summary="Subtipo de negócio" type="LIS" cgiType="ddl" />
+	<field code="SubTipoServico" name="SubTipoServico" id="cboSubTipoServico" label="Sub-Tipo Serviço" summary="" type="list" size="" lovType="ZGPS_DESC_SUBTP" cgiType="ddl" />
+	<field code="Sucursal" name="Sucursal" id="chkSucursal" label="Sucursal" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="TaxaIrs" name="TaxaIrs" id="txtTaxaIrs" label="Taxa Imposto IRS" summary="" type="double" size="" lovType="" cgiType="TaxaIrs" />
+	<field code="TaxaIva" name="TaxaIva" id="txtTaxaIva" label="Taxa Imposto IVA" summary="" type="string" size="" lovType="VALOR-IVA" cgiType="TaxaIva" />
+	<field code="TecnicoResponsavel" name="TecnicoResponsavel" id="txtTecnicoResponsavel" label="Técnico Responsável" summary="" type="string" size="" lovType="" cgiType="TecnicoResponsavel" />
+	<field code="Telefone" name="Telefone" id="txtTelefone" label="Telefone" summary="Nº de Telefone do Cliente." type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="TelefoneContactoEntidade" name="TelefoneContactoEntidade" id="txtTelefoneContactoEntidade" label="Telefone" summary="Telefone de Contacto da Entidade associada ao Prestador" type="" size="" lovType="" cgiType="TelefoneContactoEntidade" />
+	<field code="TelefoneEntidade" name="TelefoneEntidade" id="txtTelefoneEntidade" label="Telefone" summary="" type="string" size="" lovType="" cgiType="TelefoneEntidade" />
+	<field code="TelefoneLocalPrestacao" name="TelefoneLocalPrestacao" id="txtTelefoneLocalPrestacao" label="Telefone" summary="" type="string" size="" lovType="" cgiType="TelefoneLocalPrestacao" />
+	<field code="Telemovel" name="Telemovel" id="txtTelemovel" label="Telemovel" summary="" type="string" size="" lovType="" cgiType="Telemovel" />
+	<field code="TemFranquia" name="TemFranquia" id="chkTemFranquia" label="Tem Franquia" summary="" type="bool" size="" lovType="" cgiType="ckl" />
+	<field code="Ter" name="Ter" id="txtTer" label="Terça" summary="" type="integer" size="" lovType="" cgiType="Ter" />
+	<field code="TipificacaoHistorico" name="TipificacaoHistorico" id="txtTipificacaoHistorico" label="Tipo Alteração Protocolo" summary="" type="string" size="" lovType="ZGPS_TP_ALT_P" cgiType="TipificacaoHistorico" />
+	<field code="TipoAccaoMarketing" name="TipoAccaoMarketing" id="cboTipoAccaoMarketing" label="Acção Marketing" summary="Acção de marketing" type="LIS" cgiType="ddl" />
+	<field code="TipoActualizacaoLinhaServico" name="TipoActualizacaoLinhaServico" id="txtTipoActualizacaoLinhaServico" label="Tipo Actualização Linha Serviço" summary="" type="string" size="" lovType="" cgiType="TipoActualizacaoLinhaServico" />
+	<field code="TipoActualizacaoProtocolo" name="TipoActualizacaoProtocolo" id="txtTipoActualizacaoProtocolo" label="Tipo Actualização Protocolo" summary="" type="string" size="" lovType="ZGPS_TP_ACT_SRV" cgiType="TipoActualizacaoProtocolo" />
+	<field code="TipoActualizacaoServico" name="TipoActualizacaoServico" id="txtTipoActualizacaoServico" label="Tipo Actualização Serviço" summary="" type="string" size="" lovType="" cgiType="TipoActualizacaoServico" />
+	<field code="TipoAeronave" name="TipoAeronave" id="txtTipoAeronave" label="Ver Ecrã" summary="Tipo de aeronave" cgiType="TipoAeronave" />
+	<field code="TipoArruamento" name="TipoArruamento" id="cboTipoArruamento" label="Morada" summary="Tipo de arruamento" type="LIS" lovType="TIPO-ARRUAMENTO" cgiType="ddl" />
+	<field code="TipoCalendario" name="TipoCalendario" id="cboTipoCalendario" label="Tipo Calendário Associado" summary="" type="list" size="" lovType="ZGPS_TP_CALEND" cgiType="ddl" />
+	<field code="TipoCalendarioAssociado" name="TipoCalendarioAssociado" id="txtTipoCalendarioAssociado" label="Tipo Calendário Associado" summary="" type="string" size="" lovType="" cgiType="TipoCalendarioAssociado" />
+	<field code="TipoCartaConducao" name="TipoCartaConducao" id="cboTipoCartaConducao" label="Tipo Carta Condução" summary="Tipo de carta de condução" type="LIS" lovType="TIPO-CARTA" cgiType="ddl" />
+	<field code="TipoCliente" name="TipoCliente" id="cboTipoCliente" label="Tipo" summary="Tipo de Cliente" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="TipoCombustivel" name="TipoCombustivel" id="cboTipoCombustivel" label="Combustível" summary="Tipo de combustível" type="LIS" lovType="TIPO-COMBUSTIVEL" cgiType="ddl" />
+	<field code="TipoComprimentoEmbarcacao" name="TipoComprimentoEmbarcacao" id="txtTipoComprimentoEmbarcacao" label="Comprimento" summary="Tipo e comprimento da embarcação" cgiType="TipoComprimentoEmbarcacao" />
+	<field code="TipoCondutorHabitual" name="TipoCondutorHabitual" id="rdoTipoCondutorHabitual" label="Condutor Habitual é o Tomador de Seguro" summary="Indica se o condutor habitual é o tomador de seguro" type="RAD" cgiType="rdl" />
+	<field code="TipoConformidade" name="TipoConformidade" id="txtTipoConformidade" label="Tipo" summary="" type="string" size="" lovType="" cgiType="TipoConformidade" />
+	<field code="TipoConstrucaoImovel" name="TipoConstrucaoImovel" id="cboTipoConstrucaoImovel" label="Tipo Construção" summary="Tipo de construção do imóvel" type="LIS" cgiType="ddl" />
+	<field code="TipoContacto" name="TipoContacto" id="cboTipoContacto" label="Tipo Contacto" summary="Tipo de Contacto" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="TipoContaInterna" name="TipoContaInterna" id="txtTipoContaInterna" label="Tipo Conta Interna" summary="Tipo de Conta Interna do Mediador" type="" size="" lovType="" cgiType="TipoContaInterna" />
+	<field code="TipoCosseguro" name="TipoCosseguro" id="txtTipoCosseguro" label="Cosseguro" summary="" type="string" size="" lovType="" cgiType="TipoCosseguro" />
+	<field code="TipoCriterio" name="TipoCriterio" id="txtTipoCriterio" label="Tipo Critério" summary="" type="string" size="" lovType="ZGPS_TP_CRITERIO" cgiType="TipoCriterio" />
+	<field code="TipoCriterioFiltro" name="TipoCriterioFiltro" id="cboTipoCriterioFiltro" label="Tipo Critério" summary="" type="list" size="" lovType="ZGPS_TP_CRITERIO" cgiType="ddl" />
+	<field code="TipoDocumento" name="TipoDocumento" id="txtTipoDocumento" label="Documento" summary="Tipo de documento consoante a operação (Recibo prémio, Estorno...)" type="" size="" lovType="" cgiType="TipoDocumento" />
+	<field code="TipoDocumentoNumerado" name="TipoDocumentoNumerado" id="cboTipoDocumentoNumerado" label="Tipo de Documento" summary="Tipo de Documento com gestão numeração pré-definida" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="TipoDuracaoApolice" name="TipoDuracaoApolice" id="cboTipoDuracaoApolice" label="Duração Seguro" summary="Tipo de duração do seguro" type="LIS" lovType="TIPO-RENOVACAO" cgiType="ddl" />
+	<field code="TipoEmbarcacao" name="TipoEmbarcacao" id="txtTipoEmbarcacao" label="Tipo Embarcação" summary="Tipo de embarcação" cgiType="TipoEmbarcacao" />
+	<field code="TipoEncomenda" name="TipoEncomenda" id="txtTipoEncomenda" label="Tipo Encomenda" summary="Tipo de Encomenda" type="" size="" lovType="" cgiType="TipoEncomenda" />
+	<field code="TipoEntidade" name="TipoEntidade" id="txtTipoEntidade" label="Tipo" summary="Tipo de Entidade Associadas ao Prestador" type="" size="" lovType="" cgiType="TipoEntidade" />
+	<field code="TipoEPS" name="TipoEPS" id="txtTipoEPS" label="Tipo EPS" summary="Tipo de EPS" type="" size="" lovType="" cgiType="TipoEPS" />
+	<field code="TipoEscape" name="TipoEscape" id="txtTipoEscape" label="Tipo Escape" summary="Tipo de escape" type="TEX" size="4" cgiType="txt" />
+	<field code="TipoExperienciaSeguros" name="TipoExperienciaSeguros" id="cboTipoExperienciaSeguros" label="Tipo de Experiência em Seguros" summary="Tipo de experiência de seguros" type="LIS" lovType="TIPO-EXPERIENCIA" cgiType="ddl" />
+	<field code="TipoExtracto" name="TipoExtracto" id="txtTipoExtracto" label="Tipo Extracto" summary="Tipo de Extracto associado ao prestador" type="" size="" lovType="" cgiType="TipoExtracto" />
+	<field code="TipoFormula" name="TipoFormula" id="txtTipoFormula" label="Tipo Fórmula Cálculo" summary="" type="string" size="" lovType="ZGPS_TP_FORMULA" cgiType="TipoFormula" />
+	<field code="TipoFraccionamento" name="TipoFraccionamento" id="cboTipoFraccionamento" label="Fraccionamento" summary="Tipo de fraccionamento" type="LIS" lovType="6E" cgiType="ddl" />
+	<field code="TipoFraccionamentoRecibo" name="TipoFraccionamentoRecibo" id="txtTipoFraccionamentoRecibo" label="Fraccionamento" summary="Tipo de fraccionamento" type="" size="" lovType="" cgiType="TipoFraccionamentoRecibo" />
+	<field code="TipoFraccionamentoSalario" name="TipoFraccionamentoSalario" id="cboTipoFraccionamentoSalario" label="Ver Ecrã." summary="Tipo de fraccionamento do salário" type="LIS" cgiType="ddl" />
+	<field code="TipoFranquia" name="TipoFranquia" id="cboTipoFranquia" label="Tipo Franquia" summary="Tipo de franquia" type="LIS" cgiType="ddl" />
+	<field code="TipoHabitacao" name="TipoHabitacao" id="cboTipoHabitacao" label="Tipo Habitação" summary="Tipo de habitação" type="LIS" cgiType="ddl" />
+	<field code="TipoLinhaServico" name="TipoLinhaServico" id="txtTipoLinhaServico" label="Tipo Linha Serviço" summary="Tipo de Linha de Serviço" type="" size="" lovType="ZGPSV_TP_SRV" cgiType="TipoLinhaServico" />
+	<field code="TipoMaterialCasco" name="TipoMaterialCasco" id="txtTipoMaterialCasco" label="Material do Casco" summary="Tipo de material do casco" cgiType="TipoMaterialCasco" />
+	<field code="TipoMatricula" name="TipoMatricula" id="cboTipoMatricula" label="Matricula" summary="Tipo de matrícula" type="LIS" lovType="TIPO-MATRICULA" cgiType="ddl" />
+	<field code="TipoModalidade" name="TipoModalidade" id="txtTipoModalidade" label="Ver Ecrã" summary="Tipo de modalidade" cgiType="TipoModalidade" />
+	<field code="TipoModalidadeActividade" name="TipoModalidadeActividade" id="txtTipoModalidadeActividade" label="Ver Ecrã" summary="Tipo de modalidade / actividade" cgiType="TipoModalidadeActividade" />
+	<field code="TipoMorada" name="TipoMorada" id="cboTipoMorada" label="Tipo Morada" summary="Tipo de morada" type="LIS" lovType="TIPO-MORADA" cgiType="ddl" />
+	<field code="TipoNaoConformidade" name="TipoNaoConformidade" id="txtTipoNaoConformidade" label="Tipo Não Conformidade" summary="" type="string" size="" lovType="" cgiType="TipoNaoConformidade" />
+	<field code="TipoNaoConformidadePagamento" name="TipoNaoConformidadePagamento" id="cboTipoNaoConformidadePagamento" label="Tipo Não Conformidade" summary="" type="list" size="" lovType="TIPO-CONFORM" cgiType="ddl" />
+	<field code="TipoNatureza" name="TipoNatureza" id="cboTipoNatureza" label="Natureza" summary="Natureza" type="LIS" lovType="NT" cgiType="ddl" />
+	<field code="TipoNegocio" name="TipoNegocio" id="cboTipoNegocio" label="Tipo Negócio" summary="Tipo de negócio" type="LIS" cgiType="ddl" />
+	<field code="TipoObjectoRecheio" name="TipoObjectoRecheio" id="txtTipoObjectoRecheio" label="Tipo" summary="Tipo de objecto Recheio" type="TEX" size="60" cgiType="txt" />
+	<field code="TipoOnda" name="TipoOnda" id="txtTipoOnda" label="Tipo de Ondas" summary="Tipo de ondas" cgiType="TipoOnda" />
+	<field code="TipoPaisDestino" name="TipoPaisDestino" id="cboTipoPaisDestino" label="País Destino" summary="País destino" type="LIS" cgiType="ddl" />
+	<field code="TipoPotenciaMotor" name="TipoPotenciaMotor" id="cboTipoPotenciaMotor" label="Potência Motor" summary="Tipo de potência do motor" type="LIS" lovType="UNIDADE-POTENCIA" cgiType="ddl" />
+	<field code="TipoPotenciaVeiculo" name="TipoPotenciaVeiculo" id="cboTipoPotenciaVeiculo" summary="Tipo de potência do veículo" type="LIS" lovType="UNIDADE-POTENCIA" cgiType="ddl" />
+	<field code="TipoPrestador" name="TipoPrestador" id="txtTipoPrestador" label="Tipo Prestador" summary="Tipo de entidade Prestador" type="" size="" lovType="TIPO-EPS" cgiType="TipoPrestador" />
+	<field code="TipoProtocolo" name="TipoProtocolo" id="cboTipoProtocolo" label="Tipo Protocolo" summary="" type="list" size="" lovType="ZGPS_TP_PROTOC" cgiType="ddl" />
+	<field code="TipoProtocoloDesc" name="TipoProtocoloDesc" id="txtTipoProtocoloDesc" label="Tipo Protocolo" summary="" type="string" size="" lovType="" cgiType="TipoProtocoloDesc" />
+	<field code="TipoQuadroPessoal" name="TipoQuadroPessoal" id="cboTipoQuadroPessoal" label="Tipo Quadro" summary="Tipo de quadro de pessoal" type="LIS" cgiType="ddl" />
+	<field code="TipoRecebedor" name="TipoRecebedor" id="txtTipoRecebedor" label="Tipo Recebedor" summary="" type="string" size="" lovType="TIPO-RECEBEDOR" cgiType="TipoRecebedor" />
+	<field code="TipoRecebedorModificar" name="TipoRecebedorModificar" id="txtTipoRecebedorModificar" label="Tipo Recebedor" summary="" type="string" size="" lovType="" cgiType="TipoRecebedorModificar" />
+	<field code="TipoRecibo" name="TipoRecibo" id="cboTipoRecibo" label="Tipo" summary="Tipo de Recibo. Distingue recibos provenientes de Apólices, Sinistros," type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="TipoRefrigaracao" name="TipoRefrigaracao" id="txtTipoRefrigaracao" label="Tipo Refrigeração" summary="Tipo de refrigeração" cgiType="TipoRefrigaracao" />
+	<field code="TipoReparacaoCanalizacoes" name="TipoReparacaoCanalizacoes" id="txtTipoReparacaoCanalizacoes" label="Ver Ecrã" summary="Este campo só se encontra visível se o Sistema detectar, em função das informações prestadas pelo Cliente, a necessidade de recolher esta informação, de acordo com as definições constantes da Política de Subscrição." cgiType="TipoReparacaoCanalizacoes" />
+	<field code="TipoReparacaoInstalacaoElectrica" name="TipoReparacaoInstalacaoElectrica" id="txtTipoReparacaoInstalacaoElectrica" label="Ver Ecrã" summary="Este campo só se encontra visível se o Sistema detectar, em função das informações prestadas pelo Cliente, a necessidade de recolher esta informação, de acordo com as definições constantes da Política de Subscrição.Adicionalmente, este campo só se encontra disponível para preenchimento se o campo “UltimaReparacaoInstalacaoElectrica” apresentar um valor diferente de “Inexistente”." cgiType="TipoReparacaoInstalacaoElectrica" />
+	<field code="TipoReparacaoParedesExteriores" name="TipoReparacaoParedesExteriores" id="txtTipoReparacaoParedesExteriores" label="Ver Ecrã" summary="Este campo só se encontra visível se o Sistema detectar, em função das informações prestadas pelo Cliente, a necessidade de recolher esta informação, de acordo com as definições constantes da Política de Subscrição." cgiType="TipoReparacaoParedesExteriores" />
+	<field code="TipoReparacaoParedesInteriores" name="TipoReparacaoParedesInteriores" id="txtTipoReparacaoParedesInteriores" label="Ver Ecrã" summary="Este campo só se encontra visível se o Sistema detectar, em função das informações prestadas pelo Cliente, a necessidade de recolher esta informação, de acordo com as definições constantes da Política de Subscrição.Adicionalmente, este campo só se encontra disponível para preenchimento se o campo “UltimaReparacaoParedesInteriores” apresentar um valor diferente de “Inexistente”." cgiType="TipoReparacaoParedesInteriores" />
+	<field code="TipoReparacaoRedeAguasPluviais" name="TipoReparacaoRedeAguasPluviais" id="txtTipoReparacaoRedeAguasPluviais" label="Ver Ecrã" summary="Este campo só se encontra visível se o Sistema detectar, em função das informações prestadas pelo Cliente, a necessidade de recolher esta informação, de acordo com as definições constantes da Política de Subscrição." cgiType="TipoReparacaoRedeAguasPluviais" />
+	<field code="TipoReparacaoRedeEsgotos" name="TipoReparacaoRedeEsgotos" id="txtTipoReparacaoRedeEsgotos" label="Ver Ecrã" summary="Este campo só se encontra visível se o Sistema detectar, em função das informações prestadas pelo Cliente, a necessidade de recolher esta informação, de acordo com as definições constantes da Política de Subscrição.Adicionalmente, este campo só se encontra disponível para preenchimento se o campo “UltimaReparacaoRedeEsgotos” apresentar um valor diferente de “Inexistente”." cgiType="TipoReparacaoRedeEsgotos" />
+	<field code="TipoReparacaoTelhado" name="TipoReparacaoTelhado" id="txtTipoReparacaoTelhado" label="Ver Ecrã" summary="Este campo só se encontra visível se o Sistema detectar, em função das informações prestadas pelo Cliente, a necessidade de recolher esta informação, de acordo com as definições constantes da Política de Subscrição.Adicionalmente, este campo só se encontra disponível para preenchimento se o campo “UltimaReparacaoTelhado” apresentar um valor diferente de “Inexistente”." cgiType="TipoReparacaoTelhado" />
+	<field code="TipoResultado" name="TipoResultado" id="txtTipoResultado" label="Tipo Resultado" summary="" type="string" size="" lovType="" cgiType="TipoResultado" />
+	<field code="TipoResultadoServico" name="TipoResultadoServico" id="cboTipoResultadoServico" label="Tipo" summary="Tipo de Resultado de Serviço" type="list" size="" lovType="ZGPS_TP_RES_SRV" cgiType="ddl" />
+	<field code="TipoResultadoServicoDesc" name="TipoResultadoServicoDesc" id="txtTipoResultadoServicoDesc" label="Tipo Resultado Serviço" summary="" type="string" size="" lovType="" cgiType="TipoResultadoServicoDesc" />
+	<field code="Tipos" name="Tipos" id="cboTipos" label="Tipos de Prestadores Associados ao Serviço" summary="" type="list" size="" lovType="" cgiType="ddl" />
+	<field code="TipoServico" name="TipoServico" id="cboTipoServico" label="Tipo Serviço" summary="Tipo Serviço" type="list" size="" lovType="ZGPSV_TP_SRV" cgiType="ddl" />
+	<field code="TipoSinistro" name="TipoSinistro" id="txtTipoSinistro" label="Tipo Sinistro" summary="Tipo de Sinistro" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="TipoTransacao" name="TipoTransacao" id="txtTipoTransacao" label="Tipo Transacção" summary="Tipo de transacção financeira" type="" size="" lovType="" cgiType="TipoTransacao" />
+	<field code="TipoTransaccao" name="TipoTransaccao" id="txtTipoTransaccao" label="Tipo Transacção" summary="" type="string" size="" lovType="TXNTYP2" cgiType="TipoTransaccao" />
+	<field code="TipoUtilizacaoVeiculo" name="TipoUtilizacaoVeiculo" id="cboTipoUtilizacaoVeiculo" label="Utilização" summary="Tipo de utilização do veículo" type="LIS" lovType="UTILIZACAO" cgiType="ddl" />
+	<field code="TipoValor" name="TipoValor" id="txtTipoValor" label="Tipo Valor" summary="Tipo de valor" cgiType="TipoValor" />
+	<field code="TipoVendaCruzada" name="TipoVendaCruzada" id="cboTipoVendaCruzada" label="Venda Cruzada" summary="Tipo de venda cruzada" type="LIS" cgiType="ddl" />
+	<field code="TituloProfissional" name="TituloProfissional" id="cboTituloProfissional" label="Título Prof" summary="Título Profissional do Cliente" type="LIS" size="" lovType="" cgiType="ddl" />
+	<field code="TomaRegularmenteMedicamentosPessoaSegura" name="TomaRegularmenteMedicamentosPessoaSegura" id="txtTomaRegularmenteMedicamentosPessoaSegura" label="Ver Questionário Clinico" summary="Questão do questionário clínico" cgiType="TomaRegularmenteMedicamentosPessoaSegura" />
+	<field code="ToneladasArqueacaoBruta" name="ToneladasArqueacaoBruta" id="txtToneladasArqueacaoBruta" label="Toneladas Arqueação Bruta" summary="Toneladas de arqueação bruta" cgiType="ToneladasArqueacaoBruta" />
+	<field code="ToneladasArqueacaoLiquida" name="ToneladasArqueacaoLiquida" id="txtToneladasArqueacaoLiquida" label="Toneladas Arqueação Liquida" summary="Toneladas de arqueação líquida" cgiType="ToneladasArqueacaoLiquida" />
+	<field code="TotalColaboradoresUniverso1" name="TotalColaboradoresUniverso1" id="txtTotalColaboradoresUniverso1" label="Total Colaboradores Universo 1" summary="Número total de pessoas seguras com relação de Colaboradores  para o Universo 1" cgiType="TotalColaboradoresUniverso1" />
+	<field code="TotalColaboradoresUniverso2" name="TotalColaboradoresUniverso2" id="txtTotalColaboradoresUniverso2" label="Total Colaboradores Universo2" summary="Número total de pessoas seguras com relação de Colaboradores  para o Universo 2" cgiType="TotalColaboradoresUniverso2" />
+	<field code="TotalConjugesUniverso1" name="TotalConjugesUniverso1" id="txtTotalConjugesUniverso1" label="Total Cônjuges Universo 1" summary="Número total de pessoas seguras com relação de Cônjuge  para o Universo 1" cgiType="TotalConjugesUniverso1" />
+	<field code="TotalConjugesUniverso2" name="TotalConjugesUniverso2" id="txtTotalConjugesUniverso2" label="Total Cônjuges Universo 2" summary="Número total de pessoas seguras com relação de Cônjuge  para o Universo 2" cgiType="TotalConjugesUniverso2" />
+	<field code="TotalDescentesUniverso1" name="TotalDescentesUniverso1" id="txtTotalDescentesUniverso1" label="Total Descendentes Universo 1" summary="Número total de pessoas seguras com relação de Descendente para o Universo 1" cgiType="TotalDescentesUniverso1" />
+	<field code="TotalDescentesUniverso2" name="TotalDescentesUniverso2" id="txtTotalDescentesUniverso2" label="Total Descendentes Universo 2" summary="Número total de pessoas seguras com relação de Descendente para o Universo 1" cgiType="TotalDescentesUniverso2" />
+	<field code="TotalFemininos" name="TotalFemininos" id="txtTotalFemininos" label="Ver Ecrã." summary="Número total de Pessoas Seguras do sexo feminino" cgiType="TotalFemininos" />
+	<field code="TotalMasculinos" name="TotalMasculinos" id="txtTotalMasculinos" label="Ver Ecrã." summary="Número total de Pessoas Seguras do sexo masculino" cgiType="TotalMasculinos" />
+	<field code="TotalPessoasSegurasUniverso1" name="TotalPessoasSegurasUniverso1" id="txtTotalPessoasSegurasUniverso1" label="Total Pessoas Seguras Universo 1" summary="Número total de Pessoas Seguras do Universo 1" cgiType="TotalPessoasSegurasUniverso1" />
+	<field code="TotalPessoasSegurasUniverso2" name="TotalPessoasSegurasUniverso2" id="txtTotalPessoasSegurasUniverso2" label="Total Pessoas Seguras Universo 2" summary="Número total de Pessoas Seguras do Universo 2" cgiType="TotalPessoasSegurasUniverso2" />
+	<field code="TotalValorAnualSalarioSubsidio" name="TotalValorAnualSalarioSubsidio" id="txtTotalValorAnualSalarioSubsidio" label="Ver Ecrã." summary="Total do valor anual do salário ou subsídio" cgiType="TotalValorAnualSalarioSubsidio" />
+	<field code="TrabalhadorPorContaOutrem" name="TrabalhadorPorContaOutrem" id="rdoTrabalhadorPorContaOutrem" label="Ver Ecrã" summary="Trabalhador por conta de outrem" type="RAD" cgiType="rdl" />
+	<field code="TratamentoAlcoolismoDrogaPessoaSegura" name="TratamentoAlcoolismoDrogaPessoaSegura" id="txtTratamentoAlcoolismoDrogaPessoaSegura" label="Ver Ecrã" summary="Questão do questionário clínico" cgiType="TratamentoAlcoolismoDrogaPessoaSegura" />
+	<field code="UltimaReparacaoCanalizacoes" name="UltimaReparacaoCanalizacoes" id="dtUltimaReparacaoCanalizacoes" label="Ver Ecrã" summary="Data de reparação" type="DAT" cgiType="date" />
+	<field code="UltimaReparacaoInstalacaoElectrica" name="UltimaReparacaoInstalacaoElectrica" id="dtUltimaReparacaoInstalacaoElectrica" label="Ver Ecrã" summary="Data de reparação" type="DAT" cgiType="date" />
+	<field code="UltimaReparacaoParedesExteriores" name="UltimaReparacaoParedesExteriores" id="dtUltimaReparacaoParedesExteriores" label="Ver Ecrã" summary="Data de reparação" type="DAT" cgiType="date" />
+	<field code="UltimaReparacaoParedesInteriores" name="UltimaReparacaoParedesInteriores" id="dtUltimaReparacaoParedesInteriores" label="Ver Ecrã" summary="Data de reparação" type="DAT" cgiType="date" />
+	<field code="UltimaReparacaoRedeAguasPluviais" name="UltimaReparacaoRedeAguasPluviais" id="dtUltimaReparacaoRedeAguasPluviais" label="Ver Ecrã" summary="Data de reparação" type="DAT" cgiType="date" />
+	<field code="UltimaReparacaoRedeEsgotos" name="UltimaReparacaoRedeEsgotos" id="dtUltimaReparacaoRedeEsgotos" label="Ver Ecrã" summary="Data de reparação" type="DAT" cgiType="date" />
+	<field code="UltimaReparacaoTelhado" name="UltimaReparacaoTelhado" id="dtUltimaReparacaoTelhado" label="Ver Ecrã" summary="Data de reparação" type="DAT" cgiType="date" />
+	<field code="UnidadeMedida" name="UnidadeCustoServico" id="txtUnidadeCustoServico" label="Unidade Custo/Moeda" summary="" type="" size="" lovType="" cgiType="UnidadeCustoServico" />
+	<field code="UnidadeMedidaServico" name="UnidadeMedidaServico" id="txtUnidadeMedidaServico" label="Unidade Medida Serviço" summary="" type="string" size="" lovType="" cgiType="UnidadeMedidaServico" />
+	<field code="Url" name="Url" id="txtUrl" label="URL" summary="Url do Cliente" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="URLDocumento" name="URLDocumento" id="txtURLDocumento" label="URL" summary="URL do Documento" type="" size="" lovType="" cgiType="URLDocumento" />
+	<field code="URLResultadoServico" name="URLResultadoServico" id="txtURLResultadoServico" label="URL" summary="" type="string" size="" lovType="" cgiType="URLResultadoServico" />
+	<field code="Utilizador" name="Utilizador" id="txtUtilizador" label="Utilizador" summary="Utilizador responsável pela criação ou alteração de um determinado registo" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="UtilizadorAutorizacao" name="UtilizadorAutorizacao" id="txtUtilizadorAutorizacao" label="Utilizador Autorização" summary="Utilizador responsável pelo pagamento" type="" size="" lovType="" cgiType="UtilizadorAutorizacao" />
+	<field code="UtilizadorConferencia" name="UtilizadorConferencia" id="txtUtilizadorConferencia" label="Utilizador Conferência" summary="Utilizador que confere o Recibo" type="" size="" lovType="" cgiType="UtilizadorConferencia" />
+	<field code="UtilizadorEmissao" name="UtilizadorEmissao" id="txtUtilizadorEmissao" label="Utilizador Emissão" summary="Utilizador responsável pela emissão de um recibo" type="" size="" lovType="" cgiType="UtilizadorEmissao" />
+	<field code="UtilizaMaterialExplosivos" name="UtilizaMaterialExplosivos" id="txtUtilizaMaterialExplosivos" label="Ver Ecrã" summary="Indicador de utilização de explosivos" cgiType="UtilizaMaterialExplosivos" />
+	<field code="UtilizaVeiculoMotorizadoduasRodas" name="UtilizaVeiculoMotorizadoduasRodas" id="txtUtilizaVeiculoMotorizadoduasRodas" label="Ver Ecrã" summary="Indicador de utilização de veículo motorizado de duas rodas" cgiType="UtilizaVeiculoMotorizadoduasRodas" />
+	<field code="ValorActualReboque" name="ValorActualReboque" id="txtValorActualReboque" label="Valor Actual" summary="Valor actual do reboque" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorAjudasNauticas" name="ValorAjudasNauticas" id="txtValorAjudasNauticas" label="Valor Ajudas Náuticas" summary="Valor das ajudas náuticas" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorALiquidarPagamento" name="ValorALiquidarPagamento" id="txtValorALiquidarPagamento" label="Valor Liquidar" summary="" type="double" size="" lovType="" cgiType="ValorALiquidarPagamento" />
+	<field code="ValorAlturaPessoaSegura" name="ValorAlturaPessoaSegura" id="txtValorAlturaPessoaSegura" label="Altura" summary="Altura da pessoa segura" type="DEC" size="1,2" cgiType="ValorAlturaPessoaSegura" />
+	<field code="ValorAntigo" name="ValorAntigo" id="txtValorAntigo" label="Valor Antigo" summary="" type="string" size="" lovType="" cgiType="ValorAntigo" />
+	<field code="ValorApetrechosPalamenta" name="ValorApetrechosPalamenta" id="txtValorApetrechosPalamenta" label="Valor Apetrechos / Palamenta" summary="Valor dos apetrechos / palamenta" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorApuradoPagamento" name="ValorApuradoPagamento" id="txtValorApuradoPagamento" label="Valor Apurado" summary="" type="double" size="" lovType="" cgiType="ValorApuradoPagamento" />
+	<field code="ValorATM" name="ValorATM" id="txtValorATM" label="Montante" summary="Montante associado à referência ATM" type="" size="" lovType="" cgiType="ValorATM" />
+	<field code="ValorAvaliacao" name="ValorAvaliacao" id="txtValorAvaliacao" label="Valor Avaliação" summary="" type="integer" size="" lovType="" cgiType="ValorAvaliacao" />
+	<field code="ValorBalsasEquipamentoSalvamento" name="ValorBalsasEquipamentoSalvamento" id="txtValorBalsasEquipamentoSalvamento" label="Valor Balsas / Equipamento de Salvamento" summary="Valor de balsas e equipamentos de salvamento" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorC" name="ValorC" id="txtValorC" label="Valor C" summary="" type="double" size="" lovType="" cgiType="ValorC" />
+	<field code="ValorCao" name="ValorCao" id="txtValorCao" label="Valor" summary="Valor do cão" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorCapitalSeguro" name="ValorCapitalSeguro" id="txtValorCapitalSeguro" label="Capital Seguro" summary="Valor do capital seguro" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorCoberturaOpcaoLocalRiscoObjecto" name="ValorCoberturaOpcaoLocalRiscoObjecto" id="txtValorCoberturaOpcaoLocalRiscoObjecto" label="Ver ecrã" summary="Valor da cobertura" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorCoberturaOpcaoObjecto" name="ValorCoberturaOpcaoObjecto" id="txtValorCoberturaOpcaoObjecto" label="Ver ecrã" summary="Valor da cobertura" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorCobradoPago" name="ValorCobradoPago" id="txtValorCobradoPago" label="Importância Cobrada/Paga" summary="Montante cobrado/pago" type="" size="" lovType="" cgiType="ValorCobradoPago" />
+	<field code="ValorDefault" name="ValorDefault" id="txtValorDefault" label="Valor Defeito" summary="" type="integer" size="" lovType="" cgiType="ValorDefault" />
+	<field code="ValorDescontoComercial" name="ValorDescontoComercial" id="txtValorDescontoComercial" label="Desconto Comercial" summary="Valor do desconto comercial" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorDevido" name="ValorDevido" id="txtValorDevido" label="Valor Devido" summary="" type="double" size="" lovType="" cgiType="ValorDevido" />
+	<field code="ValorDuracaoDeslocacao" name="ValorDuracaoDeslocacao" id="txtValorDuracaoDeslocacao" label="Duração Deslocação" summary="Duração da deslocação" type="INT" size="3" cgiType="int" />
+	<field code="ValorEmbarcacao" name="ValorEmbarcacao" id="txtValorEmbarcacao" label="Valor Casco / Embarcação" summary="Valor da embarcação" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorEspingrada" name="ValorEspingrada" id="txtValorEspingrada" label="Valor" summary="Valor da espingarda" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorExtra" name="ValorExtra" id="txtValorExtra" label="Valor" summary="Valor do extra" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceOpcao" name="ValorFraccaoApoliceOpcao" id="txtValorFraccaoApoliceOpcao" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceOpcao1Universo1" name="ValorFraccaoApoliceOpcao1Universo1" id="txtValorFraccaoApoliceOpcao1Universo1" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceOpcao1Universo2" name="ValorFraccaoApoliceOpcao1Universo2" id="txtValorFraccaoApoliceOpcao1Universo2" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceOpcao2Universo1" name="ValorFraccaoApoliceOpcao2Universo1" id="txtValorFraccaoApoliceOpcao2Universo1" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceOpcao2Universo2" name="ValorFraccaoApoliceOpcao2Universo2" id="txtValorFraccaoApoliceOpcao2Universo2" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceOpcao3Universo1" name="ValorFraccaoApoliceOpcao3Universo1" id="txtValorFraccaoApoliceOpcao3Universo1" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceOpcao3Universo2" name="ValorFraccaoApoliceOpcao3Universo2" id="txtValorFraccaoApoliceOpcao3Universo2" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceOpcao4Universo1" name="ValorFraccaoApoliceOpcao4Universo1" id="txtValorFraccaoApoliceOpcao4Universo1" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceOpcao4Universo2" name="ValorFraccaoApoliceOpcao4Universo2" id="txtValorFraccaoApoliceOpcao4Universo2" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceOpcao5Universo1" name="ValorFraccaoApoliceOpcao5Universo1" id="txtValorFraccaoApoliceOpcao5Universo1" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceOpcao5Universo2" name="ValorFraccaoApoliceOpcao5Universo2" id="txtValorFraccaoApoliceOpcao5Universo2" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceOpcaoSimulacao" name="ValorFraccaoApoliceOpcaoSimulacao" id="txtValorFraccaoApoliceOpcaoSimulacao" label="Valor Fracção Simulação" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceOpcaoUniverso1" name="ValorFraccaoApoliceOpcaoUniverso1" id="txtValorFraccaoApoliceOpcaoUniverso1" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceOpcaoUniverso2" name="ValorFraccaoApoliceOpcaoUniverso2" id="txtValorFraccaoApoliceOpcaoUniverso2" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoApoliceTotal" name="ValorFraccaoApoliceTotal" id="txtValorFraccaoApoliceTotal" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoPeriodo" name="ValorFraccaoPeriodo" id="txtValorFraccaoPeriodo" label="Valor Fracção" summary="Valor da fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFraccaoPrimeiroPeriodo" name="ValorFraccaoPrimeiroPeriodo" id="txtValorFraccaoPrimeiroPeriodo" label="Valor 1ª Fracção" summary="Valor da primeira fracção" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorFranquia" name="ValorFranquia" id="txtValorFranquia" label="Valor Franquia" summary="Valor da Franquia aplicada à cobertura" type="" size="" lovType="" cgiType="ValorFranquia" />
+	<field code="ValorFranquiaPagamento" name="ValorFranquiaPagamento" id="txtValorFranquiaPagamento" label="Valor Franquia" summary="" type="double" size="" lovType="" cgiType="ValorFranquiaPagamento" />
+	<field code="ValorHorasDias" name="ValorHorasDias" id="txtValorHorasDias" label="Ver Ecrã." summary="Número de horas / dias" type="INT" size="3" cgiType="int" />
+	<field code="ValorImpostoIndemnizacao" name="ValorImpostoIndemnizacao" id="txtValorImpostoIndemnizacao" label="Imposto" summary="Valor de imposto" type="" size="" lovType="" cgiType="ValorImpostoIndemnizacao" />
+	<field code="ValorIRS" name="ValorIRS" id="txtValorIRS" label="IRS" summary="" type="" size="" lovType="" cgiType="ValorIRS" />
+	<field code="ValorIVA" name="ValorIVA" id="txtValorIVA" label="IVA" summary="Valor do IVA" type="" size="" lovType="" cgiType="ValorIVA" />
+	<field code="ValorK" name="ValorK" id="txtValorK" label="Valor K" summary="" type="double" size="" lovType="" cgiType="ValorK" />
+	<field code="ValorLiquidar" name="ValorLiquidar" id="txtValorLiquidar" label="Valor Liquidar" summary="" type="double" size="" lovType="" cgiType="ValorLiquidar" />
+	<field code="ValorLiquidarRegistoPagamento" name="ValorLiquidarRegistoPagamento" id="txtValorLiquidarRegistoPagamento" label="Valor Liquidar Registo Pagamento" summary="Valor Liquidar Registo Pagamento" type="double" size="" lovType="" cgiType="ValorLiquidarRegistoPagamento" />
+	<field code="ValorLiquidoRecibo" name="ValorLiquidoRecibo" id="txtValorLiquidoRecibo" label="Valor Liquido" summary="Valor liquido do Recibo" type="" size="" lovType="" cgiType="ValorLiquidoRecibo" />
+	<field code="ValorMotorAuxiliar" name="ValorMotorAuxiliar" id="txtValorMotorAuxiliar" label="Valor Motor Auxiliar" summary="Valor do motor auxiliar" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorMotorPrincipal" name="ValorMotorPrincipal" id="txtValorMotorPrincipal" label="Valor Motor Principal" summary="Valor do motor principal" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorNegociado" name="ValorNegociado" id="txtValorNegociado" label="Valor Negociado Prestador" summary="" type="double" size="" lovType="" cgiType="ValorNegociado" />
+	<field code="ValorNegociadoPrestador" name="ValorNegociadoPrestador" id="txtValorNegociadoPrestador" label="Valor Negociado Prestador" summary="" type="double" size="" lovType="" cgiType="ValorNegociadoPrestador" />
+	<field code="ValorNovo" name="ValorNovo" id="txtValorNovo" label="Valor Novo" summary="" type="string" size="" lovType="" cgiType="ValorNovo" />
+	<field code="ValorObjectoRecheio" name="ValorObjectoRecheio" id="txtValorObjectoRecheio" label="Valor" summary="Valor do recheio" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorOutrosBensSeguros" name="ValorOutrosBensSeguros" id="txtValorOutrosBensSeguros" label="Valor Total Outros Bens a Segurar" summary="Valor total de outros bens a segurar" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPagamentoCemporcento" name="ValorPagamentoCemporcento" id="txtValorPagamentoCemporcento" label="Valor Pagamento 100%" summary="" type="double" size="" lovType="" cgiType="ValorPagamentoCemporcento" />
+	<field code="ValorPesoPessoaSegura" name="ValorPesoPessoaSegura" id="txtValorPesoPessoaSegura" label="Peso" summary="Peso da pessoa segura" type="DEC" size="3,2" cgiType="ValorPesoPessoaSegura" />
+	<field code="ValorPremioTotalDanosPropriosPeriodo" name="ValorPremioTotalDanosPropriosPeriodo" id="txtValorPremioTotalDanosPropriosPeriodo" label="Prémio Total Danos Próprios" summary="Prémio total de danos próprios do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalDanosPropriosPeriodoOpcaoSimulacao" name="ValorPremioTotalDanosPropriosPeriodoOpcaoSimulacao" id="txtValorPremioTotalDanosPropriosPeriodoOpcaoSimulacao" label="Prémio Total Danos Próprios" summary="Prémio total de danos próprios" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodo" name="ValorPremioTotalPeriodo" id="txtValorPremioTotalPeriodo" label="Prémio Total" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoOpcao" name="ValorPremioTotalPeriodoOpcao" id="txtValorPremioTotalPeriodoOpcao" label="Prémio Anual" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoOpcao1Universo1" name="ValorPremioTotalPeriodoOpcao1Universo1" id="txtValorPremioTotalPeriodoOpcao1Universo1" label="Prémio Total" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoOpcao1Universo2" name="ValorPremioTotalPeriodoOpcao1Universo2" id="txtValorPremioTotalPeriodoOpcao1Universo2" label="Prémio Total" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoOpcao2Universo1" name="ValorPremioTotalPeriodoOpcao2Universo1" id="txtValorPremioTotalPeriodoOpcao2Universo1" label="Prémio Total" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoOpcao2Universo2" name="ValorPremioTotalPeriodoOpcao2Universo2" id="txtValorPremioTotalPeriodoOpcao2Universo2" label="Prémio Total" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoOpcao3Universo1" name="ValorPremioTotalPeriodoOpcao3Universo1" id="txtValorPremioTotalPeriodoOpcao3Universo1" label="Prémio Total" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoOpcao3Universo2" name="ValorPremioTotalPeriodoOpcao3Universo2" id="txtValorPremioTotalPeriodoOpcao3Universo2" label="Prémio Total" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoOpcao4Universo1" name="ValorPremioTotalPeriodoOpcao4Universo1" id="txtValorPremioTotalPeriodoOpcao4Universo1" label="Prémio Total" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoOpcao4Universo2" name="ValorPremioTotalPeriodoOpcao4Universo2" id="txtValorPremioTotalPeriodoOpcao4Universo2" label="Prémio Total" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoOpcao5Universo1" name="ValorPremioTotalPeriodoOpcao5Universo1" id="txtValorPremioTotalPeriodoOpcao5Universo1" label="Prémio Total" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoOpcao5Universo2" name="ValorPremioTotalPeriodoOpcao5Universo2" id="txtValorPremioTotalPeriodoOpcao5Universo2" label="Prémio Total" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoOpcaoSimulacao" name="ValorPremioTotalPeriodoOpcaoSimulacao" id="txtValorPremioTotalPeriodoOpcaoSimulacao" label="Prémio Total Simulação" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoOpcaoUniverso1" name="ValorPremioTotalPeriodoOpcaoUniverso1" id="txtValorPremioTotalPeriodoOpcaoUniverso1" label="Prémio Total" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoOpcaoUniverso2" name="ValorPremioTotalPeriodoOpcaoUniverso2" id="txtValorPremioTotalPeriodoOpcaoUniverso2" label="Prémio Total" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoSimulacao" name="ValorPremioTotalPeriodoSimulacao" id="txtValorPremioTotalPeriodoSimulacao" label="Prémio Total Simulação" summary="Prémio total do período" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorPremioTotalPeriodoTotal" name="ValorPremioTotalPeriodoTotal" id="txtValorPremioTotalPeriodoTotal" label="Prémio Total" summary="Prémio total" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorRecibo" name="ValorRecibo" id="txtValorRecibo" label="Montante" summary="Montante do Recibo" type="TEX" size="" lovType="" cgiType="txt" />
+	<field code="ValorRecibosPagar" name="ValorRecibosPagar" id="txtValorRecibosPagar" label="" summary="Valor a pagar pelo Cliente" type="" size="" lovType="" cgiType="ValorRecibosPagar" />
+	<field code="ValorRecibosReceber" name="ValorRecibosReceber" id="txtValorRecibosReceber" label="" summary="Valor a receber pelo Cliente" type="" size="" lovType="" cgiType="ValorRecibosReceber" />
+	<field code="ValorSalarioSubsidio" name="ValorSalarioSubsidio" id="txtValorSalarioSubsidio" label="Salário Anual" summary="Valor do salário ou subsídio" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorTotal" name="ValorTotal" id="txtValorTotal" label="Valor Total" summary="" type="double" size="" lovType="" cgiType="ValorTotal" />
+	<field code="ValorTotalCapital" name="ValorTotalCapital" id="txtValorTotalCapital" label="Salário Total Anual" summary="Valor total do salário anual" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorTotalEmbarcacao" name="ValorTotalEmbarcacao" id="txtValorTotalEmbarcacao" label="Valor Total da Embarcação" summary="Valor total da embarcação" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorTotalExtra" name="ValorTotalExtra" id="txtValorTotalExtra" label="Valor Total Extras" summary="Valor total do extras" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="ValorTotalImpostoEPS" name="ValorTotalImpostoEPS" id="txtValorTotalImpostoEPS" label="Total Imposto" summary="Valor total de imposto" type="" size="" lovType="" cgiType="ValorTotalImpostoEPS" />
+	<field code="ValorTotalImpostoIndemnizacao" name="ValorTotalImpostoIndemnizacao" id="txtValorTotalImpostoIndemnizacao" label="Total Imposto" summary="Valor total de imposto" type="" size="" lovType="" cgiType="ValorTotalImpostoIndemnizacao" />
+	<field code="ValorTotalPagamento" name="ValorTotalPagamento" id="txtValorTotalPagamento" label="Valor Total" summary="" type="double" size="" lovType="" cgiType="ValorTotalPagamento" />
+	<field code="ValorTransacao" name="ValorTransacao" id="txtValorTransacao" label="Valor" summary="Valor da transacção" type="" size="" lovType="" cgiType="ValorTransacao" />
+	<field code="ValorVeiculoNovo" name="ValorVeiculoNovo" id="cboValorVeiculoNovo" label="Valor em Novo" summary="Valor do veículo em novo" type="LIS" lovType="EV" cgiType="ddl" />
+	<field code="ValorVenal" name="ValorVenal" id="txtValorVenal" label="Valor Venal" summary="Valor venal do veículo" type="DEC" size="13,2" cgiType="mntComp" />
+	<field code="VeiculoInspeccaoPeriodica" name="VeiculoInspeccaoPeriodica" id="rdoVeiculoInspeccaoPeriodica" label="Veículo sujeito a Inspecção Periódica" summary="Indicador de veículo sujeito a Inspecção Periódica" type="RAD" cgiType="rdl" />
+	<field code="VeiculoNovo" name="VeiculoNovo" id="rdoVeiculoNovo" label="Automóvel Novo" summary="Indicador de veículo novo" type="RAD" cgiType="rdl" />
+	<field code="VeiculoVistoriado" name="VeiculoVistoriado" id="rdoVeiculoVistoriado" label="Veículo Vistoriado" summary="Indicador de  veículo vistoriado" type="RAD" cgiType="rdl" />
+	<field code="Versao" name="Versao" id="cboVersao" label="Versão" summary="Versão do veículo" type="LIS" cgiType="ddl" />
+	<field code="VersaoOutro" name="VersaoOutro" id="txtVersaoOutro" label="Versão" summary="Versão do veículo" type="TEX" size="30" cgiType="txt" />
+	<field code="VersaoProtocolo" name="VersaoProtocolo" id="txtVersaoProtocolo" label="Versão" summary="" type="integer" size="" lovType="" cgiType="VersaoProtocolo" />
+	<field code="VersaoProtocoloPrestador" name="VersaoProtocoloPrestador" id="txtVersaoProtocoloPrestador" label="Versão Protocolo" summary="" type="string" size="" lovType="" cgiType="VersaoProtocoloPrestador" />
+</dictionary>

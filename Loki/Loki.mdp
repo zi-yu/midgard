@@ -1,0 +1,93 @@
+<Project name="Loki" fileversion="2.0" language="C#" clr-version="Net_2_0" ctype="DotNetProject">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="DotNetProjectConfiguration">
+      <Output directory="./bin/" assembly="Loki" />
+      <Build debugmode="True" target="Library" />
+      <Execution runwithwarnings="True" consolepause="True" runtime="MsNet" clr-version="Net_2_0" />
+      <CodeGeneration compiler="Csc" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" generatexmldocumentation="False" ctype="CSharpCompilerParameters" />
+    </Configuration>
+    <Configuration name="Release" ctype="DotNetProjectConfiguration">
+      <Output directory="./bin/" assembly="Loki" />
+      <Build debugmode="False" target="Library" />
+      <Execution runwithwarnings="True" consolepause="True" runtime="MsNet" clr-version="Net_2_0" />
+      <CodeGeneration compiler="Csc" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" generatexmldocumentation="False" ctype="CSharpCompilerParameters" />
+    </Configuration>
+  </Configurations>
+  <DeploymentInformation strategy="File">
+    <excludeFiles />
+  </DeploymentInformation>
+  <Contents>
+    <File name="./Loki.build" subtype="Code" buildaction="Nothing" />
+    <File name="./Src/DataRepresentation/Entity.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/EntityClass.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/EntityField.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/EntityInterface.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/EntityMethod.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/EntityParameter.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IDescriptable.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IEntity.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IEntityAttribute.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/ILifecycle.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IPersistable.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IPersistance.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IProjectTools.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/LokiDataColumn.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/Model.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/Loader/ConfigLoader.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/Loader/DefaultEntities.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/Loader/IntrinsicTypes.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IntrinsicEntities/Bool.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IntrinsicEntities/BoolFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IntrinsicEntities/DateTime.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IntrinsicEntities/DateTimeFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IntrinsicEntities/Int.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IntrinsicEntities/IntFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IntrinsicEntities/IntrinsicFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IntrinsicEntities/String.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/DataRepresentation/IntrinsicEntities/StringFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Exceptions/LifecycleAbortException.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Exceptions/LokiException.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Exceptions/ResourceExists.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Exceptions/UnknownComponentException.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Exceptions/UnknownContextException.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Exceptions/UnknownIntrinsicTypeException.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Exceptions/UnknownTypeException.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/BuildAggregator.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/BuildFile.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/BuildInformation.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/ComponentType.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/Database.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/Globals.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/Log.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/Parameters.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/PluginBase.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/PluginManager.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/PluginParameter.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/Project.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/ProjectPluginParameters.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/ProjectTypes.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/ReferenceInformation.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/RelationDependency.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/Templates.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/VSFileType.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/Factories/BuildGeneratorFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/Factories/CodeGeneratorFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/Factories/LoadGeneratorFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Generic/Factories/RelationDependencyFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/AssemblyInfo.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Interfaces/IBuildAggregator.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Interfaces/IBuildGenerator.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Interfaces/ICodeGenerator.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Interfaces/ILoader.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Interfaces/IPlugin.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Interfaces/IProject.cs" subtype="Code" buildaction="Compile" />
+  </Contents>
+  <References>
+    <ProjectReference type="Gac" localcopy="True" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <ProjectReference type="Gac" localcopy="True" refto="System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <ProjectReference type="Assembly" localcopy="True" refto="./bin/DesignPatterns.dll" />
+    <ProjectReference type="Assembly" localcopy="True" refto="./bin/log4net.dll" />
+    <ProjectReference type="Assembly" localcopy="True" refto="./bin/NVelocity.dll" />
+    <ProjectReference type="Gac" localcopy="True" refto="System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  </References>
+</Project>

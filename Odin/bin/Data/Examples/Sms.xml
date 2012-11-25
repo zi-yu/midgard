@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+regex expression="simpleText"/>
+<regex expression="mail"/>
+<regex expression="text"/>
+<regex expression="number"/>
+<regex expression="url"/>
+-->
+
+<dataModel>
+	<table name="Category">
+		<column name="Id" type="System.Int32" null="false" readOnly="true" >
+			<key type="primary"/>
+			<increment seed="1" step="1" />
+		</column>
+		<column name="Category" type="System.String" defaultValue="no-name" readOnly="false">
+			<validation>
+				<maxLength value="10" />
+				<regex expression="simpleText"/>
+			</validation>
+		</column>
+	</table>
+	<table name="Sms">
+		<column name="Id" type="System.Int32" null="false" readOnly="true" >
+			<key type="primary"/>
+			<increment seed="1" step="1" />
+		</column>
+		<column name="Category" type="System.Int32" defaultValue="1" readOnly="false">
+			<key type="foreign" table="Category" column="Id"/>
+		</column>
+		<column name="Message" type="System.String" defaultValue="no message" readOnly="false" >
+			<validation>
+				<maxLength value="500" />
+				<regex expression="text"/>
+			</validation>
+		</column>
+	</table>
+</dataModel>

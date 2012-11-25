@@ -1,0 +1,81 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $setPersistance = "PrincipalPersistance persistance = PrincipalPersistance.GetSession()" )
+
+
+		#region Validation
+
+		protected void AddValidators()
+		{
+#if( $field.IsRequired && $field.Type.AccessInterface != "bool" && !$field.Secret )
+			RequiredFieldValidator req = new RequiredFieldValidator();
+			Controls.Add(req);
+			req.ControlToValidate = TargetName;
+			req.Display = ValidatorDisplay.Dynamic;
+			req.ErrorMessage = "Required Field: $field.PropertyName";
+#end
+#if( $field.HasRegex )
+			RegularExpressionValidator reg = null;
+#*	*##foreach( $regex in $field.Regex ) 
+			reg = new RegularExpressionValidator();
+            Controls.Add(reg);
+            reg.ControlToValidate = TargetName;
+            reg.ValidationExpression = "$regex";
+			reg.Display = ValidatorDisplay.Dynamic;
+            reg.ErrorMessage = "Regex Validation Failed";
+#*	*##end
+#end
+#if( $field.Type.AccessInterface == "string" )	
+			RegularExpressionValidator maxSize = new RegularExpressionValidator();
+            Controls.Add(maxSize);
+            maxSize.ControlToValidate = TargetName;
+			maxSize.Display = ValidatorDisplay.Dynamic;
+            maxSize.ValidationExpression = ".{1,$field.MaxSize}";
+            maxSize.ErrorMessage = "Maximum Chars: " + $field.MaxSize;
+#end
+#if( $field.Type.AccessInterface == "double" )	
+			RegularExpressionValidator maxSize = new RegularExpressionValidator();
+            Controls.Add(maxSize);
+            maxSize.ControlToValidate = TargetName;
+			maxSize.Display = ValidatorDisplay.Dynamic;
+            maxSize.ValidationExpression = "^\\d*.\\d*$";
+            maxSize.ErrorMessage = "format: number.number";
+#end
+#if( $field.Unique )	
+			// We only test uniqueness on create
+			if (GetParent().Source == SourceType.New) {
+				CustomValidator unique = new CustomValidator();
+				Controls.Add(unique);
+				unique.ErrorMessage = "$field.PropertyName Already Exists";
+				unique.Display = ValidatorDisplay.Dynamic;
+				unique.Display = ValidatorDisplay.Dynamic;
+				unique.ServerValidate += delegate(object source, ServerValidateEventArgs args) {
+						$setPersistance;
+						args.IsValid = persistance.SelectBy$field.PropertyName (text.Text).Count == 0;
+					};
+			}
+#end
+#if( $field.Secret )	
+			// We only test secret fields on create
+			if (GetParent().Source == SourceType.New) {
+				RequiredFieldValidator secretreq = new RequiredFieldValidator();
+				Controls.Add(secretreq);
+				secretreq.ControlToValidate = TargetName;
+				secretreq.Display = ValidatorDisplay.Dynamic;
+				secretreq.ErrorMessage = "Required Field";
+			}
+#end
+		}
+		
+		#endregion

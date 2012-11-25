@@ -1,0 +1,76 @@
+#set ( $edit = "Editor" )
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set ( $toString = ".ToString()" )
+#set ( $roles = ".Roles" )
+#set ( $designer = "Designer" )
+#set ( $designers = ".Designers" )
+using System;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.Security;
+using System.ComponentModel;
+using Loki.DataRepresentation;
+using Roles = $CoreNamespace$roles;
+using $CoreNamespace;
+using $DALNamespace;
+##using $namespace$designers;
+
+namespace $namespace {
+
+	/// <summary>
+    /// Edits the $field.PropertyName of the $entity.Name entity
+    /// </summary>
+	public class $entity.Name$field.PropertyName$edit : 
+#if( $field.Type.AccessInterface == "string" )
+#parse("./Data/Web.Controls/EditControl_StringField.vtl")
+#elseif( $field.Type.AccessInterface == "int" )
+#parse("./Data/Web.Controls/EditControl_IntField.vtl")
+#elseif( $field.Type.AccessInterface == "bool" )
+#parse("./Data/Web.Controls/EditControl_BoolField.vtl")
+#elseif( $field.Type.AccessInterface == "double" )
+#parse("./Data/Web.Controls/EditControl_DoubleField.vtl")
+#elseif( $field.Type.AccessInterface == "DateTime" )
+#parse("./Data/Web.Controls/EditControl_DateTimeField.vtl")
+#elseif( !$field.Type.IsIntrinsic )
+#parse("./Data/Web.Controls/EditControl_EntityField.vtl")
+#else
+			Control {
+	
+		#region Base Implementation
+		
+		protected override void Render( HtmlTextWriter writer )
+		{
+			writer.Write("<em>TODO</em>");
+		}
+		
+		#endregion
+		
+		#region Properties
+		
+		protected string TargetName {
+			get {
+				return string.Empty;
+			}
+		}
+		
+		#endregion Properties
+#end
+#if( $field.Type.IsIntrinsic && !($field.Type.AccessInterface == "DateTime") )
+#parse("./Data/Web.Controls/Validators.vtl")
+#end
+		
+	};
+
+}

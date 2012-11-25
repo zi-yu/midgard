@@ -1,0 +1,78 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Web;
+using System.Web.UI;
+using Loki.DataRepresentation;
+
+namespace $namespace {
+
+	/// <summary>
+    /// Control that renders an Entity's field
+    /// </summary>
+    /// <typeparam name="T">The entity type</typeparam>
+	public abstract class BaseFieldControl<T> : Control where T : IDescriptable {
+		
+		#region Control Rendering & Events
+		
+		/// <summary>
+        /// Utility Render... gets the current object and delegates the render to the derived class
+        /// </summary>
+        /// <param name="writer">The HtmlTextWriter</param>
+		protected override void Render( HtmlTextWriter writer )
+		{
+			BaseEntityItem<T> item = GetParent();
+			HttpContext.Current.Items[ string.Format("__Current__{0}", typeof(T).Name) ] = item.Current;
+			
+			Render( writer, item.Current, item.RenderCount, item.FlipFlop );
+		}
+		
+		#endregion Control Rendering & Events
+		
+		#region Abstract Members
+
+		/// <summary>
+        /// Renders an entity object's information
+        /// </summary>
+        /// <param name="writer">The HtmlTextWriter</param>
+        /// <param name="t">The entity instance</param>
+        /// <param name="renderCount">The render count</param>
+        /// <param name="flipFlop">True if render count is odd</param>
+        protected virtual void Render(HtmlTextWriter writer, T t, int renderCount, bool flipFlop)
+        {
+        }
+		
+		#endregion Abstract Members
+		
+		#region Utilities
+		
+		/// <summary>
+        /// Gets this object parent
+        /// </summary>
+        /// <returns>The parent</returns>
+		protected virtual BaseEntityItem<T> GetParent()
+		{
+			BaseEntityItem<T> parent = Parent as BaseEntityItem<T>;
+			if( parent == null ) {
+				throw new Exception("Parent it's not BaseEntityItem<" + typeof(T).Name + ">");
+			}
+			parent.FetchCurrent();
+			return parent;
+		}
+		
+		#endregion
+		
+	};
+
+}

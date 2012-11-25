@@ -1,0 +1,40 @@
+<Project name="OdinUtilities" fileversion="2.0" language="C#" clr-version="Net_2_0" ctype="DotNetProject">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="DotNetProjectConfiguration">
+      <Output directory="../../../Odin/bin/Plugins/CodeGenerator" assembly="OdinUtilities" />
+      <Build debugmode="True" target="Library" />
+      <Execution runwithwarnings="True" consolepause="True" runtime="MsNet" clr-version="Net_2_0" />
+      <CodeGeneration compiler="Csc" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" generatexmldocumentation="False" ctype="CSharpCompilerParameters" />
+    </Configuration>
+    <Configuration name="Release" ctype="DotNetProjectConfiguration">
+      <Output directory="./bin/" assembly="OdinUtilities" />
+      <Build debugmode="False" target="Library" />
+      <Execution runwithwarnings="True" consolepause="True" runtime="MsNet" clr-version="Net_2_0" />
+      <CodeGeneration compiler="Csc" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" generatexmldocumentation="False" ctype="CSharpCompilerParameters" />
+    </Configuration>
+  </Configurations>
+  <DeploymentInformation strategy="File">
+    <excludeFiles />
+  </DeploymentInformation>
+  <Contents>
+    <File name="./Src/AssemblyInfo.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/CopyBaseFiles.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/CopyBaseFilesFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/CopyFile.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/CopyFileFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/GenerateBase.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/GenerateBaseFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/GenerateBaseTests.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/GenerateBaseTestsFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/GenerateConfigApp.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/GenerateConfigAppFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Template.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/TemplateFactory.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/Xslt.cs" subtype="Code" buildaction="Compile" />
+    <File name="./Src/XsltFactory.cs" subtype="Code" buildaction="Compile" />
+  </Contents>
+  <References>
+    <ProjectReference type="Assembly" localcopy="True" refto="../../../Loki/bin/DesignPatterns.dll" />
+    <ProjectReference type="Project" localcopy="True" refto="Loki" />
+  </References>
+</Project>

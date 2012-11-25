@@ -1,0 +1,148 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Loki.DataRepresentation;
+
+namespace $namespace {
+
+	/// <summary>
+    /// Edits a Date field
+    /// </summary>
+    /// <typeparam name="T">The entity type</typeparam>
+	public abstract class DateTimeEditor<T> : BaseEntityFieldEditor<T> where T : IDescriptable {
+	
+		#region Fields
+		
+		protected DropDownList year = new DropDownList();
+		protected DropDownList month = new DropDownList();
+		protected DropDownList day = new DropDownList();
+		
+		#endregion Fields
+		
+		#region Private Methods
+		
+		private void InitYears()
+		{
+			year.Items.Clear();
+			for( int years = 1900; years < (DateTime.Now.Year + 50); ++years )
+					year.Items.Add(years.ToString());
+		}
+		
+		private void InitDays()
+		{
+			day.Items.Clear();
+			for( int days = 1; days <= 31; ++days )
+					day.Items.Add(days.ToString());
+		}
+		
+		private void InitMonths()
+		{
+			month.Items.Clear();
+			month.Items.Add("January");
+			month.Items.Add("February");
+			month.Items.Add("March");
+			month.Items.Add("April");
+			month.Items.Add("May");
+			month.Items.Add("June");
+			month.Items.Add("July");
+			month.Items.Add("August");
+			month.Items.Add("September");
+			month.Items.Add("Octuber");
+			month.Items.Add("November");
+			month.Items.Add("December");
+		}
+		
+		private int FindIndex (DropDownList list, string value)
+		{
+			for( int iter = 0; iter < list.Items.Count; ++iter)
+			{
+				if( value == list.Items[iter].ToString())
+					return iter;
+			}
+			return 0;
+		}
+		#endregion Private Methods
+		
+		#region Events
+		
+		protected override void OnInit( EventArgs args )
+		{
+			InitYears();
+			InitMonths();
+			InitDays();
+			base.OnInit(args);
+			Controls.Add(day);
+			Controls.Add(month);
+			Controls.Add(year);
+			
+			month.Attributes.Add( "onchange", "alterdropdown()" );
+			year.Attributes.Add( "onchange", "alterdropdown()" );
+			day.Attributes.Add( "onload", "alterdropdown()" );
+			string cod = @"<script type='text/javascript'>
+						var monthdays = new Array(13);
+						   monthdays[0]= 31;
+						   monthdays[1]= 28;
+						   monthdays[2]= 31;
+						   monthdays[3]= 30;
+						   monthdays[4]= 31;
+						   monthdays[5]= 30;
+						   monthdays[6]= 31;
+						   monthdays[7]= 31;
+						   monthdays[8]= 30;
+						   monthdays[9]= 31;
+						   monthdays[10]= 30;
+						   monthdays[11]= 31;
+						   monthdays[12]= 29;
+
+						function alterdropdown(){
+							var monthIndex;
+							
+							if(document.getElementById('" + month.ClientID + @"').selectedIndex == 1 && document.getElementById('" + year.ClientID + @"').value % 4 == 0)
+								monthIndex = 12;
+							else
+								monthIndex = document.getElementById('" + month.ClientID + @"').selectedIndex;
+							document.getElementById('" + day.ClientID + @"').options.length = 0;
+							for(var i = 0; i < monthdays[monthIndex]; ++i)
+								document.getElementById('" + day.ClientID + @"').options.add(new Option(i+1));
+							document.getElementById('" + day.ClientID + @"').selectedIndex = 0;
+							
+						}
+						</script>";
+
+			Page.ClientScript.RegisterClientScriptBlock( this.GetType(), "script", cod );
+		}
+		
+		protected override void Render( HtmlTextWriter writer, T t, int renderCount, bool flipFlop )
+		{
+			year.SelectedIndex = FindIndex(year, GetDateTime(t).Year.ToString());
+			month.SelectedIndex = GetDateTime(t).Month - 1;
+			day.SelectedIndex = FindIndex(day, GetDateTime(t).Day.ToString());			
+			year.RenderControl( writer );
+			month.RenderControl( writer );
+			day.RenderControl( writer );
+		}
+		
+		#endregion Events
+		
+		#region Abstract Members
+		
+		protected abstract DateTime GetDateTime( T t );
+		
+		#endregion
+		
+	};
+
+}

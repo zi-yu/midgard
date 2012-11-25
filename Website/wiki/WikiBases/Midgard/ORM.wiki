@@ -1,0 +1,32 @@
+:Summary: Ferramentas ORM
+
+O Midgard é independente de determinada ferramenta de [ORM]. Foram estudados os seguintes projectos (cada tópico tem uma pequena descrição):
+	* NeoFramework
+	* GentleDotNet
+	* NHibernate
+
+!!!Comparação
+
+||{!}Características||{!}GentleDotNet ||{!}NeoFramework||{!}NHibernate||
+||Free Licence||S||S||S||
+||Available Sources||S||S||S||
+||Mapping GUI ^1^||S||N||S||
+||Accept SQL based queries||S||S/N ^2^||S||
+||Supporta relações entre objectos||S||S||S||
+||Suporte para associações múltiplos-múltiplos e múltiplos-um||Parcial ^3^||N||S||
+||Suporte de associações um-um||S||S||S||
+||Modificar os elementos da DB salvando automaticamente e sem violar as relações entre tabelas||N||S||S||
+||Uso de tipos null||N||S||S||
+||DB Schema||Atributos||XML||XML/Atributos(?)||
+||Suporte a Herança||S||(?)||S||
+
+
+!!!Referências Externas
+	* "Comparação de várias ferramentas ORM":http://c2.com/cgi/wiki?ObjectRelationalToolComparisonDotNet
+	* "What is a Persistence Framework?":http://www.mertner.com/confluence/pages/viewpage.action?pageId=65
+
+!
+
+	1. For ''DataBase'' to Objects and Ojects to ''DataBase''.
+	1. Só aceita SQL gerado automaticamente, mas não SQL introduzido manualmente.
+	1. Apesar de ter classes que suportem as ligações não tem construção de ''queries'' que suportem ''joins''

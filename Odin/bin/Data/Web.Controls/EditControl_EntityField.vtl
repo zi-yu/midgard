@@ -1,0 +1,72 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $Item = "Item" )
+			$field.Type.Name$Item, IEntityFieldEditor<$entity.Name>, INamingContainer {
+
+		#region Events
+		
+		/// <summary>
+        /// Initializes this control
+        /// </summary>
+        /// <param name="args">Event arguments</param>
+		protected override void OnInit(EventArgs args)
+        {
+			if( Source == SourceType.None ) {
+				Source = SourceType.Choice;
+			}
+            base.OnInit(args);
+        }
+		
+		#endregion Events
+#if( $field.Mult.ToString().EndsWith("ToOne") )		
+
+		#region $field.Type.Name$Item Implementation
+		
+		/// <summary>
+        /// Obtains the current value via the parent control
+        /// </summary>
+        /// <returns>The current object</returns>
+		protected override $field.Type.Name GetSourceFromParent( IDescriptable descriptable )
+        {
+            $entity.Name entity = descriptable as $entity.Name;
+            if (entity == null) {
+                return null;
+            }
+            return entity.$field.PropertyName;
+        }
+		
+		#endregion $field.Type.Name$Item Implementation
+		
+#end
+
+		#region IEntityFieldEditor<$field.Type.Name> Implementation
+		
+		/// <summary>
+        /// Updates an $entity.Name
+        /// </summary>
+        /// <param name="entity">An instance of $entity.Name</param>
+		public void Update( $entity.Name entity )
+		{
+			// $field.Mult.ToString()
+#if( $field.Mult.ToString().EndsWith("ToOne") )
+			FetchCurrent();
+			entity.$field.PropertyName = Current;
+#else
+			System.Collections.IList list = entity.$field.PropertyName;
+			list.Add(Current);
+#end
+		}
+		
+		#endregion IEntityFieldEditor<$field.Type.Name> Implementation
+		

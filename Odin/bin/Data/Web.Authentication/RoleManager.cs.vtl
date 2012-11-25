@@ -1,0 +1,97 @@
+
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Security.Principal;
+using System.Xml.XPath;
+using System.IO;
+
+namespace $namespace {
+
+	public static class RoleManager {
+
+		#region Static
+
+		private static XPathDocument doc = null;
+
+		static RoleManager()
+		{
+			string file = RolesFile;
+			if( !File.Exists(file) ) {
+				throw new Exception("Roles file `"+file+"' not found");
+			}
+			doc = new XPathDocument(file);
+		}
+
+		public static XPathDocument Document {
+			get { return doc; }
+		}
+
+		#endregion Static
+
+		#region Properties
+
+		private static string RolesFile {
+			get {
+				string roleFile = "Roles.xml";
+				string path = typeof( RoleManager ).Assembly.CodeBase;
+				path = new Uri(path).AbsolutePath;
+				path = Path.GetDirectoryName( path );
+				roleFile = Path.Combine( path, roleFile );
+				return roleFile;
+			}
+		}
+
+		#endregion
+
+		#region Private
+
+		private static bool CheckParents( XPathNavigator navigator, IPrincipal principal ) {
+			if( principal.IsInRole( navigator.GetAttribute( "name", "" ) ) ) {
+				return true;
+			}
+
+			if( navigator.MoveToParent() ) {
+				return CheckParents( navigator, principal );
+			}
+			return false;
+		}
+
+		#endregion
+		
+		#region Public
+
+		public static bool IsInRole( IPrincipal principal, string name ) {
+			try {
+				XPathNavigator nav = Document.CreateNavigator();
+				XPathNodeIterator iter = nav.Select( string.Format("//role[@name='{0}']",name) );
+
+				foreach( XPathNavigator navigator in iter ) {
+					if( CheckParents(navigator,principal) ) {
+						return true;
+					}
+				}
+
+				return false;
+			} catch {
+				return principal.IsInRole(name);
+			}
+		}
+		
+		#endregion
+
+	}
+}

@@ -1,0 +1,33 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $controls = ".Controls" )
+using System;
+using System.Web;
+using $namespace$controls;
+
+namespace $namespace {
+	public partial class AdminMaster : System.Web.UI.MasterPage {
+
+		protected Information errors;
+		protected Information information;
+
+		protected override void OnInit( EventArgs e ) {
+			HttpContext.Current.Session["CurrentEntity"] = "";
+			HttpContext.Current.Session["CurrentAction"] = "";
+
+			Information.InitErrorControl( errors );
+			Information.InitInformationControl( information );
+		}
+	}
+}

@@ -1,0 +1,448 @@
+/*
+Main: #FFB200
+#B37D00
+#FFECBF
+#FFD980
+*/
+
+body, p, ul, li, legend, PropertyValue, Property
+{
+	font-size: 12px;
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+
+p:first-letter 
+{
+	font-style:italic;
+	font-weight: bold;
+}
+
+img 
+{
+	border: 0px;
+}
+
+pre 
+{
+	font-size: 11px;
+    font-family: monospace;
+}
+
+#content 
+{
+	width: 100%;
+    background-color: white;
+	border: solid 1px black;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+}
+
+#referrals a
+{
+	font-size: 10px;
+}
+
+#content p 
+{
+	line-height: 1.5em;
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+
+#TopicTip
+{
+	font-size: 12px;
+	background-color:  #e8f1f6;
+	border: solid 1px black;
+	padding: 3px;
+}
+
+div.topic_preview 
+{
+	background-color: #EFEFEF;
+	border: dashed 1px #AAAAAA;
+	padding: 5px;
+	margin-bottom: 8px;
+	font-size: 10px;
+}
+
+div.footer 
+{
+	background-color:  #e8f1f6;
+	border-top-color: #95bbce;
+	border-top-style: groove;
+	border-top-width: 10px;
+	padding: 5px;
+}
+
+input 
+{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+#header
+{
+    margin-top:5px;
+	background-color:  white;
+	border-bottom-color: #003366;
+	border-bottom-style: groove;
+	border-bottom-width: 10px;
+	padding: 3px;
+    padding-bottom: 0px;
+}
+
+#header-search 
+{
+	float: right;
+	padding: 10px 20px 3px 0px;
+}
+
+#header-title
+{
+	color: black;
+	text-transform: capitalize;
+	font-weight: bold;
+	font-size: 25px;
+	margin-left: 20px;
+}
+
+#header-subtitle
+{
+	color: black;
+	font-size: 15px;
+	margin-left: 20px;
+    padding-bottom:9px;
+    font-family: monospace;
+}
+
+#left_menu 
+{
+	border-left-color: #95bbce;
+	border-left-style: dashed;
+	border-left-width: 1px;
+	background-color: white;
+	width: 150px;
+	padding: 5px;
+	margin-top: 5px;
+}
+
+#right_menu 
+{
+    border-left-color: #00487D;
+	border-left-style: inset;
+	border-left-width: 1px;
+	background-color: white;
+	width: 200px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+#wiki_header 
+{
+    margin-top: 10px;
+
+	color: black;
+    background-color: #CCCCFF;
+	font-size: 12px;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+    padding: 3px;
+    margin-bottom: 3px;
+}
+
+#site_utils 
+{
+	float: right;
+}
+
+#related 
+{
+	padding: 5px;
+	padding-bottom: 0px;
+	background-color: #EEEEEE;
+	border: solid 1px gray;
+	font-size: 10px;
+}
+
+#related a 
+{
+	font-size: 10px;
+}
+
+#related li
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+.content 
+{
+	padding: 10px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+a
+{
+	font-size: 12px;
+    color: #00487D;
+}
+
+a:hover
+{
+    color: #0066B3;
+}
+
+a.menu1 
+{
+	font-family: verdana, helvetica, arial, sans-serif;
+	color: #526772;
+}
+
+a.menu1:hover
+{
+	color: #6d9eb7;
+	text-decoration: none;
+}
+
+a.menu0
+{
+	font-family: verdana, helvetica, arial, sans-serif;
+	color: #6299b5;
+}
+
+a.menu0:hover
+{
+	color: #526772;
+	text-decoration: none;
+}
+
+span.nav, #wiki_header span, #postInfo, .postInfo
+{
+	font-family: monospace;
+	color: black;
+	font-size: 10px;
+	margin-bottom: 5px;
+}
+
+#postInfo 
+{
+	margin-bottom: 10px;
+}
+
+a.nav, #wiki_header a, #postInfo a
+{
+	font-family: monospace;
+	color: black;
+	font-size: 10px;
+}
+
+a.nav:hover, #wiki_header a:hover, #postInfo a:hover
+{
+	color: black;
+	text-decoration: underline;
+}
+
+#left_menu ul, #right_menu ul
+{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 10px;
+}
+
+#left_menu li, #right_menu li
+{
+	margin-top: 5px;
+	width: 200px;
+	border-bottom-color: #CCCCCC;
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+	padding: 0px;
+	font-size: 12px;
+}
+
+#left_menu h2, #right_menu h2
+{
+	color: black;
+    background-color: #CCCCFF;
+	font-weight: bold;
+	width: 200px;
+	margin: 0px;
+	font-size: 12px;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	border-left-width: 0px;
+    text-align: center;
+    padding-top: 3px;
+}
+
+#latest dt
+{
+	font-size: 10px;
+	margin-left: 10px;
+	margin-bottom: 2px;
+}
+
+#latest dd 
+{
+	margin-left: 30px;
+	margin-bottom: 10px;
+	font-style: italic;
+	font-size: 12px;
+}
+
+#pub 
+{
+	text-align: center;
+	margin-top: 8px;
+}
+
+.orange 
+{
+	color: orange;
+}
+
+.red
+{
+	color: red;
+}
+
+.green
+{
+	color: green;
+}
+
+div.orionsbelt_title
+{
+	color: #4884a3;
+	font-weight:bold;
+	width: 140px;
+	margin-left: 5px;
+	margin-bottom:5px;
+	border-bottom-color: black;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+
+a.orionsbelt_link:hover 
+{
+	text-decoration: none;
+}
+
+table.orionsbelt_table
+{
+	background-color: #f8f8f8;
+	border: #505050 1px solid;	
+	border-collapse: collapse;
+	margin-bottom: 10px;
+}
+
+td.orionsbelt_td
+{
+	text-align: center;
+	font-size: 10px;
+	border-collapse: collapse;
+	border: #909090 1px solid;
+}
+
+div.menu_title_end 
+{
+	margin-bottom: 10px;
+}
+
+div.wiki_topic, #wiki_title, #blog h1, #item h1
+{
+	margin: 0px;
+	margin-bottom:5px;
+	color: #00487D;
+	font-size: 30px;
+	font-weight: normal;
+    font-family: monospace;
+    border: 0px;
+    text-decoration: underline;
+}
+
+h1
+{
+	margin: 0px;
+	color: #00487D;
+	font-size: 20px;
+	font-weight: bold;
+	border-top-width: 0px;
+	border-bottom-color: #4884a3;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	font-family: monospace;
+}
+
+#shopList h2
+{
+	font-weight: normal;
+	margin: 0px;
+}
+
+#shopList li 
+{
+	float: left;
+	margin: 5px;
+	padding: 5px;
+	list-style: none;
+}
+
+#shopList ul li p
+{
+	width: 120px;
+	font-size: 10px;
+}
+
+#shopList ul li p:first-letter 
+{
+	font-style: normal;
+	font-weight:normal;
+}
+
+#itemPreview
+{
+	background-color: #f8f8f8;
+	border: #505050 1px solid;	
+	border-collapse: collapse;
+	margin-bottom: 5px;
+	padding: 5px;
+	width: 95%;
+}
+
+#itemPreview td 
+{
+	padding: 10px;
+	vertical-align: top;
+}
+
+
+#checkOutZone 
+{
+	font-size: 12px;
+	margin-top: 10px;
+	background-color: #EEEEEE;
+	padding: 5px;
+	border: solid 1px black;
+}
+
+#checkOutZone textarea 
+{
+	margin-top: 5px;
+}
+
+#letter_index, #letter_index a
+{
+	font-family: verdana, helvetica, arial, sans-serif;
+	color: gray;
+	font-size: 10px;
+	margin-bottom: 5px;
+	text-align: center;
+}

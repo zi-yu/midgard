@@ -1,0 +1,264 @@
+:Display: NHibernate
+:Summary: Documentação sobre NHibernate
+:SeeAlso: Midgard.NeoFramework Midgard.GentleDotNet Midgard.ObjectMapper
+:Parent: Midgard.ORM
+
+
+O NHibernate é uma ferramenta que possibilita o mapeamento ''object/relational'' ([ORM]) para o ambiente .NET. O termo [ORM] refere uma técnica de mapeamento entre representação em modelo de objectos, e representação em relações através de um esquema baseado em SQL.
+O NHibernate possibilita tanto o mapeamento entre classes .NET para tabelas de base de dados (BD) como também o inverso, disponibilizando ainda mecanismos que simplificam algum tipo de ''queries''. 
+O principal objectivo é facilitar o desenvolvimento de aplicações no domínio de modelos ''object-oriented'', assim como a sua camada de negócio.
+O diagrama seguinte, demonstra a arquitectura NHibernate de uma forma abstracta:
+
+http://midgard-rad.sourceforge.net/images/arquitecturaNHibernate.jpg
+
+!!Configuração Programática
+
+Para criar o conjunto de regras que descrevam o mapeamento basta simplesmente criar uma instância de ''NHibernate.Cfg.Configuration'', a qual vai ter a informação das regras descritas em XML.
+
+ Configuration cfg = new Configuration()
+ 	.AddXmlFile("Item.hbm.xml")
+ 	.AddXmlFile("Bid.hbm.xml");
+
+Alternativas a XML é deixar o NHibernate carregadar um ficheiro de mapeamento usando ''GetManifestResourceStream()'':  
+
+ Configuration cfg = new Configuration()
+ 	.AddClass( typeof(NHibernate.Auction.Item) )
+ 	.AddClass( typeof(NHibernate.Auction.Bid) );
+
+O NHibernate irá procurar os ficheiros de mapeamento ''NHibernate.Auction.Item.hbm.xml'' e ''NHibernate.Auction.Bid.hbm.xml'' como recursos embebidos no Assembly. Esta aproximação elimina a escrita ''hardcoded'' do nome dos ficheiros.
+
+A última hipótese é carregar ficheiros de mapeamento que estejam dentro do ''Assembly'':
+
+ Configuration cfg = new Configuration()
+ 	.AddAssembly( "NHibernate.Auction" );
+
+Em relação ao tipo de BD, ligação, controlo transaccional, etc, isto tudo é controlado com um ficheiro de configuração em XML. O exemplo seguinte demonstra um possível ficheiro web.config:
+
+ <?xml version="1.0" encoding="utf-8" ?>
+ <configuration>
+	<configSections>
+	    <section name="nhibernate"   type="System.Configuration.NameValueSectionHandler, 
+	    System,Version=1.0.5000.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089" />
+
+	    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler,log4net" />
+	</configSections>
+	
+	<nhibernate>
+		<add 
+			key="hibernate.connection.provider"          
+	 	        value="NHibernate.Connection.DriverConnectionProvider" 
+		/>
+		<add 
+			key="hibernate.connection.driver_class"        		      
+                        value="NHibernate.Driver.SqlClientDriver" 
+		/>
+		<add 
+			key="hibernate.connection.connection_string" 
+                        value="Server=127.0.0.1;Initial 
+                        Catalog=thedatabase;Integrated Security=SSPI" 
+		/>
+		<add 
+			key="hibernate.connection.isolation"
+			value="ReadCommitted"
+		/>
+		<add 
+			key="hibernate.dialect"                      
+			value="NHibernate.Dialect.MsSql2000Dialect" 
+		/>	
+	</nhibernate>
+	<!-- log4net (required by NHibernate) and other app specific config follows -->
+ </configuration>
+
+
+
+Existem ainda outras propriedades opcionais, que controlam alguns comportamentos do NHibernate em ''runtime'', assim como o ''schema'' por omissão, possibilitar a preparação de ''sql statements'', etc.
+
+Em relação ao tipo de BD utilizada o NHibernate suporta vários tipos desde que que sejam baseados em SQL. A tabela seguinte indica os dialectos suportados pelo NHibernate:
+
+|| *RDBMS* || *Dialect* ||
+|| ''DB2'' || ''NHibernate.Dialect.DB2Dialect'' ||
+|| ''PostgreSQL'' || ''NHibernate.Dialect.PostgreSQLDialect'' ||
+|| ''MySQL'' || ''NHibernate.Dialect.MySQLDialect'' ||
+|| ''Oracle (any version)'' || ''NHibernate.Dialect.OracleDialect'' ||
+|| ''Oracle 9/10g'' || ''NHibernate.Dialect.Oracle9Dialect'' ||
+|| ''Sybase'' || ''NHibernate.Dialect.SybaseDialect'' ||
+|| ''Microsoft SQL Server 2000'' || ''NHibernate.Dialect.MsSql2000Dialect'' ||
+|| ''Microsoft SQL Server 7'' || ''NHibernate.Dialect.MsSql7Dialect'' ||
+|| ''Firebird'' || ''NHibernate.Dialect.FirebirdDialect'' ||
+
+
+!!Classes de persistência
+
+Estas são as classes que implementam as entidades da lógica de negócio. O NHibernate tem um melhor desempenho se estas classes obedecerem a algumas regras bastante simples, conhecidas como modelo de programação ''Plain Old CLR Object'' (POCO), que são classes apenas constituídas por campos e opcinalmente com as respectivas propriedades.
+
+ public class Cat
+ {
+	private long _id; // identifier
+	private string _name;
+	private DateTime _birthdate;
+	private Cat _mate;
+
+	public long Id
+	{
+		get { return _id; }
+		set { _id = value; }
+	}
+
+	public string Name
+	{
+		get { return _name; }
+		set { _name = value; }
+	}
+
+	public DateTime Birthdate
+	{
+		get { return _birthdate; }
+		set { _birthdate = value; }
+	}
+
+	public Cat Mate
+	{
+		get { return _mate; }
+		set { _mate = value; }
+	}
+ }
+
+
+!!Mapeamento em XML
+
+A linguagem de mapeamento é .NET-centric, que significa que o mapeamento é construído em torno de eclarações de classes persistentes, e não declaração de tabelas. Em seguida demonstra-se um exemplo de XML:
+
+ <?xml version="1.0" ?>
+ <hibernate-mapping xmlns="urn:nhibernate-mapping-2.0"
+	namespace="Eg" assembly="Eg">
+
+	<class name="Cat" table="CATS" discriminator-value="C">
+		<id name="Id" column="uid" type="Int64">
+			<generator class="hilo"/>
+		</id>
+		<discriminator column="subclass" type="Char"/>
+		<property name="Birthdate" type="Date"/>
+		<property name="Color" not-null="true"/>
+		<property name="Sex" not-null="true" update="false"/>
+		<property name="Weight"/>
+		<many-to-one name="Mate" column="mate_id"/>
+		<set name="Kittens">
+			<key column="mother_id"/>
+			<one-to-many class="Cat"/>
+		</set>
+		<subclass name="DomesticCat" discriminator-value="D">
+			<property name="Name" type="String"/>
+		</subclass>
+	</class>
+
+	<class name="Dog">
+		<!-- mapping for Dog could go here -->
+	</class>
+
+ </hibernate-mapping>
+
+Na documentação do NHibernate estão bem explicados todos os elementos e suas propriedades, mas por ser uma documentação mais de consulta não será incluída neste documento.
+
+!!Tipos do NHibernate
+
+No NHibernate existem dois tipos as ''Entities'' e os ''Values''.
+Uma ''Entity'' existe mesmo que nenhum objecto possua uma referência para esta, contrastando com o modelo em .NET que objectos sem referências são ''garbage collected''. As ''Entities'' precisam de ser explicitamente guardadas e apagadas (excepto se tiverem afectadas com a propriedade ''cascaded''). Podem ainda ter versão.
+Quando uma ''Entity'' é persistente o seu estado consiste em referências para outras ''entities'' e instâncias do tipo ''value''. ''Values'' são estruturas, colecções componentes e tipos imutáveis. Ao contrário das ''entities'' os ''values'' são persistentes e apagadas pelo moledo do .NET. ''Values'' não têm uma identidade independente, ou seja eles não podem ser partilhados por duas ''entities'' ou colecções.
+Todos os tipos NHibernate suportam a semântica de ''null'' (excepto as colecções), desde que o tipo correspondente em .NET também o suporte. A tabela seguinte demonstra as relações entre os diferentes universos:
+
+||*NHibernate Type*||*.NET Type*||*Database Type*||
+||''Boolean''||''System.Boolean''||''DbType.Boolean''||
+||''Byte''||''System.Byte''||''DbType.Byte''||
+||''Char''||''System.Char''||''DbType.StringFixedLength'' - 1 char||
+||''DateTime''||''System.DateTime''||''DbType.DateTime'' - ignores the milliseconds||
+||''Decimal''||''System.Decimal''||''DbType.Decimal''||
+||''Double''||''System.Double''||''DbType.Double''||
+||''Guid''||''System.Guid''||''DbType.Guid''||
+||''Int16''||''System.Int16''||''DbType.Int16''||
+||''Int32''||''System.Int32''||''DbType.Int32''||
+||''Int64''||''System.Int64''||''DbType.Int64''||
+||''PersistentEnum''||A ''System.Enum''||	The ''DbType'' for the underlying value.||
+||''Single''||''System.Single''||''DbType.Single''||
+||''Ticks''||''System.DateTime''||''DbType.Int64''||
+||''TimeSpan''||''System.TimeSpan''||''DbType.Int64''||
+||''Timestamp''||''System.DateTime''||''DbType.DateTime'' - as specific as database supports||
+||''TrueFalse''||''System.Boolean''||''DbType.AnsiStringFixedLength ''- 1 char either 'T' or 'F'||
+||''YesNo''||''System.Boolean''||''DbType.AnsiStringFixedLength ''- 1 char either 'Y' or 'N'||
+||''AnsiString''||''System.String''||''DbType.AnsiString''||
+||''CultureInfo''||''System.Globalization.CultureInfo''||''DbType.String ''- 5 chars for culture||
+||''Binary''||''System.Byte[]''||''DbType.Binary''||
+||''Type''||''System.Type''||''DbType.String'' holding Assembly Qualified Name.||
+||''String''||''System.String''||''DbType.String''||
+||''StringClob''||''System.String''||''DbType.String''||
+||''BinaryBlob''||''System.Byte[]''||''DbType.Binary''||
+||''Serializable''||Any ''System.Object'' that is marked with ''SerializableAttribute''.||''DbType.Binary''||
+
+Além destes tipos ainda é possível ao programador ter tipos ''custom value''. Para implementar estes tipos pode implementar a interface ''NHibernate.IUserType'' ou a ''NHibernate.ICompositeUserType'', declarando propriedades usando o nome do tipo.
+
+!!Tipos de Associações
+É possível ter três tipos de associações ''one-to-one'', ''one-to-many/many-to-one'' e ''many-to-many''.
+As relações ''one-to-many'', são as mais comuns, pois são o tipo de relação existente em relações ''parent/child''.
+
+ <class name="Person">
+	<id name="Id" column="personId">
+		<generator class="native" />
+	</id>
+	<many-to-one name="Address"
+		column="addressId"
+		not-null="true"
+	/>
+ </class>
+
+ <class name="Address">
+	<id name="Id" column="addressId">
+		<generator class="native" />
+	</id>
+	<set name="People" inverse="true">
+		<key column="addressId" />
+		<one-to-many class="Person" />
+	</set>
+ </class>
+
+
+ create table Person 
+ (
+	personId bigint not null primary key,
+	addressId bigint not null
+ )
+
+ create table Address
+ (
+	addressId bigint not null primary key
+ )
+
+Em seguida demonstra-se o exemplo de uma relação ''many-to-many'', que é o tipo de relação mais complicado de implementar e ainda existem algumas ferramentas [ORM] que não têm suporte para ela.
+
+ <class name name="NHibernate.Auction.Category, NHibernate.Auction">
+	<id name="Id" column="ID"/>
+	...
+	<bag name="Items" table="CATEGORY_ITEM" lazy="true">
+		<key column="CATEGORY_ID" />
+		<many-to-many class="NHibernate.Auction.Category, NHibernate.Auction" column="ITEM_ID" />
+	</bag>
+ </class>
+
+ <class name="NHibernate.Auction.Item, NHibernate.Auction">
+	<id name="Id" column="ID" />
+	
+	<!-- inverse end -->
+	<bag name="Categories" table="CATEGORY_ITEM" inverse="true" lazy="true">
+		<key column="ITEM_ID" />
+		<many-to-many class="NHibernate.Auction.Category, NHibernate.Auction" column="CATEGORY_ID" />
+	</bag>
+ </class>
+
+!!Conclusão
+
+O NHibernate é das ferramentas [ORM] ''Open Source'' com mais capacidades. Por vezes a sua complexidade também é superior às das outras ferramentas devido ao seu nível de detalhe.
+Em termos de documentação está muito bem documentado, sendo possível com alguma facilidade encontrar as respostas desejadas.
+Para mais informações consultar o "site da documentação NHibernate":http://wiki.nhibernate.org/display/NH/Documentation/
+
+!!!Referências Externas
+	* "HQL - Query Language Reference":http://www.hibernate.org/hib_docs/reference/en/html/queryhql.html
+	* "NHibernate Query Analyzer":http://www.ayende.com/projects/nhibernate-query-analyzer.aspx

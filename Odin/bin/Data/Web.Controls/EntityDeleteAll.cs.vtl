@@ -1,0 +1,111 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $IdToDelete = "DeleteAll" )
+#set( $ext = "DeleteAll" )
+#set( $par = "(" )
+#set( $value = ".value" )
+#set( $persistance = "Persistance" )
+#set( $persistanceSession = "Persistance.GetSession()" )
+#set( $DeleteAll = "DeleteAll" )
+
+using System;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Loki.DataRepresentation;
+using $CoreNamespace;
+using $DALNamespace;
+
+namespace $namespace {
+
+	/// <summary>
+    /// Deletes all instances of $entity.Name from the data source
+    /// </summary>
+	public class $entity.Name$ext : Control {
+	
+		#region Control Fields & Events
+		
+		/// <summary>
+        /// OnLoad configuration
+        /// </summary>
+        /// <param name="e">Event arguments</param>
+		protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            if( Page.IsPostBack ) {
+				string toRemove = Page.Request.Form["$entity.Name$IdToDelete"];
+				if( !string.IsNullOrEmpty(toRemove) && HttpContext.Current.Items["$entity.Name$IdToDelete"] == null ) {
+					HttpContext.Current.Items["$entity.Name$IdToDelete"] = string.Empty;
+					DeleteAll();
+				}
+			}
+			RegisterDeleteJS();
+        }
+
+		/// <summary>
+        /// Deletes all $entity.Name
+        /// </summary>
+        void DeleteAll ()
+        {
+			$entity.Name$persistance persistance = $entity.Name$persistanceSession;
+			persistance.DeleteAll();
+			persistance.Flush();
+        }
+		
+		#endregion
+	
+		#region Control Implementation
+		
+		protected override void Render( HtmlTextWriter writer )
+		{
+            writer.Write("<a href='javascript:$entity.Name$DeleteAll$par)'>Delete All</a>");
+		}
+		
+		#endregion Control Implementation
+
+        #region Delete JS
+
+		/// <summary>
+        /// Registers necessary JavaScript
+        /// </summary>
+        private void RegisterDeleteJS()
+        {
+            string script = @"<script type='text/javascript'>
+	var theForm = document.forms['" + Page.Form.ClientID + @"'];
+    if (!theForm) {
+        theForm = document.form;
+    }
+    function $entity.Name$DeleteAll ()
+    {
+        if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+			var resp = confirm('Really delete all from $entity.Name ?');
+			if( !resp ) {
+				return;
+			}
+		
+			theForm.$entity.Name$DeleteAll$value = 1;
+			theForm.submit();
+		}
+	}
+	</script>";
+	
+			Page.ClientScript.RegisterClientScriptBlock(GetType(),"$entity.Name$DeleteAll", script);
+			Page.ClientScript.RegisterHiddenField("$entity.Name$DeleteAll", "");
+        }
+
+        #endregion
+
+    };
+
+}

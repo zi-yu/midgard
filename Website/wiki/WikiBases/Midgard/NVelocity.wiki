@@ -1,0 +1,215 @@
+:Summary: NVelocity
+:Display: NVelocity
+:Parent: Midgard.FerramentasTemplate
+
+O NVelocity é uma ferramenta que possibilita gerar código a partir de ''templates'', seja código C#, SQL, páginas Web, ''PostScript'' entre outros.O NVelocity é uma ''Template Language'', que possibilita de uma forma simples incorporar conteúdos dinâmicos.
+
+!!Uma primeira aproximação
+
+Este ''template'' usa referências para embeber os conteúdos dinâmicos, por exemplo uma variável é encarada como um tipo de referência, que refere algo definido no código C# ou pode obter o seu valor através dum ''statement'' do NVelocity. De seguida apresenta-se um exemplo de um ''statement'':
+
+ #set( $a = "Midgard" )
+
+O caracter *#* significa que se vai iniciar um ''statement'', se seguida aparece a directiva set indicando uma afectação na expressão entre parêntesis, o caracter *$* indica q irá esta uma referência a seguir a este. Resumindo isto é a afectação da variável a com o valor Midgard.
+Os valores têm de estar sempre entre aspas pois são sempre do tipo ''string'', apesar de ser umas das limitações do NVelocity é também um modo de retirar a ambiguidade do tipo do valor.
+
+!!Comentários
+
+Os comentários são basicamente muito idênticos aos comentários em C# substituindo o caracter “/” pelo caracter “#”, ou seja um comentário de linha será:
+
+ ## Exemplo de um comentário
+
+Um comentário de bloco será:
+
+ #* 
+ Inicio do bloco
+ 
+ Fim do bloco
+ *#
+
+E um comentário que gere documentação será:
+
+ #**
+ Midgard – Uma ferramenta RAD
+ *#
+
+!!Referências
+
+Existem 3 tipos de referências: variáveis, propriedades e métodos. Os valores que são retornados de uma referência ou que são usados para afectar uma referência são tratados como ''strings''.
+Em caso de se ter um ''object'' que represente uma referência, então o NVelocity chamará o método ''.ToString()'', desse objecto.
+
+!!!Variáveis
+
+Uma variável é representada com o caracter inicial “*$*” seguido pelo que se chama de ''Identifier''. O ''Identifier'' necessita de começar pelos caracteres (a-z ou A-Z), os restantes carateres podem ser os atrás referidos ou então: (0-9), “-” ou “_”.
+Exemplos de variáveis são:
+
+ $Midgard
+ $RAD-Project
+ $ISEL
+ $log4net
+
+!!!Propriedades
+
+Formatação de uma propriedade também é muito idêntica ao que existe no C#, é representada com o caracter inicial “*$*” seguido por um ''Identifier'', mais o caracter “.” Seguido de mais um ''Identifier''. Após a chamada será retornado o valor apropriado.
+Exemplos de propriedades são:
+
+ $midgard.file
+ $project.Name
+
+!!!Métodos
+
+Um método é algo definido em código C# e tem a capacidade de fazer algo. A representação de um método também é muito idêntica a uma representação em C#, basicamente só se tem de prefixar a chamada do método com o carater “*$*”.
+Exemplo de métodos:
+
+ $midgard.projectName(“exemplo”)
+ $odin.run()
+ $loky.getArgs( [“midgard”, “exemplo”] )
+
+!!Directivas
+
+!!!#set
+
+Uma das mais importantes directivas é a *#set*. A sua importância deve-se ao facto de ser o modo de afectar referências. O lado esquerdo da afectação pode ser uma referência do tipo variável ou propriedade, enquanto que o lado direito pode ser: ''string'', ''Number literal'', ''ArrayList'' ou uma referência de qualquer tipo.
+De seguida apresentam-se alguns exemplos:
+
+ #set( $midgard = $bill ) ## variable reference 
+ #set( $midgard.Friend = "monica" ) ## string 
+ #set( $midgard.Blame = $whitehouse.Leak ) ## property reference 
+ #set( $midgard.Plan = $project.task($web) ) ## method reference 
+ #set( $midgard.Number = 123 ) ##number literal 
+ #set( $midgard.Say = ["Not", $my, "fault"] ) ## ArrayList
+
+!!!#foreach
+
+O *#foreach*  é a directiva que representa o ''foreach'' C#, sendo assim o seu modo de utilização é exactamente igual. Para se tornar mais claro apresenta-se o seguinte exemplo:
+
+ #set( $criteria = ["name", "address"] ) 
+ 
+ #foreach( $criterion in $criteria ) 
+ #set( $result = “nome = $result  endereço = $criterion”) 
+ #end 
+
+!!!#if
+
+O *#if* permite ter troços de código condicionados. A sua utilização também é idêntica à do C#, possibilitando também o uso de operadores lógicos. O exemplo seguinte é demonstrativo:
+
+ #if( !$midgard.lines < 100 && $errors == 0  )
+ 	$midgard.sucess = “true”
+ #end
+
+Ainda existem outras directivas como ''#include'', ''#parser'', ''#stop'', etc, mas o objectivo deste documento é demonstrar as capacidades fundamentais e mais úteis do NVelocity, para um maior aprofundamento no assunto consultar http://jakarta.apache.org/velocity/docs/vtl-reference-guide.html.
+
+!!Exemplo
+
+Comece-se por definir o ficheiro de template:
+
+ ## Este é um exemplo do velocity template
+ 
+ #set( $this = "Midgard")
+ 
+ $this - um projecto RAD
+ 
+ #foreach( $name in $list )
+     $name - escrito!
+ #end
+ 
+ #if ($list.Count == 4)
+     Dimensão = 4
+ #else
+     Dimensao != 4
+ #end
+ 
+ #set( $condition = true)
+ 
+ #if ($condition)
+     A condicao verdadeira!
+ #else
+     A condicao falsa!
+ #end  
+
+Este ficheiro terá de estar na mesma directoria do projecto em que este vai ser dado como contexto ao NVelocity. O nome do ficheiro será “example.vm”.
+O ficheiro seguinte será o ficheiro ''.cs'' que chamará o NVelocity:
+  
+ using System;
+ using System.Collections;
+
+ using Velocity = NVelocity.App.Velocity;
+ using VelocityContext = NVelocity.VelocityContext;
+ using Template = NVelocity.Template;
+ using ParseErrorException = NVelocity.Exception.ParseErrorException;
+ using ResourceNotFoundException = NVelocity.Exception.ResourceNotFoundException;
+
+ public class Example1 {
+
+    public virtual ArrayList Names {
+	get {
+	    ArrayList list = new ArrayList();
+
+	    list.Add("ArrayList element 1");
+	    list.Add("ArrayList element 2");
+	    list.Add("ArrayList element 3");
+	    list.Add("ArrayList element 4");
+	    return list;
+	}
+    }
+
+    public Example1(System.String templateFile) {
+	try {
+	    //Inicializar as propriedades do NVelocity
+	    Velocity.Init("nvelocity.properties");
+
+   /*
+	    *  Criar o contexto e p+opular com informação. Este é o ponto
+	    *  onde o motor do NVelocity recebe a informação para
+	    * resolver as referências no template
+	    */
+	    VelocityContext context = new VelocityContext();
+	    context.Put("list", Names);
+
+    /*
+	    *  Criar um objecto de template, que receberá o ficheiro de template
+    *  O método getTemplate() pode gerar as seguintes excepções:
+	    *  ''ResourceNotFoundException'' : Se não encontrar template
+	    *  ''ParseErrorException'' : Se houver erros de sintaxe ou semântica no ficheiro
+	    *  ''Exception'' : Se outra coisa aconteceu de errado (geralmente será um problema sério)
+	    */
+	    Template template = null;
+
+	    try 
+	    {
+			template = Velocity.GetTemplate(templateFile);
+	    } catch (ResourceNotFoundException) {
+			System.Console.Out.WriteLine("Example1 : error : cannot find template " + templateFile);
+	    } catch (ParseErrorException pee) {
+			System.Console.Out.WriteLine("Example1 : Syntax error in template " + templateFile + ":" + pee);
+	    }
+
+ /*
+	    *  Neste momento o motor de template irá processar o template usando
+	    *  a informação colocada no contexto.Pensado num "merge" entre 
+	    *  o template e os dados produzindo  um output
+	    */
+	    if (template != null) {
+		template.Merge(context, System.Console.Out);
+	    }
+	} catch (System.Exception e) {
+	    System.Console.Out.WriteLine(e);
+	}
+    }
+
+    [STAThread]
+    public static void  Main(System.String[] args) {
+	    Example1 t = new Example1("example.vm");
+    }
+ }
+
+O ficheiro “nvelocity.properties” usado para carregar as propriedades do NVelocity, neste caso só terá o ficheiro de ''log'' para o qual se fará o sumário do NVelocity, este log é construído à custa da ferramenta "log4net":http://logging.apache.org/log4net/ .
+
+ runtime.log = nvelocity_example1.log
+
+Há a referir como conclusão a este exemplo, que se torna complicado o processo de debug no código executado dentro do ''template'', facilmente se cometem erros como o esquecimento da directiva ''#end'' para terminar um ''#if'', tornando-se penosa a correcção de erros, este será o principal defeito a apontar. Esta dificuldade também se deve ao mau ''output'' produzido pela excepção, indicando o erro numa linha errada, devido ao parser efectuado pelo motor NVelocity. Outro problema detectado, mas menos significativo é alguma demora no carregamento das propriedades no método ''Init(…).''
+
+!!!Documentação de referências
+
+	* "NVelocity Site":http://nvelocity.sourceforge.net/
+	* "Velocity Site":http://jakarta.apache.org/velocity/

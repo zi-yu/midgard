@@ -1,0 +1,63 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+				DoubleEditor<$entity.Name>, INamingContainer {
+		
+		#region Base Implementation
+		
+		/// <summary>
+        /// Initializes this control
+        /// </summary>
+        /// <param name="args">Event arguments</param>
+		protected override void OnInit( EventArgs args )
+		{
+			base.OnInit(args);
+			AddValidators();
+		}
+		
+		/// <summary>
+        /// Gets the value of the property to edit
+        /// </summary>
+        /// <param name="entity">The $entity.Name</param>
+        /// <returns>The value</returns>
+		protected override double GetNumber( $entity.Name entity )
+		{
+			return entity.$field.PropertyName;
+		}
+
+#if( $field.IsPrimaryKey )		
+		protected override void Render( HtmlTextWriter writer, $entity.Name entity, int renderCount, bool flipFlop )
+		{
+			writer.Write(GetNumber(entity));
+		}
+#end
+
+		/// <summary>
+        /// Updates an $entity.Name
+        /// </summary>
+        /// <param name="entity">An instance of $entity.Name</param>
+		public override void Update( $entity.Name entity )
+		{
+#if( !$field.IsPrimaryKey )	
+			entity.$field.PropertyName = double.Parse(text.Text);
+#end
+		}
+		
+		/// <summary>
+        /// Field to be edited
+        /// </summary>
+		protected override string TargetName { 
+			get { return "$field.Name"; }
+		}
+		
+		#endregion

@@ -1,0 +1,44 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+#set( $controls = ".Controls")
+#set( $inherits = ".AdminMaster")
+<%@ Master Language="C#" AutoEventWireup="true" Inherits="$namespace$inherits" %>
+<%@ Register TagPrefix="Admin" Assembly="$assembly" Namespace="$namespace$controls" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Midgard Admin</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="Style/style.css" />
+</head>
+<body>
+    <form id="form" runat="server">
+        <div id="header">
+            <div id="topnav">
+                <a href="default.aspx"><img alt="Midgard" src="Images/logo.gif" /></a>
+			</div>
+            <Admin:TopMenu runat="server" />
+        </div>
+        <div id="left">        
+			<Admin:LeftMenu runat="server" />
+        </div>
+        <div id="center">
+			<Admin:Information id="errors" runat="server" />
+			<Admin:Information ID="information" runat="server" />
+            <asp:ContentPlaceHolder ID="content" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

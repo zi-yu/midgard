@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QuartzLoader</name>
+    </assembly>
+    <members>
+        <member name="M:Quartz.QuartzLoader.ParseNodeList(System.Xml.XmlNode)">
+            <summary>
+            Parse ao elemento principal nodeList
+            </summary>
+            <param name="element"></param>
+        </member>
+        <member name="M:Quartz.QuartzLoader.ParseNodeElement(System.Xml.XmlNode)">
+            <summary>
+            Parse ao filho de nodeList, node
+            </summary>
+            <param name="element"></param>
+        </member>
+        <member name="M:Quartz.QuartzLoader.ParseScreenNodeElement(System.Xml.XmlNode)">
+            <summary>
+            Parse ao filho de nodeList, sceenNode
+            </summary>
+            <param name="element"></param>
+        </member>
+        <member name="M:Quartz.QuartzLoader.ParseSubProcessNodeElement(System.Xml.XmlNode)">
+            <summary>
+            Parse ao filho de nodeList, subProcess
+            </summary>
+            <param name="element"></param>
+        </member>
+    </members>
+</doc>

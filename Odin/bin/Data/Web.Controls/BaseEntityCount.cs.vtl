@@ -1,0 +1,69 @@
+## Copyright (c) Zi-Yu.com - All Rights Reserved
+## http://midgard.zi-yu.com/
+##
+## The use and distribution terms for this software are covered by the
+## LGPL (http://opensource.org/licenses/lgpl-license.php).
+## By using this software in any fashion, you are agreeing to be bound by
+## the terms of this license.
+##
+## You must not remove this notice, or any other, from this software.
+##
+## Midgard Interface Generator
+##
+############################################
+using System;
+using System.Collections.Generic;
+using System.Web.UI;
+using Loki.DataRepresentation;
+
+namespace $namespace {
+
+    /// <summary>
+    /// Base control that knows the the quantity of records of a specficic entity T
+    /// </summary>
+    /// <typeparam name="T">The Entity Type</typeparam>
+	public abstract class BaseEntityCount<T> : Control where T : IDescriptable {
+	
+		#region Ctor & Control Fields
+		
+		private IPersistance<T> persistance = null;
+		
+		/// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="per">The persistance object to obtain the quantity</param>
+		public BaseEntityCount( IPersistance<T> per )
+		{
+			Persistance = per;
+		}
+		
+		#endregion Control Fields
+		
+		#region Control Properties
+		
+		/// <summary>
+        /// The Persistance object to be used
+        /// </summary>
+		public IPersistance<T> Persistance {
+			get { return persistance; }
+			set { persistance = value; }
+		}
+		
+		#endregion Control Properties
+	
+		#region Control Events
+		
+		/// <summary>
+        /// Renders the control in XHTML
+        /// </summary>
+        /// <param name="writer">The HtmlTextWriter</param>
+		protected override void Render( HtmlTextWriter writer )
+		{
+			writer.Write( Persistance.GetCount() );
+		}
+		
+		#endregion Control Rendering
+		
+	};
+
+}

@@ -1,0 +1,244 @@
+﻿body {
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, sans-serif;
+	font-size: 10px;
+	line-height: 1.5em;
+	color: #000;
+	min-width: 630px;
+}
+
+img {
+	border:0px;	
+}
+
+#header {
+	float:none;
+}
+
+#center {
+	margin-left:220px;
+	margin-top:10px;
+	margin-right:20px;
+}
+
+#left {	
+	float:left;
+	width:200px;
+	background: #5c8dc5 url(../Images/gradient.png) no-repeat;
+}
+
+html>body #left {
+	background: #6797cb url(../Images/gradient.png) no-repeat;
+}
+
+
+/*======== TOP ===========================================================*/
+
+#topnav {
+	height:80px;
+	background: #5c8dc5 url(../Images/gradient.png) no-repeat;
+}
+
+#topnav img{
+	padding-top:20px;
+	padding-left:30px;
+}
+
+html>body #topnav {
+	background: #6797cb url(../Images/gradient.png) no-repeat;
+}
+
+#bottomnav {
+	float:left;
+	height:80px;
+	background: #5c8dc5 url(../Images/gradient.png) no-repeat;
+	font-family:Verdana;
+	font-size:15px;
+}
+
+#nav {
+	float:none;
+	text-align:right;
+}
+
+#nav ul {
+	height:20px;	
+	padding: 0;
+	margin: 0;
+	padding-right:10px;
+	list-style: none;
+	background: #5c8dc5 url(../Images/gradient.png) no-repeat;
+}
+
+html>body #nav ul {
+	background: #6797cb url(../Images/gradient.png) no-repeat;
+}
+
+#nav ul li {
+	margin: 0;
+	padding: 0 1px 0 0;
+	list-style: none;
+	display: inline;
+}
+
+#nav ul a {
+	width:172px;
+	padding: 5px 35px;
+	text-decoration: none;
+	border-bottom:solid 2px #6797cb;
+	background: #deeaf3 url(../Images/topMenu2IE.gif) no-repeat left;
+	color:#000;
+}
+
+#nav ul li.time {
+	width:172px;
+	padding: 5px 35px;
+	text-decoration: none;
+	border-bottom:solid 2px #6797cb;
+	color:#fff;
+	font-weight:bold;
+}
+
+
+
+html>body #nav ul a{
+	background: #deeaf3 url(../Images/topMenu2.gif) no-repeat;
+}
+
+#nav ul a:hover {
+	background: #f1ebbd url(../Images/topMenu3IE.gif) no-repeat left;
+}
+
+html>body #nav ul a:hover {
+	background: #f1ebbd url(../Images/topMenu3.gif) no-repeat left;
+}
+
+#nav ul a.active, #nav ul a.active:hover {
+	background: #fff url(../Images/topMenuIE.gif) no-repeat left;
+	border-bottom:solid 2px #fff;
+	font-weight: bold;
+}
+
+html>body #nav ul a.active, html>body #nav ul a.active:hover{
+	background: #fff url(../Images/topMenu.gif) no-repeat;
+}
+
+/*======== LEFT ==========================================================*/
+
+#left dl {
+	float:none;	
+}
+
+#left dt {
+	margin: 0;
+	padding: 5px 0px 5px 0;
+	list-style: none;
+	display:inline-block;
+	text-align:center;
+	background: #cbe1f1;
+	border:solid 1px #6797cb;
+	font-weight:bold;
+	font-size:11px;
+}
+
+#left dl dd {
+	margin: 0;
+	padding: 5px 0px 12px 20px;
+	list-style: none;
+	display:inline-block;
+	text-align:left;
+	background: #deeaf3;
+	border-right:solid 1px #6797cb;
+	border-top:solid 1px #6797cb;
+	border-bottom:solid 1px #6797cb;
+}
+
+#left dl a {
+	text-decoration: none;
+	color:#000;
+}
+
+#left dl dd:hover {
+	font-weight: bold;
+	background: #f1ebbd;
+}
+
+#left dl dd.active, #left dl dd.active:hover, #left dl dd.active a:hover  {
+	border-right:solid 1px #fff;
+	border-top:solid 1px #fff;
+	border-bottom:solid 1px #fff;
+	font-weight: bold;
+	background: #fff;
+}
+
+/*======== CONTENT ==========================================================*/
+
+h2 {
+	font-family: Verdana, sans-serif;
+	font-size: 14px;
+	color: #5c8dc5;	
+}
+
+table {
+	border:1px solid #6797cb;
+	text-align:center;
+}
+
+html>body table {
+	width:100%;	
+}
+
+th{
+	border:1px solid #6797cb;
+	background-color:#6797cb;
+	color:#fff;
+}
+
+tr:hover {
+	background: #f1ebbd;
+}
+
+td{
+	border:1px dashed #6797cb;
+}
+
+/*======== INFORMATION TABLE ==========================================================*/
+
+#informationTable {
+	border-bottom:solid 1px #6797cb;
+	border-left:solid 1px #6797cb;
+	border-right:solid 1px #6797cb;
+	border-collapse:collapse;
+	table-layout:auto;
+}
+
+#informationTable th {
+	background-image:url(../Images/msg_fill.gif);
+	text-align:left;
+}
+
+#informationTable th img {
+	float:left;
+	padding-left:2px;
+	vertical-align:middle;
+}
+
+#informationTable .messageContent {
+	width:100%;
+	padding-left:10px;
+}
+
+#informationTable td {
+	border:0px;
+	text-align:left;
+}
+
+#informationTable td img{
+	margin:10px 10px 10px 40px;
+}
+
+#informationTable td ul {
+	margin-top: 8px;
+	list-style: none;
+}
